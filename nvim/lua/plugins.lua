@@ -3,7 +3,10 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('Shougo/deoplete.nvim')
+Plug 'Shougo/deoplete.nvim'
+vim.cmd[[
+let g:deoplete#enable_at_startup = 1
+]]
 
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -22,6 +25,8 @@ Plug 'romgrk/barbar.nvim'
 
 Plug('folke/tokyonight.nvim', { branch = 'main' })
 Plug 'ayu-theme/ayu-vim'
+
+Plug 'mfussenegger/nvim-dap'
 
 vim.call('plug#end')
 

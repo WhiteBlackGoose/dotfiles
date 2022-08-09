@@ -1,0 +1,21 @@
+format = """
+[ ](fg:#000000 bg:#FABD2F)\
+$directory\
+[◤](fg:#FABD2F bg:#D3869B)\
+$git_branch\
+[◤](fg:#D3869B)
+[ ](fg:#000000 bg:#8888FF)\
+[◤ ](fg:#8888FF bg:#000000)
+"""
+
+[directory]
+style = "bg:#FABD2F fg:#000000"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncation_symbol = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#D3869B fg:#000000"
+format = '[ $symbol $branch ]($style)'
+

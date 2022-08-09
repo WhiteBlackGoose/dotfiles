@@ -6,8 +6,8 @@ vim.g.theme_dark = function()
     vim.o.background = "dark"
     vim.g.tokyonight_style = "storm"
     vim.cmd[[
-    let g:airline_theme='violet'
     colorscheme tokyonight
+    let g:airline_theme='violet'
     ]]
 end
 
