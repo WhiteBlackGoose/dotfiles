@@ -3,12 +3,14 @@ set termguicolors
 ]]
 
 vim.g.theme_dark = function()
-    vim.o.background = "dark"
+    vim.cmd[[
+    let g:airline_theme='violet'
+    ]]
     vim.g.tokyonight_style = "storm"
     vim.cmd[[
     colorscheme tokyonight
-    let g:airline_theme='violet'
     ]]
+    vim.o.background = "dark"
 end
 
 vim.g.theme_light = function()
