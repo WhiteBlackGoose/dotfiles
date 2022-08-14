@@ -9,6 +9,8 @@
 
 - Change themes with Alt+[ and Alt+]
 - Multicaret with holding Ctrl
+- Copy and cut with Ctrl+C and Ctrl+X respectively (d'uh, hate me for that)
+- Ctrl+Space to activate completion suggestions
 - Toggle the file tree with Alt+T
 - Ctrl+C to copy selected with V mode to the (actual) clipboard
 - Debug .NET

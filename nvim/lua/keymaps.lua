@@ -23,6 +23,7 @@ map('n', '<A-t>', ':NvimTreeToggle<CR>', norm)
 
 -- Ctrl+C to copy to clipboard
 map('v', '<C-C>', '"+y', norm)
+map('v', '<C-X>', '"+ygv<DEL>', norm)
 
 -- German keys
 map('i', '<A-u>', 'ü', norm)
@@ -57,4 +58,5 @@ map('i', '<F8>',  "<ESC>:lua require'dap'.repl.close()<CR>i", norm)
 map('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i", norm)
 
 -- Auto complete
-map('i', '<A-Space>', '<ESC>:lua vim.g.auto_complete_popup_deoplete()<CR>i', norm)
+vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
+-- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()]]

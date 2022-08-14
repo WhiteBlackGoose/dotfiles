@@ -1,10 +1,8 @@
+
 vim.cmd[[
+let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option({
-\    'auto_complete_popup': 'manual'
+\    'auto_complete': v:false,
 \})
 ]]
-
-vim.g.auto_complete_popup_deoplete = function()
-    vim.cmd[[call deoplete#manual_complete()]]
-end
 
