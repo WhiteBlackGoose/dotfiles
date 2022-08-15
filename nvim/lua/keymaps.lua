@@ -10,6 +10,11 @@ map('v', '<up>', 'gk', norm)
 map('i', '<C-s>', '<ESC>:w<CR>i<right>', norm)
 map('n', '<C-s>', ':w<CR>', norm)
 
+map('n', '<A-">', '<C-y>', norm)
+map('n', '<A-:>', '<C-e>', norm)
+
+map('n', '<C-l>', 'zz', norm)
+
 -- Tabs
 map('n', '<A-,>', ':BufferPrevious<CR>', norm)
 map('n', '<A-.>', ':BufferNext<CR>', norm)
@@ -60,3 +65,4 @@ map('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i", norm)
 -- Auto complete
 vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
 -- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()]]
+-- vim.cmd[[inoremap <C-space> <Cmd>call deoplete#manual_complete()<CR>]]
