@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+-- Plug('Shougo/deoplete.nvim', { commit = '33ed4fa0cd704999f9f74b37640bf6d7334bac37' })
 Plug 'Shougo/deoplete.nvim'
 
 Plug 'https://github.com/vim-airline/vim-airline'
@@ -21,6 +22,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'romgrk/barbar.nvim'
 
 Plug('folke/tokyonight.nvim', { branch = 'main' })
+
 Plug 'ayu-theme/ayu-vim'
 
 Plug 'mfussenegger/nvim-dap'

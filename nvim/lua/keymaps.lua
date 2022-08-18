@@ -2,6 +2,8 @@ local map = vim.api.nvim_set_keymap
 
 local norm = { noremap = true, silent = true }
 
+map('i', '<C-a>', '<Cmd>', norm)
+
 -- Common
 map('n', '<down>', 'gj', norm)
 map('n', '<up>', 'gk', norm)
@@ -25,10 +27,12 @@ map('n', '<A-c>', ':BufferClose<CR>', norm)
 -- Tree
 map('n', '<A-f>', ':NvimTreeFindFile<CR>', norm)
 map('n', '<A-t>', ':NvimTreeToggle<CR>', norm)
-
--- Ctrl+C to copy to clipboard
-map('v', '<C-C>', '"+y', norm)
-map('v', '<C-X>', '"+ygv<DEL>', norm)
+ 
+-- Regular clipboard operations (besides inner nvim's clipboard)
+map('v', '<C-c>', '"+y', norm)
+map('v', '<C-x>', '"+ygv<DEL>', norm)
+map('n', '<C-v>', '"+p', norm)
+-- map('v', '<C-v>', '<DEL>h"+p', norm) How to make it work for both forward and backward selection?
 
 -- German keys
 map('i', '<A-u>', 'ü', norm)
@@ -64,5 +68,6 @@ map('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i", norm)
 
 -- Auto complete
 vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
+-- vim.cmd[[inoremap <C-Space> aaaaa]]
 -- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()]]
 -- vim.cmd[[inoremap <C-space> <Cmd>call deoplete#manual_complete()<CR>]]

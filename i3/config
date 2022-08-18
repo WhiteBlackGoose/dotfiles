@@ -191,10 +191,9 @@ bindsym $mod+r mode "resize"
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="Xfce4-.*" instance="xfce4-.*"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
+# for_window [class="^.*"] border pixel 3
 for_window [class="^.*"] border pixel 1
 
-# don't move to the opposite container when trying
-# to move over the edge
 focus_wrapping no
 focus_follows_mouse no
 
@@ -203,7 +202,7 @@ focus_follows_mouse no
 # from https://github.com/dracula/i3/blob/master/.config/i3/config
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #C2C2C2 #C2C2C2 #444444 #6272A4   #C2C2C2
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -219,6 +218,7 @@ bar {
     statusline #F8F8F2
     separator  #44475A
 
+#                      border  backgr. text
     focused_workspace  #44475A #44475A #F8F8F2
     active_workspace   #282A36 #44475A #F8F8F2
     inactive_workspace #282A36 #282A36 #BFBFBF

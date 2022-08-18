@@ -7,8 +7,10 @@ vim.g.theme_dark = function()
     let g:airline_theme='violet'
     ]]
     vim.g.tokyonight_style = "storm"
+    -- vim.cmd[[colorscheme tokyonight]]
     vim.cmd[[
-    colorscheme tokyonight
+    let ayucolor="dark"
+    colorscheme ayu
     ]]
     vim.o.background = "dark"
 end
