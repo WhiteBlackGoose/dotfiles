@@ -1,0 +1,40 @@
+# Battery
+[battery]
+command=~/.config/scripts/battery.sh
+interval=5
+color=#FFAAAA
+
+# Disk space
+[disk]
+command=~/.config/scripts/disk.sh
+interval=20
+color=#FFFF00
+
+# RAM
+[ram]
+command=~/.config/scripts/ram.sh
+interval=4
+color=#CCCCCC
+
+# Sound
+[sound]
+command=~/.config/scripts/vol.sh
+interval=1
+color=#FFAAFF
+
+# Guess the weather hourly
+[weather]
+command=~/.config/scripts/weather.sh
+interval=3600
+color=#A4C2F4
+
+# Query my default IP address only on startup
+[ip]
+command=~/.config/scripts/ip.sh
+interval=20
+color=#91E78B
+
+# Update time every 5 seconds
+[time]
+command=~/.config/scripts/time.sh
+interval=1

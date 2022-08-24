@@ -17,6 +17,8 @@ map('n', '<A-:>', '<C-e>', norm)
 
 map('n', '<C-l>', 'zz', norm)
 
+map('i', '<C-t>', '<C-V><Tab>', norm)
+
 -- Tabs
 map('n', '<A-,>', ':BufferPrevious<CR>', norm)
 map('n', '<A-.>', ':BufferNext<CR>', norm)
