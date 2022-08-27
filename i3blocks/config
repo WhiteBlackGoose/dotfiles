@@ -1,8 +1,20 @@
+# Sound
+[sound]
+command=~/.config/scripts/vol.sh
+interval=1
+color=#FFAAFF
+
 # Battery
 [battery]
 command=~/.config/scripts/battery.sh
 interval=5
 color=#FFAAAA
+
+# Guess the weather hourly
+[weather]
+command=~/.config/scripts/weather.sh
+interval=3600
+color=#A4C2F4
 
 # Disk space
 [disk]
@@ -16,17 +28,17 @@ command=~/.config/scripts/ram.sh
 interval=4
 color=#CCCCCC
 
-# Sound
-[sound]
-command=~/.config/scripts/vol.sh
-interval=1
-color=#FFAAFF
+# GPU memory
+[gpumem]
+command=~/.config/scripts/videomem.sh
+interval=4
+color=#CCCCCC
 
-# Guess the weather hourly
-[weather]
-command=~/.config/scripts/weather.sh
-interval=3600
-color=#A4C2F4
+# Temperatures
+[temp]
+command=~/.config/scripts/temp.sh
+interval=3
+color=#AAFFEE
 
 # Query my default IP address only on startup
 [ip]
