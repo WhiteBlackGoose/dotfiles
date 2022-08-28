@@ -20,13 +20,14 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8
 
-font pango:FiraCode Nerd Font Bold 8
+# font pango:FiraCode Nerd Font Bold 4
+font pango:Ubuntu Mono Bold 6
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+# exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -37,7 +38,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -221,14 +222,17 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 bar {
-  font pango:FiraCode Nerd Font Bold 10
-  status_command i3blocks
+  tray_output none
+  position top
 
+  font pango:FiraCode Nerd Font Bold 6
+  status_command i3blocks
+ 
   colors {
     background #282A36
     statusline #F8F8F2
     separator  #44475A
-
+ 
 #                      border  backgr. text
     focused_workspace  #44475A #44475A #F8F8F2
     active_workspace   #282A36 #44475A #F8F8F2
@@ -240,5 +244,16 @@ bar {
 
 ################# Dracula end
 
-exec feh --bg-scale ~/Pictures/oram_blue_moon-scaled.jpg
+# exec feh --bg-scale ~/Pictures/oram_blue_moon-scaled.jpg
+exec feh --bg-scale ~/Pictures/XOR_2K.png
+
+# Apps
+bindsym $mod+Tab exec xfce4-appfinder
+bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym Shift+Print exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym Ctrl+Print exec xfce4-screenshooter -f -c --save ~/Pictures/
+
+bindsym $mod+x move workspace to output right
+
+
 
