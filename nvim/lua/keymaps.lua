@@ -74,3 +74,7 @@ vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<
 -- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()<CR>]]
 -- vim.cmd[[inoremap <C-space> <Cmd>call deoplete#manual_complete()<CR>]]
 -- vim.cmd[[inoremap <C-space> <Cmd>call asyncomplete#force_refresh()<CR>]]
+
+-- Toggle syntastic
+map('n', '<C-p>', ":lua vim.g.toggle_synt()<CR>", norm)
+

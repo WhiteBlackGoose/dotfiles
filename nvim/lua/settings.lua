@@ -10,9 +10,14 @@ opt.tabstop = 4
 opt.smartindent = false
 vim.cmd[[filetype indent off]]
 
-require('settings.barbar')
-require('settings.nvim-tree')
-require('settings.theme')
+-- By alphabet please
 require('settings.airline')
+require('settings.alpha')
+require('settings.asyncomplete')
+require('settings.barbar')
 require('settings.dap')
 require('settings.deoplete')
+require('settings.nvim-tree')
+require('settings.omnisharp-vim')
+require('settings.syntastic')
+require('settings.theme')
