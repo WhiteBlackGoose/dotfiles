@@ -3,13 +3,23 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
--- Plug('Shougo/deoplete.nvim', { commit = '33ed4fa0cd704999f9f74b37640bf6d7334bac37' })
 Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+vim.cmd[[
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+]]
 
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'deoplete-plugins/deoplete-lsp'
+
+vim.cmd[[let g:OmniSharp_server_use_net6 = 1]]
+
+Plug 'OmniSharp/omnisharp-vim'
+-- Plug 'OrangeT/vim-csharp'
 Plug 'ionide/Ionide-vim'
  
 Plug('mg979/vim-visual-multi', { branch = 'master' })

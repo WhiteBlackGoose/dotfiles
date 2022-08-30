@@ -71,5 +71,6 @@ map('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i", norm)
 -- Auto complete
 vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
 -- vim.cmd[[inoremap <C-Space> aaaaa]]
--- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()]]
+-- vim.cmd[[inoremap <C-space><expr>  deoplete#manual_complete()<CR>]]
 -- vim.cmd[[inoremap <C-space> <Cmd>call deoplete#manual_complete()<CR>]]
+-- vim.cmd[[inoremap <C-space> <Cmd>call asyncomplete#force_refresh()<CR>]]

@@ -23,11 +23,13 @@ set $mod Mod4
 # font pango:DejaVu Sans Mono 8
 
 # font pango:FiraCode Nerd Font Bold 4
-font pango:Ubuntu Mono Bold 6
+font pango:Ubuntu Mono Bold 9
+
+exec xrandr --dpi 96
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-# exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -38,7 +40,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -204,6 +206,7 @@ for_window [class="Xfce4-.*" instance="xfce4-.*"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
 # for_window [class="^.*"] border pixel 3
 for_window [class="^.*"] border pixel 1
+# new_window pixel 1
 
 focus_wrapping no
 focus_follows_mouse no
@@ -225,7 +228,7 @@ bar {
   tray_output none
   position top
 
-  font pango:FiraCode Nerd Font Bold 6
+  font pango:FiraCode Nerd Font Bold 9
   status_command i3blocks
  
   colors {
@@ -247,6 +250,9 @@ bar {
 # exec feh --bg-scale ~/Pictures/oram_blue_moon-scaled.jpg
 exec feh --bg-scale ~/Pictures/XOR_2K.png
 
+bindsym $mod+m bar mode invisible 
+bindsym $mod+n bar mode dock
+
 # Apps
 bindsym $mod+Tab exec xfce4-appfinder
 bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
@@ -255,5 +261,11 @@ bindsym Ctrl+Print exec xfce4-screenshooter -f -c --save ~/Pictures/
 
 bindsym $mod+x move workspace to output right
 
+exec setxkbmap -layout us,ru
+exec setxkbmap -option 'grp:caps_toggle'
 
-
+# My attempts to make umlaut work :((
+# bindsym Ctrl+Mod1+a exec xvkbd -xsendevent -text "ä"
+# bindsym Ctrl+Mod1+a exec xvkbd -xsendevent -utf16 -text "ä"
+# bindsym Ctrl+Mod1+a exec xfce4-appfinder
+# bindsym Ctrl+Mod1+a exec /home/goose/scripts/ttt.sh
