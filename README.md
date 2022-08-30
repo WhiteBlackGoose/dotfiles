@@ -23,7 +23,9 @@
 #### Dev
 
 - Suggestions for C# work
+- Warnings and errors on save
 - Debug .NET (F5 to start, F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl)
+- Alt+@ for F# interactive
 
 #### Misc
 
