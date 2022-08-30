@@ -1,6 +1,4 @@
-# dotfiles
-
-## My setup
+# Setup
 
 |                  | Component     |
 |:-----------------|:-------------:|
@@ -16,18 +14,16 @@
 | File manager     | xplr          |
 | Font             | FiraCode Nerd |
 
-## Features
+# nvim
 
-### nvim
-
-#### Dev
+### Dev
 
 - Suggestions for C# work
 - Warnings and errors on save
 - Debug .NET (F5 to start, F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl)
 - Alt+@ for F# interactive
 
-#### Misc
+### Misc
 
 - Change themes with Alt+[ and Alt+]
 - Multicaret with holding Ctrl
@@ -37,19 +33,19 @@
 - Ctrl+C to copy selected with V mode to the (actual) clipboard
 - The rest see the configs
 
-### starship
+# starship
 
 - Just pretty yet minimalistic config for starship shell
 - Shows time: useful when you want to see when a command was run
 
-### i3
+# i3
 
 - Borderless, very minimalistic
 - Xfce apps configured as floating
 - Menu is `xfce-appfinder`. Stupid, simple
 - `i3blocks` configured for some info about your system
 
-## Screenshots
+# Screenshots
 
 ### 2022-08-27 12:46 UTC
 
