@@ -33,7 +33,7 @@ map('n', '<A-t>', ':NvimTreeToggle<CR>', norm)
 -- Regular clipboard operations (besides inner nvim's clipboard)
 map('v', '<C-c>', '"+y', norm)
 map('v', '<C-x>', '"+ygv<DEL>', norm)
-map('n', '<C-v>', '"+p', norm)
+map('n', '<C-v>', 'h"+p', norm)
 -- map('v', '<C-v>', '<DEL>h"+p', norm) How to make it work for both forward and backward selection?
 
 -- German keys
