@@ -12,6 +12,7 @@ vim.cmd[[filetype indent off]]
 
 -- By alphabet please
 require('settings.airline')
+require('settings.ale')
 require('settings.alpha')
 require('settings.asyncomplete')
 require('settings.barbar')
@@ -19,4 +20,3 @@ require('settings.dap')
 require('settings.deoplete')
 require('settings.nvim-tree')
 require('settings.omnisharp-vim')
-require('settings.syntastic')

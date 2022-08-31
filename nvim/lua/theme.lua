@@ -15,10 +15,12 @@ vim.g.theme_dark = function()
     vim.o.background = "dark"
 
     -- Syntastics
-    vim.highlight.create('SyntasticErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('SyntasticErrorLine', { guibg="#331111" })
-    vim.highlight.create('SyntasticWarningSign', { guifg="#FFFF55" })
-    vim.highlight.create('SyntasticWarningLine', { guibg="#2A2A11" })
+    vim.highlight.create('ALEErrorSign', { guifg="#FF5555" })
+    vim.highlight.create('ALEErrorLine', { guibg="#331111" })
+    vim.highlight.create('ALEVirtualTextError', { guibg="#331111" })
+    vim.highlight.create('ALEWarningSign', { guifg="#FFFF55" })
+    vim.highlight.create('ALEWarningLine', { guibg="#2A2A11" })
+    vim.highlight.create('ALEVirtualTextWarning', { guibg="#2A2A11" })
 
     -- Dap
     vim.highlight.create('DapBreakpoint', { guifg='#AAAAFF' })
@@ -35,10 +37,12 @@ vim.g.theme_light = function()
     ]]
 
     -- Syntastics
-    vim.highlight.create('SyntasticErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('SyntasticErrorLine', { guibg="#FFEFEF" })
-    vim.highlight.create('SyntasticWarningSign', { guifg="#FFA500" })
-    vim.highlight.create('SyntasticWarningLine', { guibg="#FFF3D0" })
+    vim.highlight.create('ALEErrorSign', { guifg="#FF5555" })
+    vim.highlight.create('ALEErrorLine', { guibg="#FFEFEF" })
+    vim.highlight.create('ALEVirtualTextError', { guibg="#FFEFEF" })
+    vim.highlight.create('ALEWarningSign', { guifg="#FFA500" })
+    vim.highlight.create('ALEWarningLine', { guibg="#FFF3D0" })
+    vim.highlight.create('ALEVirtualTextWarning', { guibg="#FFF3D0" })
 
     -- Dap
     vim.highlight.create('DapBreakpoint', { guifg='#8888EE' })
