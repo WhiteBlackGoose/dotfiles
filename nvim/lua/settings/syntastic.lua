@@ -28,5 +28,4 @@ vim.g['syntastic_warning_symbol'] = ' '
 vim.g['syntastic_style_error_symbol'] = ''
 vim.g['syntastic_style_warning_symbol'] = ''
 
--- vim.cmd[[highlight SyntasticErrorSign guibg=red]]
 

@@ -51,6 +51,9 @@ map('i', '<A-S>', 'ẞ', norm)
 map('n', '<A-[>', ":lua vim.g.theme_light()<CR>", norm)
 map('n', '<A-]>', ":lua vim.g.theme_dark()<CR>", norm)
 
+-- Build
+map('n', '<C-b>', ':lua vim.g.dotnet_build_project()<CR>', norm)
+
 -- Debug
 map('n', '<F5>', ":lua require'dap'.continue()<CR>", norm)
 map('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>", norm)

@@ -15,14 +15,16 @@ vim.g.theme_dark = function()
     vim.o.background = "dark"
 
     -- Syntastics
-    vim.cmd[[highlight SyntasticErrorSign guifg=#FF5555]]
-    vim.cmd[[highlight SyntasticWarningSign guifg=#FFFF55]]
-
+    vim.highlight.create('SyntasticErrorSign', { guifg="#FF5555" })
+    vim.highlight.create('SyntasticErrorLine', { guibg="#331111" })
+    vim.highlight.create('SyntasticWarningSign', { guifg="#FFFF55" })
+    vim.highlight.create('SyntasticWarningLine', { guibg="#2A2A11" })
 
     -- Dap
-    vim.highlight.create('DapBreakpoint', { ctermbg=0, guifg='#5555DD', guibg='#31353f' }, false)
-    vim.highlight.create('DapLogPoint', { ctermbg=0, guifg='#61afef', guibg='#31353f' }, false)
-    vim.highlight.create('DapStopped', { ctermbg=0, guifg='#98c379', guibg='#31353f' }, false)
+    vim.highlight.create('DapBreakpoint', { guifg='#AAAAFF' })
+    vim.highlight.create('DapBreakpointLine', { guibg='#222244' })
+    vim.highlight.create('DapStopped', { guifg='#228822' })
+    vim.highlight.create('DapStoppedLine', { guibg='#224422' })
 end
 
 vim.g.theme_light = function()
@@ -33,13 +35,16 @@ vim.g.theme_light = function()
     ]]
 
     -- Syntastics
-    vim.cmd[[highlight SyntasticErrorSign guifg=#FF5555]]
-    vim.cmd[[highlight SyntasticWarningSign guifg=#AAAA33]]
+    vim.highlight.create('SyntasticErrorSign', { guifg="#FF5555" })
+    vim.highlight.create('SyntasticErrorLine', { guibg="#FFEFEF" })
+    vim.highlight.create('SyntasticWarningSign', { guifg="#FFA500" })
+    vim.highlight.create('SyntasticWarningLine', { guibg="#FFF3D0" })
 
     -- Dap
-    vim.highlight.create('DapBreakpoint', { ctermbg=0, guifg='#8888EE', guibg='#E0E0E0' }, false)
-    vim.highlight.create('DapLogPoint', { ctermbg=0, guifg='#61afef', guibg='#E0E0E0' }, false)
-    vim.highlight.create('DapStopped', { ctermbg=0, guifg='#228822', guibg='#E0E0E0' }, false)
+    vim.highlight.create('DapBreakpoint', { guifg='#8888EE' })
+    vim.highlight.create('DapBreakpointLine', { guibg='#EFEFFF' })
+    vim.highlight.create('DapStopped', { guifg='#228822' })
+    vim.highlight.create('DapStoppedLine', { guibg='#CCFFCC' })
 
 end
 
