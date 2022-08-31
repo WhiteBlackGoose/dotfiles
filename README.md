@@ -47,6 +47,10 @@
 
 # Screenshots
 
+### 2022-08-31 21:30 UTC
+
+![image](https://user-images.githubusercontent.com/31178401/187788733-253e5643-b7d6-495e-918d-42eecfb2d4ef.png)
+
 ### 2022-08-31 11:13 UTC
 
 ![nvim-dev](https://user-images.githubusercontent.com/31178401/187665978-5a37f8e5-0eda-49e1-90ba-949b6632d544.gif)
