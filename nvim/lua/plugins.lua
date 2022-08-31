@@ -11,7 +11,11 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
 
-Plug 'dense-analysis/ale'
+-- DO NOT FORGET TO SWITCH BACK ONCE
+-- https://github.com/dense-analysis/ale/pull/4289
+-- IS MERGED
+-- Plug 'dense-analysis/ale'
+Plug('vimpostor/ale', { branch = 'virt_all' })
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'ionide/Ionide-vim'
 

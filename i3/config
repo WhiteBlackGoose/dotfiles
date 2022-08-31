@@ -258,6 +258,7 @@ bindsym $mod+Tab exec xfce4-appfinder
 bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
 bindsym Shift+Print exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
 bindsym Ctrl+Print exec xfce4-screenshooter -f -c --save ~/Pictures/
+bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
 
 bindsym $mod+x move workspace to output right
 
