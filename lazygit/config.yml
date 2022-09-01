@@ -1,0 +1,12 @@
+gui:
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - gray
+    selectedLineBgColor:
+      - default
+  gui:
+    mouseEvents: false
