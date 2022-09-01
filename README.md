@@ -19,19 +19,25 @@
 ### Dev
 
 - Suggestions for C# work
-- Warnings and errors on save
-- Debug .NET (F5 to start, F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl)
+  - Semantic completions pop up as you type
+- Warnings and errors for C#
+  - With virtual text (which appears on the same line with error)
+  - Works for both themes
+- Debug .NET
+  - F5 to start. Before starting, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
+  - F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl
 - Alt+@ for F# interactive
 
 ### Misc
 
 - Change themes with Alt+[ and Alt+]
 - Multicaret with holding Ctrl
-- Copy and cut with Ctrl+C and Ctrl+X respectively (d'uh, hate me for that)
+- Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
 - Ctrl+Space to activate completion suggestions
 - Toggle the file tree with Alt+T
-- Ctrl+C to copy selected with V mode to the (actual) clipboard
-- The rest see the configs
+- Alt+, and Alt+. to switch between tabs
+
+#### The rest see the config...
 
 # starship
 
@@ -46,6 +52,10 @@
 - `i3blocks` configured for some info about your system
 
 # Screenshots
+
+### 2022-08-31 21:30 UTC
+
+![image](https://user-images.githubusercontent.com/31178401/187789412-2be41579-e1a2-4696-9de3-a867614df74d.png)
 
 ### 2022-08-31 11:13 UTC
 
