@@ -14,10 +14,14 @@ vim.g['airline#extensions#ale#enabled'] = 1
 
 vim.g['ale_echo_msg_format'] = '[%linter%] %s [%severity%]'
 
-
+vim.g['spacegray_use_italics'] = 1
 vim.g['ale_floating_window_border'] = { '│', '─', '╭', '╮', '╯', '╰', '│', '─' }
 
 vim.g['ale_virtualtext_prefix'] = '    '
 vim.g['ale_echo_cursor'] = 1
 vim.g['ale_virtualtext_cursor'] = 2
+
+vim.g['ale_hover_to_floating_preview'] = 1
+vim.g['ale_hover_to_preview'] = 1
+vim.g['ale_floating_preview'] = 1
 vim.g['ale_hover'] = 1

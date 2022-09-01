@@ -7,7 +7,12 @@ dap.adapters.coreclr = {
 }
 
 vim.g.dotnet_build_project = function()
-    local path = vim.fn.input('Path to your *proj file', vim.fn.getcwd() .. '/', 'file')
+    local default_path = vim.fn.getcwd() .. '/'
+    if vim.g['dotnet_last_proj_path'] ~= nil then
+        default_path = vim.g['dotnet_last_proj_path']
+    end
+    local path = vim.fn.input('Path to your *proj file', default_path, 'file')
+    vim.g['dotnet_last_proj_path'] = path
     local cmd = 'dotnet build -c Debug ' .. path .. ' > /dev/null'
     print('')
     print('Cmd to execute: ' .. cmd)

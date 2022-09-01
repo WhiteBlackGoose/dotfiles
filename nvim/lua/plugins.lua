@@ -33,5 +33,8 @@ Plug 'goolord/alpha-nvim'
 
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
+
 vim.call('plug#end')
 
