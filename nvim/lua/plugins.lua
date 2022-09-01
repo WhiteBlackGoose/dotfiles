@@ -36,5 +36,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 
+Plug 'vim-test/vim-test'
+
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'p00f/nvim-ts-rainbow'
+
 vim.call('plug#end')
 
