@@ -27,15 +27,25 @@
   - F5 to start. Before starting, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
   - F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl
 - Alt+@ for F# interactive
+- Rainbow brackets
+- .NET tests (though without explorer :(( )
+
 
 ### Misc
 
 - Change themes with Alt+[ and Alt+]
-- Multicaret with holding Ctrl
-- Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
-- Ctrl+Space to activate completion suggestions
-- Toggle the file tree with Alt+T
-- Alt+, and Alt+. to switch between tabs
+- Editing
+  - Multicaret with holding Ctrl
+  - Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
+  - Ctrl+Space to activate completion suggestions
+- Files
+  - Toggle the file tree with Alt+T
+  - Alt+, and Alt+. to switch between tabs
+- Telescope
+  - `\ff` to find among files
+  - `\cc` to find among commands
+  - `\fb` to find among buffers
+  - `\co` to find among commits
 
 #### The rest see the config...
 
