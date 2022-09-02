@@ -49,5 +49,7 @@ Plug 'lewis6991/gitsigns.nvim'
 -- How to enable **only** parens and only for a few file types?
 -- Plug 'windwp/nvim-autopairs'
 
+Plug 'windwp/nvim-ts-autotag'
+
 vim.call('plug#end')
 

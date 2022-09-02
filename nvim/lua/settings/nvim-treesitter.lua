@@ -8,7 +8,7 @@ require'nvim-treesitter.configs'.setup {
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
-  auto_install = false,
+  auto_install = true,
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -32,5 +32,9 @@ require'nvim-treesitter.configs'.setup {
       max_file_lines = nil, -- Do not enable for files with more than n lines, int
       -- colors = {}, -- table of hex strings
       -- termcolors = {} -- table of colour name strings
+  },
+
+  autotag = {
+    enable = true,
   }
 }
