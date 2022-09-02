@@ -33,6 +33,8 @@ vim.g.theme_dark = function()
     vim.highlight.create('DapBreakpointLine', { guibg='#222244' })
     vim.highlight.create('DapStopped', { guifg='#228822' })
     vim.highlight.create('DapStoppedLine', { guibg='#224422' })
+
+    vim.g['theme_current'] = 'dark'
 end
 
 vim.g.theme_light = function()
@@ -63,6 +65,15 @@ vim.g.theme_light = function()
     vim.highlight.create('DapStopped', { guifg='#228822' })
     vim.highlight.create('DapStoppedLine', { guibg='#CCFFCC' })
 
+    vim.g['theme_current'] = 'light'
+end
+
+vim.g.theme_toggle = function()
+    if vim.g['theme_current'] == 'light' then
+        vim.g.theme_dark()
+    else
+        vim.g.theme_light()
+    end
 end
 
 vim.g.theme_dark()

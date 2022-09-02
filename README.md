@@ -20,20 +20,33 @@
 
 - Suggestions for C# work
   - Semantic completions pop up as you type
+  - Disable errors/warnings with `Ctrl+q`
+  - Enable list of errors and warnings in a file with `Ctrl+p`
 - Warnings and errors for C#
   - With virtual text (which appears on the same line with error)
   - Works for both themes
 - Debug .NET
   - F5 to start. Before starting, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
-  - F10/F11 for step over/in, F4 to stop, F7/F8 to show/hide repl
+  - F10/Ctrl+F10 for step over/in, F4 to stop, F7/F8 to show/hide repl
+  - `\h` to hover over a variable
+  - Build project with `Ctrl+B`
+- Symbols
+  - `\hd` to hover preview documentation
+  - `\hp` to hover preview definition
+  - `\hg` to go to definition
+  - `\rr` to rename symbol
+  - `\sy` to see symbols in the current file
+- Tests
+  - `\ta` to run tests in a file
+  - `\tt` to run the test  
 - Alt+@ for F# interactive
 - Rainbow brackets
-- .NET tests (though without explorer :(( )
+- Git signs (shows which lines are added/modified since the last commit)
 
 
 ### Misc
 
-- Change themes with Alt+[ and Alt+]
+- Toggle the theme with `\the`
 - Editing
   - Multicaret with holding Ctrl
   - Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
@@ -46,6 +59,7 @@
   - `\cc` to find among commands
   - `\fb` to find among buffers
   - `\co` to find among commits
+  - `\man` to see man entries
 
 #### The rest see the config...
 

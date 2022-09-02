@@ -41,5 +41,10 @@ Plug 'vim-test/vim-test'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'p00f/nvim-ts-rainbow'
 
+Plug 'lewis6991/gitsigns.nvim'
+
+-- How to enable **only** parens and only for a few file types?
+-- Plug 'windwp/nvim-autopairs'
+
 vim.call('plug#end')
 

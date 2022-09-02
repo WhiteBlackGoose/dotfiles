@@ -52,8 +52,7 @@ add('i', '<A-A>', 'Ä')
 add('i', '<A-S>', 'ẞ')
 
 -- Change themes
-add('n', '<A-[>', ":lua vim.g.theme_light()<CR>")
-add('n', '<A-]>', ":lua vim.g.theme_dark()<CR>")
+add('n', '<leader>the', ":lua vim.g.theme_toggle()<CR>")
 
 -- Build
 add('n', '<C-b>', ':lua vim.g.dotnet_build_project()<CR>')
@@ -77,6 +76,19 @@ add('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i")
 
 add('n', '<leader>h', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
 
+
+-- O#
+
+-- Hover
+add('n', '<leader>hd', ':OmniSharpDocumentation<CR>')
+add('n', '<leader>hp', ':OmniSharpPreviewDefinition<CR>')
+add('n', '<leader>hg', ':OmniSharpGotoDefinition<CR>')
+
+-- Tests
+add('n', '<leader>ta', ':OmniSharpRunTestsInFile %:p<CR>')
+add('n', '<leader>tt', ':OmniSharpRunTest<CR>')
+
+
 -- Auto complete
 vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
 -- vim.cmd[[inoremap <C-Space> aaaaa]]
@@ -87,13 +99,20 @@ vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<
 -- ALE
 add('n', '<C-q>', ':ALEToggle<CR>')
 add('n', '<C-p>', ":ALEPopulateLocList<CR>")
-add('n', '<C-h>', ':ALEHover<CR>')
 
 
 -- Telescope
-add('n', "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-add('n', "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-add('n', "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-add('n', "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
-add('n', '<leader>cc', "<cmd>lua require('telescope.builtin').commands()<cr>")
-add('n', '<leader>co', "<cmd>lua require('telescope.builtin').git_commits()<cr>")
+
+local addtele = function(keys, commandname)
+    add('n', '<leader>' .. keys, "<cmd>lua require('telescope.builtin')." .. commandname .. "()<cr>")
+end
+
+addtele('ff',  'find_files')
+addtele('fb',  'buffers')
+addtele('fh',  'help_tags')
+addtele('cc',  'commands')
+addtele('co',  'git_commits')
+addtele('man', 'man_pages')
+addtele('ref', 'lsp_references')
+addtele('sy',  'treesitter')
+
