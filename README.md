@@ -93,6 +93,11 @@ To get my setup of nvim:
 
 # Screenshots
 
+### 2022-09-02 10:48 UTC
+
+![image](https://user-images.githubusercontent.com/31178401/188125083-3f136231-8550-4ecc-b388-288bb83f52de.png)
+![image](https://user-images.githubusercontent.com/31178401/188123905-c571f56c-9bb7-4e46-a868-6089777b1954.png)
+
 ### 2022-08-31 21:30 UTC
 
 ![image](https://user-images.githubusercontent.com/31178401/187789412-2be41579-e1a2-4696-9de3-a867614df74d.png)
