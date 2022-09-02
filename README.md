@@ -58,11 +58,12 @@ To get my setup of nvim:
 - Alt+@ for F# interactive
 - Rainbow brackets
 - Git signs (shows which lines are added/modified since the last commit)
+- `mim` or `minimal vim` - nvim without NerdFont symbols - is suitable for using neovim over ssh
 
 
 ### Misc
 
-- Toggle the theme with `\the`
+- Toggle the theme with `\the` (or run `wim` for the white theme and `vim` for the default/dark one)
 - Editing
   - Multicaret with holding Ctrl
   - Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
