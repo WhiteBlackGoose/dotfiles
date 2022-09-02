@@ -1,7 +1,10 @@
 local Plug = vim.fn['plug#']
 
+-- ~/.local/share/nvim/plugged
 
 vim.call('plug#begin')
+
+Plug 'williamboman/mason.nvim'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-lsp'

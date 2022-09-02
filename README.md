@@ -16,15 +16,31 @@
 
 # nvim
 
+To get my setup of nvim:
+
+- `neovim` >= 0.7.0
+  - `vim-plug`
+    - `:PlugInstall`
+    - Restart nvim
+  - .NET
+    - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
+    - `:Mason`, find `fsautocomplete`, press `i`
+
+
 ### Dev
 
 - Suggestions for C# work
   - Semantic completions pop up as you type
   - Disable errors/warnings with `Ctrl+q`
   - Enable list of errors and warnings in a file with `Ctrl+p`
+- Suggestions for F# work
+  - Not tested extensively though. Activate them with Ctrl+space
 - Warnings and errors for C#
   - With virtual text (which appears on the same line with error)
   - Works for both themes
+- Warnings and errors for F#
+  - Not yet customised properly
+  - But works for both themes
 - Debug .NET
   - F5 to start. Before starting, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
   - F10/Ctrl+F10 for step over/in, F4 to stop, F7/F8 to show/hide repl

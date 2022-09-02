@@ -79,15 +79,17 @@ add('n', '<leader>h', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
 
 -- O#
 
--- Hover
+-- O# Hover
 add('n', '<leader>hd', ':OmniSharpDocumentation<CR>')
 add('n', '<leader>hp', ':OmniSharpPreviewDefinition<CR>')
 add('n', '<leader>hg', ':OmniSharpGotoDefinition<CR>')
 
--- Tests
+-- O# Tests
 add('n', '<leader>ta', ':OmniSharpRunTestsInFile %:p<CR>')
 add('n', '<leader>tt', ':OmniSharpRunTest<CR>')
 
+-- O# Other
+add('n', '<leader>rr', ':OmniSharpRename<CR>')
 
 -- Auto complete
 vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<CR>]]
