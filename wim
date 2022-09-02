@@ -1,0 +1,2 @@
+#!/bin/bash
+nvim '+lua vim.g.theme_light()' '+Alpha' $@

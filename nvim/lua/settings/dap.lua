@@ -18,9 +18,9 @@ vim.g.dotnet_build_project = function()
     print('Cmd to execute: ' .. cmd)
     local f = os.execute(cmd)
     if f == 0 then
-        print('\nBuild: ✔️ ')
+        print('\nBuild: ' .. vim.g.gsign('✔️ ', 'OK'))
     else
-        print('\nBuild: ❌ (code: ' .. f .. ')')
+        print('\nBuild: ' .. vim.g.gsign('❌', 'ERR') .. '(code: ' .. f .. ')')
     end
 end
 
@@ -57,11 +57,11 @@ local config = {
 dap.configurations.cs = config
 dap.configurations.fsharp = config
 
-vim.fn.sign_define('DapBreakpoint', { text='', texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl= 'DapBreakpoint' })
-vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint', linehl='DapLogPointLine', numhl= 'DapLogPoint' })
-vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStoppedLine', numhl= 'DapStopped' })
+vim.fn.sign_define('DapBreakpoint', { text=vim.g.gsign('', 'B'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
+vim.fn.sign_define('DapBreakpointCondition', { text=vim.g.gsign('ﳁ', 'B?'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
+vim.fn.sign_define('DapBreakpointRejected', { text=vim.g.gsign('', 'B!'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl= 'DapBreakpoint' })
+vim.fn.sign_define('DapLogPoint', { text=vim.g.gsign('', 'Bi'), texthl='DapLogPoint', linehl='DapLogPointLine', numhl= 'DapLogPoint' })
+vim.fn.sign_define('DapStopped', { text=vim.g.gsign('', '=>'), texthl='DapStopped', linehl='DapStoppedLine', numhl= 'DapStopped' })
 
 
 

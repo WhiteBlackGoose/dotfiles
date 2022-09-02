@@ -118,3 +118,21 @@ addtele('man', 'man_pages')
 addtele('ref', 'lsp_references')
 addtele('sy',  'treesitter')
 
+
+
+-- For those with limited keyboard
+add('i', '<A-y>', '<Esc>')
+
+
+add('n', '<leader>dc', ":lua require'dap'.continue()<CR>")
+add('n', '<leader>dt', ":lua require'dap'.toggle_breakpoint()<CR>")
+add('n', '<leader>do', ":lua require'dap'.step_over()<CR>")
+add('n', '<leader>di', ":lua require'dap'.step_into()<CR>")
+add('n', '<leader>drepo', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
+add('n', '<leader>drepc', ":lua require'dap'.repl.close()<CR>")
+add('n', '<leader>ds', ":lua require'dap'.disconnect()<CR>")
+
+
+
+
+

@@ -24,7 +24,9 @@ Plug 'ionide/Ionide-vim'
 
 Plug('mg979/vim-visual-multi', { branch = 'master' })
 
-Plug 'kyazdani42/nvim-web-devicons'
+if not vim.g.use_simple() then
+    Plug 'kyazdani42/nvim-web-devicons'
+end
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug('folke/tokyonight.nvim', { branch = 'main' })

@@ -1,3 +1,5 @@
+require('utils')
+
 require('plugins')
 require('settings')
 require('keymaps')

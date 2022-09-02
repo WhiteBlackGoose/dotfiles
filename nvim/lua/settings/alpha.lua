@@ -7,20 +7,22 @@ EOF
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
--- Set header
-dashboard.section.header.val = {
-    "                                                 ",
-    "  ██◣   ◥██◤   ██      ██    ◥██◤    ██◣   ◢██   ",    
-    "  ███◣   ██    ◥█◣    ◢█◤     ██     ███◣ ◢███   ",
-    "  ██◥█◣  ██     ██    ██      ██     ██◥███◤██   ",
-    "  ██ ◥█◣ ██     ◥█◣  ◢█◤      ██     ██ ◥█◤ ██   ",
-    "  ██  ◥█◣██      ██  ██       ██     ██     ██   ",     
-    " ◢██◣  ◥███      ◥█◣◢█◤      ◢██◣   ◢██◣   ◢██◣  ",  
-    "                                                 ",
-}
+if not vim.g.use_simple() then
+    -- Set header
+    dashboard.section.header.val = {
+        "                                                 ",
+        "  ██◣   ◥██◤   ██      ██    ◥██◤    ██◣   ◢██   ",    
+        "  ███◣   ██    ◥█◣    ◢█◤     ██     ███◣ ◢███   ",
+        "  ██◥█◣  ██     ██    ██      ██     ██◥███◤██   ",
+        "  ██ ◥█◣ ██     ◥█◣  ◢█◤      ██     ██ ◥█◤ ██   ",
+        "  ██  ◥█◣██      ██  ██       ██     ██     ██   ",     
+        " ◢██◣  ◥███      ◥█◣◢█◤      ◢██◣   ◢██◣   ◢██◣  ",  
+        "                                                 ",
+    }
+end
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "i", "  > Proceed..." , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "i", vim.g.gsign(' ', 'File ') .. " > Proceed..." , ":ene <BAR> startinsert <CR>"),
 }
 
