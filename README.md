@@ -26,8 +26,21 @@ To get my setup of nvim:
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - `:Mason`, find `fsautocomplete`, press `i`
 
+### Why nvim?
 
-### Dev
+- :white_check_mark: Start up time (< 500 ms is not noticeable by human)
+- :white_check_mark: Responsiveness (no GUI - no lags)
+- :white_check_mark: Customisation. It's all lua. You almost write your own IDE, given components. Glue them together and add/remove whatever you want
+- :white_check_mark: Suitable to run over terminal SSH. So you can literally use a full-blown IDE from a tablet
+- :white_check_mark: Optimized for hotkeys. It's impossible to use mouse, so 100% everything is reachable from keyboard
+- :white_check_mark: Opens in the same window as your shell, not poping up (because no GUI)
+- :white_check_mark: You certainly can copy any part of the window because ... it's all text
+- :white_check_mark: FOSS
+- :x: Ridiculous learning curve. It's not that you *just* need to learn the completely alien to most modern people keybindings, you also have to learn installing and configuring plugins, and soon, coding some basics in lua as well as basics of interacting with `nvim` itself. Meanwhile in Visual Studio you need to click two buttons and you're set
+- :x: Vim keybindings. I hate them. I still optimized some of them to be on a key combination like in emacs
+- :x: Availability. For example, I couldn't find a test explorer for neovim for .net
+
+### Features for developers
 
 - Suggestions for C# work
   - Semantic completions pop up as you type
@@ -58,11 +71,12 @@ To get my setup of nvim:
 - Alt+@ for F# interactive
 - Rainbow brackets
 - Git signs (shows which lines are added/modified since the last commit)
+- Html auto closing and tag renaming
+- `mim` or `minimal vim` - nvim without NerdFont symbols - is suitable for using neovim over ssh
 
+### Other features
 
-### Misc
-
-- Toggle the theme with `\the`
+- Toggle the theme with `\the` (or run `wim` for the white theme and `vim` for the default/dark one)
 - Editing
   - Multicaret with holding Ctrl
   - Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
