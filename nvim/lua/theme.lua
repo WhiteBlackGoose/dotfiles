@@ -76,8 +76,11 @@ vim.g.theme_toggle = function()
     end
 end
 
-vim.g.theme_dark()
--- vim.g.theme_light()
+if vim.g["startup_theme"] == "light" then
+    vim.g.theme_light()
+else
+    vim.g.theme_dark()
+end
 
 
 

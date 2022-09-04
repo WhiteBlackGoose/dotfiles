@@ -8,7 +8,10 @@ Plug 'williamboman/mason.nvim'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
+
+if vim.g.use_ide() then
+    Plug 'prabirshrestha/asyncomplete.vim'
+end
 
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -18,9 +21,11 @@ Plug 'romgrk/barbar.nvim'
 -- https://github.com/dense-analysis/ale/pull/4289
 -- IS MERGED
 -- Plug 'dense-analysis/ale'
-Plug('vimpostor/ale', { branch = 'virt_all' })
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'ionide/Ionide-vim'
+if vim.g.use_ide() then
+    Plug('vimpostor/ale', { branch = 'virt_all' })
+    Plug 'OmniSharp/omnisharp-vim'
+    Plug 'ionide/Ionide-vim'
+end
 
 Plug('mg979/vim-visual-multi', { branch = 'master' })
 
@@ -32,26 +37,29 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug('folke/tokyonight.nvim', { branch = 'main' })
 Plug 'ayu-theme/ayu-vim'
 
-Plug 'mfussenegger/nvim-dap'
+if vim.g.use_ide() then
+    Plug 'mfussenegger/nvim-dap'
+end
 
-Plug 'goolord/alpha-nvim'
-
-Plug 'lukas-reineke/indent-blankline.nvim'
+if vim.g.use_ide() then
+    Plug 'lukas-reineke/indent-blankline.nvim'
+end
 
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 
-Plug 'vim-test/vim-test'
+if vim.g.use_ide() then
+    Plug 'vim-test/vim-test'
 
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'p00f/nvim-ts-rainbow'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'p00f/nvim-ts-rainbow'
 
-Plug 'lewis6991/gitsigns.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
 
--- How to enable **only** parens and only for a few file types?
--- Plug 'windwp/nvim-autopairs'
+    Plug 'windwp/nvim-autopairs'
 
-Plug 'windwp/nvim-ts-autotag'
+    Plug 'windwp/nvim-ts-autotag'
+end
 
 vim.call('plug#end')
 

@@ -14,18 +14,24 @@ vim.cmd[[set nofixendofline]]
 
 -- By alphabet please
 require('settings.airline')
-require('settings.ale')
-require('settings.alpha')
-require('settings.asyncomplete')
 require('settings.barbar')
-require('settings.dap')
 require('settings.deoplete')
-require('settings.gitsigns')
-require('settings.ionide')
-require('settings.nvim-autopairs')
 require('settings.nvim-tree')
-require('settings.nvim-treesitter')
 require('settings.mason')
-require('settings.omnisharp-vim')
 require('settings.telescope')
-require('settings.vim-test')
+
+if vim.g.use_ide() then
+    require('settings.asyncomplete')
+    require('settings.ale')
+    require('settings.omnisharp-vim')
+    require('settings.ionide')
+    require('settings.dap')
+    require('settings.vim-test')
+    require('settings.nvim-treesitter')
+    require('settings.gitsigns')
+    require('settings.nvim-autopairs')
+
+    vim.cmd[[NvimTreeOpen]]
+end
+
+

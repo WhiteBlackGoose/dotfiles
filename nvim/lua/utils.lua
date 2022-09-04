@@ -15,5 +15,11 @@ vim.g.gsign = function(normal, simple)
     end
 end
 
-
+vim.g.use_ide = function()
+    if vim.g['is_ide_mode'] then
+        return true
+    else
+        return false
+    end
+end
 
