@@ -61,5 +61,10 @@ if vim.g.use_ide() then
     Plug 'windwp/nvim-ts-autotag'
 end
 
+Plug 'edluffy/hologram.nvim'
+
 vim.call('plug#end')
 
+require('hologram').setup{
+    auto_display = true
+}

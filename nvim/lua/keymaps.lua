@@ -121,7 +121,7 @@ addtele('sy',  'treesitter')
 
 
 -- For those with limited keyboard
-add('i', '<A-y>', '<Esc>')
+add('i', '<A-q>', '<Esc>')
 
 
 add('n', '<leader>dc', ":lua require'dap'.continue()<CR>")
