@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# minimal
+if [[ $* == *m* ]]; then
+  a1="--cmd \"lua vim.g['simple_sign_code']=1\""
+fi
+
+# ide
+if [[ $* == *i* ]]; then
+  a2="--cmd 'lua vim.g[\"is_ide_mode\"]=1'"
+fi
+
+# light
+if [[ $* == *w* ]]; then
+  a3="--cmd 'lua vim.g[\"startup_theme\"]=\"light\"'"
+fi
+
+nvim $a1 $a2 $a3 $@
