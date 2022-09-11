@@ -249,7 +249,8 @@ bar {
 ################# Dracula end
 
 # exec feh --bg-scale ~/Pictures/oram_blue_moon-scaled.jpg
-exec feh --bg-scale ~/Pictures/XOR_2K.png
+# exec feh --bg-scale ~/Pictures/XOR_2K.png
+exec xsetroot -solid "#000000"
 
 bindsym $mod+m bar mode invisible 
 bindsym $mod+n bar mode dock
