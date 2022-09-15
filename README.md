@@ -22,6 +22,7 @@ To get my setup of nvim:
   - `vim-plug`
     - `:PlugInstall`
     - Restart nvim
+  - `pip3 install neovim`
   - .NET
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - `:Mason`, find `fsautocomplete`, press `i`
