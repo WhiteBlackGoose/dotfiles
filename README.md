@@ -11,9 +11,9 @@
 | Editor           | NeoVim        |
 | Git UI           | lazygit       |
 | Task manager     | bashtop       |
-| File manager     | xplr          |
+| File manager     | vifm          |
 | Font             | FiraCode Nerd |
-
+| Browser          | firefox + vimium |
 # nvim
 
 To get my setup of nvim:
