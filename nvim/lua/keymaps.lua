@@ -9,6 +9,9 @@ end
 add('i', '<C-a>', '<Cmd>')
 
 -- Common
+vim.g.mapleader = " "
+add('i', 'jk', '<esc>')
+
 add('n', '<down>', 'gj')
 add('n', '<up>', 'gk')
 add('v', '<down>', 'gj')
@@ -22,6 +25,13 @@ add('n', '<A-:>', '<C-e>')
 add('n', '<C-l>', 'zz')
 
 add('i', '<C-t>', '<C-V><Tab>') -- inserts actual tab symbol
+add('i', '<A-v>', '<Esc>')
+add('v', '<A-v>', '<Esc>')
+
+add('v', 'p', '"_dP')
+add('n', '<leader>y', 'viw"_dP')
+
+
 
 -- Tabs
 add('n', '<A-,>', ':BufferPrevious<CR>')
