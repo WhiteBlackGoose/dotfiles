@@ -6,11 +6,8 @@ local add = function(mode, key, output)
     map(mode, key, output, norm)
 end
 
-add('i', '<C-a>', '<Cmd>')
-
 -- Common
-vim.g.mapleader = " "
-add('i', 'jk', '<esc>')
+add('n', '<space>', '<leader>')
 
 add('n', '<down>', 'gj')
 add('n', '<up>', 'gk')
@@ -26,12 +23,10 @@ add('n', '<C-l>', 'zz')
 
 add('i', '<C-t>', '<C-V><Tab>') -- inserts actual tab symbol
 add('i', '<A-v>', '<Esc>')
-add('v', '<A-v>', '<Esc>')
-
-add('v', 'p', '"_dP')
-add('n', '<leader>y', 'viw"_dP')
-
-
+add('i', 'jk', '<Esc>')
+add('i', 'kj', '<Esc>')
+add('n', '<esc>', ':noh<CR>')
+-- add('n', '[', '
 
 -- Tabs
 add('n', '<A-,>', ':BufferPrevious<CR>')
