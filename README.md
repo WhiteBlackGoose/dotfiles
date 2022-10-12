@@ -1,19 +1,21 @@
 # Setup
 
-|                  | Component     |
-|:-----------------|:-------------:|
-| OS               | Ubuntu        |
-| DE               | Xfce4         |
-| WM               | i3            |
-| Status bar       | i3blocks      |
-| Terminal         | Terminator    |
-| Shell            | starship      |
-| Editor           | NeoVim        |
-| Git UI           | lazygit       |
-| Task manager     | bashtop       |
-| File manager     | vifm          |
-| Font             | FiraCode Nerd |
-| Browser          | firefox + vimium |
+|                  | Past     | Now |
+|:-----------------|:-------------:|:-------------:|
+| OS               | Ubuntu | Debian        |
+| DE               | | Xfce4 | -         |
+| WM               | i3 | i3          |
+| Status bar       | i3blocks | i3blocks     |
+| Terminal         | Terminator    | Terminator |
+| Shell            | starship   | bash |
+| Editor           | neovim        | neovim |
+| Git UI           | lazygit       | lazygit |
+| Task manager     | bashtop       | bpytop |
+| File manager     | vifm          | - |
+| Password manager | - | [pass](https://gist.github.com/WhiteBlackGoose/8ffb7123b991dcc4cdafcdd574bdc3c6) |
+| Font             | FiraCode Nerd | FiraCode Nerd |
+| Browser          | firefox | firefox + vimium |
+| App launcher     | xfce4-appfinder | rofi |
 # nvim
 
 To get my setup of nvim:
