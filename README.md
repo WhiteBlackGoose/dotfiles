@@ -3,7 +3,7 @@
 |                  | Past     | Now |
 |:-----------------|:-------------:|:-------------:|
 | OS               | Ubuntu | Debian        |
-| DE               | | Xfce4 | -         |
+| DE               | Xfce4 | -         |
 | WM               | i3 | i3          |
 | Status bar       | i3blocks | i3blocks     |
 | Terminal         | Terminator    | Terminator |
