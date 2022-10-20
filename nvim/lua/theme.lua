@@ -15,24 +15,24 @@ vim.g.theme_dark = function()
     vim.o.background = "dark"
 
     -- Syntastics
-    vim.highlight.create('ALEErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('ALEErrorLine', { guibg="#331111" })
-    vim.highlight.create('ALEVirtualTextError', { guifg="#777777", guibg="#331111" })
-    vim.highlight.create('ALEWarningSign', { guifg="#FFFF55" })
-    vim.highlight.create('ALEWarningLine', { guibg="#2A2A11" })
-    vim.highlight.create('ALEVirtualTextWarning', { guifg="#777777", guibg="#2A2A11" })
-    vim.highlight.create('ALEStyleErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('ALEStyleErrorLine', { guibg="#331111" })
-    vim.highlight.create('ALEVirtualTextStyleError', { guifg="#777777", guibg="#331111" })
-    vim.highlight.create('ALEStyleWarningSign', { guifg="#6666CC" })
-    vim.highlight.create('ALEStyleWarningLine', { guibg="#2A2A11" })
-    vim.highlight.create('ALEVirtualTextStyleWarning', { guifg="#777777", guibg="#2A2A11" })
+    vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
+    vim.api.nvim_set_hl(0, 'ALEErrorLine', { bg="#331111" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextError', { fg="#777777", bg="#331111" })
+    vim.api.nvim_set_hl(0, 'ALEWarningSign', { fg="#FFFF55" })
+    vim.api.nvim_set_hl(0, 'ALEWarningLine', { bg="#2A2A11" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextWarning', { fg="#777777", bg="#2A2A11" })
+    vim.api.nvim_set_hl(0, 'ALEStyleErrorSign', { fg="#FF5555" })
+    vim.api.nvim_set_hl(0, 'ALEStyleErrorLine', { bg="#331111" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextStyleError', { fg="#777777", bg="#331111" })
+    vim.api.nvim_set_hl(0, 'ALEStyleWarningSign', { fg="#6666CC" })
+    vim.api.nvim_set_hl(0, 'ALEStyleWarningLine', { bg="#2A2A11" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextStyleWarning', { fg="#777777", bg="#2A2A11" })
 
     -- Dap
-    vim.highlight.create('DapBreakpoint', { guifg='#AAAAFF' })
-    vim.highlight.create('DapBreakpointLine', { guibg='#222244' })
-    vim.highlight.create('DapStopped', { guifg='#228822' })
-    vim.highlight.create('DapStoppedLine', { guibg='#224422' })
+    vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg='#AAAAFF' })
+    vim.api.nvim_set_hl(0, 'DapBreakpointLine', { bg='#222244' })
+    vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
+    vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#224422' })
 
     vim.g['theme_current'] = 'dark'
 end
@@ -45,25 +45,25 @@ vim.g.theme_light = function()
     ]]
 
     -- Syntastics
-    vim.highlight.create('ALEErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('ALEErrorLine', { guibg="#FFEFEF" })
-    vim.highlight.create('ALEVirtualTextError', { guifg="#AAAAAA", guibg="#FFEFEF" })
+    vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
+    vim.api.nvim_set_hl(0, 'ALEErrorLine', { bg="#FFEFEF" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextError', { fg="#AAAAAA", bg="#FFEFEF" })
 
-    vim.highlight.create('ALEWarningSign', { guifg="#FFA500" })
-    vim.highlight.create('ALEWarningLine', { guibg="#FFF3D0" })
-    vim.highlight.create('ALEVirtualTextWarning', { guifg="#AAAAAA", guibg="#FFF3D0" })
-    vim.highlight.create('ALEStyleErrorSign', { guifg="#FF5555" })
-    vim.highlight.create('ALEStyleErrorLine', { guibg="#FFEFEF" })
-    vim.highlight.create('ALEVirtualTextStyleError', { guifg="#AAAAAA", guibg="#FFEFEF" })
-    vim.highlight.create('ALEStyleWarningSign', { guifg="#AAAAFF" })
-    vim.highlight.create('ALEStyleWarningLine', { guibg="#FFF3D0" })
-    vim.highlight.create('ALEVirtualTextStyleWarning', { guifg="#AAAAAA", guibg="#FFF3D0" })
+    vim.api.nvim_set_hl(0, 'ALEWarningSign', { fg="#FFA500" })
+    vim.api.nvim_set_hl(0, 'ALEWarningLine', { bg="#FFF3D0" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextWarning', { fg="#AAAAAA", bg="#FFF3D0" })
+    vim.api.nvim_set_hl(0, 'ALEStyleErrorSign', { fg="#FF5555" })
+    vim.api.nvim_set_hl(0, 'ALEStyleErrorLine', { bg="#FFEFEF" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextStyleError', { fg="#AAAAAA", bg="#FFEFEF" })
+    vim.api.nvim_set_hl(0, 'ALEStyleWarningSign', { fg="#AAAAFF" })
+    vim.api.nvim_set_hl(0, 'ALEStyleWarningLine', { bg="#FFF3D0" })
+    vim.api.nvim_set_hl(0, 'ALEVirtualTextStyleWarning', { fg="#AAAAAA", bg="#FFF3D0" })
 
     -- Dap
-    vim.highlight.create('DapBreakpoint', { guifg='#8888EE' })
-    vim.highlight.create('DapBreakpointLine', { guibg='#EFEFFF' })
-    vim.highlight.create('DapStopped', { guifg='#228822' })
-    vim.highlight.create('DapStoppedLine', { guibg='#CCFFCC' })
+    vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg='#8888EE' })
+    vim.api.nvim_set_hl(0, 'DapBreakpointLine', { bg='#EFEFFF' })
+    vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
+    vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#CCFFCC' })
 
     vim.g['theme_current'] = 'light'
 end

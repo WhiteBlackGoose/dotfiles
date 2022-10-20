@@ -5,6 +5,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-lsp'
@@ -62,6 +63,15 @@ if vim.g.use_ide() then
 end
 
 Plug 'edluffy/hologram.nvim'
+
+Plug 'lervag/vimtex'
+
+if vim.g.use_ide() then
+    Plug 'neovim/nvim-lspconfig' 
+    Plug 'simrat39/rust-tools.nvim'
+end
+
+Plug 'voldikss/vim-floaterm'
 
 vim.call('plug#end')
 

@@ -1,6 +1,7 @@
 local cmd = vim.cmd
 local opt = vim.opt
 
+opt.clipboard = 'unnamedplus'
 -- opt.cursorline = true
 opt.number = true
 
@@ -18,6 +19,7 @@ require('settings.barbar')
 require('settings.deoplete')
 require('settings.nvim-tree')
 require('settings.mason')
+require('settings.vimtex')
 require('settings.telescope')
 
 if vim.g.use_ide() then
@@ -30,8 +32,10 @@ if vim.g.use_ide() then
     require('settings.nvim-treesitter')
     require('settings.gitsigns')
     require('settings.nvim-autopairs')
+    require('settings.rust-tools')
+    require('settings.rust-lsp')
 
-    vim.cmd[[NvimTreeOpen]]
+    -- vim.cmd[[NvimTreeOpen]]
 end
 
 

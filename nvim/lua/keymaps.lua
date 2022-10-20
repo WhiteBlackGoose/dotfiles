@@ -6,15 +6,10 @@ local add = function(mode, key, output)
     map(mode, key, output, norm)
 end
 
+vim.cmd[[set mouse=]]
+
 -- Common
 add('n', '<space>', '<leader>')
-
-add('n', '<down>', 'gj')
-add('n', '<up>', 'gk')
-add('v', '<down>', 'gj')
-add('v', '<up>', 'gk')
-add('i', '<C-s>', '<ESC>:w<CR>i<right>')
-add('n', '<C-s>', ':w<CR>')
 
 add('n', '<A-">', '<C-y>')
 add('n', '<A-:>', '<C-e>')
@@ -22,11 +17,11 @@ add('n', '<A-:>', '<C-e>')
 add('n', '<C-l>', 'zz')
 
 add('i', '<C-t>', '<C-V><Tab>') -- inserts actual tab symbol
-add('i', '<A-v>', '<Esc>')
 add('i', 'jk', '<Esc>')
 add('i', 'kj', '<Esc>')
 add('n', '<esc>', ':noh<CR>')
--- add('n', '[', '
+
+add('i', '<A-9>', '();<Esc>hi');
 
 -- Tabs
 add('n', '<A-,>', ':BufferPrevious<CR>')
@@ -39,12 +34,6 @@ add('n', '<A-c>', ':BufferClose<CR>')
 add('n', '<A-f>', ':NvimTreeFindFile<CR>')
 add('n', '<A-t>', ':NvimTreeToggle<CR>')
  
--- Regular clipboard operations (besides inner nvim's clipboard)
-add('v', '<C-c>', '"+y')
-add('v', '<C-x>', '"+ygv<DEL>')
-add('n', '<C-v>', 'h"+p')
--- add('v', '<C-v>', '<DEL>h"+p') How to make it work for both forward and backward selection?
-
 -- German keys
 add('i', '<A-u>', 'ü')
 add('i', '<A-o>', 'ö')
@@ -137,7 +126,7 @@ add('n', '<leader>drepo', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('n', '<leader>drepc', ":lua require'dap'.repl.close()<CR>")
 add('n', '<leader>ds', ":lua require'dap'.disconnect()<CR>")
 
+-- Floaterm
 
-
-
+add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
 

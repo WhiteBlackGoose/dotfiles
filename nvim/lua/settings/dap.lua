@@ -1,5 +1,8 @@
 local dap = require 'dap'
 
+--.NET----------------------------
+
+
 dap.adapters.coreclr = {
   type = 'executable',
   command = '/home/goose/programs/netcoredbg/netcoredbg',
@@ -36,9 +39,7 @@ vim.g.dotnet_get_dll_path = function()
             vim.g['dotnet_last_dll_path'] = request()
         end
     end
-
-    return vim.g['dotnet_last_dll_path']
-end
+return vim.g['dotnet_last_dll_path'] end
 
 local config = {
   {
@@ -57,12 +58,41 @@ local config = {
 dap.configurations.cs = config
 dap.configurations.fsharp = config
 
+--Rust/C/C++----------------------------
+
+dap.adapters.codelldb = {
+  type = 'server',
+  -- host = '127.0.0.1',
+  port = "13000",
+  executable = {
+    command = '/home/goose/programs/codelldb/extension/adapter/codelldb',
+    args = {"--port", "13000"},
+  }
+}
+
+-- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
+dap.configurations.rust = {
+    {
+        type = 'codelldb',
+        request = 'launch',
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd()..'/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        terminal = 'integrated',
+        sourceLanguages = { 'rust' },
+        stopOnEntry = true
+    }
+}
+
+dap.configurations.c = dap.configurations.rust
+dap.configurations.cpp = dap.configurations.rust
+
 vim.fn.sign_define('DapBreakpoint', { text=vim.g.gsign('', 'B'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointCondition', { text=vim.g.gsign('ﳁ', 'B?'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointRejected', { text=vim.g.gsign('', 'B!'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl= 'DapBreakpoint' })
 vim.fn.sign_define('DapLogPoint', { text=vim.g.gsign('', 'Bi'), texthl='DapLogPoint', linehl='DapLogPointLine', numhl= 'DapLogPoint' })
 vim.fn.sign_define('DapStopped', { text=vim.g.gsign('', '=>'), texthl='DapStopped', linehl='DapStoppedLine', numhl= 'DapStopped' })
-
 
 
 
