@@ -110,6 +110,11 @@ To get my setup of nvim:
 
 # Screenshots
 
+### 2022-10-21 07:31 UTC
+
+![image](https://user-images.githubusercontent.com/31178401/197138881-81ab130d-a156-49d9-88a2-5d957c5419c5.png)
+
+
 ### 2022-09-02 10:48 UTC
 
 ![image](https://user-images.githubusercontent.com/31178401/188125083-3f136231-8550-4ecc-b388-288bb83f52de.png)
