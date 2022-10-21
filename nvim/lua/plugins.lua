@@ -40,6 +40,7 @@ Plug 'ayu-theme/ayu-vim'
 
 if vim.g.use_ide() then
     Plug 'mfussenegger/nvim-dap'
+    Plug 'rcarriga/nvim-dap-ui'
 end
 
 if vim.g.use_ide() then

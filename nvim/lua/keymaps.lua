@@ -130,3 +130,8 @@ add('n', '<leader>ds', ":lua require'dap'.disconnect()<CR>")
 
 add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
 
+
+-- Ruts
+
+add('n', '<leader>rh', ':lua vim.diagnostic.open_float(nil, { focusable = false })<CR>')
+add('n', '<leader>rd', ':RustDebuggables<CR>')
