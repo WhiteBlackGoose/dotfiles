@@ -3,7 +3,7 @@
 |                  | Past     | Now |
 |:-----------------|:-------------:|:-------------:|
 | OS               | Ubuntu | Debian        |
-| DE               | | Xfce4 | -         |
+| DE               | Xfce4 | -         |
 | WM               | i3 | i3          |
 | Status bar       | i3blocks | i3blocks     |
 | Terminal         | Terminator    | Terminator |
@@ -109,6 +109,12 @@ To get my setup of nvim:
 - `i3blocks` configured for some info about your system
 
 # Screenshots
+
+### 2022-10-21 07:31 UTC
+
+![image](https://user-images.githubusercontent.com/31178401/197138881-81ab130d-a156-49d9-88a2-5d957c5419c5.png)
+![image](https://user-images.githubusercontent.com/31178401/197142494-56966fe3-f06f-4d7f-9eff-2e05b31ecf16.png)
+
 
 ### 2022-09-02 10:48 UTC
 
