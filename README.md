@@ -110,6 +110,12 @@ To get my setup of nvim:
 
 # Screenshots
 
+### 2022-11-03 16:48 UTC
+
+See branch arch for dot files.
+
+![Screenshot_2022-11-03_22-40-03](https://user-images.githubusercontent.com/31178401/199783198-22f9a953-035b-4dad-bd7c-2c303fcd192d.png)
+
 ### 2022-10-21 07:31 UTC
 
 ![image](https://user-images.githubusercontent.com/31178401/197138881-81ab130d-a156-49d9-88a2-5d957c5419c5.png)
