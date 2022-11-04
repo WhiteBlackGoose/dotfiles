@@ -110,6 +110,12 @@ To get my setup of nvim:
 
 # Screenshots
 
+### 2022-11-04 06:03 UTC
+
+See branch freebsd for dot files.
+
+![Screenshot_20221104_053856](https://user-images.githubusercontent.com/31178401/199902935-6bd11369-99c1-4d8c-ad85-eb7cfa300ad1.png)
+
 ### 2022-11-03 16:48 UTC
 
 See branch arch for dot files.
