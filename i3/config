@@ -22,7 +22,7 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
 
-# font pango:FiraCode Nerd Font Bold 4
+# font pango: FiraCode Mono Bold Nerd Font 9
 font pango:Ubuntu Mono Bold 9
 
 exec xrandr --dpi 96
@@ -36,7 +36,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/goose/scripts/lock.sh --nofork
 
 exec --no-startup-id pactl load-module module-bluetooth-discover
 
@@ -224,7 +224,8 @@ bar {
   tray_output none
   position top
 
-  font pango:FiraCode Nerd Font Regular 9
+  # font pango:FiraCode Nerd Font Regular 9
+  font pango:Ubuntu Mono Bold 9
   status_command i3blocks
  
   colors {
@@ -246,7 +247,8 @@ bar {
 # exec feh --bg-scale ~/Pictures/oram_blue_moon-scaled.jpg
 # exec feh --bg-scale ~/Pictures/XOR_2K.png
 # exec xsetroot -solid "#000000"
-exec feh --bg-scale Debian-11-wallpaper_1920x1080.png
+# exec feh --bg-scale Debian-11-wallpaper_1920x1080.png
+exec feh --bg-scale sqxsto7n6xw91.webp
 
 bindsym $mod+m bar mode invisible 
 bindsym $mod+n bar mode dock
@@ -256,6 +258,8 @@ bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -sele
 bindsym Shift+Print exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
 bindsym Ctrl+Print exec xfce4-screenshooter -f -c --save ~/Pictures/
 bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym $mod+Shift+Print exec xfce4-screenshooter -f -d 5 --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym $mod+Print exec ~/.config/global_scripts/snip
 
 # bindsym $mod+x move workspace to output right
 
@@ -268,10 +272,8 @@ exec setxkbmap -option 'grp:caps_toggle'
 # bindsym Ctrl+Mod1+a exec xfce4-appfinder
 # bindsym Ctrl+Mod1+a exec /home/goose/scripts/ttt.sh
 
+bindsym $mod+Shift+Home exec /home/goose/scripts/lock.sh
 bindsym $mod+Shift+Delete exec systemctl suspend
-
-bindsym $mod+Shift+comma move left
-bindsym $mod+Shift+period move right
 
 bindsym $mod+c exec xdotool click 1
 bindsym $mod+comma exec xdotool mousedown 1
@@ -301,6 +303,8 @@ bindsym $mod+Control+Shift+h exec xdotool keyup Super_L && xdotool keyup h && xd
 bindsym $mod+Control+Shift+l exec xdotool keyup Super_L && xdotool keyup l && xdotool key Right && xdotool keydown Super_L
 bindsym $mod+Control+Shift+j exec xdotool keyup Super_L && xdotool keyup j && xdotool key Down && xdotool keydown Super_L
 bindsym $mod+Control+Shift+k exec xdotool keyup Super_L && xdotool keyup k && xdotool key Up && xdotool keydown Super_L
+
+bindsym $mod+Shift+o exec xdotool keyup Shift && xdotool keyup Super_L && xdotool keyup o && xdotool key End && xdotool key Return && xdotool keydown Super_L && xdotool keydown Shift
 
 bindsym $mod+x exec xdotool keyup Super_L && xdotool keyup x && xdotool key Delete && xdotool keydown Super_L
 

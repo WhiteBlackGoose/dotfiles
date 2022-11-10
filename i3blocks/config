@@ -1,3 +1,7 @@
+[de]
+command=python3 ~/scripts/fetchrandomword.py
+interval=20
+
 # Sound
 [sound]
 command=~/.config/scripts/vol.sh
@@ -10,28 +14,16 @@ command=~/.config/scripts/battery.sh
 interval=5
 color=#FFAAAA
 
-# Guess the weather hourly
-[weather]
-command=~/.config/scripts/weather.sh
-interval=3600
-color=#A4C2F4
-
 # Disk space
 [disk]
 command=~/.config/scripts/disk.sh
 interval=20
 color=#FFFF00
 
-# RAM
-[ram]
-command=~/.config/scripts/ram.sh
-interval=4
-color=#CCCCCC
-
-# GPU memory
-[gpumem]
-command=~/.config/scripts/videomem.sh
-interval=4
+# CPU usage
+[disk]
+command=~/.config/scripts/cpu.sh
+interval=3
 color=#CCCCCC
 
 # Temperatures
@@ -40,11 +32,21 @@ command=~/.config/scripts/temp.sh
 interval=3
 color=#AAFFEE
 
+# RAM
+[ram]
+command=~/.config/scripts/ram.sh
+interval=4
+color=#CCCCCC
+
 # Query my default IP address only on startup
 [ip]
 command=~/.config/scripts/ip.sh
-interval=20
+interval=1
 color=#91E78B
+
+[tz]
+command=~/.config/scripts/tz.sh
+interval=10800
 
 # Update time every 5 seconds
 [time]

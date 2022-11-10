@@ -9,7 +9,8 @@ end
 vim.cmd[[set mouse=]]
 
 -- Common
-add('n', '<space>', '<leader>')
+add('n', '<space>', '<nop>')
+vim.cmd[[let mapleader=" "]]
 
 add('n', '<A-">', '<C-y>')
 add('n', '<A-:>', '<C-e>')
@@ -135,3 +136,11 @@ add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
 
 add('n', '<leader>rh', ':lua vim.diagnostic.open_float(nil, { focusable = false })<CR>')
 add('n', '<leader>rd', ':RustDebuggables<CR>')
+
+add('n', '<leader>rr', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 cargo run<CR>')
+add('n', '<leader>rb', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 cargo build<CR>')
+add('n', '<leader>rc', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 cargo check<CR>')
+
+-- Git
+
+add('n', '<leader>lg', ':FloatermNew --height=0.8 --width=0.8 lazygit<CR>')

@@ -1,0 +1,4 @@
+#!/bin/bash
+xfce4-screenshooter -f -c --save /tmp/snip-tmp.png
+pinta /tmp/snip-tmp.png
+rm /tmp/snip-tmp.png

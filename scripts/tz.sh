@@ -1,4 +1,6 @@
 #!/bin/bash
 tz=$(~/programs/tzupdate.py -p)
 printf "$tz"
-printf "$tz" > ./currtz
+if [ -n "$tz" ]; then
+    printf "$tz" > /home/goose/.config/scripts/currtz
+fi
