@@ -144,3 +144,8 @@ add('n', '<leader>rc', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 carg
 -- Git
 
 add('n', '<leader>lg', ':FloatermNew --height=0.8 --width=0.8 lazygit<CR>')
+
+-- CtrlSF
+
+add('n', '<leader>fff', '<Plug>CtrlSFPrompt')
+add('n', '<leader>ffo', ':CtrlSFOpen<CR>')

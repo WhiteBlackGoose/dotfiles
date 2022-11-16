@@ -74,6 +74,8 @@ end
 
 Plug 'voldikss/vim-floaterm'
 
+Plug 'dyng/ctrlsf.vim'
+
 vim.call('plug#end')
 
 require('hologram').setup{
