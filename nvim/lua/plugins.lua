@@ -76,6 +76,9 @@ Plug 'voldikss/vim-floaterm'
 
 Plug 'dyng/ctrlsf.vim'
 
+Plug 'zchee/deoplete-jedi'
+Plug 'mfussenegger/nvim-dap-python'
+
 vim.call('plug#end')
 
 require('hologram').setup{

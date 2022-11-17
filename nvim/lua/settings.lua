@@ -29,6 +29,7 @@ if vim.g.use_ide() then
     require('settings.ionide')
     require('settings.dap')
     require('settings.dapui')
+    require('settings.dap-python')
     require('settings.vim-test')
     require('settings.nvim-treesitter')
     require('settings.gitsigns')

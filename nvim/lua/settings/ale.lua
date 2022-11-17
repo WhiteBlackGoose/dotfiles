@@ -1,4 +1,7 @@
-vim.b['ale_linters'] = { 'code_checker' }
+vim.cmd[[
+let b:ale_linters = { 'python': ['pylint', 'mypy', 'flake8'] }
+]]
+-- vim.b['ale_linters'] = { 'code_checker', 'python' }
 
 vim.g['ale_lsp_suggestions'] = 1
 vim.g['ale_lsp_show_message_severity'] = 'information'
