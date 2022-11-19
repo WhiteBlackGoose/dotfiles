@@ -20,11 +20,11 @@
 
 To get my setup of nvim:
 
-- `neovim` >= 0.7.0
+- `neovim` >= 0.8.0
   - `vim-plug`
     - `:PlugInstall`
     - Restart nvim
-  - `pip3 install neovim`
+  - `pip3 install neovim` for deoplete
   - .NET
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - `:Mason`, find `fsautocomplete`, press `i`
@@ -35,6 +35,10 @@ To get my setup of nvim:
     - `pip install flake8`
     - `pip install mypy`
     - `pip install debugpy`
+  - Rust
+    - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
+    - Unpack vsix
+    - Update paths in the config file
 
 ### Why nvim?
 
