@@ -28,6 +28,13 @@ To get my setup of nvim:
   - .NET
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - `:Mason`, find `fsautocomplete`, press `i`
+    - Make sure that your $PATH has no `~` (neovim can't expand it)
+    - Make sure your DOTNET_ROOT is set to the place where your actual binaries are
+  - Python
+    - `pip install pylint`
+    - `pip install flake8`
+    - `pip install mypy`
+    - `pip install debugpy`
 
 ### Why nvim?
 
