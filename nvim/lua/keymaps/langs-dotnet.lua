@@ -15,5 +15,6 @@ add('n', '<leader>db', ':lua vim.g.dotnet_build_project()<CR>')
 
 -- dotnet
 
-add('n', '<leader>drr', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 dotnet run<CR>')
+add('n', '<leader>drr', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 dotnet run -c release<CR>')
+add('n', '<leader>drb', ':FloatermNew --height=0.8 --width=0.8 --autoclose=0 dotnet run<CR>')
 add('n', '<leader>dq', ':OmniSharpGetCodeActions<CR>')

@@ -36,6 +36,7 @@ if vim.g.use_ide() then
     require('settings.nvim-autopairs')
     require('settings.rust-tools')
     require('settings.rust-lsp')
+    require('settings.ufo')
 
     -- vim.cmd[[NvimTreeOpen]]
 end

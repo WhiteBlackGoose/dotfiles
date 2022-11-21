@@ -15,7 +15,7 @@ add('i', '<F7>',  "<ESC>:lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('i', '<F8>',  "<ESC>:lua require'dap'.repl.close()<CR>i")
 add('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i")
 
-add('n', '<leader>h', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
+add('n', '<leader>eh', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
 
 -- For those with limited keyboard
 
