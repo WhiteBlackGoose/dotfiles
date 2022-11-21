@@ -25,6 +25,7 @@ To get my setup of nvim:
     - `:PlugInstall`
     - Restart nvim
   - `pip3 install neovim` for deoplete
+  - Get `lazygit` for git UI
   - .NET
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - `:Mason`, find `fsautocomplete`, press `i`
@@ -56,36 +57,44 @@ To get my setup of nvim:
 
 ### Features for developers
 
-- Suggestions for C# work
+- Suggestions for C#, Rust work
   - Semantic completions pop up as you type
   - Disable errors/warnings with `Ctrl+q`
   - Enable list of errors and warnings in a file with `Ctrl+p`
 - Suggestions for F# work
   - Not tested extensively though. Activate them with Ctrl+space
-- Warnings and errors for C#
+- Warnings and errors for C#, Rust, Python
   - With virtual text (which appears on the same line with error)
   - Works for both themes
+- Quick fixes for C#
 - Warnings and errors for F#
   - Not yet customised properly
   - But works for both themes
-- Debug .NET
-  - F5 to start. Before starting, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
+- Debug .NET, Rust, python
+  - F5 to start. Before starting .NET, it suggests compilation (y/n) and changing path to dll (y/n if already prompted once)
   - F10/Ctrl+F10 for step over/in, F4 to stop, F7/F8 to show/hide repl
-  - `\h` to hover over a variable
-  - Build project with `Ctrl+B`
+  - Hover over a variable
+  - Build .NET project with `Ctrl+B`
 - Symbols
-  - `\hd` to hover preview documentation
-  - `\hp` to hover preview definition
-  - `\hg` to go to definition
-  - `\rr` to rename symbol
-  - `\sy` to see symbols in the current file
+  - Hover preview documentation
+  - Hover preview definition
+  - Go to definition
+  - Rename symbol
+  - See symbols in the current file
 - Tests
-  - `\ta` to run tests in a file
-  - `\tt` to run the test  
+  - Run tests in a file
+  - Run the test  
 - Alt+@ for F# interactive
 - Rainbow brackets
-- Git signs (shows which lines are added/modified since the last commit)
+- Git
+  - Git signs (shows which lines are added/modified since the last commit)
+  - Open lazygit on hotkey
+- Search
+  - Over files with `<leader>ff`
+  - In files with `<leader>fff`
+  - And many more searches
 - Html auto closing and tag renaming
+- Folding with `<leader>j` and `<leader>k`
 - `mim` or `minimal vim` - nvim without NerdFont symbols - is suitable for using neovim over ssh
 
 ### Other features
