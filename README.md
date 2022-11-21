@@ -52,8 +52,8 @@ To get my setup of nvim:
 - :white_check_mark: You certainly can copy any part of the window because ... it's all text
 - :white_check_mark: FOSS
 - :x: Ridiculous learning curve. It's not that you *just* need to learn the completely alien to most modern people keybindings, you also have to learn installing and configuring plugins, and soon, coding some basics in lua as well as basics of interacting with `nvim` itself. Meanwhile in Visual Studio you need to click two buttons and you're set
-- :x: Vim keybindings. I hate them. I still optimized some of them to be on a key combination like in emacs
 - :x: Availability. For example, I couldn't find a test explorer for neovim for .net
+- :x: Small community for many languages. For instance, for C# you're unlikely to encounter anyone in your life who uses vim or neovim for it. You're gonna stand out, but also, seeking help becomes much more challenging.
 
 ### Features for developers
 
