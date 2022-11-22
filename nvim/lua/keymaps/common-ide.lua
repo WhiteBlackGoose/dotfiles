@@ -36,3 +36,7 @@ add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
 
 add('n', '<leader>lg', ':FloatermNew --height=0.8 --width=0.8 lazygit<CR>')
 
+-- nvim-toggler
+if vim.g.use_ide() then
+    vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)
+end

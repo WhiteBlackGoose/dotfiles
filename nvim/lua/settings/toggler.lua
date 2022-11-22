@@ -1,0 +1,1 @@
+require('nvim-toggler').setup()

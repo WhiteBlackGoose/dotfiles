@@ -2,7 +2,7 @@ local addtele = function(keys, commandname)
     add('n', '<leader>' .. keys, "<cmd>lua require('telescope.builtin')." .. commandname .. "()<cr>")
 end
 
-addtele('ff',  'find_files')
+addtele('F',  'find_files')
 addtele('fb',  'buffers')
 addtele('fh',  'help_tags')
 addtele('cc',  'commands')

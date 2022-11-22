@@ -1,36 +1,41 @@
 # Setup
 
-|                  | Past     | Now |
-|:-----------------|:-------------:|:-------------:|
-| OS               | Ubuntu | Debian        |
-| DE               | Xfce4 | -         |
-| WM               | i3 | i3          |
-| Status bar       | i3blocks | i3blocks     |
-| Terminal         | Terminator    | Terminator |
-| Shell            | starship   | bash |
-| Editor           | neovim        | neovim |
-| Git UI           | lazygit       | lazygit |
-| Task manager     | bashtop       | bpytop |
-| File manager     | vifm          | - |
-| Password manager | - | [pass](https://gist.github.com/WhiteBlackGoose/8ffb7123b991dcc4cdafcdd574bdc3c6) |
-| Font             | FiraCode Nerd | FiraCode Nerd |
-| Browser          | firefox | firefox + vimium |
-| App launcher     | xfce4-appfinder | rofi |
+|                  | Past                | Now                                                                              |
+|:-----------------|:-------------------:|:---------------------------------------------------------------------------------|
+| OS               | Ubuntu              | Debian                                                                           |
+| DE               | Xfce4               | -                                                                                |
+| WM               | i3                  | i3                                                                               |
+| Status bar       | i3blocks            | i3blocks                                                                         |
+| Terminal         | Terminator          | Terminator                                                                       |
+| Shell            | starship            | bash                                                                             |
+| Text Editor      | neovim              | neovim                                                                           |
+| IDE              | VSC, Rider, PyCharm | neovim                                                                           |
+| PDF editor       | LibreOffice Writer  | neovim                                                                           |
+| PDF viewer       | -                   | zathura                                                                          |
+| Git UI           | lazygit             | lazygit                                                                          |
+| Task manager     | bashtop             | bpytop                                                                           |
+| File manager     | vifm                | -                                                                                |
+| Password manager | -                   | [pass](https://gist.github.com/WhiteBlackGoose/8ffb7123b991dcc4cdafcdd574bdc3c6) |
+| Font             | FiraCode Nerd       | FiraCode Nerd                                                                    |
+| Browser          | firefox             | firefox + vimium                                                                 |
+| App launcher     | xfce4-appfinder     | rofi                                                                             |
 # nvim
 
 To get my setup of nvim:
 
-- `neovim` >= 0.8.0
-  - `vim-plug`
-    - `:PlugInstall`
+- Get `neovim` >= 0.8.0
+  - Get `vim-plug`
+    - Run it (you will see many errors - it's ok)
+    - Type `:PlugInstall` and hit enter, wait until plugins are installed
     - Restart nvim
   - `pip3 install neovim` for deoplete
   - Get `lazygit` for git UI
   - .NET
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
-    - `:Mason`, find `fsautocomplete`, press `i`
     - Make sure that your $PATH has no `~` (neovim can't expand it)
     - Make sure your DOTNET_ROOT is set to the place where your actual binaries are
+  - F#
+    - `:Mason`, find `fsautocomplete`, press `i`
   - Python
     - `pip install pylint`
     - `pip install flake8`
@@ -40,6 +45,9 @@ To get my setup of nvim:
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
     - Unpack vsix
     - Update paths in the config file
+  - LaTeX
+    - Get `latexmk`
+    - Get `zathura` (PDF viewer)
 
 ### Why nvim?
 
@@ -53,7 +61,6 @@ To get my setup of nvim:
 - :white_check_mark: FOSS
 - :x: Ridiculous learning curve. It's not that you *just* need to learn the completely alien to most modern people keybindings, you also have to learn installing and configuring plugins, and soon, coding some basics in lua as well as basics of interacting with `nvim` itself. Meanwhile in Visual Studio you need to click two buttons and you're set
 - :x: Availability. For example, I couldn't find a test explorer for neovim for .net
-- :x: Small community for many languages. For instance, for C# you're unlikely to encounter anyone in your life who uses vim or neovim for it. You're gonna stand out, but also, seeking help becomes much more challenging.
 
 ### Features for developers
 
@@ -89,10 +96,6 @@ To get my setup of nvim:
 - Git
   - Git signs (shows which lines are added/modified since the last commit)
   - Open lazygit on hotkey
-- Search
-  - Over files with `<leader>ff`
-  - In files with `<leader>fff`
-  - And many more searches
 - Html auto closing and tag renaming
 - Folding with `<leader>j` and `<leader>k`
 - `mim` or `minimal vim` - nvim without NerdFont symbols - is suitable for using neovim over ssh
@@ -108,11 +111,17 @@ To get my setup of nvim:
   - Toggle the file tree with Alt+T
   - Alt+, and Alt+. to switch between tabs
 - Telescope
-  - `\ff` to find among files
-  - `\cc` to find among commands
-  - `\fb` to find among buffers
-  - `\co` to find among commits
-  - `\man` to see man entries
+  - `<leader>ff` to find among files
+  - `<leader>cc` to find among commands
+  - `<leader>fb` to find among buffers
+  - `<leader>co` to find among commits
+  - `<leader>man` to see man entries
+- Search
+  - Over files with `<leader>F`
+  - In files with `<leader>fff`
+  - And many more searches
+- LaTeX support
+  - Edit LaTeX in nvim and preview hot-reloaded PDFs in Zathura
 
 #### The rest see the config...
 

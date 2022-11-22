@@ -76,14 +76,22 @@ Plug 'voldikss/vim-floaterm'
 
 Plug 'dyng/ctrlsf.vim'
 
-Plug 'zchee/deoplete-jedi'
-Plug 'mfussenegger/nvim-dap-python'
+if vim.g.use_ide() then
+    Plug 'zchee/deoplete-jedi'
+    Plug 'mfussenegger/nvim-dap-python'
+    
+    Plug 'kevinhwang91/promise-async'
+    Plug 'kevinhwang91/nvim-ufo'
 
-Plug 'kevinhwang91/promise-async'
-Plug 'kevinhwang91/nvim-ufo'
+    Plug 'nguyenvukhang/nvim-toggler'
+end
+
+Plug 'samodostal/image.nvim'
+Plug 'm00qek/baleia.nvim'
 
 vim.call('plug#end')
 
+require('baleia').setup { }
 require('hologram').setup{
     auto_display = true
 }

@@ -12,11 +12,14 @@ opt.smartindent = false
 vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
+vim.cmd[[set relativenumber]]
+vim.cmd[[set virtualedit=all]]
 
 -- By alphabet please
 require('settings.airline')
 require('settings.barbar')
 require('settings.deoplete')
+require('settings.image-nvim')
 require('settings.nvim-tree')
 require('settings.mason')
 require('settings.vimtex')
@@ -31,13 +34,13 @@ if vim.g.use_ide() then
     require('settings.dapui')
     require('settings.dap-python')
     require('settings.vim-test')
+    require('settings.nvim-autopairs')
     require('settings.nvim-treesitter')
     require('settings.gitsigns')
-    require('settings.nvim-autopairs')
+    require('settings.toggler')
     require('settings.rust-tools')
     require('settings.rust-lsp')
     require('settings.ufo')
-
     -- vim.cmd[[NvimTreeOpen]]
 end
 
