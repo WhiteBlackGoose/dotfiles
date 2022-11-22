@@ -8,8 +8,7 @@ opt.number = true
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4
-opt.smartindent = false
-vim.cmd[[filetype indent off]]
+opt.smartindent = false vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
 vim.cmd[[set relativenumber]]
@@ -41,7 +40,9 @@ if vim.g.use_ide() then
     require('settings.rust-tools')
     require('settings.rust-lsp')
     require('settings.ufo')
-    -- vim.cmd[[NvimTreeOpen]]
+
+    -- SPEICLAJ
+    require('settings.draco')
 end
 
 
