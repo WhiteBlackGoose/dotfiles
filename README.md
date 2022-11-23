@@ -48,6 +48,7 @@ To get my setup of nvim:
   - LaTeX
     - Get `latexmk`
     - Get `zathura` (PDF viewer)
+    - Get `amcli` (AngouriMathCLI) (optional)
 
 ### Why nvim?
 
@@ -122,6 +123,8 @@ To get my setup of nvim:
   - And many more searches
 - LaTeX support
   - Edit LaTeX in nvim and preview hot-reloaded PDFs in Zathura
+  - Convert math expressions into LaTeX with hotkeys
+- Image preview
 
 #### The rest see the config...
 
@@ -138,6 +141,10 @@ To get my setup of nvim:
 - `i3blocks` configured for some info about your system
 
 # Screenshots
+
+### 2022-11-23 13:15 UTC
+
+![LaTeX demo](./latex.gif)
 
 ### 2022-11-04 06:03 UTC
 

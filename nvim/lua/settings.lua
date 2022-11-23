@@ -16,6 +16,7 @@ vim.cmd[[set virtualedit=all]]
 
 -- By alphabet please
 require('settings.airline')
+require('settings.amcli')
 require('settings.barbar')
 require('settings.deoplete')
 require('settings.image-nvim')

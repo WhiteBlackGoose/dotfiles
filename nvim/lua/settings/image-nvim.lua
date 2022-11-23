@@ -3,8 +3,8 @@ require('image').setup {
     min_padding = 5,
     show_label = true,
     use_dither = false,
-    foreground_color = false,
-    background_color = false
+    foreground_color = true,
+    background_color = true
   },
   events = {
     update_on_nvim_resize = true,
