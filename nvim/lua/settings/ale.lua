@@ -1,5 +1,6 @@
 vim.cmd[[
-let b:ale_linters = { 'python': ['pylint', 'mypy', 'flake8'] }
+let g:ale_python_flake8_args = '--ignore=E,W,F403,F405,E501'
+let b:ale_linters = { 'python': [ 'flake8' ] }
 ]]
 -- vim.b['ale_linters'] = { 'code_checker', 'python' }
 
