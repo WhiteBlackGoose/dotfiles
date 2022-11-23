@@ -50,7 +50,7 @@ local function clean_selection()
     vim.api.nvim_set_current_line(newline)
 end
   
-function AmcliLatex(fmt)
+function Amcli(fmt, cmd)
     y1, x1, y2, x2 = visual_selection_range()
     if y1 ~= y2 then
         print("Cannot do multilines")
@@ -58,12 +58,14 @@ function AmcliLatex(fmt)
     end
     local txt = get_visual_selection()
     clean_selection()
-    local converted = os.capture("amcli latex \"" .. txt .. "\" 2> /dev/null", false)
+    local converted = os.capture("AMCLI_PRECISION=8 amcli " .. cmd .. " \"" .. txt .. "\" 2> /dev/null", false)
     write_to_cursor(string.format(fmt, converted))
 end
 
 vim.cmd[[
-:command AmcliLatex lua AmcliLatex('%s')
-:command AmcliLatexLine lua AmcliLatex('$%s$')
-:command AmcliLatexBlock lua AmcliLatex('$$%s$$')
+:command AmcliLatex lua Amcli('%s', 'latex')
+:command AmcliLatexLine lua Amcli('$%s$', 'latex')
+:command AmcliLatexBlock lua Amcli('$$%s$$', 'latex')
+:command AmcliSimp lua Amcli('%s', 'simp')
+:command AmcliEval lua Amcli('%s', 'eval')
 ]]

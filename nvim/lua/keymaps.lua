@@ -29,10 +29,10 @@ vim.cmd[[inoremap <C-Space>  <Cmd>call deoplete#mapping#_rpcrequest_wrapper([])<
 
 
 require('keymaps.ale')
+require('keymaps.amcli')
 require('keymaps.common-editor')
 require('keymaps.common-ide')
 require('keymaps.langs-dotnet')
-require('keymaps.langs-latex')
 require('keymaps.langs-rust')
 require('keymaps.special-symbols')
 require('keymaps.telescope')
