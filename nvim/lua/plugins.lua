@@ -88,6 +88,8 @@ end
 
 Plug 'samodostal/image.nvim'
 Plug 'm00qek/baleia.nvim'
+-- Plug 'file:///home/goose/prj/draco-nvim/draco-nvim.git'
+Plug 'https://github.com/Draco-lang/draco-nvim'
 
 vim.call('plug#end')
 

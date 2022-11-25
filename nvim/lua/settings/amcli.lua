@@ -35,18 +35,12 @@ local function get_visual_selection()
   return table.concat(lines, '\n')
 end
 
--- https://www.reddit.com/r/neovim/comments/psux8f/how_to_use_a_lua_function_to_insert_text/
-local function write_to_cursor(text)
-    local pos = vim.api.nvim_win_get_cursor(0)[2]
-    local line = vim.api.nvim_get_current_line()
-    local nline = line:sub(0, pos) .. text .. line:sub(pos + 1)
-    vim.api.nvim_set_current_line(nline)
-end
+require('utils')
 
 local function clean_selection()
     _, x1, _, x2 = visual_selection_range()
     local line = vim.api.nvim_get_current_line()
-    local newline = line:sub(0, x1) .. line:sub(x2)
+    local newline = line:sub(0, x1) .. line:sub(x2 + 1)
     vim.api.nvim_set_current_line(newline)
 end
   
@@ -64,8 +58,8 @@ end
 
 vim.cmd[[
 :command AmcliLatex lua Amcli('%s', 'latex')
-:command AmcliLatexLine lua Amcli('$%s$', 'latex')
-:command AmcliLatexBlock lua Amcli('$$%s$$', 'latex')
+:command AmcliLatexLine lua Amcli('\\(%s\\)', 'latex')
+:command AmcliLatexBlock lua Amcli('\\[%s\\]', 'latex')
 :command AmcliSimp lua Amcli('%s', 'simp')
 :command AmcliEval lua Amcli('%s', 'eval')
 ]]
