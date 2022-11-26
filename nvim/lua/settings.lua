@@ -42,9 +42,6 @@ if vim.g.use_ide() then
     require('settings.ufo')
     require('settings.vim-test')
     require('settings.vimtex')
-
-    -- SPEICLAJ
-    require('settings.draco')
 end
 
 

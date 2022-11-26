@@ -91,8 +91,11 @@ Plug 'm00qek/baleia.nvim'
 -- Plug 'file:///home/goose/prj/draco-nvim/draco-nvim.git'
 Plug 'https://github.com/Draco-lang/draco-nvim'
 
+Plug 'https://github.com/ggandor/leap.nvim'
+
 vim.call('plug#end')
 
+require('leap').add_default_mappings()
 require('baleia').setup { }
 require('hologram').setup{
     auto_display = true
