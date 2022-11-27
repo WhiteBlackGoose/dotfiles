@@ -91,7 +91,13 @@ Plug 'm00qek/baleia.nvim'
 -- Plug 'file:///home/goose/prj/draco-nvim/draco-nvim.git'
 Plug 'https://github.com/Draco-lang/draco-nvim'
 
+
 Plug 'https://github.com/ggandor/leap.nvim'
+
+if vim.g.use_ide() then
+    Plug 'dccsillag/magma-nvim'
+end
+
 
 vim.call('plug#end')
 
@@ -100,3 +106,8 @@ require('baleia').setup { }
 require('hologram').setup{
     auto_display = true
 }
+vim.g['magma_automatically_open_output'] = false
+-- vim.g['magma_image_provider'] = 'ueberzug'
+vim.cmd[[
+let g:magma_image_provider = "ueberzug"
+]]

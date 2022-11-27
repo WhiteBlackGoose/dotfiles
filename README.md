@@ -41,6 +41,7 @@ To get my setup of nvim:
     - `pip install flake8`
     - `pip install mypy`
     - `pip install debugpy`
+    - `pip install jupyter_client` for interactive
   - Rust
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
     - Unpack vsix
@@ -49,6 +50,9 @@ To get my setup of nvim:
     - Get `latexmk`
     - Get `zathura` (PDF viewer)
     - Get `amcli` (AngouriMathCLI) (optional)
+    - Get `texlab` (Language server) (optional)
+  - Image
+    - `ascii-image-converter`
 
 ### Why nvim?
 
@@ -112,7 +116,7 @@ To get my setup of nvim:
   - Toggle the file tree with Alt+T
   - Alt+, and Alt+. to switch between tabs
 - Telescope
-  - `<leader>ff` to find among files
+  - `<leader>F` to find among files
   - `<leader>cc` to find among commands
   - `<leader>fb` to find among buffers
   - `<leader>co` to find among commits
@@ -123,6 +127,7 @@ To get my setup of nvim:
   - And many more searches
 - LaTeX support
   - Edit LaTeX in nvim and preview hot-reloaded PDFs in Zathura
+  - Language server (errors, completions)
   - Convert math expressions into LaTeX with hotkeys
 - Image preview
 
