@@ -40,3 +40,8 @@ add('n', '<leader>lg', ':FloatermNew --height=0.8 --width=0.8 lazygit<CR>')
 if vim.g.use_ide() then
     vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)
 end
+
+-- magma (interactive env)
+add('n', '<leader>mag', '<Plug>MagmaInit')
+add('n', '<leader>mm', ':MagmaEvaluateLine<CR>')
+add('v', '<leader>mm', ':<C-u>MagmaEvaluateVisual<CR>')

@@ -7,9 +7,7 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
-if vim.g.use_ide() then
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'deoplete-plugins/deoplete-lsp'
+if vim.g.use_ide() then Plug 'Shougo/deoplete.nvim' Plug 'deoplete-plugins/deoplete-lsp'
     Plug 'prabirshrestha/asyncomplete.vim'
 end
 
@@ -100,15 +98,13 @@ end
 
 vim.call('plug#end')
 
-pcall(require, 'impatient')
+vim.g['python3_host_prog'] = '/usr/bin/python3'
+require('impatient')
 
-require('leap').add_default_mappings()
+require('leap')
 require('baleia').setup { }
 require('hologram').setup{
     auto_display = true
 }
 vim.g['magma_automatically_open_output'] = false
--- vim.g['magma_image_provider'] = 'ueberzug'
-vim.cmd[[
-let g:magma_image_provider = "ueberzug"
-]]
+vim.g['magma_image_provider'] = 'kitty'

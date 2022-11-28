@@ -31,6 +31,7 @@ To get my setup of nvim:
   - `pip3 install neovim` for deoplete
   - Get `lazygit` for git UI
   - .NET
+    - [Install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script#recommended-version) .NET (using binaries works too)
     - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - Make sure that your $PATH has no `~` (neovim can't expand it)
     - Make sure your DOTNET_ROOT is set to the place where your actual binaries are
@@ -41,7 +42,11 @@ To get my setup of nvim:
     - `pip install flake8`
     - `pip install mypy`
     - `pip install debugpy`
+  - Python interactive
     - `pip install jupyter_client` for interactive
+  - .NET interactive (C#, F#)
+    - `dotnet tool install -g Microsoft.dotnet-interactive`
+    - `dotnet interactive jupyter install`
   - Rust
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
     - Unpack vsix
