@@ -38,10 +38,9 @@ To get my setup of nvim:
   - F#
     - `:Mason`, find `fsautocomplete`, press `i`
   - Python
-    - `pip install pylint`
     - `pip install flake8`
-    - `pip install mypy`
     - `pip install debugpy`
+    - `pip install jedi-language-server`
   - Python interactive
     - `pip install jupyter_client` for interactive
   - .NET interactive (C#, F#)

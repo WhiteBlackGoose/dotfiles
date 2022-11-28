@@ -15,12 +15,8 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
 
--- DO NOT FORGET TO SWITCH BACK ONCE
--- https://github.com/dense-analysis/ale/pull/4289
--- IS MERGED
--- Plug 'dense-analysis/ale'
 if vim.g.use_ide() then
-    Plug('vimpostor/ale', { branch = 'virt_all' })
+    Plug 'dense-analysis/ale'
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'ionide/Ionide-vim'
 end
@@ -92,7 +88,7 @@ Plug 'https://github.com/Draco-lang/draco-nvim'
 Plug 'https://github.com/ggandor/leap.nvim'
 
 if vim.g.use_ide() then
-    Plug 'dccsillag/magma-nvim'
+    Plug 'LoipesMas/magma-nvim'
 end
 
 

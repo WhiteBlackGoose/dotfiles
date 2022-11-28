@@ -1,6 +1,13 @@
 -- Debug
+function DapJumpTo()
+    dap = require'dap'
+    dap.toggle_breakpoint()
+    dap.continue()
+    dap.toggle_breakpoint()
+end
 add('n', '<F5>', ":lua require'dap'.continue()<CR>")
 add('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>")
+add('n', '<F3>', ":lua DapJumpTo()<CR>")
 add('n', '<F10>', ":lua require'dap'.step_over()<CR>")
 add('n', '<F34>', ":lua require'dap'.step_into()<CR>")
 add('n', '<F7>', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
