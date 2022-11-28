@@ -91,6 +91,9 @@ To get my setup of nvim:
   - F10/Ctrl+F10 for step over/in, F4 to stop, F7/F8 to show/hide repl
   - Hover over a variable
   - Build .NET project with `Ctrl+B`
+- Interactive C#, F#, Python
+  - Start typing `:MagmaInit`, see the options
+  - Once initialized, `<space>mm` runs the line in normal mode or selected block in visual mode
 - Symbols
   - Hover preview documentation
   - Hover preview definition

@@ -35,6 +35,7 @@ if vim.g.use_ide() then
     require('settings.latex')
     require('settings.nvim-autopairs')
     require('settings.nvim-treesitter')
+    require('settings.magma')
     require('settings.omnisharp-vim')
     require('settings.rust-lsp')
     require('settings.rust-tools')
