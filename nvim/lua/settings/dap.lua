@@ -89,6 +89,32 @@ dap.configurations.rust = {
 dap.configurations.c = dap.configurations.rust
 dap.configurations.cpp = dap.configurations.rust
 
+--Other-------------------------------
+
+dap.adapters.gdb = {
+  type = 'server',
+  -- host = '127.0.0.1',
+  port = "13000",
+  executable = {
+    command = 'gdb',
+    args = {"--port", "13000"},
+  }
+}
+
+dap.configurations.native = {
+    {
+        type = 'gdb',
+        request = 'launch',
+        program = function()
+            -- return vim.fn.input('Path to native executable: ', vim.fn.getcwd()..'/', 'file')
+            return '/home/goose/trash/InductiveVariadics/InductiveVariadics.Sample/bin/Debug/net7.0/InductiveVariadics.Sample'
+        end,
+        cwd = '${workspaceFolder}',
+        terminal = 'integrated',
+        sourceLanguages = { '*' },
+        stopOnEntry = true
+    }
+}
 
 vim.fn.sign_define('DapBreakpoint', { text=vim.g.gsign('', 'B'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointCondition', { text=vim.g.gsign('ﳁ', 'B?'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })

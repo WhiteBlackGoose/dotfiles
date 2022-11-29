@@ -6,12 +6,12 @@ vim.g.theme_dark = function()
     vim.cmd[[
     let g:airline_theme='violet'
     ]]
-    vim.g.tokyonight_style = "storm"
-    -- vim.cmd[[colorscheme tokyonight]]
+    -- vim.g.tokyonight_style = "storm"
+    vim.cmd[[colorscheme tokyonight]]
     vim.cmd[[
     let ayucolor="dark"
-    colorscheme ayu
     ]]
+    -- vim.cmd[[colorscheme ayu]]
     vim.o.background = "dark"
 
     -- Syntastics

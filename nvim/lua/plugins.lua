@@ -88,7 +88,9 @@ Plug 'https://github.com/Draco-lang/draco-nvim'
 Plug 'https://github.com/ggandor/leap.nvim'
 
 if vim.g.use_ide() then
-    Plug 'LoipesMas/magma-nvim'
+    -- Plug('file:///home/goose/prj/magma-nvim-fork/magma-nvim.git', { branch = 'main' })
+    Plug('WhiteBlackGoose/magma-nvim', { branch = 'main' })
+    -- Plug 'https://github.com/sakhnik/nvim-gdb'
 end
 
 
