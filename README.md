@@ -43,6 +43,7 @@ To get my setup of nvim:
     - `pip install jedi-language-server`
   - Python interactive
     - `pip install jupyter_client` for interactive
+    - `:UpdateRemotePlugins`
   - .NET interactive (C#, F#)
     - `dotnet tool install -g Microsoft.dotnet-interactive`
     - `dotnet interactive jupyter install`
