@@ -26,6 +26,7 @@ require('settings.telescope')
 if vim.g.use_ide() then
     require('settings.ale')
     require('settings.asyncomplete')
+    require('settings.clang')
     require('settings.dap')
     require('settings.dap-python')
     require('settings.dapui')

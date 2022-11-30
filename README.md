@@ -51,6 +51,8 @@ To get my setup of nvim:
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
     - Unpack vsix
     - Update paths in the config file
+  - C
+    - Install clangd
   - LaTeX
     - Get `latexmk`
     - Get `zathura` (PDF viewer)
@@ -74,13 +76,13 @@ To get my setup of nvim:
 
 ### Features for developers
 
-- Suggestions for C#, Rust work
+- Suggestions for C#, Rust, C work
   - Semantic completions pop up as you type
   - Disable errors/warnings with `Ctrl+q`
   - Enable list of errors and warnings in a file with `Ctrl+p`
 - Suggestions for F# work
   - Not tested extensively though. Activate them with Ctrl+space
-- Warnings and errors for C#, Rust, Python
+- Warnings and errors for C#, Rust, Python, C
   - With virtual text (which appears on the same line with error)
   - Works for both themes
 - Quick fixes for C#
