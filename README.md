@@ -1,7 +1,7 @@
 # Setup
 
 |                  | Past                | Now                                                                              |
-|:-----------------|:-------------------:|:---------------------------------------------------------------------------------|
+|:-----------------|:--------------------|:---------------------------------------------------------------------------------|
 | OS               | Ubuntu              | Debian                                                                           |
 | DE               | Xfce4               | -                                                                                |
 | WM               | i3                  | i3                                                                               |
@@ -12,6 +12,8 @@
 | IDE              | VSC, Rider, PyCharm | neovim                                                                           |
 | PDF editor       | LibreOffice Writer  | neovim                                                                           |
 | PDF viewer       | -                   | zathura                                                                          |
+| Image editor     | Pinta               | Pinta                                                                            |
+| Image viewer     | -                   | [nsxiv-goose](https://github.com/WhiteBlackGoose/nsxiv-goose)                    |
 | Git UI           | lazygit             | lazygit                                                                          |
 | Task manager     | bashtop             | bpytop                                                                           |
 | File manager     | vifm                | -                                                                                |
