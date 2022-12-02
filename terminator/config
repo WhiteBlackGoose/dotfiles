@@ -1,0 +1,32 @@
+[global_config]
+[keybindings]
+  page_up_half = <Shift>Page_Up
+  page_down_half = <Shift>Page_Down
+  line_up = <Alt>k
+  line_down = <Alt>j
+  group_all = ""
+  group_tab = ""
+  next_profile = <Primary>at
+[profiles]
+  [[default]]
+    background_color = "#24283b"
+    font = FiraMono Nerd Font Medium 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+  [[white]]
+    background_color = "#ffffff"
+    font = FiraMono Nerd Font Medium 10
+    foreground_color = "#657b83"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
