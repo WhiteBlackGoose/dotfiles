@@ -94,6 +94,7 @@ if vim.g.use_ide() then
     Plug 'nvim-treesitter/nvim-treesitter-context'
 end
 
+Plug 'https://github.com/xorid/asciitree.nvim'
 
 vim.call('plug#end')
 

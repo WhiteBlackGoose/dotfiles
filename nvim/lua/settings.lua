@@ -13,7 +13,7 @@ vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
 vim.cmd[[set relativenumber]]
-vim.cmd[[set virtualedit=all]]
+vim.cmd[[set virtualedit=none]]
 
 -- By alphabet please
 require('settings.airline')
