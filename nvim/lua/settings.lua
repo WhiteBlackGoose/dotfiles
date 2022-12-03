@@ -8,7 +8,8 @@ opt.number = true
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4
-opt.smartindent = false vim.cmd[[filetype indent off]]
+opt.smartindent = false
+vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
 vim.cmd[[set relativenumber]]
