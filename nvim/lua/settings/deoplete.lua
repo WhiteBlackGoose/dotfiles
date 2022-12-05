@@ -5,5 +5,6 @@ call deoplete#custom#option({
 \    'auto_complete': v:true,
 \})
 autocmd InsertEnter * call deoplete#enable()
+:command NoDeoplete call deoplete#custom#option('auto_complete', v:false)
 ]]
 

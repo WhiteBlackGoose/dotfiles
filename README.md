@@ -8,9 +8,9 @@
 | Status bar       | i3blocks                     | i3blocks                                                                         |
 | Terminal         | Terminator                   | Terminator                                                                       |
 | Shell            | starship                     | bash                                                                             |
-| Text Editor      | neovim                       | neovim                                                                           |
-| IDE              | VSC, Rider, PyCharm, Jupyter | neovim                                                                           |
-| PDF editor       | LibreOffice Writer           | neovim                                                                           |
+| Text Editor      | neovim                       | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
+| IDE              | VSC, Rider, PyCharm, Jupyter | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
+| PDF editor       | LibreOffice Writer           | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
 | PDF viewer       | -                            | zathura                                                                          |
 | Image editor     | Pinta                        | Pinta                                                                            |
 | Image viewer     | -                            | [nsxiv-goose](https://github.com/WhiteBlackGoose/nsxiv-goose)                    |

@@ -10,13 +10,13 @@
 [profiles]
   [[default]]
     background_color = "#24283b"
-    font = FiraMono Nerd Font Medium 10
+    font = FiraMono Nerd Font Medium 11
     show_titlebar = False
     scrollbar_position = hidden
     use_system_font = False
   [[white]]
     background_color = "#ffffff"
-    font = FiraMono Nerd Font Medium 10
+    font = FiraMono Nerd Font Medium 11
     foreground_color = "#657b83"
     show_titlebar = False
     scrollbar_position = hidden

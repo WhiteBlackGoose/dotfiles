@@ -89,7 +89,8 @@ Plug 'https://github.com/ggandor/leap.nvim'
 
 if vim.g.use_ide() then
     -- Plug('file:///home/goose/prj/magma-nvim-fork/magma-nvim.git', { branch = 'main' })
-    Plug('WhiteBlackGoose/magma-nvim', { branch = 'main' })
+    -- Plug('WhiteBlackGoose/magma-nvim', { branch = 'main' })
+    Plug('WhiteBlackGoose/magma-nvim-goose', { branch = 'main' })
     -- Plug 'https://github.com/sakhnik/nvim-gdb'
     Plug 'nvim-treesitter/nvim-treesitter-context'
 end
