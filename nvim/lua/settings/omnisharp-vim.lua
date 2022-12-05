@@ -1,6 +1,5 @@
 vim.g['OmniSharp_server_use_net6'] = 1
 
-vim.g['dap_DapBreakpoint_sign'] = vim.g.gsign(' ', '->')
 
 -- vim.cmd[[
 -- lua << EOF

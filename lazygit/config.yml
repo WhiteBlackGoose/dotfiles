@@ -8,5 +8,4 @@ gui:
       - gray
     selectedLineBgColor:
       - default
-  gui:
-    mouseEvents: false
+  mouseEvents: false
