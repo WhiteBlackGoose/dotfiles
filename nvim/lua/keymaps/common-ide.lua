@@ -54,3 +54,4 @@ end
 add('n', '<leader>mag', '<Plug>MagmaInit')
 add('n', '<leader>mm', ':MagmaEvaluateLine<CR>')
 add('v', '<leader>mm', ':<C-u>MagmaEvaluateVisual<CR>')
+add('n', '<leader>mh', 'viw:<C-u>MagmaEvaluateVisual<CR>')

@@ -43,9 +43,10 @@ To get my setup of nvim:
     - `pip install flake8`
     - `pip install debugpy`
     - `pip install jedi-language-server`
-  - Python interactive
+  - Any interactive
     - `pip install jupyter_client` for interactive
     - `:UpdateRemotePlugins`
+    - 'pip install pyperclip`
   - .NET interactive (C#, F#)
     - `dotnet tool install -g Microsoft.dotnet-interactive`
     - `dotnet interactive jupyter install`
