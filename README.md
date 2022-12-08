@@ -208,3 +208,15 @@ See branch arch for dot files.
 
 ![image](https://user-images.githubusercontent.com/31178401/184002354-84b0e663-4ccf-45b1-962f-a00d91f50006.png)
 ![image](https://user-images.githubusercontent.com/31178401/184002978-67cca6d5-f304-4d27-b904-66aca846083d.png)
+
+# My changes
+
+Basically list of my own changes here to make myself more comfortable, besides obviously the config available here
+
+- nvim: barbar integration with NvimTree
+- nvim: evaluate code in magma-nvim in expression
+- nvim: copy the output of magma-nvim into clipboard
+- nsxiv-goose: inversion of color
+- nvim: folding without unnecessary numbers
+- nvim: window tearing fixed
+- nvim: maintain a fork of magma-nvim with other cool features

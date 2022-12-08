@@ -96,6 +96,7 @@ if vim.g.use_ide() then
 end
 
 Plug 'https://github.com/xorid/asciitree.nvim'
+Plug 'safv12/andromeda.vim'
 
 vim.call('plug#end')
 

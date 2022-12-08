@@ -2,13 +2,13 @@
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c_sharp", "rust", "toml"},
+  ensure_installed = { "c_sharp", "rust", "toml", "latex"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
-  auto_install = true,
+  auto_install = false,
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -38,3 +38,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   }
 }
+
+vim.cmd[[
+:command RainbowReset TSDisable rainbow | TSEnable rainbow
+]]
