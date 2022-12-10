@@ -13,7 +13,7 @@ vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
 vim.cmd[[set relativenumber]]
-vim.cmd[[set virtualedit=none]]
+vim.cmd[[set virtualedit=block]]
 
 -- By alphabet please
 require('settings.airline')
@@ -38,6 +38,7 @@ if vim.g.use_ide() then
     require('settings.nvim-autopairs')
     require('settings.nvim-treesitter')
     require('settings.magma')
+    require('settings.markdown')
     require('settings.omnisharp-vim')
     require('settings.rust-lsp')
     require('settings.rust-tools')

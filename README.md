@@ -14,6 +14,7 @@
 | PDF viewer       | -                            | zathura                                                                          |
 | Image editor     | Pinta                        | Pinta                                                                            |
 | Image viewer     | -                            | [nsxiv-goose](https://github.com/WhiteBlackGoose/nsxiv-goose)                    |
+| Markdown viewer  | -                            | [libemdview-goose](https://codeberg.org/WhiteBlackGoose/litemdview)              |
 | Git UI           | lazygit                      | lazygit                                                                          |
 | Task manager     | bashtop                      | bpytop                                                                           |
 | File manager     | vifm                         | -                                                                                |
@@ -63,6 +64,8 @@ To get my setup of nvim:
     - Get `texlab` (Language server) (optional)
   - Image
     - `ascii-image-converter`
+  - Markdown
+    - `litemdview`
 
 ### Why nvim?
 
@@ -120,11 +123,7 @@ To get my setup of nvim:
 
 ### Other features
 
-- Toggle the theme with `\the` (or run `wim` for the white theme and `vim` for the default/dark one)
-- Editing
-  - Multicaret with holding Ctrl
-  - Copy, cut, paste with Ctrl+C, Ctrl+X, Ctrl+V respectively (d'uh, hate me for that)
-  - Ctrl+Space to activate completion suggestions
+- Toggle the theme with ` the` (or run `wim` for the white theme and `vim` for the default/dark one)
 - Files
   - Toggle the file tree with Alt+T
   - Alt+, and Alt+. to switch between tabs
@@ -143,6 +142,8 @@ To get my setup of nvim:
   - Language server (errors, completions)
   - Convert math expressions into LaTeX with hotkeys
 - Image preview
+- Markdown preview
+  - `:MdView`
 
 #### The rest see the config...
 
