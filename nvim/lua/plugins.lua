@@ -98,7 +98,9 @@ end
 Plug 'https://github.com/xorid/asciitree.nvim'
 -- Plug 'safv12/andromeda.vim'
 -- Plug 'WhiteBlackGoose/andromeda.nvim'
-Plug 'file:///home/goose/prj/andromeda.nvim/andromeda.nvim.git'
+-- Plug 'file:///home/goose/prj/andromeda.nvim/andromeda.nvim.git'
+
+Plug 'glepnir/template.nvim'
 
 vim.call('plug#end')
 

@@ -7,12 +7,12 @@ vim.g.theme_dark = function()
     let g:airline_theme='violet'
     ]]
     -- vim.g.tokyonight_style = "storm"
-    -- vim.cmd[[colorscheme tokyonight]]
+    vim.cmd[[colorscheme tokyonight]]
     vim.cmd[[let ayucolor="dark"]]
     -- vim.cmd[[colorscheme ayu]]
     vim.o.background = "dark"
     -- ! git commit -m "1" && git push local
-    vim.cmd[[colorscheme andromeda]]
+    -- vim.cmd[[colorscheme andromeda]]
 
     -- Syntastics
     vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
@@ -34,7 +34,7 @@ vim.g.theme_dark = function()
     vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
     vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#224422' })
 
-    vim.api.nvim_set_hl(0, 'Normal', { fg='#CCCCCC' })
+    -- vim.api.nvim_set_hl(0, 'Normal', { fg='#CCCCCC' })
 
     vim.g['theme_current'] = 'dark'
 end
