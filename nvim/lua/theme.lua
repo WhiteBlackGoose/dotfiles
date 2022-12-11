@@ -34,6 +34,8 @@ vim.g.theme_dark = function()
     vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
     vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#224422' })
 
+    vim.api.nvim_set_hl(0, 'Normal', { fg='#CCCCCC' })
+
     vim.g['theme_current'] = 'dark'
 end
 

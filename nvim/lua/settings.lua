@@ -2,8 +2,12 @@ local cmd = vim.cmd
 local opt = vim.opt
 
 opt.clipboard = 'unnamedplus'
-opt.cursorline = true
+if vim.g.use_ide() then
+    opt.cursorline = true
+end
 opt.number = true
+
+vim.wo.fillchars='eob: '
 
 opt.expandtab = true
 opt.shiftwidth = 4
