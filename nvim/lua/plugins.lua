@@ -101,6 +101,7 @@ Plug 'https://github.com/xorid/asciitree.nvim'
 -- Plug 'file:///home/goose/prj/andromeda.nvim/andromeda.nvim.git'
 
 Plug 'glepnir/template.nvim'
+Plug 'tpope/vim-fugitive'
 
 vim.call('plug#end')
 

@@ -9,7 +9,7 @@
   next_profile = <Primary>at
 [profiles]
   [[default]]
-    background_color = "#23262e"
+    background_color = "#24283b"
     font = FiraMono Nerd Font Medium 11
     show_titlebar = False
     scrollbar_position = hidden

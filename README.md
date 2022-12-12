@@ -30,6 +30,7 @@ To get my setup of nvim:
   - Get `vim-plug`
     - Run it (you will see many errors - it's ok)
     - Type `:PlugInstall` and hit enter, wait until plugins are installed
+    - Type `:UpdateRemotePlugins`
     - Restart nvim
   - `pip3 install neovim` for deoplete
   - Get `lazygit` for git UI
