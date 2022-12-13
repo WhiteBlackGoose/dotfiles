@@ -17,8 +17,11 @@ local npairs = require('nvim-autopairs')
 npairs.add_rules({
     Rule("(", ")"),
     Rule("[", "]"),
---    Rule("{", "}")
 })
+
+vim.cmd[[
+:autocmd InsertEnter *.tex lua require('nvim-autopairs').add_rules({require('nvim-autopairs.rule')('{', '}')})
+]]
 
 
 

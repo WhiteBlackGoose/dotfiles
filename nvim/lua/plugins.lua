@@ -103,6 +103,8 @@ Plug 'https://github.com/xorid/asciitree.nvim'
 Plug 'glepnir/template.nvim'
 Plug 'tpope/vim-fugitive'
 
+Plug 'https://github.com/tpope/vim-surround'
+
 vim.call('plug#end')
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'

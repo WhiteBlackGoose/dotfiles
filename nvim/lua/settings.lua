@@ -22,6 +22,7 @@ vim.cmd[[set virtualedit=block]]
 -- By alphabet please
 require('settings.airline')
 require('settings.amcli')
+require('settings.asciitree')
 require('settings.barbar')
 require('settings.image-nvim')
 require('settings.mason')
@@ -50,7 +51,6 @@ if vim.g.use_ide() then
     require('settings.toggler')
     require('settings.ufo')
     require('settings.vim-test')
-    require('settings.vimtex')
 end
 
 
