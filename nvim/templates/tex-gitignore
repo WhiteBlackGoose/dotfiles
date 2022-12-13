@@ -1,0 +1,3 @@
+.out/**
+!.out/**.pdf
+_minted*

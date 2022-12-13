@@ -63,6 +63,7 @@ To get my setup of nvim:
     - Get `zathura` (PDF viewer)
     - Get `amcli` (AngouriMathCLI) (optional)
     - Get `texlab` (Language server) (optional)
+    - Get `pygmentize` (python syntax highlighting) (optional)
   - Image
     - `ascii-image-converter`
   - Markdown
@@ -142,6 +143,7 @@ To get my setup of nvim:
   - Edit LaTeX in nvim and preview hot-reloaded PDFs in Zathura
   - Language server (errors, completions)
   - Convert math expressions into LaTeX with hotkeys
+  - A bunch of templates for math papers, presentations, etc. (see `:Template`)
 - Image preview
 - Markdown preview
   - `:MdView`
