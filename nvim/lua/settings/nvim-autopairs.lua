@@ -19,8 +19,14 @@ npairs.add_rules({
     Rule("[", "]"),
 })
 
+function AddTexAutoPairRules()
+    npairs.add_rules({
+        Rule('{', '}'),
+        Rule('$', '$')
+        })
+end
 vim.cmd[[
-:autocmd InsertEnter *.tex lua require('nvim-autopairs').add_rules({require('nvim-autopairs.rule')('{', '}')})
+:autocmd InsertEnter *.tex lua AddTexAutoPairRules()
 ]]
 
 

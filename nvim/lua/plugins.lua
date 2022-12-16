@@ -101,9 +101,18 @@ Plug 'https://github.com/xorid/asciitree.nvim'
 -- Plug 'file:///home/goose/prj/andromeda.nvim/andromeda.nvim.git'
 
 Plug 'glepnir/template.nvim'
-Plug 'tpope/vim-fugitive'
+
+if vim.g.use_ide() then
+    Plug 'tpope/vim-fugitive'
+end
 
 Plug 'https://github.com/tpope/vim-surround'
+
+if vim.g.use_ide() then
+    Plug 'tpope/vim-dadbod'
+    Plug 'https://github.com/kristijanhusak/vim-dadbod-ui'
+    Plug 'https://github.com/kristijanhusak/vim-dadbod-completion'
+end
 
 vim.call('plug#end')
 
