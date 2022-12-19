@@ -28,6 +28,7 @@ require('settings.image-nvim')
 require('settings.mason')
 require('settings.nvim-tree')
 require('settings.telescope')
+require('settings.template')
 
 if vim.g.use_ide() then
     require('settings.ale')
@@ -47,10 +48,10 @@ if vim.g.use_ide() then
     require('settings.omnisharp-vim')
     require('settings.rust-lsp')
     require('settings.rust-tools')
-    require('settings.template')
     require('settings.toggler')
     require('settings.ufo')
     require('settings.vim-test')
+    require('settings.vim-dadbod-ui')
 end
 
 

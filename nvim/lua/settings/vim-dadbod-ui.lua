@@ -1,0 +1,31 @@
+-- vim.cmd[[
+-- let s:expanded_icon = '´ÿ┐'
+-- let s:collapsed_icon = '╦â'
+-- let g:db_ui_icons = {
+--       \ 'expanded': {
+--       \   'db': s:expanded_icon.' ´ÜÀ',
+--       \   'buffers': s:expanded_icon.' ´âè',
+--       \   'saved_queries': s:expanded_icon.' ¯ù┐',
+--       \   'schemas': s:expanded_icon.' ´Çó',
+--       \   'schema': s:expanded_icon.' ´Çó',
+--       \   'tables': s:expanded_icon.' ´º░',
+--       \   'table': s:expanded_icon.' ´âÄ',
+--       \ },
+--       \ 'collapsed': {
+--       \   'db': s:collapsed_icon.' ´ÜÀ',
+--       \   'buffers': s:collapsed_icon.' ´âè',
+--       \   'saved_queries': s:collapsed_icon.' ¯ù┐',
+--       \   'schemas': s:collapsed_icon.' ´Çó',
+--       \   'schema': s:collapsed_icon.' ´Çó',
+--       \   'tables': s:collapsed_icon.' ´º░',
+--       \   'table': s:collapsed_icon.' ´âÄ',
+--       \ },
+--       \ 'saved_query': '  ´àø',
+--       \ 'new_query': '  ´º»',
+--       \ 'tables': '  ´º¬',
+--       \ 'buffers': '  ´¼ÿ',
+--       \ 'add_connection': '  ´Ü╣',
+--       \ 'connection_ok': 'Ô£ô',
+--       \ 'connection_error': 'Ô£ò',
+--       \ }
+-- ]]
