@@ -16,7 +16,7 @@ add('n', 'Wk', '<C-w>k')
 add('n', 'Wl', '<C-w>l')
 
 -- Swap windows
-add('n', 'WH', '<C-w>H')
-add('n', 'WJ', '<C-w>J')
-add('n', 'WK', '<C-w>K')
-add('n', 'WL', '<C-w>L')
+add('n', 'WHH', '<C-w>H')
+add('n', 'WJJ', '<C-w>J')
+add('n', 'WKK', '<C-w>K')
+add('n', 'WLL', '<C-w>L')

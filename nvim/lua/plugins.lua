@@ -112,6 +112,14 @@ if vim.g.use_ide() then
     Plug 'tpope/vim-dadbod'
     Plug 'https://github.com/kristijanhusak/vim-dadbod-ui'
     Plug 'https://github.com/kristijanhusak/vim-dadbod-completion'
+
+    Plug 'https://github.com/folke/neodev.nvim'
+end
+
+Plug 'https://github.com/mbbill/undotree'
+
+if vim.g.use_ide() then
+    Plug 'https://github.com/nvim-colortils/colortils.nvim'
 end
 
 vim.call('plug#end')
@@ -121,8 +129,6 @@ require('impatient')
 
 require('leap')
 require('baleia').setup { }
-require('hologram').setup{
-    auto_display = true
-}
+require('hologram').setup{ auto_display = true }
 vim.g['magma_automatically_open_output'] = false
 vim.g['magma_image_provider'] = 'kitty'
