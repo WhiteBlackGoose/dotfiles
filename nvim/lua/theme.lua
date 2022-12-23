@@ -34,6 +34,8 @@ vim.g.theme_dark = function()
     vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
     vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#224422' })
 
+    vim.cmd[[ :command! MdView ! litemdview -t 2 %:p & disown ]]
+
     -- vim.api.nvim_set_hl(0, 'Normal', { fg='#CCCCCC' })
 
     vim.g['theme_current'] = 'dark'
@@ -66,6 +68,18 @@ vim.g.theme_light = function()
     vim.api.nvim_set_hl(0, 'DapBreakpointLine', { bg='#EFEFFF' })
     vim.api.nvim_set_hl(0, 'DapStopped', { fg='#228822' })
     vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg='#CCFFCC' })
+
+    vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferInactive', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferInactiveMod', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferInactiveSign', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferInactiveIndex', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferTabpages', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferTabpageFill', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferInactiveIcon', { bg='#F0F0F0' })
+    vim.api.nvim_set_hl(0, 'BufferOffset', { bg='#F0F0F0' })
+
+    vim.cmd[[ :command! MdView ! litemdview -t 1 %:p & disown ]]
 
     vim.g['theme_current'] = 'light'
 end

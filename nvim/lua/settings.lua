@@ -45,7 +45,6 @@ if vim.g.use_ide() then
     require('settings.latex')
     require('settings.lua-lsp')
     require('settings.magma')
-    require('settings.markdown')
     require('settings.nvim-autopairs')
     require('settings.nvim-treesitter')
     require('settings.omnisharp-vim')
