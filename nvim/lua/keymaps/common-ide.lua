@@ -57,3 +57,7 @@ add('v', '<leader>mm', ':<C-u>MagmaEvaluateVisual<CR>')
 add('n', '<leader>mh', 'viw:<C-u>MagmaEvaluateVisual<CR>')
 add('n', '<leader>me', ':MagmaReevaluateCell<CR>')
 add('n', '<leader>ms', ':MagmaShowOutput<CR>')
+
+-- markdown
+add('n', 'K', ':lua require("toggle-checkbox").toggle()<CR>')
+add('n', '<leader>tbt', ':TableModeToggle<CR>')

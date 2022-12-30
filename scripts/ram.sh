@@ -11,8 +11,8 @@ cached=$(expr $(cat /proc/meminfo | grep Cached | head -n 1 | awk '{ print $2 }'
 reclaimable=$(expr $(cat /proc/meminfo | grep SReclaimable | head -n 1 | awk '{ print $2 }') / 1024)
 
 used=$(expr $total + $shmem - $free - $buffers - $cached - $reclaimable)
-
+swap=$(free -h | tail -n 1 | awk '{ print $3 }')
 
 percent=$(echo "scale=1; 100*$used/$total" | bc)
-printf "   %s %% / %'d Mb " $percent $used
+printf "   %s %% / %'d Mb / $swap " $percent $used
 

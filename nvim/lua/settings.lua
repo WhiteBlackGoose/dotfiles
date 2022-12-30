@@ -53,6 +53,7 @@ if vim.g.use_ide() then
     require('settings.toggler')
     require('settings.ufo')
     require('settings.vim-dadbod-ui')
+    require('settings.vim-table-mode')
     require('settings.vim-test')
 end
 

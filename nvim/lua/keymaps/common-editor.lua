@@ -14,3 +14,7 @@ add('n', '<leader>ffo', ':CtrlSFOpen<CR>')
 
 -- Change themes
 add('n', '<leader>the', ":lua vim.g.theme_toggle()<CR>")
+
+-- Select
+add('n', 'E', 'viw')
+

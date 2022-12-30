@@ -122,6 +122,12 @@ if vim.g.use_ide() then
     Plug 'https://github.com/nvim-colortils/colortils.nvim'
 end
 
+Plug 'https://github.com/lambdalisue/suda.vim'
+
+if vim.g.use_ide() then
+    Plug 'https://github.com/opdavies/toggle-checkbox.nvim'
+    Plug 'dhruvasagar/vim-table-mode'
+end
 vim.call('plug#end')
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'
