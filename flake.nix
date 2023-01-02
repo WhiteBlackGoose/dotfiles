@@ -17,7 +17,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.goose = import ./home.nix;
+            home-manager.users.goose = import ./home.nix { name = "goose"; };
+            home-manager.users.root = import ./home.nix { name = "root"; };
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix

@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ user, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "goose";
-  home.homeDirectory = "/home/goose";
+  home.username = user.name;
+  home.homeDirectory = "/home/${user.name}";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -17,13 +17,15 @@
   home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
 
-  programs.git = {
-    enable = true;
-    userName = "WhiteBlackGoose";
-    userEmail = "wbg@angouri.org";
+    git = {
+      enable = true;
+      userName = "WhiteBlackGoose";
+      userEmail = "wbg@angouri.org";
+    };
+
+    lazygit.enable = true;
   };
-
-  programs.lazygit.enable = true;
 }
