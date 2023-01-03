@@ -1,10 +1,9 @@
-{ user, ... }:
-
+{ config, pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = user.name;
-  home.homeDirectory = "/home/${user.name}";
+  home.username = "goose";
+  home.homeDirectory = "/home/goose";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -25,7 +24,9 @@
       userName = "WhiteBlackGoose";
       userEmail = "wbg@angouri.org";
     };
-
-    lazygit.enable = true;
   };
+
+  home.packages = [
+    pkgs.pass
+  ];
 }

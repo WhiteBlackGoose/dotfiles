@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # nsxiv-goose.url = "https://codeberg.org/WhiteBlackGoose/neovim-goose";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -17,8 +19,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.goose = import ./home.nix { name = "goose"; };
-            home-manager.users.root = import ./home.nix { name = "root"; };
+            home-manager.users.goose = import ./home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
