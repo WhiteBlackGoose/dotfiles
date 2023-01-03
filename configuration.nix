@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-#       ./python.nix
+      ./pc-configuration.nix
       ./system-packages.nix
     ];
 
@@ -21,50 +21,9 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
-  # this is EFI partition
-  # boot.loader.grub.device = "/dev/disk/by-label/SYSTEM";
-  boot.loader.grub.device = "nodev";
-
-  # needed for 12th Intel CPU graphics
-  boot.kernelParams = [ "i915.force_probe=46a8" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Setup keyfile
-  # boot.initrd.secrets = {
-  #   "/crypto_keyfile.bin" = null;
-  # };
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
-
-  # Enable grub cryptodisk
-  networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Istanbul";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -81,7 +40,7 @@
 
 
   environment.variables = {
-    EDITOR="nvim";
+    EDITOR = "nvim";
 
     PATH = [
       "/home/goose/.config/global_scripts"
@@ -92,10 +51,9 @@
     GDK_DPI_SCALE = "0.5";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
-  hardware.video.hidpi.enable = true;
 
   services.xserver = {
-    dpi = 250;
+    dpi = 192;
     enable = true;
     libinput.enable = true;
 
@@ -169,9 +127,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
