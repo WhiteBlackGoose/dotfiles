@@ -25,9 +25,9 @@
   boot.kernelParams = [ "radeon.modeset=0" "amdgpu.runpm=0" "acpi_backlight=intel_backlight" ];
 
   # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  # boot.initrd.secrets = {
+  #   "/crypto_keyfile.bin" = null;
+  # };
 
   # Enable grub cryptodisk
   boot.loader.grub.enableCryptodisk=true;
@@ -174,8 +174,10 @@
         patches = [ ];
       })
     )
+    # neovim
     (
       neovim.overrideAttrs (oldAttrs: {
+        version = "0.9.0";
         src = fetchFromGitHub {
           owner = "WhiteBlackGoose";
           repo = "neovim-goose";
