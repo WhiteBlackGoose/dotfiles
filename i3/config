@@ -25,7 +25,7 @@ set $mod Mod4
 # font pango: FiraCode Mono Bold Nerd Font 9
 font pango:Ubuntu Mono Bold 9
 
-exec xrandr --dpi 96
+exec xrandr --dpi 192
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -51,8 +51,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec i3-sensible-terminal -p white
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -248,7 +248,7 @@ bar {
 # exec feh --bg-scale ~/Pictures/XOR_2K.png
 # exec xsetroot -solid "#000000"
 # exec feh --bg-scale Debian-11-wallpaper_1920x1080.png
-exec feh --bg-scale sqxsto7n6xw91.webp
+exec feh --bg-scale /home/goose/.config/nix-wallpaper-moonscape.png
 
 bindsym $mod+m bar mode invisible 
 bindsym $mod+n bar mode dock

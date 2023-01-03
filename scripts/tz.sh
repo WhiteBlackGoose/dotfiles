@@ -1,4 +1,3 @@
-#!/bin/bash
 tz=$(~/programs/tzupdate.py -p)
 printf "$tz"
 if [ -n "$tz" ]; then

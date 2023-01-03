@@ -1,4 +1,3 @@
-#!/bin/bash
 
 
 # https://github.com/KittyKatt/screenFetch/issues/386#issuecomment-249312716

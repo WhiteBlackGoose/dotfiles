@@ -1,4 +1,3 @@
-#!/bin/bash
 curr=$(lscpu | grep 'CPU(s) scal' | awk '{ print $4 }')
 max=$(lscpu | grep 'CPU max MHz' | awk '{ print $4 }')
 

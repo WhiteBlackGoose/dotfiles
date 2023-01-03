@@ -1,4 +1,3 @@
-#!/bin/bash
 vol=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }' | sed  's/%//')
 sym="墳"
 

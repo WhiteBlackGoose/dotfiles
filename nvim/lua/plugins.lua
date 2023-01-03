@@ -128,6 +128,9 @@ if vim.g.use_ide() then
     Plug 'https://github.com/opdavies/toggle-checkbox.nvim'
     Plug 'dhruvasagar/vim-table-mode'
 end
+
+Plug 'https://github.com/LnL7/vim-nix'
+
 vim.call('plug#end')
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'

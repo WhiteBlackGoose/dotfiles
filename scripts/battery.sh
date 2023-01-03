@@ -1,12 +1,13 @@
-#!/bin/bash
-stat=$(upower -i `upower -e | grep 'BAT'` | grep percentage | awk '{ print $2 }')
-supply=$(upower -i /org/freedesktop/UPower/devices/line_power_ADP1 | grep "online" | awk '{ print $2 }')
+batnow=$(cat /sys/class/power_supply/BAT0/charge_now)
+batfull=$(cat /sys/class/power_supply/BAT0/charge_full)
+stat=$(echo "scale=0; 100*$batnow/$batfull" | bc)
+supply=$(cat /sys/class/power_supply/BAT0/status)
 
-sym=""
-
-if [ "$supply" = "yes" ]; then
+if [ "$supply" = "Discharging" ]; then
+    sym=""
+else
     sym="";
 fi
 
-echo " $sym  $stat "
+echo " $sym  $stat % "
 
