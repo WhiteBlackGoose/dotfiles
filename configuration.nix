@@ -20,9 +20,14 @@
   environment.pathsToLink = [ "/libexec" ];
 
   boot.loader.grub.enable = true;
-  # to the /
-  boot.loader.grub.device = "/dev/disk/by-id/ata-SAMSUNG_HN-M500MBB_S2RSJ1DBB00164";
-  boot.kernelParams = [ "radeon.modeset=0" "amdgpu.runpm=0" "acpi_backlight=intel_backlight" ];
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.useOSProber = true;
+  # this is EFI partition
+  # boot.loader.grub.device = "/dev/disk/by-label/SYSTEM";
+  boot.loader.grub.device = "nodev";
+
+  # needed for 12th Intel CPU graphics
+  boot.kernelParams = [ "i915.force_probe=46a8" ];
 
   # Setup keyfile
   # boot.initrd.secrets = {
@@ -30,10 +35,7 @@
   # };
 
   # Enable grub cryptodisk
-  boot.loader.grub.enableCryptodisk=true;
-
-  boot.initrd.luks.devices."disk-home".keyFile = "/crypto_keyfile.bin";
-  networking.hostName = "samsung-nixos"; # Define your hostname.
+  networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -72,17 +74,16 @@
   };
 
   services.xserver = {
-    libinput.enable = true;
     enable = true;
+    libinput.enable = true;
 
     desktopManager = {
       xterm.enable = false;
     };
 
     displayManager = {
-      lightdm = {
+      gdm = {
         enable = true;
-        greeter.enable = true;
       };
       defaultSession = "none+i3";
     };

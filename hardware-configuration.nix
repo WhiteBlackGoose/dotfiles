@@ -8,27 +8,26 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "wl" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-
-  boot.initrd.luks.devices = {
-    "disk-home" = {
-      device = "/dev/disk/by-uuid/d12768fc-4798-4b8a-afcc-d458825130fe";
-      preLVM = true;
-      allowDiscards = false;
-    };
-  };
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9b62ee2c-6ede-4040-80ab-bd63b16fda9d";
+    { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
       fsType = "ext4";
     };
 
   fileSystems."/home" =
-    { device = "/dev/mapper/disk-home";
+    { device = "/dev/disk/by-uuid/15fc3289-5599-4e60-95c0-8937428a5d88";
       fsType = "btrfs";
+    };
+
+  boot.initrd.luks.devices."nixos-home".device = "/dev/disk/by-uuid/34e93547-470a-415b-b6f1-f567f174a01e";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/A4A5-D3C9";
+      fsType = "vfat";
     };
 
   swapDevices = [ ];
@@ -38,9 +37,9 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0b1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
