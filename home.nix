@@ -28,5 +28,6 @@
 
   home.packages = [
     pkgs.pass
+    pkgs.starship
   ];
 }

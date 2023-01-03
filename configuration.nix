@@ -17,6 +17,7 @@
       experimental-features = nix-command flakes
     '';
   };
+
   environment.pathsToLink = [ "/libexec" ];
 
   boot.loader.grub.enable = true;
@@ -28,11 +29,25 @@
 
   # needed for 12th Intel CPU graphics
   boot.kernelParams = [ "i915.force_probe=46a8" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Setup keyfile
   # boot.initrd.secrets = {
   #   "/crypto_keyfile.bin" = null;
   # };
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
 
   # Enable grub cryptodisk
   networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
@@ -71,9 +86,15 @@
       "/home/goose/.config/global_scripts"
       "/home/goose/scripts"
     ];
+
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
+  hardware.video.hidpi.enable = true;
 
   services.xserver = {
+    dpi = 250;
     enable = true;
     libinput.enable = true;
 
@@ -88,7 +109,6 @@
       defaultSession = "none+i3";
     };
 
-    # services.xserver.desktopManager.pantheon.enable = true;
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
@@ -152,6 +172,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    bc
     wget
     firefox
     xclip
@@ -187,6 +208,8 @@
         };
       })
     )
+    feh
+    xfce4-screenshooter
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
