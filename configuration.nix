@@ -14,6 +14,7 @@
       ./system-packages.nix
       ./users.nix
       ./env-variables.nix
+      ./keyboard.nix
     ];
 
   nix = {

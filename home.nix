@@ -29,5 +29,6 @@
   home.packages = [
     pkgs.pass
     pkgs.starship
+    pkgs.tdesktop
   ];
 }
