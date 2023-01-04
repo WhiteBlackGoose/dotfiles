@@ -51,8 +51,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -198,7 +198,6 @@ bindsym $mod+r mode "resize"
 # }
 
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
-for_window [class="Xfce4-.*" instance="xfce4-.*"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
 # for_window [class="^.*"] border pixel 3
 for_window [class="^.*"] border pixel 1

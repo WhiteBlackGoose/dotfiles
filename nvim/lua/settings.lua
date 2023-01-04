@@ -19,6 +19,8 @@ vim.cmd[[set nofixendofline]]
 vim.cmd[[set relativenumber]]
 vim.cmd[[set virtualedit=block]]
 
+vim.g['python3_host_prog'] = 'python3'
+
 -- By alphabet please
 require('settings.airline')
 require('settings.amcli')

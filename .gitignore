@@ -5,5 +5,8 @@
 !terminator
 !zathura
 !scripts
+!xfce4
+!starship.toml
+!global_scripts
 /scripts/currtz
 lazygit/state.yml
