@@ -21,9 +21,20 @@
   };
 
   services.upower.enable = true;
+  services.logind.extraConfig = ''
+     # don’t shutdown when power button is short-pressed
+     HandlePowerKey=ignore
+   '';
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # finger print
+  services.fprintd.enable = true;
+
+  # bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -45,5 +56,22 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" ]; })
   ];
+
+  # GnuPG
+  services.pcscd.enable = true;
+  services.dbus.packages = [ pkgs.gcr ];
+  programs.gnupg.agent = {
+     enable = true;
+     pinentryFlavor = "curses";
+     enableSSHSupport = true;
+  };
+  # Add this to .gnupg/gpg-agent.conf:
+  # debug-pinentry
+  # debug ipc
+  # verbose
+  # enable-ssh-support
+  # # disable-scdaemon
+  # pinentry-program /run/current-system/sw/bin/pinentry
+  # # https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/7
 }
 

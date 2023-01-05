@@ -30,5 +30,12 @@
     pkgs.pass
     pkgs.starship
     pkgs.tdesktop
+    pkgs.passphrase2pgp
   ];
+
+  services.blueman-applet.enable = true;
+
+  dconf.settings."org/blueman/general" = {
+    plugin-list = [ "!ConnectionNotifier" ];
+  };
 }

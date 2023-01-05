@@ -18,6 +18,16 @@
       xfce.xfce4-terminal
       starship
       ack
+      fprintd
+      gnupg
+      pinentry
+      pinentry-curses
+      xss-lock
+      blueman
+      bluez
+      bluez-tools
+      zathura
+      translate-shell
     ];
 
     devPackages = with pkgs; [
@@ -25,6 +35,7 @@
         numpy
         pandas
         neovim
+        jedi-language-server
       ]))
       git
       lazygit
