@@ -23,6 +23,9 @@
       enable = true;
       userName = "WhiteBlackGoose";
       userEmail = "wbg@angouri.org";
+      signing = {
+        key = "640BEDDE9734310ABFA3B25752EDAE6A3995AFAB";
+      };
     };
   };
 
@@ -37,5 +40,23 @@
 
   dconf.settings."org/blueman/general" = {
     plugin-list = [ "!ConnectionNotifier" ];
+  };
+
+  xdg.desktopEntries = {
+    firefox = {
+      name = "Firefox";
+      genericName = "Web Browser";
+      exec = "firefox -P main %U";
+    };
+    firefoxDiscord = {
+      name = "Firefox Discord";
+      genericName = "Discord";
+      exec = "firefox -P main --new-window https://discord.com/channels/@me %U";
+    };
+    firefoxSchool = {
+      name = "Firefox School";
+      genericName = "Web Browser for school";
+      exec = "firefox -P school %U";
+    };
   };
 }
