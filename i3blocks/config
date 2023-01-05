@@ -21,7 +21,7 @@ interval=4
 color=#FFFF00
 
 # CPU usage
-[disk]
+[cpu]
 command=~/.config/scripts/cpu.sh
 interval=3
 color=#CCCCCC

@@ -6,7 +6,7 @@ supply=$(cat /sys/class/power_supply/BAT0/status)
 if [ "$supply" = "Discharging" ]; then
     sym=""
 else
-    sym="";
+    sym="⚡"
 fi
 
 echo " $sym  $stat % "

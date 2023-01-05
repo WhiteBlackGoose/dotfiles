@@ -1,2 +1,1 @@
-#!/bin/bash
 nvim --cmd 'lua vim.g["is_ide_mode"]=1' --cmd 'lua vim.g["startup_theme"]="light"' $@

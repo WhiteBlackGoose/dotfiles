@@ -58,7 +58,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+Tab exec "rofi -modi drun,run -show drun -show-icons"
+bindsym $mod+Tab exec "rofi -dpi 192 -modi drun,run -show drun -show-icons"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -261,9 +261,6 @@ bindsym $mod+Shift+Print exec xfce4-screenshooter -f -d 5 --save /dev/stdout | x
 bindsym $mod+Print exec ~/.config/global_scripts/snip
 
 # bindsym $mod+x move workspace to output right
-
-exec setxkbmap -layout us,ru
-exec setxkbmap -option 'grp:caps_toggle'
 
 # My attempts to make umlaut work :((
 # bindsym Ctrl+Mod1+a exec xvkbd -xsendevent -text "ä"

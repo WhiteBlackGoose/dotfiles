@@ -1,5 +1,3 @@
-
-
 # https://github.com/KittyKatt/screenFetch/issues/386#issuecomment-249312716
 
 total=$(expr $(cat /proc/meminfo | grep MemTotal | head -n 1 | awk '{ print $2 }') / 1024)
