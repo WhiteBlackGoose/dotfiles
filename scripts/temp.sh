@@ -9,6 +9,6 @@ tempSum=0
 
 avgCpu=$(sensors | grep 'Core 0' | awk '{ print $3 }')
 
-printf " 﨏  $avgCpu "
+printf " 﨏  $avgCpu \n"
 
 

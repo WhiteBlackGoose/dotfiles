@@ -1,7 +1,3 @@
-[de]
-command=python3 ~/scripts/fetchrandomword.py
-interval=20
-
 # Sound
 [sound]
 command=~/.config/scripts/vol.sh
@@ -43,10 +39,6 @@ color=#CCCCCC
 command=~/.config/scripts/ip.sh
 interval=1
 color=#91E78B
-
-[tz]
-command=~/.config/scripts/tz.sh
-interval=10800
 
 # Update time every 5 seconds
 [time]

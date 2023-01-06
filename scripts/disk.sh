@@ -1,5 +1,5 @@
-total_ssd=$(df -H | grep nvme0n1p6 | awk '{ print $2 }')
-used_ssd=$(df -H | grep sd | awk '{ print $3 }')
+used_root=$(df -H | grep nvme0n1p6 | awk '{ print $3 }')
+used_home=$(df -H | grep nixos-home | awk '{ print $3 }')
 
-printf "  %s / %s " $used_ssd $total_ssd
+printf "  /: %s | /home: %s \n" $used_root $used_home
 

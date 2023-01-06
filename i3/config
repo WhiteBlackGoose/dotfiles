@@ -223,8 +223,8 @@ bar {
   tray_output none
   position top
 
-  # font pango:FiraCode Nerd Font Regular 9
-  font pango:Ubuntu Mono Bold 9
+  font pango:FiraCode Nerd Font Bold 9
+  # font pango:Ubuntu Mono Bold 9
   status_command i3blocks
  
   colors {
