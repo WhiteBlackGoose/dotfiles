@@ -25,6 +25,10 @@
       bluez-tools
       zathura
       translate-shell
+      texlab
+      texlive.combined.scheme-full
+      openvpn
+      cifs-utils
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
@@ -32,7 +36,7 @@
       # ssh-keydgen
       gnupg
       pinentry
-      pinentry-curses
+      pinentry-gnome
     ];
     devPackages = with pkgs; [
       (python3.withPackages (p: with p; [

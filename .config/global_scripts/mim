@@ -1,0 +1,2 @@
+#!/bin/bash
+nvim --cmd "lua vim.g['simple_sign_code']=1" $@

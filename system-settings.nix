@@ -31,6 +31,7 @@
 
   # finger print
   services.fprintd.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   # bluetooth
   hardware.bluetooth.enable = true;
@@ -62,7 +63,7 @@
   services.dbus.packages = [ pkgs.gcr ];
   programs.gnupg.agent = {
      enable = true;
-     pinentryFlavor = "curses";
+     pinentryFlavor = "gnome3";
      enableSSHSupport = true;
   };
   # Add this to .gnupg/gpg-agent.conf:
