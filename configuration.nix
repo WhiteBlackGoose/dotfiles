@@ -7,14 +7,14 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./pc-configuration.nix
-      ./xserver.nix
-      ./system-settings.nix
-      ./system-packages.nix
-      ./users.nix
-      ./env-variables.nix
-      ./keyboard.nix
+      ./nix-config/hardware-configuration.nix
+      ./nix-config/pc-configuration.nix
+      ./nix-config/xserver.nix
+      ./nix-config/system-settings.nix
+      ./nix-config/system-packages.nix
+      ./nix-config/users.nix
+      ./nix-config/env-variables.nix
+      ./nix-config/keyboard.nix
     ];
 
   nix = {
