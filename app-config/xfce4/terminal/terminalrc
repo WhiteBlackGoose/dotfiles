@@ -1,5 +1,5 @@
 [Configuration]
-FontName=FiraCode Nerd Font Mono Medium 11
+FontName=FuraMono Nerd Font Medium 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -28,6 +28,7 @@ MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
-ColorBackground=#24283b
+ColorBackground=#242428283b3b
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(0,170,0);rgb(170,85,0);rgb(48,192,255);rgb(227,59,227);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
 

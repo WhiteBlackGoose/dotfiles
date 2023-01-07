@@ -29,6 +29,8 @@
       texlive.combined.scheme-full
       openvpn
       cifs-utils
+      lsd
+      ripgrep
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
@@ -44,7 +46,11 @@
         pandas
         neovim
         jedi-language-server
+        pynvim
+        jupyter-client
+        pillow
       ]))
+      ueberzug
       git
       lazygit
       gcc

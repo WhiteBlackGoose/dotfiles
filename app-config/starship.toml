@@ -1,5 +1,6 @@
 format = """
-[ ](fg:#FFFFFF bg:#8652AF)\
+[  ](fg:#FFFFFF bg:#6666FF)\
+[◤](fg:#6666FF bg:#8652AF)\
 $directory\
 [◤](fg:#8652AF bg:#009966)\
 $git_branch\
@@ -7,6 +8,8 @@ $git_branch\
 $time\
 [◤ ](fg:#8652AF)
 """
+# [  ](fg:#FFFFFF bg:#3030AF)\
+# [◤](fg:#3030AF bg:#8652AF)\
 
 [directory]
 style = "bg:#8652AF fg:#FFFFFF"
@@ -15,7 +18,7 @@ truncation_length = 0
 truncation_symbol = " "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#009966 fg:#FFFFFF"
 format = '[ $symbol $branch ]($style)'
 
