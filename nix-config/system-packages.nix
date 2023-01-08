@@ -31,6 +31,8 @@
       cifs-utils
       lsd
       ripgrep
+      kdeconnect
+      ascii-image-converter
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
@@ -49,12 +51,21 @@
         pynvim
         jupyter-client
         pillow
+        flake8
       ]))
       ueberzug
       git
       lazygit
       gcc
       go
+
+      (with dotnetCorePackages; combinePackages [
+        dotnet-sdk_7
+        dotnet-sdk_6
+      ])
+      omnisharp-roslyn
+      netcoredbg
+      msbuild
     ];
 
     myForks = with pkgs; [

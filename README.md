@@ -26,13 +26,15 @@
 
 To get my setup of nvim:
 
+❄️  - means it's already part of my NixOS setup, so if you're installing it, you don't need to install this package yourself.
+
 - Get `neovim` >= 0.8.0
   - Get `vim-plug`
     - Run it (you will see many errors - it's ok)
     - Type `:PlugInstall` and hit enter, wait until plugins are installed
     - Type `:UpdateRemotePlugins`
     - Restart nvim
-  - `pip3 install neovim` for deoplete
+  -❄️ `pip3 install neovim` for deoplete
   - Get `lazygit` for git UI
   - .NET
     - [Install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script#recommended-version) .NET (using binaries works too)
@@ -42,11 +44,11 @@ To get my setup of nvim:
   - F#
     - `:Mason`, find `fsautocomplete`, press `i`
   - Python
-    - `pip install flake8`
-    - `pip install debugpy`
-    - `pip install jedi-language-server`
+    -❄️ `pip install flake8`
+    -❄️ `pip install debugpy`
+    -❄️ `pip install jedi-language-server`
   - Any interactive
-    - `pip install jupyter_client` for interactive
+    -❄️ `pip install jupyter_client` for interactive
     - `:UpdateRemotePlugins`
     - 'pip install pyperclip`
   - .NET interactive (C#, F#)
@@ -59,13 +61,13 @@ To get my setup of nvim:
   - C
     - Install clangd
   - LaTeX
-    - Get `latexmk`
-    - Get `zathura` (PDF viewer)
+    -❄️ Get `latexmk`
+    -❄️ Get `zathura` (PDF viewer)
     - Get `amcli` (AngouriMathCLI) (optional)
-    - Get `texlab` (Language server) (optional)
+    -❄️ Get `texlab` (Language server) (optional)
     - Get `pygmentize` (python syntax highlighting) (optional)
   - Image
-    - `ascii-image-converter`
+    -❄️ `ascii-image-converter`
   - Markdown
     - `litemdview`
 

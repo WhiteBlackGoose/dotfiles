@@ -61,10 +61,13 @@
   # GnuPG
   services.pcscd.enable = true;
   services.dbus.packages = [ pkgs.gcr ];
-  programs.gnupg.agent = {
-     enable = true;
-     pinentryFlavor = "gnome3";
-     enableSSHSupport = true;
+  programs = {
+    gnupg.agent = {
+      enable = true;
+      pinentryFlavor = "gnome3";
+      enableSSHSupport = true;
+    };
+    kdeconnect.enable = true;
   };
   # Add this to .gnupg/gpg-agent.conf:
   # debug-pinentry
