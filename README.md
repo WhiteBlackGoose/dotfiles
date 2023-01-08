@@ -35,22 +35,22 @@ To get my setup of nvim:
     - Type `:UpdateRemotePlugins`
     - Restart nvim
   - ❄️ `pip3 install neovim` for deoplete
-  - Get `lazygit` for git UI
-  - .NET
-    - [Install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script#recommended-version) .NET (using binaries works too)
-    - Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
-    - Make sure that your $PATH has no `~` (neovim can't expand it)
-    - Make sure your DOTNET_ROOT is set to the place where your actual binaries are
+  - ❄️ Get `lazygit` for git UI
+  - ❄️ .NET
+    - ❄️ [Install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script#recommended-version) .NET (using binaries works too)
+    - ❄️ Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
+    - ❄️ Make sure that your $PATH has no `~` (neovim can't expand it)
+    - ❄️ Make sure your DOTNET_ROOT is set to the place where your actual binaries are
   - F#
     - `:Mason`, find `fsautocomplete`, press `i`
-  - Python
+  - ❄️ Python
     - ❄️ `pip install flake8`
     - ❄️ `pip install debugpy`
     - ❄️ `pip install jedi-language-server`
   - Any interactive
     - ❄️ `pip install jupyter_client` for interactive
     - `:UpdateRemotePlugins`
-    - 'pip install pyperclip`
+    - ❄️ `pip install pyperclip`
   - .NET interactive (C#, F#)
     - `dotnet tool install -g Microsoft.dotnet-interactive`
     - `dotnet interactive jupyter install`
@@ -59,13 +59,13 @@ To get my setup of nvim:
     - Unpack vsix
     - Update paths in the config file
   - C
-    - Install clangd
+    - ❄️ Install clangd
   - LaTeX
     - ❄️ Get `latexmk`
     - ❄️ Get `zathura` (PDF viewer)
     - Get `amcli` (AngouriMathCLI) (optional)
     - ❄️ Get `texlab` (Language server) (optional)
-    - Get `pygmentize` (python syntax highlighting) (optional)
+    - ❄️ Get `pygmentize` (python syntax highlighting) (optional)
   - Image
     - ❄️ `ascii-image-converter`
   - Markdown

@@ -52,11 +52,18 @@
         jupyter-client
         pillow
         flake8
+        pygmentex
+        pyperclip
       ]))
+
       ueberzug
+
       git
       lazygit
+
       gcc
+      clang
+
       go
 
       (with dotnetCorePackages; combinePackages [
