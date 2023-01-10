@@ -30,8 +30,8 @@
   services.printing.enable = true;
 
   # finger print
-  services.fprintd.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
+  # services.fprintd.enable = true;
+  # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   # bluetooth
   hardware.bluetooth.enable = true;
