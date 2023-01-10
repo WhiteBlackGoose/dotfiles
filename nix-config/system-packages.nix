@@ -34,6 +34,7 @@
       kdeconnect
       ascii-image-converter
       tlp
+      fzf
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:

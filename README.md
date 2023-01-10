@@ -59,7 +59,7 @@ To get my setup of nvim:
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
     - Unpack vsix
     - Update paths in the config file
-  - C
+  - ❄️ C
     - ❄️ Install clangd
   - LaTeX
     - ❄️ Get `latexmk`
@@ -67,7 +67,7 @@ To get my setup of nvim:
     - Get `amcli` (AngouriMathCLI) (optional)
     - ❄️ Get `texlab` (Language server) (optional)
     - ❄️ Get `pygmentize` (python syntax highlighting) (optional)
-  - Image
+  - ❄️ Image
     - ❄️ `ascii-image-converter`
   - Markdown
     - `litemdview`
