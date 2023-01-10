@@ -2,6 +2,7 @@ require'lspconfig'.texlab.setup{}
 
 -- chktex is in my way
 vim.g['ale_tex_chktex_executable'] = 'aaa'
+vim.g['ale_tex_lacheck_executable'] = 'aaa'
 
 function TexMoveOut(path)
     vim.g.vimtex_compiler_latexmk = {

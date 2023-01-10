@@ -33,6 +33,7 @@
       ripgrep
       kdeconnect
       ascii-image-converter
+      tlp
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:

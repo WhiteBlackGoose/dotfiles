@@ -28,7 +28,7 @@ To get my setup of nvim:
 
 ❄️  - means it's already part of my NixOS setup, so if you're installing it, you don't need to install this package yourself.
 
-- Get `neovim` >= 0.8.0
+- ❄️ Get `neovim-goose` (my fork)
   - Get `vim-plug`
     - Run it (you will see many errors - it's ok)
     - Type `:PlugInstall` and hit enter, wait until plugins are installed

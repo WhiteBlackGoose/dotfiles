@@ -1,8 +1,8 @@
 format = """
 [  ](fg:#FFFFFF bg:#6666FF)\
-[◤](fg:#6666FF bg:#8652AF)\
+[◤](fg:#6666FF bg:#DDDD00)\
 $directory\
-[◤](fg:#8652AF bg:#009966)\
+[◤](fg:#DDDD00 bg:#009966)\
 $git_branch\
 [◤](fg:#009966)
 $time\
@@ -12,7 +12,7 @@ $time\
 # [◤](fg:#3030AF bg:#8652AF)\
 
 [directory]
-style = "bg:#8652AF fg:#FFFFFF"
+style = "bg:#DDDD00 fg:#000000"
 format = "[ $path ]($style)"
 truncation_length = 0
 truncation_symbol = " "

@@ -260,6 +260,8 @@ bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w -c --save /dev/stdout | xcl
 bindsym $mod+Shift+Print exec xfce4-screenshooter -f -d 5 --save /dev/stdout | xclip -i -selection clipboard -t image/png
 bindsym $mod+Print exec ~/.config/global_scripts/snip
 
+bindsym $mod+Shift+n exec ~/scripts/notes.sh
+
 # bindsym $mod+x move workspace to output right
 
 # My attempts to make umlaut work :((
