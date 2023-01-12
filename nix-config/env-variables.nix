@@ -7,7 +7,6 @@
     PATH = [
       "/home/goose/.config/global_scripts"
       "/home/goose/scripts"
-      "/home/goose/scripts/fzsearches"
     ];
 
     GDK_SCALE = "2";

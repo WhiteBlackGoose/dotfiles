@@ -37,6 +37,7 @@
       zathura
       zip
       tor-browser-bundle-bin
+      peek
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
