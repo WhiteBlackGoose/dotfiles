@@ -5,36 +5,37 @@
 
   let 
     commonPackages = with pkgs; [
-      bc
-      wget
-      firefox
-      xclip
-      upower
-      zip
-      unzip
-      feh
-      lm_sensors
-      xfce.xfce4-screenshooter
-      xfce.xfce4-terminal
-      starship
       ack
-      fprintd
-      xss-lock
+      ascii-image-converter
+      bc
       blueman
       bluez
       bluez-tools
-      zathura
-      translate-shell
+      cifs-utils
+      feh
+      firefox
+      fprintd
+      fzf
+      kdeconnect
+      lm_sensors
+      lsd
+      openvpn
+      ripgrep
+      starship
       texlab
       texlive.combined.scheme-full
-      openvpn
-      cifs-utils
-      lsd
-      ripgrep
-      kdeconnect
-      ascii-image-converter
       tlp
-      fzf
+      translate-shell
+      unzip
+      upower
+      wdiff
+      wget
+      xclip
+      xfce.xfce4-screenshooter
+      xfce.xfce4-terminal
+      xss-lock
+      zathura
+      zip
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
@@ -46,16 +47,21 @@
     ];
     devPackages = with pkgs; [
       (python3.withPackages (p: with p; [
+        flake8
+        jedi-language-server
+        jupyter-client
+        jupyter_console
+        neovim
         numpy
         pandas
-        neovim
-        jedi-language-server
-        pynvim
-        jupyter-client
         pillow
-        flake8
         pygmentex
+        pynvim
         pyperclip
+        scipy
+        seaborn
+        statsmodels
+        tqdm
       ]))
 
       ueberzug

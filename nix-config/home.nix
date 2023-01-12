@@ -25,6 +25,9 @@
       signing = {
         key = "640BEDDE9734310ABFA3B25752EDAE6A3995AFAB";
       };
+      extraConfig = {
+        core.eol = "lf";
+      };
     };
   };
 
@@ -56,6 +59,20 @@
       name = "Firefox School";
       genericName = "Web Browser for school";
       exec = "firefox -P school %U";
+    };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    associations.added = { 
+      "application/pdf" = ["zathura" ]; 
+      "image/png" = ["nsxiv.desktop" ];
+      "image/jpg" = ["nsxiv.desktop" ];
+    }; 
+    defaultApplications = { 
+      "application/pdf" = ["zathura"]; 
+      "image/png" = ["nsxiv.desktop"];
+      "image/jpg" = ["nsxiv.desktop"];
     };
   };
 }

@@ -131,6 +131,8 @@ end
 
 Plug 'https://github.com/LnL7/vim-nix'
 
+Plug 'https://github.com/AndrewRadev/linediff.vim'
+
 vim.call('plug#end')
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'

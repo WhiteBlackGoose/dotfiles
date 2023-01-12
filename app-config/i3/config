@@ -206,6 +206,7 @@ for_window [class="^.*"] border pixel 1
 focus_wrapping no
 focus_follows_mouse no
 
+hide_edge_borders both
 
 ################# Dracula theme
 # from https://github.com/dracula/i3/blob/master/.config/i3/config

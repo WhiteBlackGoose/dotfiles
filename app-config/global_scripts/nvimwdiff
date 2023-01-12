@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+wdiff $@ | nvim -c "lua set_wdiff_syn()"
