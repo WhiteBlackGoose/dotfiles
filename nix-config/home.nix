@@ -60,6 +60,14 @@
       genericName = "Web Browser for school";
       exec = "firefox -P school %U";
     };
+    xdgFolderLexit = {
+      name = "Find and open as XDG";
+      exec = ''xfce4-terminal -e "/home/goose/scripts/fzsearches/xdg.sh"'';
+    };
+    ideFolderLexit = {
+      name = "Find and open as IDE";
+      exec = ''xfce4-terminal -e "/home/goose/scripts/fzsearches/as-ide.sh"'';
+    };
   };
 
   xdg.mimeApps = {

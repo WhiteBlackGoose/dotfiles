@@ -36,6 +36,7 @@
       xss-lock
       zathura
       zip
+      tor-browser-bundle-bin
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:
