@@ -1,11 +1,16 @@
 alias ci="xclip -sel clip"
 alias co="xclip -sel clip -o"
+
 alias ls="lsd"
 alias ll="lsd -la"
+
 alias cdf='cd $(find . -type d 2>/dev/null | fzf)'
 alias cda='cd / && cdf'
 alias cdh='cd ~ && cdf'
 alias cde='cd /etc/nixos'
+
+alias xda='cd / && fzf-xdg'
+alias xdh='cd ~ && fzf-xdg'
 
 # https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
 function _dotnet_bash_complete()

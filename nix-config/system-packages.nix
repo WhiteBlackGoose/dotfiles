@@ -17,14 +17,18 @@
       fprintd
       fzf
       kdeconnect
+      libreoffice
       lm_sensors
       lsd
       openvpn
+      peek
+      pinta
       ripgrep
       starship
       texlab
       texlive.combined.scheme-full
       tlp
+      tor-browser-bundle-bin
       translate-shell
       unzip
       upower
@@ -36,8 +40,6 @@
       xss-lock
       zathura
       zip
-      tor-browser-bundle-bin
-      peek
     ];
     securityPackages = with pkgs; [
       # to generate SSH keys:

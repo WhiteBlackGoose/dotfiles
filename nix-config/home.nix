@@ -75,12 +75,12 @@
     associations.added = { 
       "application/pdf" = ["zathura" ]; 
       "image/png" = ["nsxiv.desktop" ];
-      "image/jpg" = ["nsxiv.desktop" ];
+      "image/jpeg" = ["nsxiv.desktop" ];
     }; 
     defaultApplications = { 
       "application/pdf" = ["zathura"]; 
       "image/png" = ["nsxiv.desktop"];
-      "image/jpg" = ["nsxiv.desktop"];
+      "image/jpeg" = ["nsxiv.desktop"];
     };
   };
 }

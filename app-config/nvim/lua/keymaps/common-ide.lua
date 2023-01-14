@@ -61,3 +61,6 @@ add('n', '<leader>ms', ':MagmaShowOutput<CR>')
 -- markdown
 add('n', 'K', ':lua require("toggle-checkbox").toggle()<CR>')
 add('n', '<leader>tbt', ':TableModeToggle<CR>')
+vim.keymap.set('v', '<leader>mdb', ":lua require('markdowny').bold()<cr>", { buffer = 0 })
+vim.keymap.set('v', '<leader>mdi', ":lua require('markdowny').italic()<cr>", { buffer = 0 })
+vim.keymap.set('v', '<leader>mdk', ":lua require('markdowny').link()<cr>", { buffer = 0 })

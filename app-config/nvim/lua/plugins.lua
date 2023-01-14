@@ -133,6 +133,10 @@ Plug 'https://github.com/LnL7/vim-nix'
 
 Plug 'https://github.com/AndrewRadev/linediff.vim'
 
+if vim.g.use_ide() then
+    Plug 'https://github.com/antonk52/markdowny.nvim'
+end
+
 vim.call('plug#end')
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'
@@ -143,3 +147,6 @@ require('baleia').setup { }
 require('hologram').setup{ auto_display = true }
 vim.g['magma_automatically_open_output'] = false
 vim.g['magma_image_provider'] = 'kitty'
+if vim.g.use_ide() then
+    require('markdowny').setup({filetypes = {'markdown'}})
+end
