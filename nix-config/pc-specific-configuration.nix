@@ -18,7 +18,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "i915.force_probe=46a8" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # hardware-configurationboot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest-libre;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
