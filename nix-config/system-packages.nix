@@ -19,7 +19,6 @@
       fzf
       imagemagick
       kdeconnect
-      libreoffice
       lm_sensors
       lsd
       openvpn
