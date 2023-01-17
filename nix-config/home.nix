@@ -56,13 +56,18 @@
       exec = "firefox -P main --new-window https://discord.com/channels/@me %U";
     };
     firefoxSchool = {
-      name = "Firefox School";
-      genericName = "Web Browser for school";
-      exec = "firefox -P school %U";
+      name = "firefox school";
+      genericName = "web browser for school";
+      exec = "firefox -P school %u";
+    };
+    firefox3 = {
+      name = "firefox 3";
+      genericName = "third profile of ff";
+      exec = "firefox -P p3 %u";
     };
     xdgFolderLexit = {
       name = "Find and open as XDG";
-      exec = ''xfce4-terminal -e "/home/goose/scripts/fzsearches/xdg.sh"'';
+      exec = ''xfce4-terminal -e "xdh"'';
     };
     ideFolderLexit = {
       name = "Find and open as IDE";

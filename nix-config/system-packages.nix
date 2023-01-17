@@ -12,15 +12,18 @@
       bluez
       bluez-tools
       cifs-utils
+      electrum
       feh
       firefox
       fprintd
       fzf
+      imagemagick
       kdeconnect
       libreoffice
       lm_sensors
       lsd
       openvpn
+      pandoc
       peek
       pinta
       ripgrep

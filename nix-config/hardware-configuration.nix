@@ -30,7 +30,12 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swap1";
+      size = 16 * 1024;
+    }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -42,4 +47,19 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.tlp = {
+    enable = true;
+    settings = {
+      extraConfig = ''
+        START_CHARGE_THRESH_BAT0=60
+        STOP_CHARGE_THRESH_BAT0=80
+      '';
+
+      CPU_SCALING_GOVERNOR_ON_BAT="powersave";
+      CPU_ENERGY_PERF_POLICY_ON_BAT="powersave";
+      CPU_SCALING_GOVERNOR_ON_AC="performance";
+      CPU_ENERGY_PERF_POLICY_ON_AC="performance";
+    };
+  };
 }
