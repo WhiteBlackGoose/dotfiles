@@ -7,8 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./nix-config/hardware-configuration.nix
-      ./nix-config/pc-configuration.nix
+      ./nix-config/pc-specific-configuration.nix
       ./nix-config/xserver.nix
       ./nix-config/system-settings.nix
       ./nix-config/system-packages.nix

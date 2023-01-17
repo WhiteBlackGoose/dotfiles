@@ -8,10 +8,17 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.device = "nodev";
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "i915.force_probe=46a8" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
@@ -37,6 +44,20 @@
     }
   ];
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
+  hardware.video.hidpi.enable = true;
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
@@ -60,4 +81,33 @@
       CPU_ENERGY_PERF_POLICY_ON_AC="performance";
     };
   };
+
+
+  systemd.services.asus-touchpad-numpad = {
+    description = "Activate Numpad inside the touchpad with top right corner switch";
+    documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
+    path = [ pkgs.i2c-tools ];
+    script = ''
+      cd ${pkgs.fetchFromGitHub {
+        owner = "mohamed-badaoui";
+        repo = "asus-touchpad-numpad-driver";
+        # These needs to be updated from time to time
+        rev = "d80980af6ef776ee6acf42c193689f207caa7968";
+        sha256 = "sha256-JM2wrHqJTqCIOhD/yvfbjLZEqdPRRbENv+N9uQHiipc=";
+      }}
+      # In the last argument here you choose your layout.
+      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
+    '';
+    # Probably needed because it fails on boot seemingly because the driver
+    # is not ready yet. Alternativly, you can use `sleep 3` or similar in the
+    # `script`.
+    serviceConfig = {
+      RestartSec = "1s";
+      Restart = "on-failure";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
+  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
 }
