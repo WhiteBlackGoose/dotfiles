@@ -36,6 +36,7 @@
     pkgs.starship
     pkgs.tdesktop
     pkgs.passphrase2pgp
+    pkgs.dconf
   ];
 
   services.blueman-applet.enable = true;

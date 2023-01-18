@@ -18,8 +18,11 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "i915.force_probe=46a8" ];
-  # hardware-configurationboot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_latest-libre;
+
+  # boots with kernel panic (blinking caps lock), hangs there
+  # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";

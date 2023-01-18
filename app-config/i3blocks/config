@@ -1,14 +1,3 @@
-# Sound
-[sound]
-command=~/.config/scripts/vol.sh
-interval=1
-color=#FFAAFF
-
-# Battery
-[battery]
-command=~/.config/scripts/battery.sh
-interval=5
-color=#FFAAAA
 
 # Disk space
 [disk]
@@ -39,6 +28,18 @@ color=#CCCCCC
 command=~/.config/scripts/ip.sh
 interval=1
 color=#91E78B
+
+# Sound
+[sound]
+command=~/.config/scripts/vol.sh
+interval=1
+color=#FFAAFF
+
+# Battery
+[battery]
+command=~/.config/scripts/battery.sh
+interval=5
+color=#FFAAAA
 
 # Update time every 5 seconds
 [time]
