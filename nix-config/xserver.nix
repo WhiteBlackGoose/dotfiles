@@ -1,3 +1,4 @@
+{ pkgs-goose }:
 { config, pkgs, ... }:
 
 {
@@ -20,6 +21,7 @@
     };
 
     windowManager.i3 = {
+      package = pkgs-goose.legacyPackages.${pkgs.system}.i3;
       enable = true;
       extraPackages = with pkgs; [
         rofi

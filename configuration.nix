@@ -9,7 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./nix-config/pc-specific-configuration.nix
-      ./nix-config/xserver.nix
+      (import ./nix-config/xserver.nix { pkgs-goose = pkgs-goose; })
       ./nix-config/system-settings.nix
       (import ./nix-config/system-packages.nix { pkgs-goose = pkgs-goose; })
       ./nix-config/users.nix
