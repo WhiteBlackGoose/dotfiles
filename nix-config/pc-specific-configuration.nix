@@ -18,10 +18,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "i915.force_probe=46a8" ];
-
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/" =

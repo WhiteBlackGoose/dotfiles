@@ -1,9 +1,13 @@
+{ pkgs-goose }:
 { config, pkgs, ... }:
 
 {
   environment.systemPackages =
 
   let 
+    novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      litemdview
+    ];
     commonPackages = with pkgs; [
       ack
       ascii-image-converter
@@ -77,6 +81,8 @@
 
       gcc
       clang
+      clang-tools
+      clangStdenv
 
       go
 
@@ -116,7 +122,8 @@
       )
     ];
   in
-    commonPackages 
+    novaPackages
+    ++ commonPackages 
     ++ securityPackages
     ++ devPackages 
     ++ myForks;

@@ -37,10 +37,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-goose": {
+      "locked": {
+        "lastModified": 1672900130,
+        "narHash": "sha256-Swr/hD0yAp1PstckNpd26gt1H+y2S9L/pqvb4U8j45M=",
+        "owner": "WhiteBlackGoose",
+        "repo": "nixpkgs",
+        "rev": "17b0cf40e3ce85207d180d792cddc4a37125db36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "WhiteBlackGoose",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-goose": "nixpkgs-goose"
       }
     },
     "utils": {

@@ -2,6 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+{ pkgs-goose, ... }:
 { config, pkgs, lib, ... }:
 
 {
@@ -10,7 +11,7 @@
       ./nix-config/pc-specific-configuration.nix
       ./nix-config/xserver.nix
       ./nix-config/system-settings.nix
-      ./nix-config/system-packages.nix
+      (import ./nix-config/system-packages.nix { pkgs-goose = pkgs-goose; })
       ./nix-config/users.nix
       ./nix-config/env-variables.nix
       ./nix-config/keyboard.nix
@@ -23,7 +24,7 @@
     '';
   };
 
-
+  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = false;
