@@ -1,3 +1,6 @@
+right_format = """
+"""
+
 format = """
 [  ](fg:#FFFFFF bg:#6666FF)\
 [◤](fg:#6666FF bg:#DDDD00)\

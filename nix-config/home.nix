@@ -66,14 +66,6 @@
       genericName = "third profile of ff";
       exec = "firefox -P p3 %u";
     };
-    xdgFolderLexit = {
-      name = "Find and open as XDG";
-      exec = ''xfce4-terminal -e "xdh"'';
-    };
-    ideFolderLexit = {
-      name = "Find and open as IDE";
-      exec = ''xfce4-terminal -e "/home/goose/scripts/fzsearches/as-ide.sh"'';
-    };
   };
 
   xdg.mimeApps = {

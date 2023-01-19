@@ -58,14 +58,10 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+Tab exec "rofi -dpi 192 -modi drun,run -show drun -show-icons"
+bindsym $mod+Tab exec ~/.config/global_scripts/rofi.sh
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-# Emojis
-bindsym $mod+t exec rofimoji --max-recent 0
-
 
 
 # change focus
@@ -200,7 +196,7 @@ bindsym $mod+r mode "resize"
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
 # for_window [class="^.*"] border pixel 3
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 # new_window pixel 1
 
 focus_wrapping no
@@ -248,7 +244,11 @@ bar {
 # exec feh --bg-scale ~/Pictures/XOR_2K.png
 # exec xsetroot -solid "#000000"
 # exec feh --bg-scale Debian-11-wallpaper_1920x1080.png
-exec feh --bg-scale /home/goose/.config/nix-wallpaper-moonscape.png
+# exec feh --bg-scale /home/goose/.config/pics/nix-wallpaper-moonscape.png
+# exec feh --bg-scale /home/goose/.config/pics/nixos-wallpaper-light-2880x1800.png
+exec ~/.config/global_scripts/theme.sh
+bindsym $mod+t exec ~/.config/global_scripts/theme.sh
+
 
 bindsym $mod+m bar mode invisible 
 bindsym $mod+n bar mode dock

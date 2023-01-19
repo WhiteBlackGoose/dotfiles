@@ -9,6 +9,7 @@
       litemdview
     ];
     commonPackages = with pkgs; [
+      picom
       ack
       ascii-image-converter
       bc
