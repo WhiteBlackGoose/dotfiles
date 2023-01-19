@@ -39,11 +39,11 @@
     },
     "nixpkgs-goose": {
       "locked": {
-        "lastModified": 1672900130,
-        "narHash": "sha256-Swr/hD0yAp1PstckNpd26gt1H+y2S9L/pqvb4U8j45M=",
+        "lastModified": 1673847830,
+        "narHash": "sha256-GvBhqFmikZhHkFw3fdxxsKcIPKJ16hT49R4ue6C6NbA=",
         "owner": "WhiteBlackGoose",
         "repo": "nixpkgs",
-        "rev": "17b0cf40e3ce85207d180d792cddc4a37125db36",
+        "rev": "a6cb255f9194c812b43320096e9370bc4ebf91bb",
         "type": "github"
       },
       "original": {
