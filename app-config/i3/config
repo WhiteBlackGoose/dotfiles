@@ -307,3 +307,5 @@ bindsym $mod+Shift+o exec xdotool keyup Shift && xdotool keyup Super_L && xdotoo
 
 bindsym $mod+x exec xdotool keyup Super_L && xdotool keyup x && xdotool key Delete && xdotool keydown Super_L
 
+gaps outer 0
+gaps inner 10
