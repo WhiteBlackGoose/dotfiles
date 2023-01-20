@@ -9,7 +9,7 @@
 
     desktopManager = {
       xterm.enable = false;
-      gnome.enable = true;
+      gnome.enable = false;
     };
 
     displayManager = {
