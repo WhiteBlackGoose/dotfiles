@@ -6,7 +6,7 @@
     isNormalUser = true;
     description = "goose";
     home = "/home/goose";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [
     
     ];

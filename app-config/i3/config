@@ -58,7 +58,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+Tab exec ~/.config/global_scripts/rofi.sh
+bindsym $mod+Tab exec /home/goose/.config/global_scripts/rofi.sh
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -246,8 +246,9 @@ bar {
 # exec feh --bg-scale Debian-11-wallpaper_1920x1080.png
 # exec feh --bg-scale /home/goose/.config/pics/nix-wallpaper-moonscape.png
 # exec feh --bg-scale /home/goose/.config/pics/nixos-wallpaper-light-2880x1800.png
-exec ~/.config/global_scripts/theme.sh
-bindsym $mod+t exec ~/.config/global_scripts/theme.sh
+exec --no-startup-id /home/goose/.config/global_scripts/theme.sh
+bindsym $mod+t exec /home/goose/.config/global_scripts/theme.sh
+bindsym $mod+y exec /home/goose/.config/global_scripts/gg
 
 
 bindsym $mod+m bar mode invisible 
@@ -306,6 +307,10 @@ bindsym $mod+Control+Shift+k exec xdotool keyup Super_L && xdotool keyup k && xd
 bindsym $mod+Shift+o exec xdotool keyup Shift && xdotool keyup Super_L && xdotool keyup o && xdotool key End && xdotool key Return && xdotool keydown Super_L && xdotool keydown Shift
 
 bindsym $mod+x exec xdotool keyup Super_L && xdotool keyup x && xdotool key Delete && xdotool keydown Super_L
+
+# gestures for workspaces
+exec --no-startup-id xfsettingsd
+exec --no-startup-id libinput-gestures
 
 gaps outer 0
 gaps inner 10

@@ -9,7 +9,13 @@
       litemdview
     ];
     commonPackages = with pkgs; [
+      arc-theme
+      libinput-gestures
       glib
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal
+      xfce.xfconf
+      xfce.xfce4-settings
       ack
       ascii-image-converter
       bc
@@ -88,8 +94,8 @@
       go
 
       (with dotnetCorePackages; combinePackages [
-        dotnet-sdk_7
-        dotnet-sdk_6
+        sdk_6_0
+        sdk_7_0
       ])
       omnisharp-roslyn
       netcoredbg

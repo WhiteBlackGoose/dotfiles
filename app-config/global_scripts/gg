@@ -1,0 +1,2 @@
+gsettings get org.gnome.desktop.interface color-scheme > /home/goose/trash/smh
+echo gg >> /home/goose/trash/smh

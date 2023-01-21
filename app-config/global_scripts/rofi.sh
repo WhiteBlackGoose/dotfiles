@@ -1,4 +1,4 @@
-curr=$(~/.config/global_scripts/get-current-theme.sh)
+curr=$(/home/goose/.config/global_scripts/get-current-theme.sh)
 if [ "$curr" = "'prefer-light'" ]; then
     theme_arg="-theme Arc"
 else

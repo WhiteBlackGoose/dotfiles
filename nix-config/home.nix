@@ -44,6 +44,8 @@
   dconf.settings."org/blueman/general" = {
     plugin-list = [ "!ConnectionNotifier" ];
   };
+  dconf.enable = true;
+
 
   xdg.desktopEntries = {
     firefox = {
