@@ -83,4 +83,6 @@
       "image/jpeg" = ["nsxiv.desktop"];
     };
   };
+
+  gtk.enable = true;
 }
