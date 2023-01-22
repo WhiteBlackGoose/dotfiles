@@ -32,7 +32,8 @@
   in
   {
     text = ''
-    export DOTNET_ROOT=${findDrv "dotnet-core-combined"}
+      export DOTNET_ROOT=${findDrv "dotnet-core-combined"}
+      export PATH="/home/goose/.dotnet/tools:$PATH"
     '';
     mode = "0115";
   };

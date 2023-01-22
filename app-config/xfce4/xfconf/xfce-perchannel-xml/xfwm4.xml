@@ -10,6 +10,6 @@
       <value type="string" value="5"/>
       <value type="string" value="6"/>
     </property>
-    <property name="workspace_count" type="int" value="3"/>
+    <property name="workspace_count" type="int" value="4"/>
   </property>
 </channel>

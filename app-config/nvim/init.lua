@@ -1,3 +1,4 @@
+vim.lsp.set_log_level("TRACE")
 vim.o.rtp = vim.fn.stdpath('data') .. '/plugged/impatient.nvim' ..','.. vim.o.rtp
 require('utils')
 
