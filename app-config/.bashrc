@@ -1,3 +1,4 @@
+source /etc/env-vars.sh
 alias ci="xclip -sel clip"
 alias co="xclip -sel clip -o"
 

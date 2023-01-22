@@ -94,8 +94,8 @@
         owner = "mohamed-badaoui";
         repo = "asus-touchpad-numpad-driver";
         # These needs to be updated from time to time
-        rev = "d80980af6ef776ee6acf42c193689f207caa7968";
-        sha256 = "sha256-JM2wrHqJTqCIOhD/yvfbjLZEqdPRRbENv+N9uQHiipc=";
+        rev = "a2bada610ebb3fc002fceb53ddf93bc799241867";
+        sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
       }}
       # In the last argument here you choose your layout.
       ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
