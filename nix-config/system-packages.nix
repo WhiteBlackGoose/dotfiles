@@ -110,7 +110,7 @@
         # Unhandled exception: System.ComponentModel.Win32Exception (2): An error occurred trying to start process '/home/goose/prj/WhiteBlackGoose/BlogGen/bin/Debug/net6.0/BlogGen' with working directory '/home/goose/prj/WhiteBlackGoose/BlogGen'. No such file or directory
         # when trying to do dotnet run
 
-        sdk_7_0
+        # sdk_7_0
       ])
       omnisharp-roslyn
       netcoredbg

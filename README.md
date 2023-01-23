@@ -69,8 +69,8 @@ To get my setup of nvim:
     - ❄️ Get `pygmentize` (python syntax highlighting) (optional)
   - ❄️ Image
     - ❄️ `ascii-image-converter`
-  - Markdown
-    - `litemdview`
+  - ❄️ Markdown
+    - ❄️ `litemdview`
 
 ### Why nvim?
 
