@@ -13,7 +13,7 @@ end
 
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
--- Plug 'romgrk/barbar.nvim'
+Plug 'romgrk/barbar.nvim'
 
 if vim.g.use_ide() then
     Plug 'dense-analysis/ale'

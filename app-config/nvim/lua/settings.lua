@@ -26,7 +26,7 @@ vim.g['python3_host_prog'] = 'python3'
 require('settings.airline')
 require('settings.amcli')
 require('settings.asciitree')
--- require('settings.barbar')
+require('settings.barbar')
 require('settings.image-nvim')
 require('settings.mason')
 require('settings.nvim-tree')

@@ -26,7 +26,6 @@
 
   
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = false;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
