@@ -2,7 +2,7 @@ right_format = """
 """
 
 format = """
-[  ](fg:#FFFFFF bg:#6666FF)\
+$nix_shell\
 [◤](fg:#6666FF bg:#DDDD00)\
 $directory\
 [◤](fg:#DDDD00 bg:#009966)\
@@ -32,3 +32,11 @@ format = '[ $time ]($style)'
 time_format = "%T"
 utc_time_offset = "+3"
 # time_range = "10:00:00-14:00:00"
+
+[nix_shell]
+disabled = false
+symbol = " "
+impure_msg = "impure"
+pure_msg = "pure"
+style = "fg:#FFFFFF bg:#6666FF"
+format = '[ $symbol$state ]($style)' 
