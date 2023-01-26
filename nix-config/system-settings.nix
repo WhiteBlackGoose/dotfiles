@@ -100,6 +100,11 @@
   services.ipp-usb.enable = true;
   # for HP printer
   services.printing.drivers = [ pkgs.hplip ];
+
+  # hotkeys
+  # systemd.user.services.sx
+  # options.sxhkd.enable = true;
+  programs.dconf.enable = true;
 }
 
 

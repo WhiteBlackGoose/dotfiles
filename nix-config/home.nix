@@ -68,6 +68,10 @@
       genericName = "third profile of ff";
       exec = "firefox -P p3 %u";
     };
+    theme = {
+      name = "Toggle theme";
+      exec = "/home/goose/.config/global_scripts/theme.sh";
+    };
   };
 
   xdg.mimeApps = {
@@ -85,4 +89,12 @@
   };
 
   gtk.enable = true;
+
+  xsession.enable = true;
+  services.sxhkd = {
+    enable = false;
+    keybindings = {
+      "super + t" = "/home/goose/.config/global_scripts/theme.sh";
+    };
+  };
 }
