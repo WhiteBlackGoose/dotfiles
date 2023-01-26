@@ -34,6 +34,8 @@
     text = ''
       export DOTNET_ROOT=${findDrv "dotnet-core-combined"}
       export PATH="/home/goose/.dotnet/tools:$PATH"
+      export PATH="/home/goose/scripts:$PATH"
+      export PATH="/home/goose/.config/global_scripts:$PATH"
     '';
     mode = "0115";
   };

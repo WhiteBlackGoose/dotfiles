@@ -1,12 +1,12 @@
 require("asciitree").setup({
 	-- Characters used to represent the tree.
-	symbols = {
-		child = "+",
-		last = "+",
-		parent = "|",
-		dash = "-",
-		blank = " ",
-	},
+	-- symbols = {
+	-- 	child = "+",
+	-- 	last = "+",
+	-- 	parent = "|",
+	-- 	dash = "-",
+	-- 	blank = " ",
+	-- },
 
 	-- How deep each level should be drawn. This value can be overridden by
 	-- calling the AsciiTree command with a number, such as :AsciiTree 4.
