@@ -4,7 +4,7 @@
   <property name="ActiveProfile" type="string" value="Default"/>
   <property name="Default" type="empty">
     <property name="eDP-1" type="string" value="Laptop">
-      <property name="Active" type="bool" value="false"/>
+      <property name="Active" type="bool" value="true"/>
       <property name="EDID" type="string" value="a2db0f118a9e11a2f8e6b24b157b7759aadafa13"/>
       <property name="Resolution" type="string" value="2880x1800"/>
       <property name="RefreshRate" type="double" value="90.001437607820591"/>
@@ -16,8 +16,8 @@
         <property name="Y" type="double" value="1"/>
       </property>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="X" type="int" value="5120"/>
+        <property name="Y" type="int" value="1080"/>
       </property>
     </property>
     <property name="HDMI-1" type="string" value="Dell 27&quot;">
@@ -27,10 +27,10 @@
       <property name="RefreshRate" type="double" value="59.950550105254798"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
-      <property name="Primary" type="bool" value="false"/>
+      <property name="Primary" type="bool" value="true"/>
       <property name="Scale" type="empty">
-        <property name="X" type="double" value="1"/>
-        <property name="Y" type="double" value="1"/>
+        <property name="X" type="double" value="2"/>
+        <property name="Y" type="double" value="2"/>
       </property>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
@@ -52,8 +52,8 @@
         <property name="Y" type="double" value="1"/>
       </property>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="X" type="int" value="5120"/>
+        <property name="Y" type="int" value="1080"/>
       </property>
     </property>
     <property name="HDMI-1" type="string" value="Dell 27&quot;">
@@ -63,10 +63,10 @@
       <property name="RefreshRate" type="double" value="59.950550105254798"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
-      <property name="Primary" type="bool" value="false"/>
+      <property name="Primary" type="bool" value="true"/>
       <property name="Scale" type="empty">
-        <property name="X" type="double" value="1"/>
-        <property name="Y" type="double" value="1"/>
+        <property name="X" type="double" value="2"/>
+        <property name="Y" type="double" value="2"/>
       </property>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
@@ -74,4 +74,5 @@
       </property>
     </property>
   </property>
+  <property name="Notify" type="int" value="1"/>
 </channel>
