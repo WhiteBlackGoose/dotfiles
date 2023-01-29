@@ -13,7 +13,7 @@ alias cde='cd /etc/nixos'
 alias xda='cd / && fzf-xdg'
 alias xdh='cd ~ && fzf-xdg'
 
-alias ns="nix-shell -p"
+alias ns="nix-shell"
 
 # https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
 function _dotnet_bash_complete()
