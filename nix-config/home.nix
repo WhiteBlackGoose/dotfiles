@@ -97,4 +97,16 @@
       "super + t" = "/home/goose/.config/global_scripts/theme.sh";
     };
   };
+  # systemd.user.startServices = true;
+  # systemd.user.services.set-desktop-background = {
+  #   Unit = {
+  #     Description = "Set the desktop background";
+  #     After = [ "graphical-session-pre.target" ];
+  #     PartOf = [ "graphical-session.target" ];
+  #   };
+  #   Install.WantedBy = [ "graphical-session.target" ];
+  #   Service.Type = "oneshot";
+  #   Service.RemainAfterExit = true;
+  #   Service.ExecStart = "${pkgs.feh}/bin/feh --bg-scale /home/goose/.config/pics/nix-wallpaper-watersplash.png";
+  # };
 }

@@ -13,6 +13,8 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.device = "nodev";
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];

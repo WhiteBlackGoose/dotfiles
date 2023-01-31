@@ -20,4 +20,4 @@ else
 fi
 
 echo " $sym  $stat % | $power_drain W | $time_left min "
-
+# echo " $sym  $stat % $power_drain W "
