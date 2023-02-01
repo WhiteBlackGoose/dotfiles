@@ -105,6 +105,7 @@
   # systemd.user.services.sx
   # options.sxhkd.enable = true;
   programs.dconf.enable = true;
+  programs.nix-ld.enable = true;
 }
 
 

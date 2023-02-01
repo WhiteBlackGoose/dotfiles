@@ -88,26 +88,6 @@
       pinentry-gnome
     ];
     devPackages = with pkgs; [
-      (python3.withPackages (p: with p; [
-        flake8
-        jedi-language-server
-        jupyter-client
-        jupyter_console
-        neovim
-        numpy
-        pandas
-        pillow
-        pygmentex
-        pynvim
-        pyperclip
-        scipy
-        seaborn
-        statsmodels
-        tqdm
-      ]))
-
-      ueberzug
-
       git
       lazygit
 
@@ -115,21 +95,6 @@
       clang
       clang-tools
       clangStdenv
-
-      go
-
-      (with dotnetCorePackages; combinePackages [
-        sdk_6_0
-
-        # for some reason gives
-        # Unhandled exception: System.ComponentModel.Win32Exception (2): An error occurred trying to start process '/home/goose/prj/WhiteBlackGoose/BlogGen/bin/Debug/net6.0/BlogGen' with working directory '/home/goose/prj/WhiteBlackGoose/BlogGen'. No such file or directory
-        # when trying to do dotnet run
-
-        # sdk_7_0
-      ])
-      omnisharp-roslyn
-      netcoredbg
-      msbuild
     ];
 
     myForks = with pkgs; [

@@ -8,7 +8,6 @@
     GDK_DPI_SCALE = "0.5";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
-  environment.profileRelativeSessionVariables = { };
   environment.etc."env-vars.sh" = 
   let
     findDrv = drv-name:
@@ -24,9 +23,8 @@
       );
   in
   {
+      # export DOTNET_ROOT=${findDrv "dotnet-core-combined"}
     text = ''
-      export DOTNET_ROOT=${findDrv "dotnet-core-combined"}
-      export PATH="/home/goose/.dotnet/tools:$PATH"
       export PATH="/home/goose/scripts:$PATH"
       export PATH="/home/goose/.config/global_scripts:$PATH"
     '';
