@@ -44,6 +44,7 @@ if vim.g.use_ide() then
     require('settings.dap-python')
     require('settings.dapui')
     require('settings.deoplete')
+    require('settings.fstar-lsp')
     require('settings.gitsigns')
     require('settings.ionide')
     require('settings.latex')

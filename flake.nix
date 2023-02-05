@@ -15,6 +15,8 @@
         { 
           nix.registry.nixpkgs.flake = nixpkgs;
           nix.registry.nixpkgs-goose.flake = nixpkgs-goose;
+          nix.nixPath = [ "/etc/nix/path" ];
+          environment.etc."nix/path/nixpkgs".source = nixpkgs;
         }
         (import ./configuration.nix { pkgs-goose = nixpkgs-goose; })
         home-manager.nixosModules.home-manager

@@ -5,7 +5,7 @@ local dap = require 'dap'
 
 dap.adapters.coreclr = {
   type = 'executable',
-  command = '/home/goose/programs/netcoredbg/netcoredbg',
+  command = 'netcoredbg',
   args = {'--interpreter=vscode'}
 }
 
@@ -16,7 +16,8 @@ vim.g.dotnet_build_project = function()
     end
     local path = vim.fn.input('Path to your *proj file: ', default_path, 'file')
     vim.g['dotnet_last_proj_path'] = path
-    local cmd = 'dotnet build -c Debug "' .. path .. '" 2> /tmp/dap-debug-nvim-dotnet.log'
+    -- local cmd = 'dotnet build -c Debug "' .. path .. '" 2> /tmp/dap-debug-nvim-dotnet.log'
+    local cmd = 'dotnet build -c Debug "' .. path .. '"'
     print('\n')
     print('Cmd to execute: ' .. cmd)
     local f = os.execute(cmd)

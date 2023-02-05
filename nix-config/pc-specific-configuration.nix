@@ -13,12 +13,15 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.device = "nodev";
 
+
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ 
+    # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
+  ];
   boot.kernelParams = [ "i915.force_probe=46a8" ];
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
@@ -85,8 +88,6 @@
       CPU_ENERGY_PERF_POLICY_ON_AC="performance";
     };
   };
-
-
   systemd.services.asus-touchpad-numpad = {
     description = "Activate Numpad inside the touchpad with top right corner switch";
     documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
@@ -100,7 +101,7 @@
         sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
       }}
       # In the last argument here you choose your layout.
-      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
+      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py m433ia
     '';
     # Probably needed because it fails on boot seemingly because the driver
     # is not ready yet. Alternativly, you can use `sleep 3` or similar in the
