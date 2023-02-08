@@ -135,6 +135,8 @@ Plug 'https://github.com/AndrewRadev/linediff.vim'
 
 if vim.g.use_ide() then
     Plug 'https://github.com/antonk52/markdowny.nvim'
+    -- Plug('FStarLang/VimFStar', {["for"] = 'fstar'})
+    -- Plug('/home/goose/prj/VimFStar', {["for"] = 'fstar'})
 end
 
 vim.call('plug#end')

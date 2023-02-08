@@ -4,6 +4,7 @@ pkgs.mkShell rec {
   dotnetPkg = 
     (with dotnetCorePackages; combinePackages [
       sdk_7_0
+      sdk_6_0
     ]);
 
   deps = [

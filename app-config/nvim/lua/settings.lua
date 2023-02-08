@@ -4,8 +4,9 @@ local opt = vim.opt
 opt.clipboard = 'unnamedplus'
 if vim.g.use_ide() then
     opt.cursorline = true
+    opt.number = true
+    vim.cmd[[set relativenumber]]
 end
-opt.number = true
 
 vim.wo.fillchars='eob: '
 
@@ -16,7 +17,6 @@ opt.smartindent = false
 vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
-vim.cmd[[set relativenumber]]
 vim.cmd[[set virtualedit=block]]
 
 vim.g['python3_host_prog'] = 'python3'

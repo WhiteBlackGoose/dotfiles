@@ -25,7 +25,19 @@
   boot.kernelParams = [ "i915.force_probe=46a8" ];
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # it's not gonna be deblobbed even if you fetch rc, dumbass!
+  # boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_1.override {
+  #   argsOverride = rec {
+  #     src = pkgs.fetchurl {
+  #       url = "mirror://kernel/linux/kernel/v6.x/linux-6.2-rc7.tar.xz";
+  #       # sha256 = "0ibayrvrnw2lw7si78vdqnr20mm1d3z0g6a0ykndvgn5vdax5x9a";
+  #     };
+  #     version = "6.2-rc7";
+  #     modDirVersion = "6.2-rc7";
+  #     };
+  # });
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
@@ -82,10 +94,17 @@
       START_CHARGE_THRESH_BAT0=80;
       STOP_CHARGE_THRESH_BAT0=100;
 
+      # https://linrunner.de/tlp/settings/processor.html#cpu-scaling-governor-on-ac-bat
+
+      # Energy perf: power, performance
+      # Scaling: powersave, performance
+
+      # Battery
       CPU_SCALING_GOVERNOR_ON_BAT="powersave";
-      CPU_ENERGY_PERF_POLICY_ON_BAT="powersave";
-      CPU_SCALING_GOVERNOR_ON_AC="performance";
-      CPU_ENERGY_PERF_POLICY_ON_AC="performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT="power";
+
+      CPU_SCALING_GOVERNOR_ON_AC="powersave";
+      CPU_ENERGY_PERF_POLICY_ON_AC="power";
     };
   };
   systemd.services.asus-touchpad-numpad = {

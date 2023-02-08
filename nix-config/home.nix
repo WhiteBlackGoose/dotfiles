@@ -72,6 +72,14 @@
       name = "Toggle theme";
       exec = "/home/goose/.config/global_scripts/theme.sh";
     };
+    dictcc = {
+      name = "DE: dict.cc";
+      exec = "surf dict.cc";
+    };
+    konjugator = {
+      name = "DE: konjugator";
+      exec = "surf konjugator.reverso.net/";
+    };
   };
 
   xdg.mimeApps = {

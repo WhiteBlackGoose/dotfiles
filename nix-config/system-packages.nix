@@ -9,6 +9,8 @@
       litemdview
     ];
     commonPackages = with pkgs; [
+      surf
+
       (writeTextFile {
         name = "configure-gtk";
         destination = "/bin/configure-gtk";

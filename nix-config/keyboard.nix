@@ -7,7 +7,7 @@
   services.xserver.displayManager.sessionCommands =
     "${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText  "xkb-layout" ''
       ! Map umlauts to RIGHT ALT + <key>
-        keysym 0xff7e = Mode_switch
+        keycode 108 = Mode_switch
         keysym e = e E EuroSign
         keysym a = a A adiaeresis Adiaeresis
         keysym o = o O odiaeresis Odiaeresis
