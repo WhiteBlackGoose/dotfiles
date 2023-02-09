@@ -14,7 +14,6 @@
       (import ./nix-config/system-packages.nix { pkgs-goose = pkgs-goose; })
       ./nix-config/users.nix
       ./nix-config/env-variables.nix
-      ./nix-config/keyboard.nix
     ];
 
   nix = {

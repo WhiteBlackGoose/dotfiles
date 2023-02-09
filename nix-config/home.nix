@@ -80,6 +80,10 @@
       name = "DE: konjugator";
       exec = "surf konjugator.reverso.net/";
     };
+    fromClipboard = {
+      name = "Surf from clipboard";
+      exec = ''${pkgs.writeScript "surf-from-cp" "surf $(xclip -sel clip -o)"}'';
+    };
   };
 
   xdg.mimeApps = {
@@ -100,9 +104,27 @@
 
   xsession.enable = true;
   services.sxhkd = {
-    enable = false;
+    enable = true;
     keybindings = {
-      "super + t" = "/home/goose/.config/global_scripts/theme.sh";
+      "super + z" = ''${pkgs.writeScript "toggle-kb" "
+      currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print \"%n\")
+      if [ \"$currlayout\" == \"Russian\" ]; then
+        setxkbmap -layout us
+        ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText  "xkb-layout" ''
+        ! Map umlauts to RIGHT ALT + <key>
+          keycode 108 = Mode_switch
+          keysym e = e E EuroSign
+          keysym a = a A adiaeresis Adiaeresis
+          keysym o = o O odiaeresis Odiaeresis
+          keysym u = u U udiaeresis Udiaeresis
+          keysym s = s S ssharp
+        ''}
+      else
+        setxkbmap -layout ru
+      fi
+
+      ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier
+      "}'';
     };
   };
   # systemd.user.startServices = true;

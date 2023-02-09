@@ -137,10 +137,15 @@ if vim.g.use_ide() then
     Plug 'https://github.com/antonk52/markdowny.nvim'
     -- Plug('FStarLang/VimFStar', {["for"] = 'fstar'})
     -- Plug('/home/goose/prj/VimFStar', {["for"] = 'fstar'})
+    -- Plug 'luukvbaal/statuscol.nvim'
 end
 
 vim.call('plug#end')
 
+-- require("statuscol").setup({
+--   foldfunc = "builtin",
+--   setopt = true,
+-- })
 vim.g['python3_host_prog'] = '/usr/bin/python3'
 require('impatient')
 

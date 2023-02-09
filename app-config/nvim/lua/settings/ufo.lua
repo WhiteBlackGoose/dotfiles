@@ -70,7 +70,7 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
     return newVirtText
 end
 
--- global handler
+--global handler
 require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
         return {'treesitter'}

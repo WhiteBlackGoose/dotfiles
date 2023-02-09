@@ -3,7 +3,7 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 
-{
+rec {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
@@ -25,19 +25,24 @@
   boot.kernelParams = [ "i915.force_probe=46a8" ];
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # it's not gonna be deblobbed even if you fetch rc, dumbass!
-  # boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_1.override {
-  #   argsOverride = rec {
-  #     src = pkgs.fetchurl {
-  #       url = "mirror://kernel/linux/kernel/v6.x/linux-6.2-rc7.tar.xz";
-  #       # sha256 = "0ibayrvrnw2lw7si78vdqnr20mm1d3z0g6a0ykndvgn5vdax5x9a";
-  #     };
-  #     version = "6.2-rc7";
-  #     modDirVersion = "6.2-rc7";
-  #     };
-  # });
+  # boot.kernelPackages =
+  # let
+  #   my-kernel = (pkgs.linux_6_1.override {
+  #     argsOverride = rec {
+  #       src = pkgs.fetchzip {
+  #         url = "https://github.com/torvalds/linux/archive/refs/tags/v6.2-rc7.zip";
+  #         sha256 = "sha256-ZYkBHLFqX0bM3AxxzfzVOnxkS7bJj7lyQC6ya125RyE=";
+  #       };
+  #       version = "6.2-rc7";
+  #       modDirVersion = "6.2-rc7";
+  #       };
+  #   });
+  # in
+  # #  pkgs.linuxPackagesFor (
+  # #   pkgs.linux-libre.override { linux = my-kernel; });
+  # pkgs.linuxPackagesFor my-kernel;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
