@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
-{
+rec {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "goose";
@@ -68,10 +68,6 @@
       genericName = "third profile of ff";
       exec = "firefox -P p3 %u";
     };
-    theme = {
-      name = "Toggle theme";
-      exec = "/home/goose/.config/global_scripts/theme.sh";
-    };
     dictcc = {
       name = "DE: dict.cc";
       exec = "${pkgs.surf}/bin/surf dict.cc";
@@ -134,6 +130,9 @@
       ''}
       '';
   };
+  
+  xdg.desktopEntries.theme = (import ./theme.nix).desktopEntry;
+
   # systemd.user.services.set-desktop-background = {
   #   Unit = {
   #     Description = "Set the desktop background";
@@ -143,6 +142,8 @@
   #   Install.WantedBy = [ "graphical-session.target" ];
   #   Service.Type = "oneshot";
   #   Service.RemainAfterExit = true;
-  #   Service.ExecStart = "${pkgs.feh}/bin/feh --bg-scale /home/goose/.config/pics/nix-wallpaper-watersplash.png";
+  #   Service.ExecStart = ''${pkgs.writeScript ""}
+
+  #   '';
   # };
 }
