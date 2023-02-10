@@ -1,1 +1,0 @@
-nixos-rebuild switch --flake ".#hostname" -I nixpkgs=/home/goose/prj/nixpkgs/nixpkgs

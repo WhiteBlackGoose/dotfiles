@@ -9,8 +9,6 @@
       litemdview
     ];
     commonPackages = with pkgs; [
-      surf
-
       (writeTextFile {
         name = "configure-gtk";
         destination = "/bin/configure-gtk";
@@ -143,6 +141,8 @@
           };
         })
       )
+      nil  # LS for nix
+      sumneko-lua-language-server
     ];
   in
     novaPackages

@@ -112,6 +112,7 @@ rec {
       CPU_ENERGY_PERF_POLICY_ON_AC="power";
     };
   };
+  hardware.i2c.enable = true;
   systemd.services.asus-touchpad-numpad = {
     description = "Activate Numpad inside the touchpad with top right corner switch";
     documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
@@ -125,7 +126,7 @@ rec {
         sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
       }}
       # In the last argument here you choose your layout.
-      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py m433ia
+      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
     '';
     # Probably needed because it fails on boot seemingly because the driver
     # is not ready yet. Alternativly, you can use `sleep 3` or similar in the

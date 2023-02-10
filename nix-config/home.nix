@@ -74,15 +74,15 @@
     };
     dictcc = {
       name = "DE: dict.cc";
-      exec = "surf dict.cc";
+      exec = "${pkgs.surf}/bin/surf dict.cc";
     };
     konjugator = {
       name = "DE: konjugator";
-      exec = "surf konjugator.reverso.net/";
+      exec = "${pkgs.surf}/bin/surf konjugator.reverso.net/";
     };
     fromClipboard = {
       name = "Surf from clipboard";
-      exec = ''${pkgs.writeScript "surf-from-cp" "surf $(xclip -sel clip -o)"}'';
+      exec = ''${pkgs.writeScript "surf-from-cp" "${pkgs.surf}/bin/surf $(${pkgs.xclip}/bin/xclip -sel clip -o)"}'';
     };
   };
 
@@ -110,15 +110,15 @@
       currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print \"%n\")
       if [ \"$currlayout\" == \"Russian\" ]; then
         setxkbmap -layout us
-        ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText  "xkb-layout" ''
-        ! Map umlauts to RIGHT ALT + <key>
+        ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
           keycode 108 = Mode_switch
           keysym e = e E EuroSign
           keysym a = a A adiaeresis Adiaeresis
           keysym o = o O odiaeresis Odiaeresis
           keysym u = u U udiaeresis Udiaeresis
           keysym s = s S ssharp
-        ''}
+        ''} 2> /tmp/logggs > /tmp/logggs1
+        echo \"${pkgs.xorg.xmodmap}\" > /tmp/logggs2
       else
         setxkbmap -layout ru
       fi
