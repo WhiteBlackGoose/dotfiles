@@ -103,10 +103,15 @@
   gtk.enable = true;
 
   xsession.enable = true;
-  services.sxhkd = {
-    enable = true;
-    keybindings = {
-      "super + z" = ''${pkgs.writeScript "toggle-kb" 
+  systemd.user.startServices = true;
+  systemd.user.services.keyboard-layout = {
+    description = "sxhkd service";
+    wantedBy = ["graphical-session.target"];
+    partOf = ["graphical-session.target"];
+    serviceConfig.ExecStart = 
+      ''
+      super + z
+        ${pkgs.writeScript "toggle-kb" 
       ''
       currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print "%n")
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier
@@ -125,9 +130,9 @@
       fi
       ''}
       '';
-    };
+    serviceConfig.RestartSec = 3;
+    serviceConfig.Restart = "always";
   };
-  # systemd.user.startServices = true;
   # systemd.user.services.set-desktop-background = {
   #   Unit = {
   #     Description = "Set the desktop background";
