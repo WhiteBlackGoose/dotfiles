@@ -106,9 +106,11 @@
   services.sxhkd = {
     enable = true;
     keybindings = {
-      "super + z" = ''${pkgs.writeScript "toggle-kb" "
-      currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print \"%n\")
-      if [ \"$currlayout\" == \"Russian\" ]; then
+      "super + z" = ''${pkgs.writeScript "toggle-kb" 
+      ''
+      currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print "%n")
+      ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier
+      if [ "$currlayout" == "Russian" ]; then
         setxkbmap -layout us
         ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
           keycode 108 = Mode_switch
@@ -117,14 +119,12 @@
           keysym o = o O odiaeresis Odiaeresis
           keysym u = u U udiaeresis Udiaeresis
           keysym s = s S ssharp
-        ''} 2> /tmp/logggs > /tmp/logggs1
-        echo \"${pkgs.xorg.xmodmap}\" > /tmp/logggs2
+        ''}
       else
         setxkbmap -layout ru
       fi
-
-      ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier
-      "}'';
+      ''}
+      '';
     };
   };
   # systemd.user.startServices = true;
