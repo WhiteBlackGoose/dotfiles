@@ -2,8 +2,8 @@
 
 rec {
   dark-wallpaper = pkgs.fetchurl {
-    url = "https://cdn.discordapp.com/attachments/584479703662854156/1073657438982639686/wp5679143.jpg";
-    sha256 = "sha256-LzgQK4J0fiXqmCH65woUcWKpuuXs3axu01WhCDALT08=";
+    url = "https://raw.githubusercontent.com/Myagko/dotfiles/d31c692f3e28eadf3dcf19cb70e455e2d3e24f1b/home/wallpapers/wallhaven-dgdmj3.jpg";
+    sha256 = "sha256-4ydC+FnU4zj5+FDlmjTv5+KeCYxSvVCokTgZ8tV9nsA=";
   };
 
   light-wallpaper = "/home/goose/.config/pics/light_game_1_2560x1440.png";
