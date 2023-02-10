@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+inputs@{ config, pkgs, ... }:
 rec {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -131,19 +131,5 @@ rec {
       '';
   };
   
-  xdg.desktopEntries.theme = (import ./theme.nix).desktopEntry;
-
-  # systemd.user.services.set-desktop-background = {
-  #   Unit = {
-  #     Description = "Set the desktop background";
-  #     After = [ "graphical-session-pre.target" ];
-  #     PartOf = [ "graphical-session.target" ];
-  #   };
-  #   Install.WantedBy = [ "graphical-session.target" ];
-  #   Service.Type = "oneshot";
-  #   Service.RemainAfterExit = true;
-  #   Service.ExecStart = ''${pkgs.writeScript ""}
-
-  #   '';
-  # };
+  xdg.desktopEntries.theme = (import ./theme.nix inputs).desktopEntry;
 }
