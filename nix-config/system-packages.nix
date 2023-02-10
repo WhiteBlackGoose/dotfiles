@@ -22,8 +22,6 @@
           gsettings set $gnome_schema gtk-theme 'Dracula'
           '';
       })
-      sxhkd
-
       xdotool
 
       libotr
