@@ -105,18 +105,20 @@
   xsession.enable = true;
   systemd.user.startServices = true;
   systemd.user.services.keyboard-layout = {
-    description = "sxhkd service";
-    wantedBy = ["graphical-session.target"];
-    partOf = ["graphical-session.target"];
-    serviceConfig.ExecStart = 
+    Unit.Name = "keyboard-layout";
+    Unit.Description = "sxhkd service";
+    Unit.PartOf = ["graphical-session.target"];
+    Install.WantedBy = ["graphical-session.target"];
+    Service.ExecStart = 
+      ''${pkgs.sxhkd}/bin/sxhkd -c ${pkgs.writeText "config" 
       ''
       super + z
-        ${pkgs.writeScript "toggle-kb" 
+      	${pkgs.writeScript "toggle-kb" 
       ''
       currlayout=$(${pkgs.xkblayout-state}/bin/xkblayout-state print "%n")
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier
       if [ "$currlayout" == "Russian" ]; then
-        setxkbmap -layout us
+        ${pkgs.xorg.setxkbmap}/bin/setxkbmap -layout us
         ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
           keycode 108 = Mode_switch
           keysym e = e E EuroSign
@@ -126,12 +128,11 @@
           keysym s = s S ssharp
         ''}
       else
-        setxkbmap -layout ru
+        ${pkgs.xorg.setxkbmap}/bin/setxkbmap -layout ru
       fi
       ''}
+      ''}
       '';
-    serviceConfig.RestartSec = 3;
-    serviceConfig.Restart = "always";
   };
   # systemd.user.services.set-desktop-background = {
   #   Unit = {
