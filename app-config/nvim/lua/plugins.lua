@@ -140,6 +140,13 @@ if vim.g.use_ide() then
     -- Plug 'luukvbaal/statuscol.nvim'
 end
 
+Plug "olimorris/onedarkpro.nvim"
+Plug 'doums/darcula'
+Plug('catppuccin/nvim', { as = 'catppuccin' })
+if vim.g.use_ide() then
+    Plug 'https://github.com/hkupty/iron.nvim'
+end
+
 vim.call('plug#end')
 
 -- require("statuscol").setup({

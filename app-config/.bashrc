@@ -12,6 +12,7 @@ alias cde='cd /etc/nixos'
 
 alias xda='cd / && fzf-xdg'
 alias xdh='cd ~ && fzf-xdg'
+alias xdf='fzf-xdg'
 
 alias ns="nix-shell"
 

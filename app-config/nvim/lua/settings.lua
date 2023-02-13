@@ -46,6 +46,7 @@ if vim.g.use_ide() then
     require('settings.fstar-lsp')
     require('settings.gitsigns')
     require('settings.ionide')
+    require('settings.iron')
     require('settings.latex')
     require('settings.ls')
     require('settings.lua-lsp')

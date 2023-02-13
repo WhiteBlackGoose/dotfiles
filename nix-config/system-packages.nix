@@ -9,6 +9,7 @@
       litemdview
     ];
     commonPackages = with pkgs; [
+      deluge
       (writeTextFile {
         name = "configure-gtk";
         destination = "/bin/configure-gtk";

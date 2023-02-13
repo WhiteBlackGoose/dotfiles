@@ -68,6 +68,11 @@ rec {
       genericName = "third profile of ff";
       exec = "firefox -P p3 %u";
     };
+    firefoxLibre = {
+      name = "firefox libre";
+      genericName = "Libre & Privacy focused profile";
+      exec = "firefox -P libre %u";
+    };
     dictcc = {
       name = "DE: dict.cc";
       exec = "${pkgs.surf}/bin/surf dict.cc";
