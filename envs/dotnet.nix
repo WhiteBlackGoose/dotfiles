@@ -11,6 +11,7 @@ pkgs.mkShell rec {
     zlib
     zlib.dev
     openssl
+    dotnetPkg
     
     (
       let 
