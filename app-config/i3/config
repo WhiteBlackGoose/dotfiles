@@ -197,7 +197,6 @@ bindsym $mod+r mode "resize"
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
 # for_window [class="^.*"] border pixel 3
-for_window [class="^.*"] border pixel 1
 # new_window pixel 1
 
 focus_wrapping no
@@ -314,5 +313,4 @@ exec --no-startup-id libinput-gestures
 # bindsym $mod+t exec bash /home/goose/.config/global_scripts/theme.sh
 # exec --no-startup-id sxhkd
 
-gaps outer 0
-gaps inner 0
+include ./mode

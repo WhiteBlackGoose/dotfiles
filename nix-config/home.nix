@@ -85,6 +85,24 @@ rec {
       name = "Surf from clipboard";
       exec = ''${pkgs.writeScript "surf-from-cp" "${pkgs.surf}/bin/surf $(${pkgs.xclip}/bin/xclip -sel clip -o)"}'';
     };
+    toggleWMMode = {
+      name = "Toggle WM mode";
+      exec = "${pkgs.writeScript "toggle-wm-mode" ''
+        currmode=$(cat ~/.config/i3/currmode)
+        rm ~/.config/i3/mode
+        ${pkgs.killall}/bin/killall picom 2> /tmp/fff1 > /tmp/fff2
+        if [ "$currmode" == "productive" ]; then
+          ln -s ~/.config/i3/cute ~/.config/i3/mode
+          i3-msg restart
+          ${pkgs.picom}/bin/picom --backend glx &
+          echo cute > ~/.config/i3/currmode
+        else
+          ln -s ~/.config/i3/productive ~/.config/i3/mode
+          i3-msg restart
+          echo productive > ~/.config/i3/currmode
+        fi
+      ''}";
+    };
   };
 
   xdg.mimeApps = {
