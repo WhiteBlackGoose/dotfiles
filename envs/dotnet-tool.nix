@@ -1,3 +1,26 @@
+# 
+# Example of usage:
+# 
+# 
+# packages = 
+#   let dotnetPkg = 
+#     (with dotnetCorePackages; combinePackages [
+#       sdk_7_0
+#       sdk_6_0
+#     ]);
+#     dotnetTools = (callPackage ./dotnet-tool.nix {});
+#   in [
+#     vim
+#     firefox
+#     dotnetPkg 
+#     dotnetTools.combineTools dotnetPkg (with dotnetTools.tools; [
+#       fsautocomplete
+#       csharp-ls
+#       dotnet-repl
+#     ])
+#   ];
+# 
+
 { pkgs, stdenv  }:
 
 {
