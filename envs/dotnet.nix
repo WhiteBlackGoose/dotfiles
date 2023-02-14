@@ -21,6 +21,8 @@ pkgs.mkShell rec {
           (with dt.tools; [
             fsautocomplete
             csharp-ls
+            dotnet-repl
+            dotnet-interactive
           ])
     )
   ];
