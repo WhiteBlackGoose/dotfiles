@@ -75,3 +75,7 @@ add('n', '<leader>ls', ":LSPSignature<CR>")
 add('n', '<leader>lrn', ":LSPRename<CR>")
 add('n', '<leader>lc', ":LSPCodeActions<CR>")
 add('n', '<leader>lre', ":LSPReferences<CR>")
+
+-- Clipboard into buffer
+add('n', '<leader>nv', ":vert new<CR>p")
+add('n', '<leader>ns', ":hor new<CR>p")

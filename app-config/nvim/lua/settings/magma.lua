@@ -24,3 +24,5 @@ vim.cmd[[
 :command MagmaInitCSharp lua MagmaInitCSharp()
 :command MagmaInitFSharp lua MagmaInitFSharp()
 ]]
+
+vim.g['magma_automatically_open_output'] = false

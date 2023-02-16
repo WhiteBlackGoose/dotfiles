@@ -86,8 +86,7 @@ Plug 'https://github.com/Draco-lang/draco-nvim'
 Plug 'https://github.com/ggandor/leap.nvim'
 
 if vim.g.use_ide() then
-    -- Plug('file:///home/goose/prj/magma-nvim-fork/magma-nvim.git', { branch = 'main' })
-    -- Plug('WhiteBlackGoose/magma-nvim', { branch = 'main' })
+    -- Plug('file:///home/goose/prj/magma-nvim-goose', { branch = 'main' })
     Plug('WhiteBlackGoose/magma-nvim-goose', { branch = 'main' })
     -- Plug 'https://github.com/sakhnik/nvim-gdb'
     Plug 'nvim-treesitter/nvim-treesitter-context'
@@ -153,8 +152,8 @@ vim.call('plug#end')
 -- })
 vim.g['python3_host_prog'] = '/usr/bin/python3'
 require('impatient')
-
 require('leap')
+
 require('baleia').setup { }
 if vim.g.use_ide() then
     require('markdowny').setup({filetypes = {'markdown'}})
