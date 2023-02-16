@@ -49,6 +49,7 @@ if vim.g.use_ide() then
     require('settings.iron')
     require('settings.latex')
     require('settings.ls')
+    require('settings.lsp')
     require('settings.lua-lsp')
     require('settings.magma')
     require('settings.nvim-autopairs')

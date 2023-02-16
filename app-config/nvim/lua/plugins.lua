@@ -56,8 +56,6 @@ if vim.g.use_ide() then
     Plug 'windwp/nvim-ts-autotag'
 end
 
-Plug 'edluffy/hologram.nvim'
-
 Plug 'lervag/vimtex'
 
 if vim.g.use_ide() then
@@ -158,9 +156,6 @@ require('impatient')
 
 require('leap')
 require('baleia').setup { }
-require('hologram').setup{ auto_display = true }
-vim.g['magma_automatically_open_output'] = false
-vim.g['magma_image_provider'] = 'kitty'
 if vim.g.use_ide() then
     require('markdowny').setup({filetypes = {'markdown'}})
 end

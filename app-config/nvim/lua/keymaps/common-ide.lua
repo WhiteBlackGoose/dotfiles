@@ -64,3 +64,14 @@ add('n', '<leader>tbt', ':TableModeToggle<CR>')
 vim.keymap.set('v', '<leader>mdb', ":lua require('markdowny').bold()<cr>", { buffer = 0 })
 vim.keymap.set('v', '<leader>mdi', ":lua require('markdowny').italic()<cr>", { buffer = 0 })
 vim.keymap.set('v', '<leader>mdk', ":lua require('markdowny').link()<cr>", { buffer = 0 })
+
+-- built-in LSP
+
+add('n', '<leader>ldc', ":LSPDeclaration<CR>")
+add('n', '<leader>ldf', ":LSPDefinition<CR>")
+add('n', '<leader>lh', ":LSPHover<CR>")
+add('n', '<leader>lH', ":LSPHover<CR>:LSPHover<CR>")
+add('n', '<leader>ls', ":LSPSignature<CR>")
+add('n', '<leader>lrn', ":LSPRename<CR>")
+add('n', '<leader>lc', ":LSPCodeActions<CR>")
+add('n', '<leader>lre', ":LSPReferences<CR>")
