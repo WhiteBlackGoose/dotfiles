@@ -105,11 +105,11 @@
   # for HP printer
   services.printing.drivers = [ pkgs.hplip ];
 
-  # hotkeys
-  # systemd.user.services.sx
-  # options.sxhkd.enable = true;
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
+
+  # https://nixos.wiki/wiki/Virt-manager
+  virtualisation.libvirtd.enable = true;
 }
 
 

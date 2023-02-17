@@ -6,7 +6,10 @@
 
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      virt-manager
+      qemu_kvm
       litemdview
+      terminator
     ];
     commonPackages = with pkgs; [
       deluge
@@ -73,7 +76,6 @@
       wget
       xclip
       xfce.xfce4-screenshooter
-      xfce.xfce4-terminal
       xss-lock
       zathura
       zip

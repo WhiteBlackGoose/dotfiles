@@ -10,9 +10,9 @@ vim.g.theme_dark = function()
     -- vim.cmd[[colorscheme onedark]]
     -- vim.cmd[[colorscheme darcula]]
     vim.o.background = "dark"
-    vim.cmd[[colorscheme catppuccin-frappe]]
-    -- vim.cmd[[colorscheme tokyonight]]
-    -- vim.cmd[[let ayucolor="dark"]]
+    -- vim.cmd[[colorscheme catppuccin-frappe]]
+    vim.cmd[[colorscheme tokyonight]]
+    vim.cmd[[let ayucolor="dark"]]
     -- ! git commit -m "1" && git push local
     -- vim.cmd[[colorscheme andromeda]]
 

@@ -1,0 +1,75 @@
+[global_config]
+[keybindings]
+  new_tab = ""
+  cycle_next = ""
+  cycle_prev = ""
+  go_next = ""
+  go_prev = ""
+  go_up = ""
+  go_down = ""
+  go_left = ""
+  go_right = ""
+  rotate_cw = ""
+  rotate_ccw = ""
+  split_horiz = ""
+  split_vert = ""
+  close_term = ""
+  toggle_scrollbar = ""
+  search = ""
+  page_up_half = <Shift><Alt>k
+  page_down_half = <Shift><Alt>j
+  line_up = <Alt>k
+  line_down = <Alt>j
+  close_window = ""
+  resize_up = ""
+  resize_down = ""
+  resize_left = ""
+  resize_right = ""
+  move_tab_right = ""
+  move_tab_left = ""
+  toggle_zoom = ""
+  scaled_zoom = ""
+  next_tab = ""
+  prev_tab = ""
+  full_screen = ""
+  reset = ""
+  reset_clear = ""
+  hide_window = ""
+  group_all = ""
+  group_tab = ""
+  new_window = ""
+  new_terminator = ""
+  insert_number = ""
+  insert_padded = ""
+  edit_window_title = ""
+  edit_tab_title = ""
+  edit_terminal_title = ""
+  layout_launcher = ""
+  next_profile = <Primary>at
+  help = ""
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_color = "#24283b"
+    font = FuraMono Nerd Font Mono Medium 11
+    foreground_color = "#f6f5f4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+  [[white]]
+    icon_bell = False
+    background_color = "#FAFAFA"
+    font = FuraMono Nerd Font Mono Medium 11
+    foreground_color = "#3d3846"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

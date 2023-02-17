@@ -52,8 +52,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Shift+Return exec xfce4-terminal
+bindsym $mod+Return exec terminator
+bindsym $mod+Shift+Return exec terminator -p white
 
 # kill focused window
 bindsym $mod+Shift+q kill

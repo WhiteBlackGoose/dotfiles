@@ -6,7 +6,7 @@ rec {
     sha256 = "sha256-4ydC+FnU4zj5+FDlmjTv5+KeCYxSvVCokTgZ8tV9nsA=";
   };
 
-  light-wallpaper = "/home/goose/.config/pics/light_game_1_2560x1440.png";
+  light-wallpaper = "/home/goose/.config/pics/nixos-wallpaper-light-2880x1800.png";
 
   apply-theme-script = pkgs.writeScript "apply-theme" ''
     curr=$(~/.config/global_scripts/get-current-theme.sh)

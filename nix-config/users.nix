@@ -6,7 +6,7 @@
     isNormalUser = true;
     description = "goose";
     home = "/home/goose";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "kvm" ];
     packages = with pkgs; [
     
     ];
