@@ -23,6 +23,8 @@ pkgs.mkShell rec {
             csharp-ls
             dotnet-repl
             dotnet-interactive
+            angourimath-terminal
+            dotnet-script
           ])
     )
   ];
