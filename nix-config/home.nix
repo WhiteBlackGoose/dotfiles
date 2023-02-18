@@ -75,11 +75,11 @@ rec {
     };
     dictcc = {
       name = "DE: dict.cc";
-      exec = "${pkgs.surf}/bin/surf dict.cc";
+      exec = "${pkgs.surf}/bin/surf dict.cc -s";
     };
     konjugator = {
       name = "DE: konjugator";
-      exec = "${pkgs.surf}/bin/surf konjugator.reverso.net/";
+      exec = "${pkgs.surf}/bin/surf konjugator.reverso.net -s";
     };
     fromClipboard = {
       name = "Surf from clipboard";

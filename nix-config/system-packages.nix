@@ -11,7 +11,14 @@
       litemdview
       terminator
     ];
+
+    dtools = pkgs.callPackage ./dotnet-tool.nix {};
+
     commonPackages = with pkgs; [
+
+      (let dt = dtools;
+      in dt.combineTools dotnet-sdk_6 [ dt.tools.angourimath-terminal ])
+
       deluge
       (writeTextFile {
         name = "configure-gtk";
