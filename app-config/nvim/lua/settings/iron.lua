@@ -29,7 +29,7 @@ iron.setup {
     -- remove_mark = "<space>md",
     -- cr = "<space>s<cr>",
     -- interrupt = "<space>s<space>",
-    -- exit = "<space>sq",
+    exit = "<space>ix",
     -- clear = "<space>cl",
   },
   -- If the highlight is on, you can change how it looks

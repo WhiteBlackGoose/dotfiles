@@ -6,18 +6,22 @@
 
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      element-desktop
       virt-manager
       qemu_kvm
       litemdview
-      terminator
+      # konsole
+      xfce.xfce4-terminal
+      # terminator
     ];
 
     dtools = pkgs.callPackage ./dotnet-tool.nix {};
 
     commonPackages = with pkgs; [
 
-      (let dt = dtools;
-      in dt.combineTools dotnet-sdk_6 [ dt.tools.angourimath-terminal ])
+      (dtools.combineTools dotnet-sdk_6 [ 
+        dtools.tools.angourimath-terminal 
+      ])
 
       deluge
       (writeTextFile {
@@ -96,22 +100,26 @@
       pinentry-gnome
     ];
     devPackages = with pkgs; [
-      (python3.withPackages (p: with p; [
+      (pkgs.python3.withPackages (p: with p; [
         flake8
         jedi-language-server
         jupyter-client
         jupyter_console
-        neovim
+        ipython
+        scikit-learn
+        notebook
+        pkgs.neovim
         numpy
         pandas
         pillow
-        pygmentex
+        pkgs.pygmentex
         pynvim
         pyperclip
         scipy
         seaborn
         statsmodels
         tqdm
+        yfinance
       ]))
       ueberzug
 
@@ -158,5 +166,4 @@
     ++ securityPackages
     ++ devPackages 
     ++ myForks;
-
 }

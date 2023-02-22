@@ -1,1 +1,3 @@
 app-config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+./app-config/i3/currmode
+./app-config/global_scripts/currtheme

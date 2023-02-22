@@ -2,13 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs-goose, ... }:
+{ pkgs-goose, linux-input, ... }:
 { config, pkgs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./nix-config/pc-specific-configuration.nix
+      (import ./nix-config/pc-specific-configuration.nix { linux-input = linux-input; })
       (import ./nix-config/xserver.nix { pkgs-goose = pkgs-goose; })
       ./nix-config/system-settings.nix
       (import ./nix-config/system-packages.nix { pkgs-goose = pkgs-goose; })

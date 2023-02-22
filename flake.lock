@@ -53,11 +53,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-new-linux": {
+      "locked": {
+        "lastModified": 1676907840,
+        "narHash": "sha256-SCXA0oPn7ln7FxfRsTv0bkdGgmASgJ1mXxKiY19fP0U=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "04a05c2e1bd069ae01bad0265f966c4586d5ea24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-goose": "nixpkgs-goose"
+        "nixpkgs-goose": "nixpkgs-goose",
+        "nixpkgs-new-linux": "nixpkgs-new-linux"
       }
     },
     "utils": {

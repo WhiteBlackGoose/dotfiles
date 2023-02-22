@@ -1,6 +1,6 @@
 # Setup
 
-|                  | What I use                                                                              |
+|                  | What I use                                                                       |
 |:-----------------|:---------------------------------------------------------------------------------|
 | OS               | NixOS                                                                            |
 | DE               | -                                                                                |
@@ -20,8 +20,10 @@
 | File manager     | -                                                                                |
 | Password manager | [pass](https://gist.github.com/WhiteBlackGoose/8ffb7123b991dcc4cdafcdd574bdc3c6) |
 | Font             | FiraCode Nerd                                                                    |
-| Browser          | firefox + vimium + passff                                                        |
+| Browser          | firefox, surf, Tor                                                               |
+| Currency         | BTC, ETH                                                                         |
 | App launcher     | rofi                                                                             |
+
 # nvim
 
 To get my setup of nvim:
