@@ -7,4 +7,5 @@ vim.cmd[[
 :command LSPRename lua vim.lsp.buf.rename()
 :command LSPCodeActions lua vim.lsp.buf.code_action()
 :command LSPReferences lua vim.lsp.buf.references()
+:command LSPLocList lua vim.diagnostic.setloclist()
 ]]

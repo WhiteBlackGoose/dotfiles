@@ -18,7 +18,8 @@
     dtools = pkgs.callPackage ./dotnet-tool.nix {};
 
     commonPackages = with pkgs; [
-
+      krita
+      surf
       (dtools.combineTools dotnet-sdk_6 [ 
         dtools.tools.angourimath-terminal 
       ])

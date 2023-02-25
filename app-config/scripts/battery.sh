@@ -19,5 +19,5 @@ else
     sym="⚡"
 fi
 
-echo " $sym  $stat % | $power_drain W | $time_left min "
+echo " $sym  $stat % | $current A | $power_drain W | $time_left min "
 # echo " $sym  $stat % $power_drain W "

@@ -37,7 +37,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/goose/scripts/lock.sh --nofork
+exec --no-startup-id xset s 600000
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/goose/scripts/lock.sh --nofork
 
 exec --no-startup-id pactl load-module module-bluetooth-discover
 
@@ -266,7 +267,7 @@ bindsym $mod+Shift+n exec ~/scripts/notes.sh
 # bindsym $mod+x move workspace to output right
 
 bindsym $mod+Shift+Home exec /home/goose/scripts/lock.sh
-bindsym $mod+Shift+Delete exec /home/goose/scripts/lock-and-sleep.sh
+bindsym $mod+Shift+Delete exec systemctl suspend
 
 bindsym $mod+c exec xdotool click 1
 bindsym $mod+comma exec xdotool mousedown 1

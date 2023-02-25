@@ -142,6 +142,8 @@ Plug 'doums/darcula'
 Plug('catppuccin/nvim', { as = 'catppuccin' })
 if vim.g.use_ide() then
     Plug 'https://github.com/hkupty/iron.nvim'
+    Plug 'https://github.com/lkhphuc/jupyter-kernel.nvim'
+    Plug 'https://github.com/hrsh7th/nvim-cmp'
 end
 
 vim.call('plug#end')
