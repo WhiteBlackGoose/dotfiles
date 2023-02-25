@@ -2,156 +2,84 @@ local Plug = vim.fn['plug#']
 
 -- ~/.local/share/nvim/plugged
 
-vim.call('plug#begin')
-Plug 'lewis6991/impatient.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
+commonPlugins = {
+    'lewis6991/impatient.nvim',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'https://github.com/vim-airline/vim-airline',
+    'vim-airline/vim-airline-themes',
+    'romgrk/barbar.nvim',
+    { 'mg979/vim-visual-multi', branch = 'master' },
+    'kyazdani42/nvim-web-devicons',
+    'kyazdani42/nvim-tree.lua',
+    {'folke/tokyonight.nvim', branch = 'main' },
+    'ayu-theme/ayu-vim',
+    'nvim-lua/plenary.nvim',
+    {'nvim-telescope/telescope.nvim', tag = '0.1.0' },
+    'lervag/vimtex',
+    'voldikss/vim-floaterm',
+    'dyng/ctrlsf.vim',
+    'samodostal/image.nvim',
+    'm00qek/baleia.nvim',
+    'https://github.com/Draco-lang/draco-nvim',
+    'https://github.com/ggandor/leap.nvim',
+    'https://github.com/xorid/asciitree.nvim',
+    'glepnir/template.nvim',
+    'https://github.com/tpope/vim-surround',
+    'https://github.com/mbbill/undotree',
+    'https://github.com/lambdalisue/suda.vim',
+    'https://github.com/LnL7/vim-nix',
+    'https://github.com/AndrewRadev/linediff.vim',
+    "olimorris/onedarkpro.nvim",
+    'doums/darcula',
+    { 'catppuccin/nvim', as = 'catppuccin' },
+}
 
-if vim.g.use_ide() then Plug 'Shougo/deoplete.nvim' Plug 'deoplete-plugins/deoplete-lsp'
-    Plug 'prabirshrestha/asyncomplete.vim'
-end
-
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'romgrk/barbar.nvim'
-
-if vim.g.use_ide() then
-    Plug 'dense-analysis/ale'
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'ionide/Ionide-vim'
-end
-
-Plug('mg979/vim-visual-multi', { branch = 'master' })
-
-if not vim.g.use_simple() then
-    Plug 'kyazdani42/nvim-web-devicons'
-end
-Plug 'kyazdani42/nvim-tree.lua'
-
-Plug('folke/tokyonight.nvim', { branch = 'main' })
-Plug 'ayu-theme/ayu-vim'
-
-if vim.g.use_ide() then
-    Plug 'mfussenegger/nvim-dap'
-    Plug 'rcarriga/nvim-dap-ui'
-end
-
-if vim.g.use_ide() then
-    Plug 'lukas-reineke/indent-blankline.nvim'
-end
-
-Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
-
-if vim.g.use_ide() then
-    Plug 'vim-test/vim-test'
-
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'p00f/nvim-ts-rainbow'
-
-    Plug 'lewis6991/gitsigns.nvim'
-
-    Plug 'windwp/nvim-autopairs'
-
-    Plug 'windwp/nvim-ts-autotag'
-end
-
-Plug 'lervag/vimtex'
-
-if vim.g.use_ide() then
-    Plug 'neovim/nvim-lspconfig' 
-    Plug 'simrat39/rust-tools.nvim'
-end
-
-Plug 'voldikss/vim-floaterm'
-
-Plug 'dyng/ctrlsf.vim'
-
-if vim.g.use_ide() then
-    Plug 'zchee/deoplete-jedi'
-    Plug 'mfussenegger/nvim-dap-python'
-    
-    Plug 'kevinhwang91/promise-async'
-    Plug 'kevinhwang91/nvim-ufo'
-
-    Plug 'nguyenvukhang/nvim-toggler'
-end
-
-Plug 'samodostal/image.nvim'
-Plug 'm00qek/baleia.nvim'
--- Plug 'file:///home/goose/prj/draco-nvim/draco-nvim.git'
-Plug 'https://github.com/Draco-lang/draco-nvim'
-
-
-Plug 'https://github.com/ggandor/leap.nvim'
+idePlugins = {
+    'Shougo/deoplete.nvim',
+    'deoplete-plugins/deoplete-lsp',
+    'prabirshrestha/asyncomplete.vim',
+    'dense-analysis/ale',
+    'OmniSharp/omnisharp-vim',
+    'ionide/Ionide-vim',
+    'mfussenegger/nvim-dap',
+    'rcarriga/nvim-dap-ui',
+    'lukas-reineke/indent-blankline.nvim',
+    'vim-test/vim-test',
+    'nvim-treesitter/nvim-treesitter',
+    'p00f/nvim-ts-rainbow',
+    'lewis6991/gitsigns.nvim',
+    'windwp/nvim-autopairs',
+    'windwp/nvim-ts-autotag',
+    'neovim/nvim-lspconfig' ,
+    'simrat39/rust-tools.nvim',
+    'zchee/deoplete-jedi',
+    'mfussenegger/nvim-dap-python',
+    'kevinhwang91/promise-async',
+    'kevinhwang91/nvim-ufo',
+    'nguyenvukhang/nvim-toggler',
+    {'WhiteBlackGoose/magma-nvim-goose', branch = 'main' },
+    'nvim-treesitter/nvim-treesitter-context',
+    'tpope/vim-fugitive',
+    'tpope/vim-dadbod',
+    'https://github.com/kristijanhusak/vim-dadbod-ui',
+    'https://github.com/kristijanhusak/vim-dadbod-completion',
+    'https://github.com/folke/neodev.nvim',
+    'https://github.com/nvim-colortils/colortils.nvim',
+    'https://github.com/opdavies/toggle-checkbox.nvim',
+    'dhruvasagar/vim-table-mode',
+    'https://github.com/antonk52/markdowny.nvim',
+    'https://github.com/hkupty/iron.nvim',
+    'https://github.com/lkhphuc/jupyter-kernel.nvim',
+    'https://github.com/hrsh7th/nvim-cmp',
+}
 
 if vim.g.use_ide() then
-    -- Plug('file:///home/goose/prj/magma-nvim-goose', { branch = 'main' })
-    Plug('WhiteBlackGoose/magma-nvim-goose', { branch = 'main' })
-    -- Plug 'https://github.com/sakhnik/nvim-gdb'
-    Plug 'nvim-treesitter/nvim-treesitter-context'
+    require("lazy").setup(TableUnion(commonPlugins, idePlugins), {})
+else
+    require("lazy").setup(commonPlugins, {})
 end
 
-Plug 'https://github.com/xorid/asciitree.nvim'
--- Plug 'safv12/andromeda.vim'
--- Plug 'WhiteBlackGoose/andromeda.nvim'
--- Plug 'file:///home/goose/prj/andromeda.nvim/andromeda.nvim.git'
-
-Plug 'glepnir/template.nvim'
-
-if vim.g.use_ide() then
-    Plug 'tpope/vim-fugitive'
-end
-
-Plug 'https://github.com/tpope/vim-surround'
-
-if vim.g.use_ide() then
-    Plug 'tpope/vim-dadbod'
-    Plug 'https://github.com/kristijanhusak/vim-dadbod-ui'
-    Plug 'https://github.com/kristijanhusak/vim-dadbod-completion'
-
-    Plug 'https://github.com/folke/neodev.nvim'
-end
-
-Plug 'https://github.com/mbbill/undotree'
-
-if vim.g.use_ide() then
-    Plug 'https://github.com/nvim-colortils/colortils.nvim'
-end
-
-Plug 'https://github.com/lambdalisue/suda.vim'
-
-if vim.g.use_ide() then
-    Plug 'https://github.com/opdavies/toggle-checkbox.nvim'
-    Plug 'dhruvasagar/vim-table-mode'
-end
-
-Plug 'https://github.com/LnL7/vim-nix'
-
-Plug 'https://github.com/AndrewRadev/linediff.vim'
-
-if vim.g.use_ide() then
-    Plug 'https://github.com/antonk52/markdowny.nvim'
-    -- Plug('FStarLang/VimFStar', {["for"] = 'fstar'})
-    -- Plug('/home/goose/prj/VimFStar', {["for"] = 'fstar'})
-    -- Plug 'luukvbaal/statuscol.nvim'
-end
-
-Plug "olimorris/onedarkpro.nvim"
-Plug 'doums/darcula'
-Plug('catppuccin/nvim', { as = 'catppuccin' })
-if vim.g.use_ide() then
-    Plug 'https://github.com/hkupty/iron.nvim'
-    Plug 'https://github.com/lkhphuc/jupyter-kernel.nvim'
-    Plug 'https://github.com/hrsh7th/nvim-cmp'
-end
-
-vim.call('plug#end')
-
--- require("statuscol").setup({
---   foldfunc = "builtin",
---   setopt = true,
--- })
 vim.g['python3_host_prog'] = '/usr/bin/python3'
 require('impatient')
 require('leap')

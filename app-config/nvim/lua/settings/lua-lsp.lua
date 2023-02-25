@@ -7,7 +7,7 @@ require("neodev").setup({
 local lspconfig = require('lspconfig')
 
 -- example to setup sumneko and enable call snippets
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       completion = {

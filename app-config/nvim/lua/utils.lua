@@ -31,3 +31,13 @@ vim.g.use_ide = function()
     end
 end
 
+function TableUnion(a, b)
+    local result = {}
+    for k,v in pairs ( a ) do
+        table.insert( result, v )
+    end
+    for k,v in pairs ( b ) do
+         table.insert( result, v )
+    end
+    return result
+end
