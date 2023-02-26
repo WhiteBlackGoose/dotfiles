@@ -10,17 +10,13 @@ cmp.setup({
         { name = "jupyter" },
         { name = "nvim_lsp" },
         { name = 'luasnip' },
+        { name = 'path' }
     }),
     mapping = cmp.mapping.preset.insert({
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<space>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
         ['<S-Tab>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
     })
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig').jedi_language_server.setup {
-  capabilities = capabilities
-}

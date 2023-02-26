@@ -66,10 +66,13 @@ local idePlugins = {
     'dhruvasagar/vim-table-mode',
     'https://github.com/antonk52/markdowny.nvim',
     'https://github.com/hkupty/iron.nvim',
+
+    'https://github.com/hrsh7th/cmp-path',
     'https://github.com/hrsh7th/cmp-nvim-lsp',
     'L3MON4D3/LuaSnip',
     'https://github.com/saadparwaiz1/cmp_luasnip',
     { 'https://github.com/hrsh7th/nvim-cmp' },
+
     { 'https://github.com/lkhphuc/jupyter-kernel.nvim', branch = "cmp", build = ":UpdateRemotePlugins", opts = {
     inspect = {
           -- opts for vim.lsp.util.open_floating_preview

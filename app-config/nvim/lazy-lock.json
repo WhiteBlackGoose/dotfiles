@@ -8,6 +8,7 @@
   "baleia.nvim": { "branch": "main", "commit": "8ba437c2da2c917529e1c3952412a2780cecf6c6" },
   "barbar.nvim": { "branch": "master", "commit": "bbe56c80109cf431f25233a9535a84b75390d05c" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
+  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "colortils.nvim": { "branch": "main", "commit": "180a459fd142a39c1c6488e7a22de0aa93ce0578" },
   "ctrlsf.vim": { "branch": "master", "commit": "32236a8b376d9311dec9b5fe795ca99d32060b13" },

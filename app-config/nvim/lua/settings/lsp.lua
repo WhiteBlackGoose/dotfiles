@@ -12,7 +12,8 @@ vim.cmd[[
 
 
 local lsp = require'lspconfig'
-lsp.texlab.setup{}
-lsp.clangd.setup{}
-lsp.nil_ls.setup{}
-lsp.jedi_language_server.setup{}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+lsp.texlab.setup{capabilities = capabilities}
+lsp.clangd.setup{capabilities = capabilities}
+lsp.nil_ls.setup{capabilities = capabilities}
+lsp.jedi_language_server.setup{capabilities = capabilities}
