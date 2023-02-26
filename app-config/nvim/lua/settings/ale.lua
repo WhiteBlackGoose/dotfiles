@@ -1,9 +1,8 @@
-require'lspconfig'.jedi_language_server.setup{}
 vim.g['ale_python_flake8_options'] = '--ignore=F,W1,E1,W2,E2,W3,E3,W4,E4,W5,E5,E125,E722,E402'
 -- vim.b['ale_linters'] = { python = { 'flake8', 'jedils' } }
 vim.b['ale_linters'] = { python = { 'flake8' } }
 
-vim.g['ale_lsp_suggestions'] = 1
+vim.g['ale_lsp_suggestions'] = 0
 vim.g['ale_lsp_show_message_severity'] = 'information'
 
 vim.g['ale_sign_error'] =          vim.g.gsign(' ', 'E')

@@ -1,8 +1,4 @@
-local Plug = vim.fn['plug#']
-
--- ~/.local/share/nvim/plugged
-
-commonPlugins = {
+local commonPlugins = {
     'lewis6991/impatient.nvim',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -35,8 +31,8 @@ commonPlugins = {
     { 'catppuccin/nvim', as = 'catppuccin' },
 }
 
-idePlugins = {
-    'Shougo/deoplete.nvim',
+local idePlugins = {
+    { 'Shougo/deoplete.nvim', build = ":UpdateRemotePlugins" },
     'deoplete-plugins/deoplete-lsp',
     'prabirshrestha/asyncomplete.vim',
     'dense-analysis/ale',
@@ -58,7 +54,7 @@ idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'WhiteBlackGoose/magma-nvim-goose', branch = 'main' },
+    {'WhiteBlackGoose/magma-nvim-goose', branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',
@@ -70,8 +66,20 @@ idePlugins = {
     'dhruvasagar/vim-table-mode',
     'https://github.com/antonk52/markdowny.nvim',
     'https://github.com/hkupty/iron.nvim',
-    'https://github.com/lkhphuc/jupyter-kernel.nvim',
-    'https://github.com/hrsh7th/nvim-cmp',
+    'https://github.com/hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'https://github.com/saadparwaiz1/cmp_luasnip',
+    { 'https://github.com/hrsh7th/nvim-cmp' },
+    { 'https://github.com/lkhphuc/jupyter-kernel.nvim', branch = "cmp", build = ":UpdateRemotePlugins", opts = {
+    inspect = {
+          -- opts for vim.lsp.util.open_floating_preview
+          window = {
+            max_width = 84,
+          },
+        },
+        -- time to wait for kernel's response in seconds
+        timeout = 0.5,
+      }},
 }
 
 if vim.g.use_ide() then

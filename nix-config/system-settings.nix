@@ -59,7 +59,7 @@
   };
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "CascadiaCode" ]; })
   ];
 
   # GnuPG

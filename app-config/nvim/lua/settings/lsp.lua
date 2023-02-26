@@ -9,3 +9,10 @@ vim.cmd[[
 :command LSPReferences lua vim.lsp.buf.references()
 :command LSPLocList lua vim.diagnostic.setloclist()
 ]]
+
+
+local lsp = require'lspconfig'
+lsp.texlab.setup{}
+lsp.clangd.setup{}
+lsp.nil_ls.setup{}
+lsp.jedi_language_server.setup{}
