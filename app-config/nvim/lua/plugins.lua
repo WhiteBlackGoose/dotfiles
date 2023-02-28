@@ -73,7 +73,7 @@ local idePlugins = {
     'https://github.com/saadparwaiz1/cmp_luasnip',
     { 'https://github.com/hrsh7th/nvim-cmp' },
 
-    { 'https://github.com/lkhphuc/jupyter-kernel.nvim', branch = "cmp", build = ":UpdateRemotePlugins", opts = {
+    { 'https://github.com/lkhphuc/jupyter-kernel.nvim', branch = "main", build = ":UpdateRemotePlugins", opts = {
     inspect = {
           -- opts for vim.lsp.util.open_floating_preview
           window = {

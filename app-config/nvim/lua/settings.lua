@@ -32,6 +32,7 @@ require('settings.mason')
 require('settings.nvim-tree')
 require('settings.telescope')
 require('settings.template')
+require('settings.spellcheck')
 require('settings.undotree')
 require('settings.wdiff')
 
