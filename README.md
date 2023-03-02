@@ -71,16 +71,16 @@ To get my setup of nvim:
 
 ### Why nvim?
 
-- :white_check_mark: Start up time (< 500 ms is not noticeable by human)
-- :white_check_mark: Responsiveness (no GUI - no lags)
-- :white_check_mark: Customisation. It's all lua. You almost write your own IDE, given components. Glue them together and add/remove whatever you want
-- :white_check_mark: Suitable to run over terminal SSH. So you can literally use a full-blown IDE from a tablet
-- :white_check_mark: Optimized for hotkeys. It's impossible to use mouse, so 100% everything is reachable from keyboard
-- :white_check_mark: Opens in the same window as your shell, not poping up (because no GUI)
-- :white_check_mark: You certainly can copy any part of the window because ... it's all text
-- :white_check_mark: FOSS
-- :x: Ridiculous learning curve. It's not that you *just* need to learn the completely alien to most modern people keybindings, you also have to learn installing and configuring plugins, and soon, coding some basics in lua as well as basics of interacting with `nvim` itself. Meanwhile in Visual Studio you need to click two buttons and you're set
-- :x: Availability. For example, I couldn't find a test explorer for neovim for .net
+- ✅ Start up time (< 500 ms is not noticeable by human)
+- ✅ Responsiveness (no GUI - no lags)
+- ✅ Customisation. It's all lua. You almost write your own IDE, given components. Glue them together and add/remove whatever you want
+- ✅ Suitable to run over terminal SSH. So you can literally use a full-blown IDE from a tablet
+- ✅ Optimized for hotkeys. It's impossible to use mouse, so 100% everything is reachable from keyboard
+- ✅ Opens in the same window as your shell, not poping up (because no GUI)
+- ✅ You certainly can copy any part of the window because ... it's all text
+- ✅ FOSS
+- ❌ Ridiculous learning curve. It's not that you *just* need to learn the completely alien to most modern people keybindings, you also have to learn installing and configuring plugins, and soon, coding some basics in lua as well as basics of interacting with `nvim` itself. Meanwhile in Visual Studio you need to click two buttons and you're set
+- ❌ Availability. For example, I couldn't find a test explorer for neovim for .net
 
 ### Features for developers
 
