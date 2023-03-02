@@ -10,6 +10,7 @@ local commonPlugins = {
     'ayu-theme/ayu-vim',
     'nvim-lua/plenary.nvim',
     {'nvim-telescope/telescope.nvim', tag = '0.1.0' },
+    'nvim-telescope/telescope-symbols.nvim',
     'lervag/vimtex',
     'voldikss/vim-floaterm',
     'dyng/ctrlsf.vim',
@@ -88,16 +89,23 @@ local idePlugins = {
             vim.diagnostic.config({ virtual_lines = false })
         end },
 
-    { 'aaronhallaert/ts-advanced-git-search.nvim',
+    { 'aaronhallaert/ts-advanced-git-search.nvim', dev = false,
         config = function()
                 require("telescope").load_extension("advanced_git_search")
             end, }
 }
 
+lazy_opt = {
+    dev = {
+        path = "~/prj",
+        fallback = false
+    }
+}
+
 if vim.g.use_ide() then
-    require("lazy").setup(TableUnion(commonPlugins, idePlugins), {})
+    require("lazy").setup(TableUnion(commonPlugins, idePlugins), lazy_opt)
 else
-    require("lazy").setup(commonPlugins, {})
+    require("lazy").setup(commonPlugins, lazy_opt)
 end
 
 vim.g['python3_host_prog'] = '/usr/bin/python3'
