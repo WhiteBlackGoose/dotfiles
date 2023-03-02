@@ -1,8 +1,13 @@
 require'lspconfig'.texlab.setup{}
 
+vim.cmd[[
+:autocmd BufNewFile,BufRead *.tex VimtexCompile
+]]
+
 -- chktex is in my way
 vim.g['ale_tex_chktex_executable'] = 'aaa'
 vim.g['ale_tex_lacheck_executable'] = 'aaa'
+vim.g.vimtex_fold_enabled = true
 
 function TexMoveOut(path)
     vim.g.vimtex_compiler_latexmk = {

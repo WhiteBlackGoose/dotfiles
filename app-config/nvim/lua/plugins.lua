@@ -1,7 +1,5 @@
 local commonPlugins = {
     'lewis6991/impatient.nvim',
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
     'https://github.com/vim-airline/vim-airline',
     'vim-airline/vim-airline-themes',
     'romgrk/barbar.nvim',
@@ -89,6 +87,11 @@ local idePlugins = {
             require("lsp_lines").setup() 
             vim.diagnostic.config({ virtual_lines = false })
         end },
+
+    { 'aaronhallaert/ts-advanced-git-search.nvim',
+        config = function()
+                require("telescope").load_extension("advanced_git_search")
+            end, }
 }
 
 if vim.g.use_ide() then

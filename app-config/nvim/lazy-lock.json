@@ -57,6 +57,7 @@
   "template.nvim": { "branch": "main", "commit": "a711d1b32b1189493d9d641d392196c610c88322" },
   "toggle-checkbox.nvim": { "branch": "main", "commit": "856b3d99cde6eac0a0ab6085d2a5fca695b02352" },
   "tokyonight.nvim": { "branch": "main", "commit": "a0abe53df53616d13da327636cb0bcac3ea7f5af" },
+  "ts-advanced-git-search.nvim": { "branch": "main", "commit": "5ab31c12c634cbdc07a023774b4861e874e47ae0" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
   "vim-airline": { "branch": "master", "commit": "038e3a6ca59f11b3bb6a94087c1792322d1a1d5c" },
   "vim-airline-themes": { "branch": "master", "commit": "dd81554c2231e438f6d0e8056ea38fd0e80ac02a" },
