@@ -83,6 +83,12 @@ local idePlugins = {
         -- time to wait for kernel's response in seconds
         timeout = 0.5,
       }},
+
+    { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',  config = 
+        function() 
+            require("lsp_lines").setup() 
+            vim.diagnostic.config({ virtual_lines = false })
+        end },
 }
 
 if vim.g.use_ide() then

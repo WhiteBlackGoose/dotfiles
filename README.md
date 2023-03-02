@@ -32,11 +32,6 @@ To get my setup of nvim:
 > ❄️  - means it's already part of my NixOS setup, so if you're installing it, you don't need to install this package yourself.
 
 - ❄️ Get `neovim-goose` (my fork)
-  - Get `vim-plug`
-    - Run it (you will see many errors - it's ok)
-    - Type `:PlugInstall` and hit enter, wait until plugins are installed
-    - Type `:UpdateRemotePlugins`
-    - Restart nvim
   - ❄️ `pip3 install neovim` for deoplete
   - ❄️ Get `lazygit` for git UI
   - ❄️ .NET
@@ -44,18 +39,18 @@ To get my setup of nvim:
     - ❄️ Install [netcoredbg](https://github.com/Samsung/netcoredbg) and replace the path in the config somewhere to it
     - ❄️ Make sure that your $PATH has no `~` (neovim can't expand it)
     - ❄️ Make sure your DOTNET_ROOT is set to the place where your actual binaries are
-  - F#
-    - `:Mason`, find `fsautocomplete`, press `i`
+  - ❄️  F#
+    - ❄️  `:Mason`, find `fsautocomplete`, press `i`
   - ❄️ Python
     - ❄️ `pip install flake8`
     - ❄️ `pip install debugpy`
     - ❄️ `pip install jedi-language-server`
   - Any interactive
     - ❄️ `pip install jupyter_client` for interactive
-    - `:UpdateRemotePlugins`
+    - ❄️  `:UpdateRemotePlugins`
     - ❄️ `pip install pyperclip`
-  - .NET interactive (C#, F#)
-    - `dotnet tool install -g Microsoft.dotnet-interactive`
+  -  .NET interactive (C#, F#)
+    - ❄️  `dotnet tool install -g Microsoft.dotnet-interactive`
     - `dotnet interactive jupyter install`
   - Rust
     - Get [vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)

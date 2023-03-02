@@ -6,6 +6,8 @@
 
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      firefox
+
       element-desktop
       virt-manager
       qemu_kvm
@@ -64,7 +66,6 @@
       cifs-utils
       electrum
       feh
-      firefox
       fprintd
       fzf
       imagemagick
@@ -102,6 +103,7 @@
     ];
     devPackages = with pkgs; [
       (pkgs.python3.withPackages (p: with p; [
+        openpyxl
         flake8
         jedi-language-server
         jupyter-client
@@ -112,6 +114,7 @@
         pkgs.neovim
         numpy
         pandas
+        geopandas
         pillow
         pkgs.pygmentex
         pynvim

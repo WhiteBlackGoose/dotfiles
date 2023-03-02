@@ -19,6 +19,22 @@ function MagmaInitPython()
     ]]
 end
 
+function JupInit()
+    local time = os.time(os.date("!*t"))
+    vim.cmd(':!jupyter kernel -f /tmp/' .. time .. "-jup.json --kernel=python3 & disown")
+    return time
+end
+
+function JupAttach(time)
+    vim.cmd(':JupyterAttach /tmp/' .. time .. '-jup.json')
+    vim.cmd(':MagmaInit /tmp/' .. time .. '-jup.json')
+end
+
+function JupRun()
+    local time = JupInit()
+    JupAttach(time)
+end
+
 function JupDefault()
     vim.cmd[[
     :JupyterAttach /tmp/j.json
@@ -31,6 +47,8 @@ vim.cmd[[
 :command MagmaInitCSharp lua MagmaInitCSharp()
 :command MagmaInitFSharp lua MagmaInitFSharp()
 :command JupDefault lua JupDefault()
+:command JupRun lua JupRun()
+:command JupAttach -nargs=1 lua JupAttach(<q-args>)
 ]]
 
 vim.g['magma_automatically_open_output'] = false

@@ -78,6 +78,12 @@ add('n', '<leader>lc', ":LSPCodeActions<CR>")
 add('n', '<leader>lre', ":LSPReferences<CR>")
 add('n', '<leader>lll', ":LSPLocList<CR>")
 
+function LSPLines()
+    vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text, })
+    vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines, })
+end
+add('n', '<leader>lli', ":lua LSPLines()<CR>")
+
 -- Clipboard into buffer
 add('n', '<leader>nv', ":vert new<CR>p")
 add('n', '<leader>ns', ":hor new<CR>p")
