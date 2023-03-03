@@ -83,19 +83,42 @@ local idePlugins = {
         timeout = 0.5,
       }},
 
-    { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',  config = 
-        function() 
-            require("lsp_lines").setup() 
+    { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',  config =
+        function()
+            require("lsp_lines").setup()
             vim.diagnostic.config({ virtual_lines = false })
         end },
 
     { 'aaronhallaert/ts-advanced-git-search.nvim', dev = false,
         config = function()
                 require("telescope").load_extension("advanced_git_search")
-            end, }
+            end, },
+
+    { "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    },
+
+    { "https://github.com/nvim-orgmode/orgmode", config = function ()
+        require('orgmode').setup_ts_grammar()
+        require('orgmode').setup({
+          org_default_notes_file = '~/info/notes.org',
+          win_split_mode = 'float',
+          org_agenda_span = 'month',
+        })
+    end },
+    {'akinsho/org-bullets.nvim', config = function()
+        require('org-bullets').setup()
+    end}
 }
 
-lazy_opt = {
+local lazy_opt = {
     dev = {
         path = "~/prj",
         fallback = false

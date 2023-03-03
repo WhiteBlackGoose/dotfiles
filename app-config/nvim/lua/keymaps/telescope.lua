@@ -19,10 +19,10 @@ add_tele('man', 'man_pages')
 add_tele('ref', 'lsp_references')
 add_tele('sy',  'lsp_workspace_symbols')
 add_tele('zz',  'spell_suggest')
-add_tele('kk',  'keymaps')
+add_tele('tk',  'keymaps')
 
 add_tele_ext('cof', "advanced_git_search", "diff_commit_file")
 add_tele_ext('col', "advanced_git_search", "search_log_content")
 add_tele_ext_visual('col', "advanced_git_search", "diff_commit_line")
 
-add('n', 'em', ":lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>")
+add('n', '<leader>em', ":lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<CR>")

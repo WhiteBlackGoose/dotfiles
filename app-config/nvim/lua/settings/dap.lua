@@ -14,7 +14,7 @@ vim.g.dotnet_build_project = function()
     if vim.g['dotnet_last_proj_path'] ~= nil then
         default_path = vim.g['dotnet_last_proj_path']
     end
-    local path = vim.fn.input('Path to your *proj file: ', default_path, 'file')
+    local path = vim.fn.input({prompt = 'Path to your *proj file: ', default = default_path, completion = 'file'})
     vim.g['dotnet_last_proj_path'] = path
     -- local cmd = 'dotnet build -c Debug "' .. path .. '" 2> /tmp/dap-debug-nvim-dotnet.log'
     local cmd = 'dotnet build -c Debug "' .. path .. '"'
@@ -30,7 +30,7 @@ end
 
 vim.g.dotnet_get_dll_path = function()
     local request = function()
-        return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+        return vim.fn.input({prompt = 'Path to dll: ', default = vim.fn.getcwd() .. '/bin/Debug/', completion = 'file'})
     end
 
     if vim.g['dotnet_last_dll_path'] == nil then
@@ -78,7 +78,7 @@ dap.configurations.rust = {
         type = 'codelldb',
         request = 'launch',
         program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd()..'/', 'file')
+            return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
         end,
         cwd = '${workspaceFolder}',
         terminal = 'integrated',

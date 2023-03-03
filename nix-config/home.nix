@@ -144,6 +144,7 @@ rec {
           keysym a = a A adiaeresis Adiaeresis
           keysym o = o O odiaeresis Odiaeresis
           keysym u = u U udiaeresis Udiaeresis
+          keysym i = i I idiaeresis Idiaeresis
           keysym s = s S ssharp
         ''}
       else
