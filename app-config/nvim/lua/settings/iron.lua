@@ -10,6 +10,12 @@ iron.setup {
         -- Can be a table or a function that
         -- returns a table (see below)
         command = {"nix", "repl"}
+      },
+      bash = {
+        command = {"bash"}
+      },
+      de2en = {
+        command = {"de2en"}
       }
     },
     -- How the repl window will be displayed
@@ -113,6 +119,15 @@ function NixRepl()
     :ALEDisable
     ]]
 end
+
+function BashRepl()
+    vim.cmd[[
+    :set filetype=sh
+    :IronRepl bash
+    ]]
+end
+
 vim.cmd[[
 :command NixRepl lua NixRepl()
+:command BashRepl lua BashRepl()
 ]]
