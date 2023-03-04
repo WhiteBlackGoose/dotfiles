@@ -110,6 +110,24 @@
 
   # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;
+  services.syncthing = {
+    enable = true;
+    configDir = "/home/goose/.config/syncthing";
+    user = "goose";
+    # dataDir = "/home/goose";
+    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+    overrideFolders = true;     # overrides any folders added or deleted through the WebUI
+    devices = {
+      "phone" = { id = "3UWRHBV-GMIP76R-FXF46XB-XWVQP2I-KKQDDMD-TCRXE6F-SR5QEL5-42IRXAT"; };
+    };
+    folders = {
+      "info" = {        # Name of folder in Syncthing, also the folder ID
+        path = "/home/goose/info";    # Which folder to add to Syncthing
+        devices = [ "phone" ];      # Which devices to share the folder with
+        id = "qnhud-j3uyo";
+      };
+    };
+  };
 }
 
 
