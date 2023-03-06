@@ -2,6 +2,7 @@ require'lspconfig'.texlab.setup{}
 
 vim.cmd[[
 :autocmd BufNewFile,BufRead *.tex VimtexCompile
+:autocmd BufNewFile,BufRead *.tex set shiftwidth=2
 ]]
 
 -- chktex is in my way

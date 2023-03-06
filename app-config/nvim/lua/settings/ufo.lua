@@ -71,8 +71,12 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 end
 
 --global handler
-require('ufo').setup({
-    provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter'}
-    end,
-})
+if vim.bo.filetype == "tex" then
+    require('ufo').setup()
+else
+    require('ufo').setup({
+        provider_selector = function(bufnr, filetype, buftype)
+            return {'treesitter'}
+        end,
+    })
+end

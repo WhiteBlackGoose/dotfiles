@@ -58,6 +58,10 @@ rec {
       genericName = "Discord";
       exec = "firefox -P main --new-window https://discord.com/channels/@me %U";
     };
+    syncthingUI = {
+      name = "Syncthing UI";
+      exec = "firefox -P main --new-window http://127.0.0.1:8384/ %U";
+    };
     firefoxSchool = {
       name = "firefox school";
       genericName = "web browser for school";

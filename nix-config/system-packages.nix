@@ -124,6 +124,7 @@
         statsmodels
         tqdm
         yfinance
+        catboost
       ]))
       ueberzug
 

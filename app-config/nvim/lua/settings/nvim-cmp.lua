@@ -10,7 +10,8 @@ cmp.setup({
         { name = "jupyter" },
         { name = "nvim_lsp" },
         { name = 'luasnip' },
-        { name = 'path' }
+        { name = 'path' },
+        { name = 'orgmode' },
     }),
     mapping = cmp.mapping.preset.insert({
         ['<C-Space>'] = cmp.mapping.complete(),
