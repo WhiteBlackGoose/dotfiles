@@ -42,9 +42,6 @@ if vim.g.use_ide() then
     require('settings.dap')
     require('settings.dap-python')
     require('settings.dapui')
-
-    -- looks like nvim-cmp does the job better?
-    -- require('settings.deoplete')
     require('settings.fstar-lsp')
     require('settings.gitsigns')
     require('settings.ionide')
@@ -57,6 +54,7 @@ if vim.g.use_ide() then
     require('settings.nvim-cmp')
     require('settings.nvim-treesitter')
     require('settings.omnisharp-vim')
+    require('settings.orgmode')
     require('settings.rust-lsp')
     require('settings.rust-tools')
     require('settings.toggler')

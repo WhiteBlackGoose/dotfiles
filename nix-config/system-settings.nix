@@ -122,7 +122,7 @@
     };
     folders = {
       "info" = {        # Name of folder in Syncthing, also the folder ID
-        path = "/home/goose/info";    # Which folder to add to Syncthing
+        path = "/home/goose/me/_org";    # Which folder to add to Syncthing
         devices = [ "phone" ];      # Which devices to share the folder with
         id = "qnhud-j3uyo";
       };

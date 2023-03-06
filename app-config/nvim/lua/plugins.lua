@@ -105,17 +105,9 @@ local idePlugins = {
       end
     },
 
-    { "https://github.com/nvim-orgmode/orgmode", config = function ()
-        require('orgmode').setup_ts_grammar()
-        require('orgmode').setup({
-          org_default_notes_file = '~/info/notes.org',
-          win_split_mode = 'float',
-          org_agenda_span = 'month',
-        })
-    end },
-    {'akinsho/org-bullets.nvim', config = function()
-        require('org-bullets').setup()
-    end}
+    "https://github.com/nvim-orgmode/orgmode",
+    'akinsho/org-bullets.nvim',
+    "https://github.com/lukas-reineke/headlines.nvim",
 }
 
 local lazy_opt = {
