@@ -1,7 +1,7 @@
 require('orgmode').setup_ts_grammar()
 require('orgmode').setup({
-  org_default_notes_file = '~/info/notes.org',
-  -- win_split_mode = 'float',
+  org_default_notes_file = '~/me/_org/notes.org',
+  win_split_mode = 'horizontal',
   org_agenda_span = 'month',
 })
 

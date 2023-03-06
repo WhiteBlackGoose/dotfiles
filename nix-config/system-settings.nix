@@ -110,6 +110,9 @@
 
   # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 8384 22000];
+  networking.firewall.allowedUDPPorts = [ 22000 21027];
   services.syncthing = {
     enable = true;
     configDir = "/home/goose/.config/syncthing";
@@ -124,7 +127,7 @@
       "info" = {        # Name of folder in Syncthing, also the folder ID
         path = "/home/goose/me/_org";    # Which folder to add to Syncthing
         devices = [ "phone" ];      # Which devices to share the folder with
-        id = "qnhud-j3uyo";
+        id = "org-files";
       };
     };
   };

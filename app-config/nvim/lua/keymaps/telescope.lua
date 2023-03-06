@@ -40,10 +40,13 @@ GreekTelescope = function(opts)
   pickers.new(opts, {
     prompt_title = "colors",
     finder = finders.new_table {
-      results = { 
+      results = {
         {"alpha",   "α"},
         {"epsilon", "ɛ"},
         {"phi",     "φ"},
+        {"delta",   "δ"},
+        {"Delta",   "Δ"},
+        {"in",      "∈"}
       },
       entry_maker = function(entry)
         return {
@@ -58,7 +61,7 @@ GreekTelescope = function(opts)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        vim.api.nvim_put({ selection.value[2] }, "", false, true)
+        vim.api.nvim_put({ selection.value[2] }, "", true, true)
       end)
       return true
     end,
