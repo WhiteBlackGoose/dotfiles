@@ -15,6 +15,8 @@
       # konsole
       xfce.xfce4-terminal
       # terminator
+
+      gthumb
     ];
 
     dtools = pkgs.callPackage ./dotnet-tool.nix {};

@@ -111,6 +111,7 @@
   # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;
 
+  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
   networking.firewall.allowedTCPPorts = [ 8384 22000];
   networking.firewall.allowedUDPPorts = [ 22000 21027];
   services.syncthing = {
@@ -128,6 +129,11 @@
         path = "/home/goose/me/_org";    # Which folder to add to Syncthing
         devices = [ "phone" ];      # Which devices to share the folder with
         id = "org-files";
+      };
+      "phone-photos" = {        # Name of folder in Syncthing, also the folder ID
+        path = "/home/goose/Pictures/phone";    # Which folder to add to Syncthing
+        devices = [ "phone" ];      # Which devices to share the folder with
+        id = "phone-photos";
       };
     };
   };

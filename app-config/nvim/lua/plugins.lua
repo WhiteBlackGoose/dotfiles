@@ -4,7 +4,7 @@ local commonPlugins = {
     'vim-airline/vim-airline-themes',
     'romgrk/barbar.nvim',
     { 'mg979/vim-visual-multi', branch = 'master' },
-    'kyazdani42/nvim-web-devicons',
+    {'kyazdani42/nvim-web-devicons', dev = true},
     'kyazdani42/nvim-tree.lua',
     {'folke/tokyonight.nvim', branch = 'main' },
     'ayu-theme/ayu-vim',
