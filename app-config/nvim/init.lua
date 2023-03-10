@@ -24,3 +24,8 @@ require('settings')
 require('keymaps')
 
 require('theme')
+
+
+if vim.g['open_agenda'] == 1 then
+    require('orgmode').action('agenda.agenda')
+end

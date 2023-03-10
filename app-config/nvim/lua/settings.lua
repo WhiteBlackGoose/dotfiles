@@ -10,6 +10,7 @@ end
 
 vim.wo.fillchars='eob: '
 
+
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4

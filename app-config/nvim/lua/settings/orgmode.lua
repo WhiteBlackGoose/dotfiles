@@ -5,8 +5,26 @@ require('orgmode').setup({
   win_split_mode = 'horizontal',
   org_agenda_span = 'month',
 })
+--
+-- :autocmd BufNewFile,BufRead *.org fold
+vim.cmd[[
+:autocmd BufNewFile,BufRead *.org set conceallevel=2
+:autocmd BufNewFile,BufRead *.org set concealcursor=nc
+:autocmd BufNewFile,BufRead *.org set nowrap
+]]
 
-require('org-bullets').setup()
+require("org-bullets").setup {
+  concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
+  symbols = {
+    list = "•",
+    headlines = { "◉", "○", "✸", "✿" },
+    checkboxes = {
+      half = { "", "OrgTSCheckboxHalfChecked" },
+      done = { "✓", "OrgDone" },
+      todo = { "×", "OrgTODO" },
+    },
+  }
+}
 -- require("headlines").setup()
 
 -- This is a WORKAROUND of <https://github.com/nvim-orgmode/orgmode/issues/521>
@@ -32,6 +50,3 @@ vim.api.nvim_set_keymap('n', 'T4', 'O****<space>', norm)
 vim.api.nvim_set_keymap('n', 'T5', 'O*****<space>', norm)
 vim.api.nvim_set_keymap('n', 'T6', 'O******<space>', norm)
 
-if vim.g['open_agenda'] == 1 then
-    require('orgmode').action('agenda.agenda')
-end

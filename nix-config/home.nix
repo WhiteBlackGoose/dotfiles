@@ -89,6 +89,21 @@ rec {
       name = "Surf from clipboard";
       exec = ''${pkgs.writeScript "surf-from-cp" "${pkgs.surf}/bin/surf $(${pkgs.xclip}/bin/xclip -sel clip -o)"}'';
     };
+    org = {
+      name = "OrgHub";
+      exec = 
+        let
+          runNvim = ''
+            sleep 0.5
+            nvim --cmd 'lua vim.g["is_ide_mode"]=1' ~/me/_org/_main.org
+          '';
+        in
+          ''${pkgs.writeScript "runHub" ''
+          cd ~/me/_org
+          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
+        ''}'';
+      icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
+    };
     diary = {
       name = "Diary";
       exec = 
@@ -100,7 +115,7 @@ rec {
         in
           ''${pkgs.writeScript "runDiary" ''
           cd ~/me/_org
-          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}' --fullscreen
+          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
         ''}'';
       icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
     };
@@ -115,7 +130,7 @@ rec {
         in
           ''${pkgs.writeScript "runTodo" ''
           cd ~/me/_org
-          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}' --fullscreen
+          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
         ''}'';
       icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
     };

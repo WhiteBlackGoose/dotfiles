@@ -41,7 +41,8 @@ local idePlugins = {
     'rcarriga/nvim-dap-ui',
     'lukas-reineke/indent-blankline.nvim',
     'vim-test/vim-test',
-    'nvim-treesitter/nvim-treesitter',
+    {'nvim-treesitter/nvim-treesitter', dev=false},
+    'nvim-treesitter/playground',
     'p00f/nvim-ts-rainbow',
     'lewis6991/gitsigns.nvim',
     'windwp/nvim-autopairs',
@@ -105,9 +106,9 @@ local idePlugins = {
       end
     },
 
-    "https://github.com/nvim-orgmode/orgmode",
+    {"https://github.com/WhiteBlackGoose/orgmode", dev=true, branch='my-like'},
     'akinsho/org-bullets.nvim',
-    "https://github.com/lukas-reineke/headlines.nvim",
+    -- "https://github.com/lukas-reineke/headlines.nvim",
 }
 
 local lazy_opt = {

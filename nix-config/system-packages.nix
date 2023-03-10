@@ -159,8 +159,8 @@
           src = fetchFromGitHub {
             owner = "WhiteBlackGoose";
             repo = "neovim-goose";
-            rev = "5c9bf0ea74aa9297227242f17058a9f0c4c0c115";
-            hash = "sha256-s+c745H4D9hTOWTmPKG0emp4TMiJlFhhF9zCeqnIDB4=";
+            rev = "6fccf911300fcad17a3f4f994fc09641d2398007";
+            hash = "sha256-WCHMF/swEgGh41RSw82eFdnrs7SBfe2BXk+whFbTPKw=";
           };
         })
       )
