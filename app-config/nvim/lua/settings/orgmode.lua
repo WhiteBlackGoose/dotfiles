@@ -8,9 +8,10 @@ require('orgmode').setup({
 --
 -- :autocmd BufNewFile,BufRead *.org fold
 vim.cmd[[
-:autocmd BufNewFile,BufRead *.org set conceallevel=2
-:autocmd BufNewFile,BufRead *.org set concealcursor=nc
-:autocmd BufNewFile,BufRead *.org set nowrap
+:autocmd BufNewFile,BufRead *.org setlocal conceallevel=2
+:autocmd BufNewFile,BufRead *.org setlocal concealcursor=nc
+:autocmd BufNewFile,BufRead *.org setlocal nowrap
+:autocmd BufNewFile,BufRead *.org setlocal foldlevel=99
 ]]
 
 require("org-bullets").setup {
