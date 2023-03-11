@@ -1,7 +1,5 @@
 local commonPlugins = {
     'lewis6991/impatient.nvim',
-    'https://github.com/vim-airline/vim-airline',
-    'vim-airline/vim-airline-themes',
     'romgrk/barbar.nvim',
     { 'mg979/vim-visual-multi', branch = 'master' },
     {'kyazdani42/nvim-web-devicons', dev = true},
@@ -29,6 +27,18 @@ local commonPlugins = {
     'doums/darcula',
     { 'catppuccin/nvim', as = 'catppuccin' },
 }
+
+if vim.g.neovide == nil then
+    commonPlugins = TableUnion(commonPlugins, {
+        {'https://github.com/vim-airline/vim-airline'},
+        'vim-airline/vim-airline-themes',
+    })
+else
+    commonPlugins = TableUnion(commonPlugins, {
+        {'https://github.com/vim-airline/vim-airline', dev=false},
+        'vim-airline/vim-airline-themes',
+    })
+end
 
 local idePlugins = {
     { 'Shougo/deoplete.nvim', build = ":UpdateRemotePlugins" },
