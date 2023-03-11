@@ -1,6 +1,8 @@
 -- Look for logs here: /home/goose/.cache/nvim
 -- /home/goose/.local/state/nvim/lsp.log
 -- vim.lsp.set_log_level("TRACE")
+vim.g["is_ide_mode"]=1
+
 vim.o.rtp = vim.fn.stdpath('data') .. '/plugged/impatient.nvim' ..','.. vim.o.rtp
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -28,4 +30,9 @@ require('theme')
 
 if vim.g['open_agenda'] == 1 then
     require('orgmode').action('agenda.agenda')
+end
+
+
+if vim.g.neovide then
+    require('settings.gui')
 end

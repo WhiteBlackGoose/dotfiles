@@ -6,6 +6,7 @@
 
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      neovide
       firefox
 
       element-desktop

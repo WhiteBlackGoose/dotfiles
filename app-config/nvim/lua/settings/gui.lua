@@ -1,5 +1,5 @@
 -- vim.o.guifont = "FuraMono Nerd Font Mono:h9"
-vim.o.guifont = "FiraCode Nerd Font:h9"
+vim.o.guifont = "FiraCode Nerd Font,FuraMono Nerd Font Mono,DejaVu Sans Mono:h9"
 vim.cmd[[set mouse=nv]]
 vim.g.neovide_cursor_vfx_mode = "sonicboom"
 vim.g.neovide_refresh_rate = 90

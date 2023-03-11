@@ -118,7 +118,6 @@ local lazy_opt = {
         fallback = false
     }
 }
-
 if vim.g.use_ide() then
     require("lazy").setup(TableUnion(commonPlugins, idePlugins), lazy_opt)
 else
@@ -133,3 +132,6 @@ require('baleia').setup { }
 if vim.g.use_ide() then
     require('markdowny').setup({filetypes = {'markdown'}})
 end
+
+vim.g.magma_image_provider = 'ueberzug'
+
