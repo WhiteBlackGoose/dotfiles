@@ -89,6 +89,10 @@ rec {
       name = "Surf from clipboard";
       exec = ''${pkgs.writeScript "surf-from-cp" "${pkgs.surf}/bin/surf $(${pkgs.xclip}/bin/xclip -sel clip -o)"}'';
     };
+    neovide = {
+      name = "Neovide";
+      exec = ''${pkgs.writeScript "nice" "neovide --multigrid"}'';
+    };
     org = {
       name = "OrgHub";
       exec = 
