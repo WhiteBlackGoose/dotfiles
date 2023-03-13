@@ -26,17 +26,17 @@ local commonPlugins = {
     "olimorris/onedarkpro.nvim",
     'doums/darcula',
     { 'catppuccin/nvim', as = 'catppuccin' },
+    {'https://github.com/vim-airline/vim-airline'},
+    'vim-airline/vim-airline-themes',
+    'MunifTanjim/nui.nvim',
+    'https://github.com/vonheikemen/fine-cmdline.nvim'
 }
 
 if vim.g.neovide == nil then
     commonPlugins = TableUnion(commonPlugins, {
-        {'https://github.com/vim-airline/vim-airline'},
-        'vim-airline/vim-airline-themes',
     })
 else
     commonPlugins = TableUnion(commonPlugins, {
-        {'https://github.com/vim-airline/vim-airline', dev=false},
-        'vim-airline/vim-airline-themes',
     })
 end
 
@@ -64,7 +64,7 @@ local idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'WhiteBlackGoose/magma-nvim-goose', branch = 'main', build = ":UpdateRemotePlugins" },
+    {'WhiteBlackGoose/magma-nvim-goose', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',
@@ -143,5 +143,4 @@ if vim.g.use_ide() then
     require('markdowny').setup({filetypes = {'markdown'}})
 end
 
-vim.g.magma_image_provider = 'ueberzug'
 
