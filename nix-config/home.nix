@@ -210,19 +210,31 @@ rec {
   
   xdg.desktopEntries.theme = (import ./theme.nix inputs).desktopEntry;
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    name = "Borealis";
-    size = 48;
-    package = pkgs.runCommand "moveUp" {} ''
-      mkdir -p $out/share/icons
-      ln -s ${pkgs.fetchFromGitHub {
-        owner = "alvatip";
-        repo = "Borealis-cursors";
-        rev = "dc8fd70d076eea8079e8d1c1f27f5588ea48386f";
-        hash = "sha256-bFSBXJhydAZFe6P6E/7Qb2IxzjaTgFc11w7PJc3fIWk=";
-      }}/Borealis-cursors $out/share/icons/Borealis
-    '';
-  };
+  # Gallery: https://www.opendesktop.org/browse?cat=107
+  # Nice ones:
+  # White/Green: https://github.com/yeyushengfan258/ArcAurora-Cursors
+  # Bibata regular: https://www.opendesktop.org/p/1914825
+  # Fuchsia pink: https://www.opendesktop.org/p/1544830
+  # Fuchsia pop: https://www.opendesktop.org/p/1641968
+  home.pointerCursor = 
+    let 
+      getFrom = url: hash: name: {
+          gtk.enable = true;
+          x11.enable = true;
+          name = name;
+          size = 48;
+          package = 
+            pkgs.runCommand "moveUp" {} ''
+              mkdir -p $out/share/icons
+              ln -s ${pkgs.fetchzip {
+                url = url;
+                hash = hash;
+              }} $out/share/icons/${name}
+          '';
+        };
+    in
+      getFrom 
+        "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
+        "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
+        "Fuchsia-Pop"; 
 }

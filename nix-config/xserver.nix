@@ -1,5 +1,5 @@
 { pkgs-goose }:
-{ config, pkgs, ... }:
+inputs@{ config, pkgs, ... }:
 
 {
   services.xserver = {
@@ -29,7 +29,8 @@
         i3lock
       ];
     };   
-
+    
+    displayManager.sessionCommands = ''${(import ./theme.nix inputs).apply-theme-script}'';
   };
 
   environment.gnome.excludePackages = (with pkgs; [
