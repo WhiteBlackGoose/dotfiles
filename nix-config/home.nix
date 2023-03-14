@@ -210,22 +210,19 @@ rec {
   
   xdg.desktopEntries.theme = (import ./theme.nix inputs).desktopEntry;
 
-  home.file.".icons/default".source = ''${pkgs.fetchFromGitHub {
-    owner = "alvatip";
-    repo = "Borealis-cursors";
-    rev = "dc8fd70d076eea8079e8d1c1f27f5588ea48386f";
-    hash = "sha256-bFSBXJhydAZFe6P6E/7Qb2IxzjaTgFc11w7PJc3fIWk=";
-  }}/Borealis-cursors'';
-
-  xsession.pointerCursor = 
-  {
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
     name = "Borealis";
-    size = 64;
-    package = pkgs.fetchFromGitHub {
-      owner = "alvatip";
-      repo = "Borealis-cursors";
-      rev = "dc8fd70d076eea8079e8d1c1f27f5588ea48386f";
-      hash = "sha256-bFSBXJhydAZFe6P6E/7Qb2IxzjaTgFc11w7PJc3fIWk=";
-    };
+    size = 48;
+    package = pkgs.runCommand "moveUp" {} ''
+      mkdir -p $out/share/icons
+      ln -s ${pkgs.fetchFromGitHub {
+        owner = "alvatip";
+        repo = "Borealis-cursors";
+        rev = "dc8fd70d076eea8079e8d1c1f27f5588ea48386f";
+        hash = "sha256-bFSBXJhydAZFe6P6E/7Qb2IxzjaTgFc11w7PJc3fIWk=";
+      }}/Borealis-cursors $out/share/icons/Borealis
+    '';
   };
 }

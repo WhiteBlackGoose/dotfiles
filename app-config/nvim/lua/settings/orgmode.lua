@@ -14,6 +14,8 @@ vim.cmd[[
 :autocmd BufNewFile,BufRead *.org setlocal foldlevel=99
 ]]
 
+vim.cmd(":command MdToOrgLinks s/\\[\\(.*\\)\\](\\(.*\\))/[[\2][\1]]")
+
 require("org-bullets").setup {
   concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
   symbols = {
