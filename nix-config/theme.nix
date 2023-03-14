@@ -2,11 +2,14 @@
 
 rec {
   dark-wallpaper = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/Myagko/dotfiles/d31c692f3e28eadf3dcf19cb70e455e2d3e24f1b/home/wallpapers/wallhaven-dgdmj3.jpg";
-    sha256 = "sha256-4ydC+FnU4zj5+FDlmjTv5+KeCYxSvVCokTgZ8tV9nsA=";
+    url = "https://fedoraproject.org/w/uploads/f/fc/F37-01-night.jpg";
+    sha256 = "sha256-eiMZ3xWagyUrI9iTP015cZh4X5x9gz3XXi44IeaOrEM=";
   };
 
-  light-wallpaper = "/home/goose/.config/pics/nixos-wallpaper-light-2880x1800.png";
+  light-wallpaper = pkgs.fetchurl {
+    url = "https://fedoraproject.org/w/uploads/0/02/F37-01-day.jpg";
+    sha256 = "sha256-l65ZSBoll80sSzje8qOkQPQtKnNqKQnMCwJGSRhrkvc=";
+  };
 
   apply-theme-script = pkgs.writeScript "apply-theme" ''
     curr=$(~/.config/global_scripts/get-current-theme.sh)
