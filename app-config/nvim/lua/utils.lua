@@ -41,3 +41,17 @@ function TableUnion(a, b)
     end
     return result
 end
+
+local loadedPlugins = {}
+function LazyRequire(module, exts)
+    -- require(module)
+    vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+        pattern = exts,
+        callback = function(_)
+            if loadedPlugins[module] == nil then
+                require(module)
+                loadedPlugins[module] = true
+            end
+        end
+    })
+end

@@ -22,7 +22,6 @@ vim.cmd[[set virtualedit=block]]
 
 vim.g['python3_host_prog'] = 'python3'
 
-
 -- By alphabet please
 require('settings.airline')
 require('settings.amcli')
@@ -37,31 +36,31 @@ require('settings.undotree')
 require('settings.wdiff')
 
 if vim.g.use_ide() then
-    require('settings.ale')
-    require('settings.asyncomplete')
     require('settings.colortils')
     require('settings.dap')
-    require('settings.dap-python')
+    LazyRequire('settings.dap-python', {'*.py'})
     require('settings.dapui')
-    require('settings.fstar-lsp')
+    LazyRequire('settings.fstar-lsp', {'*.fst'})
     require('settings.gitsigns')
-    require('settings.ionide')
+    LazyRequire('settings.ionide', {'*.fs', "*.fsproj"})
     require('settings.iron')
-    require('settings.latex')
+    LazyRequire('settings.latex', {"*.tex"})
     require('settings.lsp')
-    require('settings.lua-lsp')
+    LazyRequire('settings.lua-lsp', {"*.lua"})
     require('settings.magma')
     require('settings.nvim-autopairs')
     require('settings.nvim-cmp')
     require('settings.nvim-treesitter')
-    require('settings.omnisharp-vim')
-    require('settings.orgmode')
-    require('settings.rust-lsp')
-    require('settings.rust-tools')
+    LazyRequire('settings.ale', {"*.csproj", "*.cs"})
+    LazyRequire('settings.asyncomplete', {"*.csproj", "*.cs"})
+    LazyRequire('settings.omnisharp-vim', {"*.csproj", "*.cs"})
+    LazyRequire('settings.vim-test', {"*.csproj", "*.cs"})
+    LazyRequire('settings.orgmode', {"*.org"})
+    LazyRequire('settings.rust-lsp', {"*.rs", "Cargo.*"})
+    LazyRequire('settings.rust-tools', {"*.rs", "Cargo.*"})
     require('settings.toggler')
     require('settings.ufo')
     require('settings.vim-dadbod-ui')
     require('settings.vim-table-mode')
-    require('settings.vim-test')
 end
 
