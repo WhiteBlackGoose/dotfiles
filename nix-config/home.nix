@@ -161,15 +161,24 @@ rec {
   xdg.mimeApps = {
     enable = true;
     associations.added = { 
-      "application/pdf" = ["zathura" ]; 
-      "image/png" = ["nsxiv.desktop" ];
-      "image/jpeg" = ["nsxiv.desktop" ];
+      "application/pdf" = "zathura.desktop"; 
+      "image/png" = "nsxiv.desktop";
+      "image/jpeg" = "nsxiv.desktop";
+      "text/html" = "firefox.desktop";
     }; 
-    defaultApplications = { 
-      "application/pdf" = ["zathura"]; 
-      "image/png" = ["nsxiv.desktop"];
-      "image/jpeg" = ["nsxiv.desktop"];
-    };
+    defaultApplications = 
+      let
+        browser = "firefox.desktop";
+      in
+      { 
+        "application/pdf" = "zathura.desktop"; 
+        "image/png" = "nsxiv.desktop";
+        "image/jpeg" = "nsxiv.desktop";
+        "x-scheme-handler/http" = browser;
+        "x-scheme-handler/https" = browser;
+        "x-scheme-handler/about" = browser;
+        "x-scheme-handler/unknown" = browser;
+      };
   };
 
   gtk.enable = true;
