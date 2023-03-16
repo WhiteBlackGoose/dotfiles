@@ -29,12 +29,21 @@ add('n', '<leader>eh', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
 -- For those with limited keyboard
 
 add('n', '<leader>edc', ":lua require'dap'.continue()<CR>")
+add('n', '<leader>edj', ":lua DapJumpTo()<CR>")
 add('n', '<leader>edt', ":lua require'dap'.toggle_breakpoint()<CR>")
 add('n', '<leader>edo', ":lua require'dap'.step_over()<CR>")
 add('n', '<leader>edi', ":lua require'dap'.step_into()<CR>")
 add('n', '<leader>edrepo', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('n', '<leader>edrepc', ":lua require'dap'.repl.close()<CR>")
 add('n', '<leader>eds', ":lua require'dap'.disconnect()<CR>")
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.rs", "Cargo.*"},
+    callback = function(_)
+        add('n', '<F5>', ":RustDebuggables<CR>")
+        add('n', '<leader>edc', ":RustDebuggables<CR>")
+    end
+})
 
 -- Floaterm
 

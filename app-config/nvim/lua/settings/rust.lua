@@ -1,9 +1,11 @@
 -- Debugger and tools
-local extension_path = "/nix/store/ycm9v901bpnyk1383yzp1l8g80rrnacx-vscode-extension-vadimcn-vscode-lldb-1.8.1/share/vscode/extensions/vadimcn.vscode-lldb/"
+local VSCODE_CODELLDB = os.getenv("VSCODE_CODELLDB")
+if VSCODE_CODELLDB == nil then
+    return
+end
+local extension_path = VSCODE_CODELLDB .. "/share/vscode/extensions/vadimcn.vscode-lldb/"
 local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
--- local codelldb_path = "codelldb"
--- local liblldb_path = "liblldb.so"
 local rt = require('rust-tools')
 
 local opts = {
