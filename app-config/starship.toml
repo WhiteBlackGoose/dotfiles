@@ -11,8 +11,6 @@ $git_branch\
 $time\
 [◤ ](fg:#8652AF)
 """
-# [  ](fg:#FFFFFF bg:#3030AF)\
-# [◤](fg:#3030AF bg:#8652AF)\
 
 [directory]
 style = "bg:#DDDD00 fg:#000000"

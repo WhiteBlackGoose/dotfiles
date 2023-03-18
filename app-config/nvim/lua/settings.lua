@@ -22,6 +22,13 @@ vim.cmd[[set virtualedit=block]]
 
 vim.g['python3_host_prog'] = 'python3'
 
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.html"},
+    callback = function(_)
+        vim.cmd[[command HtmlView !surf % & disown]]
+    end
+})
+
 -- By alphabet please
 require('settings.airline')
 require('settings.amcli')
