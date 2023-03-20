@@ -26,7 +26,6 @@ set $mod Mod4
 font pango:Ubuntu Mono Bold 9
 
 exec xrandr --dpi 192
-exec /home/goose/.config/global_scripts/theme.sh
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -266,7 +265,7 @@ bindsym $mod+Print exec ~/.config/global_scripts/snip
 
 # bindsym $mod+x move workspace to output right
 
-bindsym $mod+Shift+Home exec /home/goose/scripts/me/lock.sh
+bindsym $mod+Shift+Home exec /home/goose/me/scripts/lock.sh
 bindsym $mod+Shift+Delete exec systemctl suspend
 
 bindsym $mod+c exec xdotool click 1

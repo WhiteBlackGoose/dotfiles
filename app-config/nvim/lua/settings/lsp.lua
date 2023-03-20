@@ -17,3 +17,7 @@ lsp.texlab.setup{capabilities = capabilities}
 lsp.clangd.setup{capabilities = capabilities}
 lsp.nil_ls.setup{capabilities = capabilities}
 lsp.jedi_language_server.setup{capabilities = capabilities}
+lsp.java_language_server.setup{
+    capabilities = capabilities,
+    cmd = {"java-language-server"}
+}
