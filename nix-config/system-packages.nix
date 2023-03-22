@@ -6,6 +6,7 @@
 
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
+      libreoffice
       neovide
       firefox
 
@@ -29,7 +30,6 @@
         dtools.tools.angourimath-terminal 
       ])
 
-      deluge
       (writeTextFile {
         name = "configure-gtk";
         destination = "/bin/configure-gtk";
