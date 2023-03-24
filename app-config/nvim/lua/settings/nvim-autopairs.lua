@@ -25,8 +25,16 @@ function AddTexAutoPairRules()
         Rule('$', '$')
         })
 end
+
+function AddRsAutoPairRules()
+    npairs.add_rules({
+        Rule('{', '}'),
+        })
+end
+
 vim.cmd[[
 :autocmd InsertEnter *.tex lua AddTexAutoPairRules()
+:autocmd InsertEnter *.rs lua AddRsAutoPairRules()
 ]]
 
 
