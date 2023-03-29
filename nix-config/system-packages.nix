@@ -128,6 +128,7 @@
         tqdm
         yfinance
         catboost
+        debugpy
       ]))
       ueberzug
 

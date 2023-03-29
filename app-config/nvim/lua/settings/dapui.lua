@@ -72,12 +72,29 @@ require("dapui").setup({
 })
 
 local dap, dapui = require("dap"), require("dapui")
-dap.listeners.after.event_initialized["dapui_config"] = function()
+
+function DapuiOpen()
   dapui.open()
 end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
+
+function DapuiClose()
+    dapui.close()
 end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
+
+function DapuiEnable()
+    dap.listeners.after.event_initialized["dapui_config"] = DapuiOpen
+    dap.listeners.before.event_terminated["dapui_config"] = DapuiClose
+    dap.listeners.before.event_exited["dapui_config"] = DapuiClose
 end
+
+function DapuiDisable()
+    dap.listeners.after.event_initialized["dapui_config"] = nil
+    dap.listeners.before.event_terminated["dapui_config"] = nil
+    dap.listeners.before.event_exited["dapui_config"] = nil
+end
+
+vim.cmd[[
+:command DapuiEnable lua DapuiEnable()
+:command DapuiDisable lua DapuiDisable()
+:command DapuiShow lua require("dapui").open()
+]]

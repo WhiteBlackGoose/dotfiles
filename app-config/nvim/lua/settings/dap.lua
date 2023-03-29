@@ -90,6 +90,14 @@ dap.configurations.rust = {
 dap.configurations.c = dap.configurations.rust
 dap.configurations.cpp = dap.configurations.rust
 
+--Python------------------------------
+
+dap.python = {
+  type = 'executable';
+  command = '/usr/bin/env';
+  args = { 'python', '-m', 'debugpy.adapter' };
+}
+
 --Other-------------------------------
 
 dap.adapters.gdb = {
