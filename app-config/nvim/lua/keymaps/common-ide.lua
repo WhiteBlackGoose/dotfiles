@@ -45,6 +45,20 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     end
 })
 
+local runCommands = {
+    {{"*.sh"}, "./%"},
+    {{"*.rs", "Cargo.*"}, "cargo run"},
+    {{"*.cs", "*.csproj"}, "dotnet run"},
+}
+for _, pair in pairs(runCommands) do
+    vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = pair[1],
+    callback = function(_)
+        vim.keymap.set('n', '<leader>ex', ':!' .. pair[2] .. "<CR>", { buffer = true })
+    end
+    })
+end
+
 -- Floaterm
 
 add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
