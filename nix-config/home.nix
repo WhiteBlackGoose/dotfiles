@@ -1,4 +1,4 @@
-inputs@{ config, pkgs, ... }:
+inputs@{ config, lib, pkgs, ... }:
 rec {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -137,6 +137,32 @@ rec {
           xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
         ''}'';
       icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
+    };
+    file = {
+      name = "Open file";
+      exec = 
+        let
+          progs = [
+            { name = "zathura"; pat = "*.pdf"; }
+            { name = "firefox"; pat = ""; }
+            { name = "libreoffice"; pat = "*.docx"; }
+          ];
+          progLine = lib.strings.concatStringsSep
+            "\\n"
+            (builtins.map (p: p.name) progs);
+        in
+        ''${pkgs.writeScript "desk-file" ''
+          exe=$(printf "${progLine}" | ${pkgs.rofi}/bin/rofi -dmenu -dpi 192)
+          ${
+          let ifs = builtins.map ({ name, pat }: ''
+          if [ "$exe" = '${name}' ]; then
+            f=$(find . -name '${pat}' | ${pkgs.rofi}/bin/rofi -dmenu -dpi 192) 
+            $exe $f
+          fi
+          '') progs;
+          in
+          lib.strings.concatStringsSep "\n" ifs}
+        ''}'';
     };
     toggleWMMode = {
       name = "Toggle WM mode";

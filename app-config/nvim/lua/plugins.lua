@@ -29,7 +29,12 @@ local commonPlugins = {
     {'https://github.com/vim-airline/vim-airline'},
     'vim-airline/vim-airline-themes',
     'MunifTanjim/nui.nvim',
-    'https://github.com/vonheikemen/fine-cmdline.nvim'
+    'https://github.com/vonheikemen/fine-cmdline.nvim',
+    -- { 'WhiteBlackGoose/power-char.nvim', dev=true,
+    --     config = function (_)
+    --         require('power-char').setup{}
+    --     end
+    -- }
 }
 
 if vim.g.neovide == nil then
