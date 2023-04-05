@@ -157,7 +157,7 @@ rec {
           let ifs = builtins.map ({ name, pat }: ''
           if [ "$exe" = '${name}' ]; then
             f=$(find . -name '${pat}' | ${pkgs.rofi}/bin/rofi -dmenu -dpi 192) 
-            $exe $f
+            $exe "$f"
           fi
           '') progs;
           in
