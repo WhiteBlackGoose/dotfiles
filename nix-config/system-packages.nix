@@ -117,6 +117,7 @@
         pkgs.neovim
         numpy
         pandas
+        pytest
         geopandas
         pillow
         pkgs.pygmentex
