@@ -15,7 +15,7 @@ iron.setup {
         command = {"bash"}
       },
       de2en = {
-        command = {"de2en"}
+        command = {"de2"}
       }
     },
     -- How the repl window will be displayed

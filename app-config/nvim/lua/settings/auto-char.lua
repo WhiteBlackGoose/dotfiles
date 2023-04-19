@@ -32,6 +32,7 @@ local mappings = {
     {"Psi", "Ψ"},
     {"omega", "ω"},
     {"Omega", "Ω"},
+    {"sqrt", "⎷"},
     {"=>", "⇒"},
     {"<=", "⇐"},
     {"->", "→"},
@@ -39,7 +40,6 @@ local mappings = {
     {"!=", "≠"},
     {">=", "⩾"},
     {"<=", "⩽"},
-    {"sqrt", "⎷"},
 }
 
 function AutoCharEnable()

@@ -20,6 +20,9 @@
 
       gthumb
       gimp
+      pamixer
+      pavucontrol
+      vlc
     ];
 
     dtools = pkgs.callPackage ./dotnet-tool.nix {};
