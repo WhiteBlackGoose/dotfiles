@@ -131,7 +131,7 @@
         statsmodels
         tqdm
         yfinance
-        catboost
+        # catboost
         debugpy
       ]))
       ueberzug

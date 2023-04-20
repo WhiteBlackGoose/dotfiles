@@ -57,7 +57,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-    package = 
     # jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -92,6 +91,8 @@
   services.tlp.enable = true;
   services.power-profiles-daemon.enable = false;
 
+  # If apps take a long time to start up
+  # https://github.com/swaywm/sway/issues/5732
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
