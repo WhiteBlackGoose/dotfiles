@@ -4,4 +4,4 @@ vol=$(echo "scale=0; $vol * 100" | bc)
 # vol=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }' | sed  's/%//')
 sym="墳"
 
-printf " $sym %s \n" $vol
+printf "$sym %s\n" $vol
