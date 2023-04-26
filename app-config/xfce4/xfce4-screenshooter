@@ -4,4 +4,5 @@ last_extension=png
 screenshot_dir=file:///dev/stdout
 enable_imgur_upload=true
 show_in_folder=false
+custom_action_command=none
 

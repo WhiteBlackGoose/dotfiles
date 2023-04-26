@@ -310,3 +310,5 @@ exec --no-startup-id libinput-gestures
 # exec --no-startup-id sxhkd
 
 include ./mode
+
+exec systemctl --user import-environment
