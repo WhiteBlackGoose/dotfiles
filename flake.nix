@@ -7,9 +7,10 @@
     # nixpkgs-new-linux.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    tri-input.url = "github:WhiteBlackGoose/tree-imagemagick-editor/docs-autcompl";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -21,6 +22,11 @@
           environment.etc."nix/path/nixpkgs".source = nixpkgs;
         }
         (import ./configuration.nix { pkgs-goose = nixpkgs; linux-input = nixpkgs; })
+        {
+          environment.systemPackages = [
+            tri-input.packages.x86_64-linux.default
+          ];
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
