@@ -3,15 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-goose.url = "github:WhiteBlackGoose/nixpkgs/master";
-    # nixpkgs-new-linux.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    tri-input.url = "github:WhiteBlackGoose/tree-imagemagick-editor/docs-autcompl";
+    tri-input.url = "github:WhiteBlackGoose/tree-imagemagick-editor";
   };
 
   outputs = { nixpkgs, home-manager, tri-input, ... }: {
-    nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
         { 
@@ -24,7 +22,7 @@
         (import ./configuration.nix { pkgs-goose = nixpkgs; linux-input = nixpkgs; })
         {
           environment.systemPackages = [
-            tri-input.packages.x86_64-linux.default
+            tri-input.packages.${system}.default
           ];
         }
         home-manager.nixosModules.home-manager
