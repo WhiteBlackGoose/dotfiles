@@ -2,47 +2,41 @@ right_format = """
 """
 
 format = """
-$shlvl\
+[$shlvl](bg:#FF5555 fg:#FFFFFF)\
 [◤](fg:#FF5555 bg:#6666FF)\
-$nix_shell\
+[$nix_shell](fg:#FFFFFF bg:#6666FF)\
 [◤](fg:#6666FF bg:#DDDD00)\
-$directory\
+[ $directory ](bg:#DDDD00 fg:#000000)\
 [◤](fg:#DDDD00 bg:#009966)\
-$git_branch\
+[ $git_branch ](bg:#009966 fg:#FFFFFF)\
 [◤](fg:#009966)
-$time\
+[ $time ](fg:#FFFFFF bg:#8652AF)\
 [◤ ](fg:#8652AF)
 """
 
 [directory]
-style = "bg:#DDDD00 fg:#000000"
-format = "[ $path ]($style)"
+format = "$path"
 truncation_length = 0
 truncation_symbol = " "
 
 [git_branch]
 symbol = ""
-style = "bg:#009966 fg:#FFFFFF"
-format = '[ $symbol $branch ]($style)'
+format = '$symbol $branch'
 
 [time]
-style = "fg:#FFFFFF bg:#8652AF"
 disabled = false
-format = '[ $time ]($style)'
+format = '$time'
 time_format = "%T"
-utc_time_offset = "+3"
-# time_range = "10:00:00-14:00:00"
+utc_time_offset = "+2"
 
 [nix_shell]
 disabled = false
 symbol = " "
 impure_msg = "impure"
 pure_msg = "pure"
-style = "fg:#FFFFFF bg:#6666FF"
-format = '[ $symbol$state ]($style)' 
+format = ' $symbol$state ' 
 
 [shlvl]
 disabled = false
 symbol = "↴ "
-style = "bg:#FF5555 fg:#FFFFFF"
-format = '[ $symbol$shlvl ]($style)'
+format = ' $symbol$shlvl '
