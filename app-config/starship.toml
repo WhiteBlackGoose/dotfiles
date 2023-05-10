@@ -2,16 +2,16 @@ right_format = """
 """
 
 format = """
-[$shlvl](       fg:#FFFFFF bg:#FF5555)\
-[◤](            fg:#FF5555 bg:#6666FF)\
-[$nix_shell](   fg:#FFFFFF bg:#6666FF)\
-[◤](            fg:#6666FF bg:#DDDD00)\
-[ $directory ]( fg:#000000 bg:#DDDD00)\
-[◤](            fg:#DDDD00 bg:#009966)\
-[ $git_branch ](fg:#FFFFFF bg:#009966)\
-[◤](            fg:#009966)
-[ $time ](      fg:#FFFFFF bg:#8652AF)\
-[◤ ](           fg:#8652AF)
+[$shlvl](       fg:#1F231E bg:#5C9EA5)\
+[◤](            fg:#5C9EA5 bg:#BA6F38)\
+[$nix_shell](   fg:#1F231E bg:#BA6F38)\
+[◤](            fg:#BA6F38 bg:#E8D9A9)\
+[ $directory ]( fg:#1F231E bg:#E8D9A9)\
+[◤](            fg:#E8D9A9 bg:#64843F)\
+[ $git_branch ](fg:#1F231E bg:#64843F)\
+[◤](            fg:#64843F)
+[ $time ](      fg:#1F231E bg:#CD825A)\
+[◤ ](           fg:#CD825A)
 """
 
 [directory]
