@@ -3,12 +3,12 @@ right_format = """
 
 format = """
 [$shlvl](       fg:#1F231E bg:#5C9EA5)\
-[◤](            fg:#5C9EA5 bg:#BA6F38)\
-[$nix_shell](   fg:#1F231E bg:#BA6F38)\
-[◤](            fg:#BA6F38 bg:#E8D9A9)\
-[ $directory ]( fg:#1F231E bg:#E8D9A9)\
-[◤](            fg:#E8D9A9 bg:#64843F)\
-[ $git_branch ](fg:#1F231E bg:#64843F)\
+[◤](            fg:#5C9EA5 bg:#E8D9A9)\
+[$nix_shell](   fg:#1F231E bg:#E8D9A9)\
+[◤](            fg:#E8D9A9 bg:#BA6F38)\
+[ $directory ]( fg:#1F231E bg:#BA6F38)\
+[◤](            fg:#BA6F38 bg:#64843F)\
+[$git_branch](fg:#1F231E bg:#64843F)\
 [◤](            fg:#64843F)
 [ $time ](      fg:#1F231E bg:#CD825A)\
 [◤ ](           fg:#CD825A)
@@ -21,7 +21,7 @@ truncation_symbol = " "
 
 [git_branch]
 symbol = ""
-format = '$symbol $branch'
+format = ' $symbol $branch '
 
 [time]
 disabled = false
