@@ -2,6 +2,8 @@ right_format = """
 """
 
 format = """
+$shlvl\
+[◤](fg:#FF5555 bg:#6666FF)\
 $nix_shell\
 [◤](fg:#6666FF bg:#DDDD00)\
 $directory\
@@ -38,3 +40,9 @@ impure_msg = "impure"
 pure_msg = "pure"
 style = "fg:#FFFFFF bg:#6666FF"
 format = '[ $symbol$state ]($style)' 
+
+[shlvl]
+disabled = false
+symbol = "↴ "
+style = "bg:#FF5555 fg:#FFFFFF"
+format = '[ $symbol$shlvl ]($style)'
