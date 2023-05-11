@@ -1,17 +1,21 @@
+# Colors:
+# https://coolors.co/palettes/trending
+
 right_format = """
 """
 
 format = """
-[$shlvl](       fg:#1F231E bg:#5C9EA5)\
-[◤](            fg:#5C9EA5 bg:#E8D9A9)\
-[$nix_shell](   fg:#1F231E bg:#E8D9A9)\
-[◤](            fg:#E8D9A9 bg:#BA6F38)\
-[ $directory ]( fg:#1F231E bg:#BA6F38)\
-[◤](            fg:#BA6F38 bg:#64843F)\
-[$git_branch](fg:#1F231E bg:#64843F)\
-[◤](            fg:#64843F)
-[ $time ](      fg:#1F231E bg:#CD825A)\
-[◤ ](           fg:#CD825A)
+$cmd_duration
+[$shlvl](       fg:#FFFFFF bg:#26547c)\
+[◤](            fg:#26547c bg:#ef476f)\
+[$nix_shell](   fg:#FFFFFF bg:#ef476f)\
+[◤](            fg:#ef476f bg:#ffd166)\
+[ $directory ]( fg:#000000 bg:#ffd166)\
+[◤](            fg:#ffd166 bg:#06d6a0)\
+[$git_branch](  fg:#000000 bg:#06d6a0)\
+[◤](            fg:#06d6a0)
+[ ](      fg:#1F231E bg:#fcfcfc)\
+[◤ ](           fg:#fcfcfc)
 """
 
 [directory]
@@ -40,3 +44,4 @@ format = ' $symbol$state '
 disabled = false
 symbol = "↴ "
 format = ' $symbol$shlvl '
+threshold = 3
