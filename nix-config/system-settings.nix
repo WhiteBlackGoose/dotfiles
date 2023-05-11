@@ -78,6 +78,7 @@
       enableSSHSupport = true;
     };
     kdeconnect.enable = true;
+    ssh.askPassword = "";
   };
   # Add this to .gnupg/gpg-agent.conf:
   # debug-pinentry
@@ -145,6 +146,8 @@
       };
     };
   };
+
+  programs.fish.enable = true;
 }
 
 

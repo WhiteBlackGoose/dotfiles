@@ -29,6 +29,30 @@ rec {
         core.eol = "lf";
       };
     };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+        alias ci="xclip -sel clip"
+        alias co="xclip -sel clip -o"
+
+        alias ls="lsd"
+        alias ll="lsd -la"
+
+        alias cdf='cd $(find . -type d 2>/dev/null | fzf)'
+        alias cda='cd / && cdf'
+        alias cdh='cd ~ && cdf'
+        alias cde='cd /etc/nixos'
+
+        alias xda='cd / && fzf-xdg'
+        alias xdh='cd ~ && fzf-xdg'
+        alias xdf='fzf-xdg'
+        starship init fish | source
+
+        set -a PATH /home/goose/me/scripts
+        set -a PATH /home/goose/.config/global_scripts
+      '';
+    };
   };
 
   home.packages = [

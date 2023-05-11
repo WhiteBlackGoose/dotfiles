@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    tri-input.url = "github:WhiteBlackGoose/tree-imagemagick-editor";
+    tri-input.url = "path:/home/goose/prj/tree-magick-editor";
   };
 
   outputs = { nixpkgs, home-manager, tri-input, ... }: {

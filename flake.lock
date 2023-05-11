@@ -104,17 +104,14 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1683296555,
-        "narHash": "sha256-x/9iDe5pxUW5MyEASEmdC8RqNnbfu38GXYcIZWgeCj0=",
-        "owner": "WhiteBlackGoose",
-        "repo": "tree-imagemagick-editor",
-        "rev": "8c1766c7814df310372398840697ee87b6d06bc4",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-Mc7WZpdLWQUoL9guz1UBL0XwwrtPzcz+Ma2J6wTTpbg=",
+        "path": "/home/goose/prj/tree-magick-editor",
+        "type": "path"
       },
       "original": {
-        "owner": "WhiteBlackGoose",
-        "repo": "tree-imagemagick-editor",
-        "type": "github"
+        "path": "/home/goose/prj/tree-magick-editor",
+        "type": "path"
       }
     }
   },

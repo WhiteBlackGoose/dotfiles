@@ -74,7 +74,7 @@
       feh
       fprintd
       fzf
-      imagemagick
+      # imagemagick
       kdeconnect
       lm_sensors
       lsd
