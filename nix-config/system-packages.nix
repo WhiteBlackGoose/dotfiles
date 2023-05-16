@@ -14,9 +14,11 @@
       virt-manager
       qemu_kvm
       litemdview
+
       # konsole
-      xfce.xfce4-terminal
+      # xfce.xfce4-terminal
       # terminator
+      kitty
 
       gthumb
       gimp
