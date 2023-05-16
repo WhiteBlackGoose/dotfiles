@@ -1,5 +1,24 @@
 {
   "nodes": {
+    "amcli-input": {
+      "inputs": {
+        "my-nix": "my-nix",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1684258210,
+        "narHash": "sha256-45y2b5bofH27zr08IMTO6z9uCWEIvA8X6KxM5Dm/hY8=",
+        "owner": "asc-community",
+        "repo": "AngouriMathCLI",
+        "rev": "616fbc3594b3844dab2c3f68b2c72c79250147d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "asc-community",
+        "repo": "AngouriMathCLI",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -45,7 +64,7 @@
     "hyprland-input": {
       "inputs": {
         "hyprland-protocols": "hyprland-protocols",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "wlroots": "wlroots",
         "xdph": "xdph"
       },
@@ -84,7 +103,39 @@
         "type": "github"
       }
     },
+    "my-nix": {
+      "locked": {
+        "lastModified": 1683399880,
+        "narHash": "sha256-sAFqdYFUETw1NSIXumtPQbhjfzEhaFpOFxIHzQdEQe8=",
+        "owner": "WhiteBlackGoose",
+        "repo": "my-nix",
+        "rev": "97899c686170f360a27920495e42e515a756182c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "WhiteBlackGoose",
+        "ref": "master",
+        "repo": "my-nix",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1683408522,
+        "narHash": "sha256-9kcPh6Uxo17a3kK3XCHhcWiV1Yu1kYj22RHiymUhMkU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "897876e4c484f1e8f92009fd11b7d988a121a4e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1683014792,
         "narHash": "sha256-6Va9iVtmmsw4raBc3QKvQT2KT/NGRWlvUlJj46zN8B8=",
@@ -100,7 +151,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1681737997,
         "narHash": "sha256-pHhjgsIkRMu80LmVe8QoKIZB6VZGRRxFmIvsC5S89k4=",
@@ -116,7 +167,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1683014792,
         "narHash": "sha256-6Va9iVtmmsw4raBc3QKvQT2KT/NGRWlvUlJj46zN8B8=",
@@ -134,9 +185,10 @@
     },
     "root": {
       "inputs": {
+        "amcli-input": "amcli-input",
         "home-manager": "home-manager",
         "hyprland-input": "hyprland-input",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "tri-input": "tri-input"
       }
     },
@@ -160,7 +212,7 @@
     "tri-input": {
       "inputs": {
         "fenix": "fenix",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 0,

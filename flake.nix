@@ -6,10 +6,11 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     tri-input.url = "path:/home/goose/prj/tree-magick-editor";
+    amcli-input.url = "github:asc-community/AngouriMathCLI";
     hyprland-input.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, ... }@inputs: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -29,6 +30,7 @@
         {
           environment.systemPackages = [
             tri-input.packages.${system}.default
+            amcli-input.packages.${system}.default
           ];
         }
         home-manager.nixosModules.home-manager

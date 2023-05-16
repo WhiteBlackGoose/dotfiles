@@ -58,10 +58,10 @@ To get my setup of nvim:
     - ❄️ Update paths in the config file
   - ❄️ C
     - ❄️ Install clangd
-  - LaTeX
+  - ❄️ LaTeX
     - ❄️ Get `latexmk`
     - ❄️ Get `zathura` (PDF viewer)
-    - Get `amcli` (AngouriMathCLI) (optional)
+    - ❄️ Get `amcli` (AngouriMathCLI) (optional)
     - ❄️ Get `texlab` (Language server) (optional)
     - ❄️ Get `pygmentize` (python syntax highlighting) (optional)
   - ❄️ Image
