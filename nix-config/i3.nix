@@ -2,6 +2,13 @@
 inputs@{ config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+      xdotool
+      xss-lock
+      xclip
+      xfce.xfce4-screenshooter
+  ];  
+
   services.xserver = {
     dpi = 192;
     enable = true;
@@ -13,7 +20,6 @@ inputs@{ config, pkgs, ... }:
     };
 
     displayManager = {
-      # gdm = {
       lightdm = {
         enable = true;
       };
@@ -32,22 +38,4 @@ inputs@{ config, pkgs, ... }:
     
     displayManager.sessionCommands = ''${(import ./theme.nix inputs).apply-theme-script}'';
   };
-
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    gnome-music
-    gnome-terminal
-    gedit # text editor
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
 }

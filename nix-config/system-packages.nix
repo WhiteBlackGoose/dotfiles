@@ -46,7 +46,6 @@
           gsettings set $gnome_schema gtk-theme 'Dracula'
           '';
       })
-      xdotool
 
       libotr
       gpgme
@@ -93,9 +92,6 @@
       upower
       wdiff
       wget
-      xclip
-      xfce.xfce4-screenshooter
-      xss-lock
       zathura
       zip
     ];

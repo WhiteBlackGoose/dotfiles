@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     tri-input.url = "path:/home/goose/prj/tree-magick-editor";
+    hyprland-input.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, ... }@inputs: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -20,6 +21,11 @@
           environment.etc."nix/path/nixpkgs".source = nixpkgs;
         }
         (import ./configuration.nix { pkgs-goose = nixpkgs; linux-input = nixpkgs; })
+
+        # WMs
+        (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
+        # (import ./nix-config/hyprland.nix inputs)
+
         {
           environment.systemPackages = [
             tri-input.packages.${system}.default
