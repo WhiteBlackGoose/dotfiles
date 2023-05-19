@@ -4,6 +4,8 @@ add('n', '<A-t>', ':NvimTreeToggle<CR>')
 -- Tabs
 add('n', '<A-,>', ':BufferPrevious<CR>')
 add('n', '<A-.>', ':BufferNext<CR>')
+add('n', '<C-,>', ':BufferMovePrevious<CR>')
+add('n', '<C-.>', ':BufferMoveNext<CR>')
 add('n', '<A-<>', ':BufferMovePrevious<CR>')
 add('n', '<A->>', ':BufferMoveNext<CR>')
 add('n', '<A-c>', ':BufferClose<CR>')

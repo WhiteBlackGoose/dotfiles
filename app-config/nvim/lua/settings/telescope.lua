@@ -5,6 +5,7 @@ require('telescope').setup{
     -- config_key = value,
     theme = "ivy",
     winblend = vim.g.neovide and 30 or 0,
+    path_display = { "smart" },
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:

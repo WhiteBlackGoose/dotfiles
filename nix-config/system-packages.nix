@@ -168,7 +168,6 @@
           };
         })
       )
-      nil  # LS for nix
       sumneko-lua-language-server
     ];
   in
