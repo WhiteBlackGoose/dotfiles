@@ -25,6 +25,7 @@
       pamixer
       pavucontrol
       vlc
+      deepin.deepin-camera
     ];
 
     dtools = pkgs.callPackage ./dotnet-tool.nix {};
@@ -107,6 +108,7 @@
     ];
     devPackages = with pkgs; [
       (pkgs.python3.withPackages (p: with p; [
+        nltk
         openpyxl
         flake8
         jedi-language-server

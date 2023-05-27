@@ -105,6 +105,10 @@ rec {
       name = "DE: dict.cc";
       exec = "${pkgs.surf}/bin/surf dict.cc -s";
     };
+    dictcc-ru = {
+      name = "DE: dict.cc from ru";
+      exec = "${pkgs.surf}/bin/surf deru.dict.cc -s";
+    };
     konjugator = {
       name = "DE: konjugator";
       exec = "${pkgs.surf}/bin/surf konjugator.reverso.net -s";
@@ -158,7 +162,7 @@ rec {
         in
           ''${pkgs.writeScript "runTodo" ''
           cd ~/me/_org
-          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
+          kitty ${pkgs.writeScript "runNvim" runNvim}
         ''}'';
       icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
     };
@@ -240,6 +244,11 @@ rec {
     Unit.Description = "sxhkd service";
     Unit.PartOf = ["graphical-session.target"];
     Install.WantedBy = ["graphical-session.target"];
+
+    # here we will have only two layouts
+    # ENG: 🇬🇧+ 🇩🇪
+    # RUS: 🇷🇺+ 🇺🇦
+    # by using right alt, type letters from the other alphabet
     Service.ExecStart = 
       ''${pkgs.sxhkd}/bin/sxhkd -c ${pkgs.writeText "config" 
       ''
@@ -252,15 +261,21 @@ rec {
         ${pkgs.xorg.setxkbmap}/bin/setxkbmap -layout us
         ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
           keycode 108 = Mode_switch
-          keysym e = e E EuroSign
+          keysym e = e E EuroSign U00A3
           keysym a = a A adiaeresis Adiaeresis
           keysym o = o O odiaeresis Odiaeresis
           keysym u = u U udiaeresis Udiaeresis
-          keysym i = i I idiaeresis Idiaeresis
-          keysym s = s S ssharp
+          keysym s = s S ssharp U1E9E
         ''}
       else
         ${pkgs.xorg.setxkbmap}/bin/setxkbmap -layout ru
+        ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
+          keycode 108 = Mode_switch
+          keysym Cyrillic_i = Cyrillic_i Cyrillic_I idiaeresis Idiaeresis
+          keysym Cyrillic_ie = Cyrillic_ie Cyrillic_IE U0454 U0404
+          keysym Cyrillic_yeru = Cyrillic_yeru Cyrillic_YERU i I
+          keysym Cyrillic_ghe = Cyrillic_ghe Cyrillic_GHE U0491 U0490
+        ''}
       fi
       ''}
       ''}

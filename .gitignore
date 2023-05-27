@@ -62,3 +62,4 @@ app-config/systemd/
 app-config/user-dirs.dirs
 app-config/user-dirs.locale
 app-config/vlc/
+app-config/ghc

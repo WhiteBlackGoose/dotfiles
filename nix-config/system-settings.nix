@@ -66,6 +66,9 @@
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "CascadiaCode" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
   ];
 
   # GnuPG
