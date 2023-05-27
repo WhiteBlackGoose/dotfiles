@@ -50,6 +50,9 @@ local runCommands = {
     {{"*.rs", "Cargo.*"}, "cargo run"},
     {{"*.cs", "*.csproj"}, "dotnet run"},
     {{"*.py"}, "python %"},
+    {{"*.fst"}, "fstar.exe %"},
+    {{"*.idr"}, "idris2 % -o out && ./build/exec/out"},
+    {{"*.hs"}, "ghc % -o out && ./out"},
 }
 for _, pair in pairs(runCommands) do
     vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {

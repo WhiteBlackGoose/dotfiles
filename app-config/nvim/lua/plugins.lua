@@ -35,6 +35,7 @@ local commonPlugins = {
     --         require('power-char').setup{}
     --     end
     -- }
+    'eandrju/cellular-automaton.nvim',
 }
 
 if vim.g.neovide == nil then
@@ -125,7 +126,11 @@ local idePlugins = {
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
+    'mfussenegger/nvim-jdtls',
+    'onsails/lspkind.nvim'
 }
+
+vim.g.magma_image_provider="kitty"
 
 local lazy_opt = {
     dev = {

@@ -1,6 +1,6 @@
 local dap = require 'dap'
 
---.NET----------------------------
+---.NET----------------------------
 
 
 dap.adapters.coreclr = {
@@ -60,7 +60,7 @@ local config = {
 dap.configurations.cs = config
 dap.configurations.fsharp = config
 
---Rust/C/C++----------------------------
+---Rust/C/C++----------------------------
 
 dap.adapters.codelldb = {
   type = 'server',
@@ -72,7 +72,7 @@ dap.adapters.codelldb = {
   }
 }
 
--- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
+--- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
 dap.configurations.rust = {
     {
         type = 'codelldb',
@@ -90,7 +90,7 @@ dap.configurations.rust = {
 dap.configurations.c = dap.configurations.rust
 dap.configurations.cpp = dap.configurations.rust
 
---Python------------------------------
+---Python------------------------------
 
 dap.python = {
   type = 'executable';
@@ -98,7 +98,7 @@ dap.python = {
   args = { 'python', '-m', 'debugpy.adapter' };
 }
 
---Other-------------------------------
+---Other-------------------------------
 
 dap.adapters.gdb = {
   type = 'server',

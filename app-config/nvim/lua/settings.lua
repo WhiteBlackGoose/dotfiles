@@ -10,7 +10,6 @@ end
 
 vim.wo.fillchars='eob: '
 
-
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4
@@ -19,6 +18,8 @@ vim.cmd[[filetype indent off]]
 
 vim.cmd[[set nofixendofline]]
 vim.cmd[[set virtualedit=block]]
+
+vim.g.editorconfig = true
 
 vim.g['python3_host_prog'] = 'python3'
 
