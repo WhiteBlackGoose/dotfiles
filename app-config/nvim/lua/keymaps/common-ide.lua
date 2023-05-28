@@ -52,7 +52,7 @@ local runCommands = {
     {{"*.py"}, "python %"},
     {{"*.fst"}, "fstar.exe %"},
     {{"*.idr"}, "idris2 % -o out && ./build/exec/out"},
-    {{"*.hs"}, "ghc % -o out && ./out"},
+    {{"*.hs"}, "cabal run"},
 }
 for _, pair in pairs(runCommands) do
     vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {

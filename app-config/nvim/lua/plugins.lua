@@ -127,7 +127,9 @@ local idePlugins = {
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
     'mfussenegger/nvim-jdtls',
-    'onsails/lspkind.nvim'
+    'onsails/lspkind.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-pack/nvim-spectre',
 }
 
 vim.g.magma_image_provider="kitty"
