@@ -1,7 +1,7 @@
 app=none
 last_user=
 last_extension=png
-screenshot_dir=file:///dev/stdout
+screenshot_dir=file:///tmp/ocr-tmp.png
 enable_imgur_upload=true
 show_in_folder=false
 custom_action_command=none
