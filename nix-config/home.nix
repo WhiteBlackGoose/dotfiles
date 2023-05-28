@@ -71,7 +71,22 @@ rec {
   dconf.enable = true;
 
 
-  xdg.desktopEntries = {
+  xdg.desktopEntries = 
+    let 
+      ocr = lang: {
+        name = "OCR image: ${lang}";
+        exec = "${pkgs.writeScript "ocr" ''
+          ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /tmp/ocr-tmp.png
+          ${pkgs.tesseract}/bin/tesseract -l ${lang} /tmp/ocr-tmp.png /tmp/ocr-out
+          cat /tmp/ocr-out.txt | ${pkgs.xclip}/bin/xclip -sel clip
+          rm /tmp/ocr-tmp.png /tmp/ocr-out.txt
+        ''}";
+      };
+    in
+  {
+    ocr-en = ocr "eng";
+    ocr-ru = ocr "rus";
+    ocr-de = ocr "deu";
     firefox = {
       name = "Firefox";
       genericName = "Web Browser";
@@ -210,6 +225,7 @@ rec {
         fi
       ''}";
     };
+    theme = (import ./theme.nix inputs).desktopEntry;
   };
 
   xdg.mimeApps = {
@@ -282,8 +298,6 @@ rec {
       '';
   };
   
-  xdg.desktopEntries.theme = (import ./theme.nix inputs).desktopEntry;
-
   # Gallery: https://www.opendesktop.org/browse?cat=107
   # Nice ones:
   # White/Green: https://github.com/yeyushengfan258/ArcAurora-Cursors
