@@ -76,10 +76,9 @@ rec {
       ocr = lang: {
         name = "OCR image: ${lang}";
         exec = "${pkgs.writeScript "ocr" ''
-          ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /tmp/ocr-tmp.png
-          ${pkgs.tesseract}/bin/tesseract -l ${lang} /tmp/ocr-tmp.png /tmp/ocr-out
-          cat /tmp/ocr-out.txt | ${pkgs.xclip}/bin/xclip -sel clip
-          rm /tmp/ocr-tmp.png /tmp/ocr-out.txt
+          ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /dev/stdout | \
+          ${pkgs.tesseract}/bin/tesseract -l ${lang} - - | \
+          ${pkgs.xclip}/bin/xclip -sel clip
         ''}";
       };
     in
@@ -87,6 +86,7 @@ rec {
     ocr-en = ocr "eng";
     ocr-ru = ocr "rus";
     ocr-de = ocr "deu";
+    ocr-all = ocr "eng+rus+deu";
     firefox = {
       name = "Firefox";
       genericName = "Web Browser";
