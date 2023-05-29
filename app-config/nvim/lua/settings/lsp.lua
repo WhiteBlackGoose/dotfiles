@@ -16,7 +16,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp.texlab.setup{capabilities = capabilities}
 lsp.clangd.setup{capabilities = capabilities}
 lsp.nil_ls.setup{capabilities = capabilities}
--- lsp.idris2_lsp.setup{capabilities = capabilities}
+lsp.idris2_lsp.setup{capabilities = capabilities}
 lsp.hls.setup{capabilities = capabilities}
 lsp.jedi_language_server.setup{capabilities = capabilities}
 -- lsp.java_language_server.setup{
