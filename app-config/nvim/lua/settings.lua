@@ -5,11 +5,12 @@ opt.clipboard = 'unnamedplus'
 if vim.g.use_ide() then
     opt.cursorline = true
     opt.number = true
-    vim.cmd[[set relativenumber]]
+    opt.relativenumber = true
 end
 
 vim.wo.fillchars='eob: '
 
+opt.ignorecase = true
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4

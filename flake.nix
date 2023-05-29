@@ -9,9 +9,10 @@
     amcli-input.url = "github:asc-community/AngouriMathCLI";
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";
+    nvim-input.url = "github:neovim/neovim/master?dir=contrib";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -33,6 +34,7 @@
             tri-input.packages.${system}.default
             amcli-input.packages.${system}.default
             nil-input.packages.${system}.default
+            nvim-input.packages.${system}.default
           ];
         }
         home-manager.nixosModules.home-manager

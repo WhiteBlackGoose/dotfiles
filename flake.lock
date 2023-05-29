@@ -59,6 +59,21 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -224,6 +239,22 @@
     },
     "nixpkgs_5": {
       "locked": {
+        "lastModified": 1681465517,
+        "narHash": "sha256-EasJh15/jcJNAHtq2SGbiADRXteURAnQbj1NqBoKkzU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "abe7316dd51a313ce528972b104f4f04f56eefc4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
         "lastModified": 1683014792,
         "narHash": "sha256-6Va9iVtmmsw4raBc3QKvQT2KT/NGRWlvUlJj46zN8B8=",
         "owner": "nixos",
@@ -238,6 +269,28 @@
         "type": "github"
       }
     },
+    "nvim-input": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "dir": "contrib",
+        "lastModified": 1685369641,
+        "narHash": "sha256-oyZ1Vf6oMJ3IHbt83lW9ztnU3958GEs9UHvzAYiGJoo=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "2028d1e2bc9fbba66552610b141df962cc550f88",
+        "type": "github"
+      },
+      "original": {
+        "dir": "contrib",
+        "owner": "neovim",
+        "ref": "master",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "amcli-input": "amcli-input",
@@ -245,6 +298,7 @@
         "hyprland-input": "hyprland-input",
         "nil-input": "nil-input",
         "nixpkgs": "nixpkgs_4",
+        "nvim-input": "nvim-input",
         "tri-input": "tri-input"
       }
     },
@@ -308,7 +362,7 @@
     "tri-input": {
       "inputs": {
         "fenix": "fenix",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 0,

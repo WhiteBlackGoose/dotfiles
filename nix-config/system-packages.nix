@@ -159,17 +159,6 @@
           patches = [ ];
         })
       )
-      # neovim
-      (
-        neovim-unwrapped.overrideAttrs (oldAttrs: {
-          src = fetchFromGitHub {
-            owner = "WhiteBlackGoose";
-            repo = "neovim-goose";
-            rev = "6fccf911300fcad17a3f4f994fc09641d2398007";
-            hash = "sha256-WCHMF/swEgGh41RSw82eFdnrs7SBfe2BXk+whFbTPKw=";
-          };
-        })
-      )
       sumneko-lua-language-server
     ];
   in
