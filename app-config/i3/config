@@ -199,6 +199,7 @@ for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class=".blueman-manager-wrapped" instance=".blueman-manager-wrapped"] floating enable
 for_window [class="Software-properties-gtk" instance="software-properties-gtk"] floating enable
 for_window [class="thunderbird" instance="Msgcompose"] floating enable
+for_window [class="Yad" instance="yad"] floating enable
 # for_window [class="^.*"] border pixel 3
 # new_window pixel 1
 
