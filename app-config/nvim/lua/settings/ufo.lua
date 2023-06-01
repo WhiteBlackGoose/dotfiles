@@ -54,7 +54,7 @@ else
 end
 
 local fold = '%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }'
-local num = '%4{&nu?(&rnu&&v:relnum?(" ".v:relnum):v:lnum." "):""}'
+local num = '%4{&nu?(&rnu&&v:relnum?(" ".v:relnum." "):("-->")):" "}'
 local git = '%1s'
 vim.o.signcolumn = "yes"
 vim.o.statuscolumn = num .. git .. fold

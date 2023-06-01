@@ -1,26 +1,10 @@
------ nvim-tree
+local function on_attach(bufnr)
+    require("keymaps.common-editor")
+    Nvim_tree_keymaps(bufnr)
+end
 
--- examples for your init.lua
-
--- empty setup using defaults
--- require("nvim-tree").setup()
-
--- OR setup with some options
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = false,
-  },
+    on_attach = on_attach
 })
+
 
