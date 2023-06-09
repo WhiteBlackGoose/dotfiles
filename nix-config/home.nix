@@ -152,7 +152,7 @@ rec {
     };
     neovide = {
       name = "Neovide";
-      exec = ''${pkgs.writeScript "nice" "neovide --multigrid"}'';
+      exec = ''${pkgs.writeScript "nice" "neovide"}'';
     };
     org = {
       name = "OrgHub";
@@ -207,6 +207,7 @@ rec {
             { name = "zathura"; pat = "*.pdf"; }
             { name = "firefox"; pat = ""; }
             { name = "libreoffice"; pat = "*.docx"; }
+            { name = "neovide"; pat = "*"; }
           ];
           progLine = lib.strings.concatStringsSep
             "\\n"

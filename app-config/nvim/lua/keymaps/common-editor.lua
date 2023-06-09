@@ -22,9 +22,6 @@ add('n', 'E', 'viw')
 
 function Nvim_tree_keymaps(bufnr)
     local api = require("nvim-tree.api")
-    vim.keymap.set('n', 'u', api.tree.change_root_to_parent)
-    vim.keymap.set('n', 'E', api.tree.expand_all)
-
     local function opts(desc)
       return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end

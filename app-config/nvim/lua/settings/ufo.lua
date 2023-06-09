@@ -58,3 +58,13 @@ local num = '%4{&nu?(&rnu&&v:relnum?(" ".v:relnum." "):("-->")):" "}'
 local git = '%1s'
 vim.o.signcolumn = "yes"
 vim.o.statuscolumn = num .. git .. fold
+
+local id = vim.api.nvim_create_augroup("StatusCol", {})
+vim.api.nvim_create_autocmd({"FileType", "BufEnter"}, {
+  group = id,
+  callback = function()
+    if vim.api.nvim_buf_get_option(0, "ft") == "NvimTree" then
+      vim.opt_local.statuscolumn = ""
+    end
+  end,
+})

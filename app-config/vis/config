@@ -1,0 +1,4 @@
+colors.override.terminal=false
+colors.scheme=mycolor
+
+visualizer.spectrum.bar.width=1

@@ -36,6 +36,20 @@ local commonPlugins = {
     --     end
     -- }
     'eandrju/cellular-automaton.nvim',
+    'WhiteBlackGoose/andromeda.nvim',
+    'zanglg/nova.nvim',
+    'Mofiqul/dracula.nvim',
+    {
+        "baliestri/aura-theme",
+        lazy = false,
+        priority = 1000,
+        config = function(plugin)
+          vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+          vim.cmd([[colorscheme aura-dark]])
+        end
+    },
+    'projekt0n/github-nvim-theme',
+    'navarasu/onedark.nvim'
 }
 
 if vim.g.neovide == nil then
@@ -70,7 +84,7 @@ local idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'WhiteBlackGoose/magma-nvim-goose', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
+    {'WhiteBlackGoose/magma-nvim-goose', dev=false, branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',
@@ -122,7 +136,7 @@ local idePlugins = {
       end
     },
 
-    {"https://github.com/WhiteBlackGoose/orgmode", dev=true },
+    {"https://github.com/nvim-orgmode/orgmode", dev=false },
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",

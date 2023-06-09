@@ -7,10 +7,10 @@
   let 
     novaPackages = with pkgs-goose.legacyPackages.${pkgs.system}; [
       libreoffice
-      neovide
+      (writeScriptBin "neovide" "${neovide}/bin/neovide --multigrid $@")
       firefox
 
-      element-desktop
+      element-desktop 
       virt-manager
       qemu_kvm
       litemdview
@@ -133,6 +133,10 @@
         yfinance
         # catboost
         debugpy
+        (word2vec.overridePythonAttrs ( _: { doCheck = false; } ))
+        pytorch
+        tensorflow
+        keras
       ]))
       ueberzug
 

@@ -11,10 +11,10 @@ vim.g.theme_dark = function()
     -- vim.cmd[[colorscheme darcula]]
     vim.o.background = "dark"
     -- vim.cmd[[colorscheme catppuccin-frappe]]
-    vim.cmd[[colorscheme tokyonight]]
-    vim.cmd[[let ayucolor="dark"]]
-    -- ! git commit -m "1" && git push local
-    -- vim.cmd[[colorscheme andromeda]]
+    -- vim.cmd[[colorscheme tokyonight]]
+    -- vim.cmd[[let ayucolor="dark"]]
+
+    vim.cmd[[colorscheme nova]]
 
     -- Syntastics
     vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
@@ -47,9 +47,13 @@ vim.g.theme_light = function()
     vim.cmd[[
     let g:airline_theme='light'
     let ayucolor="light"
-    colorscheme ayu
     ]]
 
+    if not vim.g.neovide then
+        vim.cmd[[colorscheme ayu]]
+    else
+        vim.cmd[[colorscheme github_light]]
+    end
     -- Syntastics
     vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
     vim.api.nvim_set_hl(0, 'ALEErrorLine', { bg="#FFEFEF" })

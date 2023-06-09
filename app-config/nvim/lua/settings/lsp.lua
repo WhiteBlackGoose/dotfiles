@@ -16,6 +16,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp.texlab.setup{capabilities = capabilities}
 lsp.clangd.setup{capabilities = capabilities}
 lsp.nil_ls.setup{capabilities = capabilities}
+-- lsp.csharp_ls.setup{capabilities = capabilities}
+-- lsp.omnisharp.setup{
+--     cmd = { "OmniSharp" },
+--     enable_editorconfig_support = true,
+--     capabilities = capabilities
+--     }
 lsp.idris2_lsp.setup{capabilities = capabilities}
 lsp.hls.setup{capabilities = capabilities}
 lsp.jedi_language_server.setup{capabilities = capabilities}
