@@ -84,6 +84,8 @@ To get my setup of nvim:
 
 ### Features for developers
 
+(Note: this list is outdated, there's a lot more I do with nvim now)
+
 - Suggestions for C#, Rust, C work
   - Semantic completions pop up as you type
   - Disable errors/warnings with `Ctrl+q`
@@ -166,7 +168,7 @@ To get my setup of nvim:
 
 ### 2022-11-23 13:15 UTC
 
-![LaTeX demo](./latex.gif)
+![LaTeX demo](./app-config/latex.gif)
 
 ### 2022-11-04 06:03 UTC
 

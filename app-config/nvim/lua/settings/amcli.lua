@@ -19,7 +19,7 @@ local function visual_selection_range()
         return cerow - 1, cecol - 1, csrow - 1, cscol
     end
 end
-    
+
 -- https://neovim.discourse.group/t/function-that-return-visually-selected-text/1601
 local function get_visual_selection()
   local s_start = vim.fn.getpos("'<")
@@ -38,14 +38,14 @@ end
 require('utils')
 
 local function clean_selection()
-    _, x1, _, x2 = visual_selection_range()
+    local _, x1, _, x2 = visual_selection_range()
     local line = vim.api.nvim_get_current_line()
     local newline = line:sub(0, x1) .. line:sub(x2 + 1)
     vim.api.nvim_set_current_line(newline)
 end
   
 function Amcli(fmt, cmd)
-    y1, x1, y2, x2 = visual_selection_range()
+    local y1, x1, y2, x2 = visual_selection_range()
     if y1 ~= y2 then
         print("Cannot do multilines")
         return

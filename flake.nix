@@ -10,9 +10,10 @@
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";
     nvim-input.url = "github:neovim/neovim/master?dir=contrib";
+    gpt4all.url = "github:polygon/gpt4all-nix";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -35,6 +36,8 @@
             amcli-input.packages.${system}.default
             nil-input.packages.${system}.default
             nvim-input.packages.${system}.default
+            (nixpkgs.legacyPackages.${system}.writeScriptBin "chat"
+              "QT_SCALE_FACTOR=2.5 ${gpt4all.packages.${system}.gpt4all-chat}/bin/chat $@")
           ];
         }
         home-manager.nixosModules.home-manager

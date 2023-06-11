@@ -244,6 +244,10 @@ rec {
         fi
       ''}";
     };
+    gpt4all = {
+      name = "gpt4all";
+      exec = "chat";
+    };
     theme = (import ./theme.nix inputs).desktopEntry;
   };
 

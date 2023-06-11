@@ -114,3 +114,7 @@ add('n', '<leader>lli', ":lua LSPLines()<CR>")
 -- Clipboard into buffer
 add('n', '<leader>nv', ":vert new<CR>p")
 add('n', '<leader>ns', ":hor new<CR>p")
+
+-- gpt4all autocomplete
+add('i', '<C-e>', "<Esc>:ChatGPTCompleteCode<CR>")
+add('v', '<C-e>', ":ChatGPTRun complete_code<CR>")

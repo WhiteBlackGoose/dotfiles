@@ -84,7 +84,7 @@ local idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'WhiteBlackGoose/magma-nvim-goose', dev=false, branch = 'main', build = ":UpdateRemotePlugins" },
+    {'WhiteBlackGoose/magma-nvim-goose', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',
@@ -136,7 +136,7 @@ local idePlugins = {
       end
     },
 
-    {"https://github.com/nvim-orgmode/orgmode", dev=false },
+    {"https://github.com/nvim-orgmode/orgmode", dev=true },
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
@@ -144,6 +144,23 @@ local idePlugins = {
     'onsails/lspkind.nvim',
     'nvim-lua/plenary.nvim',
     'nvim-pack/nvim-spectre',
+    {
+        'WhiteBlackGoose/gpt4all.nvim',
+        dev=true,
+        event = "VeryLazy",
+        config = function()
+          require("chatgpt").setup {
+            openai_params = {
+                model = "ggml-gpt4all-j",
+            }
+          }
+        end,
+        dependencies = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
+    }
 }
 
 vim.g.magma_image_provider="kitty"
