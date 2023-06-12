@@ -62,8 +62,8 @@ rec {
 
   swapDevices = [
     {
-      device = "/swap1";
-      size = 16 * 1024;
+      device = "/home/swap1";
+      size = 32 * 1024;
     }
   ];
 
