@@ -51,6 +51,7 @@ rec {
 
         set -a PATH /home/goose/me/scripts
         set -a PATH /home/goose/.config/global_scripts
+        fish_ssh_agent
       '';
     };
   };

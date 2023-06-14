@@ -40,6 +40,9 @@
               "QT_SCALE_FACTOR=2.5 ${gpt4all.packages.${system}.gpt4all-chat}/bin/chat $@")
           ];
         }
+        {
+          environment.systemPackages = import ./nix-config/scripts.nix nixpkgs.legacyPackages.${system};
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
