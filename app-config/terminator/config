@@ -51,7 +51,7 @@
   [[default]]
     icon_bell = False
     background_color = "#24283b"
-    font = FuraMono Nerd Font Mono Medium 11
+    font = FantasqueSansMono Nerd Font 11
     foreground_color = "#f6f5f4"
     show_titlebar = False
     scrollbar_position = hidden

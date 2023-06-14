@@ -4,6 +4,9 @@ require('orgmode').setup({
   org_agenda_files = {"~/me/_org/**"},
   win_split_mode = 'horizontal',
   org_agenda_span = 'month',
+  org_agenda_skip_scheduled_if_done = true,
+  org_agenda_skip_deadline_if_done = true,
+  org_agenda_skip_if_done = true,
 })
 --
 -- :autocmd BufNewFile,BufRead *.org fold

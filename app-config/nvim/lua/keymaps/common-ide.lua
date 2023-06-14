@@ -27,7 +27,6 @@ add('n', '<leader>enat', ":lua require'dap'.run(require'dap'.configurations.nati
 add('n', '<leader>eh', '<Cmd>lua require("dap.ui.widgets").hover()<CR>')
 
 -- For those with limited keyboard
-
 add('n', '<leader>edc', ":lua require'dap'.continue()<CR>")
 add('n', '<leader>edj', ":lua DapJumpTo()<CR>")
 add('n', '<leader>edt', ":lua require'dap'.toggle_breakpoint()<CR>")
@@ -63,14 +62,10 @@ for _, pair in pairs(runCommands) do
     })
 end
 
--- Floaterm
-
-add('n', '<leader>tty', ':FloatermNew --height=0.8 --width=0.8<CR>')
-
-
--- Git
-
-add('n', '<leader>lg', ':FloatermNew --height=0.8 --width=0.8 lazygit<CR>')
+-- Terminal
+add('n', '<leader>tt', ':botr vsplit <bar> term<CR>i')
+add('n', '<leader>tg', ':botr vsplit <bar> term lazygit<CR>i')
+add('n', '<leader>tna', ':botr vsplit <bar> term sudo ./apply<CR>i')
 
 -- nvim-toggler
 if vim.g.use_ide() then
@@ -94,7 +89,6 @@ vim.keymap.set('v', '<leader>mdi', ":lua require('markdowny').italic()<cr>", { b
 vim.keymap.set('v', '<leader>mdk', ":lua require('markdowny').link()<cr>", { buffer = 0 })
 
 -- built-in LSP
-
 add('n', '<leader>ldc', ":LSPDeclaration<CR>")
 add('n', '<leader>ldf', ":LSPDefinition<CR>")
 add('n', '<leader>lh', ":LSPHover<CR>")

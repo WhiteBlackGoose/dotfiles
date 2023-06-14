@@ -14,7 +14,7 @@ vim.g.theme_dark = function()
     -- vim.cmd[[colorscheme tokyonight]]
     -- vim.cmd[[let ayucolor="dark"]]
 
-    vim.cmd[[colorscheme nova]]
+    vim.cmd[[colorscheme tokyonight]]
 
     -- Syntastics
     vim.api.nvim_set_hl(0, 'ALEErrorSign', { fg="#FF5555" })
