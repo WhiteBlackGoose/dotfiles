@@ -4,5 +4,7 @@
   programs.hyprland.enable = true;
   environment.systemPackages = with nixpkgs; [
     wl-clipboard
+    dunst
+    waybar
   ];
 }
