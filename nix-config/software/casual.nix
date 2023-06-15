@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
     libreoffice
     firefox
     kitty
     gimp
     element-desktop 
-    (let dtools = pkgs.callPackage ./dotnet-tool.nix {};
+    (let dtools = sw.my-nix.dotnetTool pkgs;
     in  (dtools.combineTools dotnet-sdk_6 [ 
         dtools.tools.angourimath-terminal 
       ]))
@@ -60,5 +60,8 @@
     (writeScriptBin "neovide" "${neovide}/bin/neovide --multigrid $@")
     virt-manager
     qemu_kvm
+    sw.tri.default
+    sw.amcli.default
+    (writeScriptBin "chat" "QT_SCALE_FACTOR=2.5 ${sw.gpt4all.gpt4all-chat}/bin/chat $@")
   ];
 }

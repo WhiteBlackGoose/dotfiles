@@ -189,6 +189,18 @@
         "type": "github"
       }
     },
+    "my-nix_2": {
+      "locked": {
+        "lastModified": 1686815936,
+        "narHash": "sha256-la03E73VCxhAlAAbY6zJKeJ2I/Ypicb74IA6Z+44ZUA=",
+        "path": "/home/goose/prj/my-nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/goose/prj/my-nix",
+        "type": "path"
+      }
+    },
     "nil-input": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -350,6 +362,7 @@
         "gpt4all": "gpt4all",
         "home-manager": "home-manager",
         "hyprland-input": "hyprland-input",
+        "my-nix": "my-nix_2",
         "nil-input": "nil-input",
         "nixpkgs": "nixpkgs_5",
         "nvim-input": "nvim-input",
