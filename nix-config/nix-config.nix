@@ -1,20 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ pkgs-goose, linux-input, ... }:
-{ config, pkgs, lib, ... }:
-
+{ pkgs, lib, ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      (import ./nix-config/pc-specific-configuration.nix { linux-input = linux-input; })
-      ./nix-config/system-settings.nix
-      (import ./nix-config/system-packages.nix { pkgs-goose = pkgs-goose; })
-      ./nix-config/users.nix
-      ./nix-config/env-variables.nix
-    ];
-
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -37,5 +22,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }

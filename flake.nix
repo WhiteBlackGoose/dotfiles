@@ -19,12 +19,15 @@
       modules = [
         { 
           nix.registry.nixpkgs.flake = nixpkgs;
-          nix.registry.nixpkgs-goose.flake = nixpkgs;
-          nix.registry.linux-input.flake = nixpkgs;
           nix.nixPath = [ "/etc/nix/path" ];
           environment.etc."nix/path/nixpkgs".source = nixpkgs;
         }
-        (import ./configuration.nix { pkgs-goose = nixpkgs; linux-input = nixpkgs; })
+        ./nix-config/nix-config.nix
+        (import ./nix-config/pc-specific-configuration.nix { linux-input = nixpkgs; })
+        (import ./nix-config/system-packages.nix { pkgs-goose = nixpkgs; })
+        ./nix-config/system-settings.nix
+        ./nix-config/users.nix
+        ./nix-config/env-variables.nix
 
         # WMs
         (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
