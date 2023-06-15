@@ -1,28 +1,28 @@
 # Setup
 
-|                  | What I use                                                                       |
-|------------------|----------------------------------------------------------------------------------|
-| OS               | NixOS                                                                            |
-| DE               | -                                                                                |
-| WM               | i3                                                                               |
-| Status bar       | i3blocks                                                                         |
-| Terminal         | xfce4-terminal                                                                   |
-| Shell            | bash                                                                             |
-| Text Editor      | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
-| IDE              | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
-| PDF editor       | [neovim-goose](https://github.com/WhiteBlackGoose/neovim-goose)                  |
-| PDF viewer       | zathura                                                                          |
-| Image editor     | Pinta                                                                            |
-| Image viewer     | [nsxiv-goose](https://github.com/WhiteBlackGoose/nsxiv-goose)                    |
-| Markdown viewer  | [libemdview-goose](https://codeberg.org/WhiteBlackGoose/litemdview)              |
-| Git UI           | lazygit                                                                          |
-| Task manager     | -                                                                                |
-| File manager     | -                                                                                |
-| Password manager | [pass](https://gist.github.com/WhiteBlackGoose/8ffb7123b991dcc4cdafcdd574bdc3c6) |
-| Font             | FiraCode Nerd                                                                    |
-| Browser          | firefox, surf, Tor                                                               |
-| Currency         | BTC, ETH                                                                         |
-| App launcher     | rofi                                                                             |
+|                  | What I use                                                          |
+|------------------|---------------------------------------------------------------------|
+| OS               | NixOS                                                               |
+| DE               | -                                                                   |
+| WM               | i3                                                                  |
+| Status bar       | i3blocks                                                            |
+| Terminal         | kitty                                                               |
+| Shell            | fish                                                                |
+| Text Editor      | neovim                                                              |
+| IDE              | neovim                                                              |
+| PDF editor       | neovim                                                              |
+| PDF viewer       | zathura                                                             |
+| Image editor     | Pinta/Gimp                                                          |
+| Image viewer     | [nsxiv-goose](https://github.com/WhiteBlackGoose/nsxiv-goose)       |
+| Markdown viewer  | [libemdview-goose](https://codeberg.org/WhiteBlackGoose/litemdview) |
+| Git UI           | lazygit                                                             |
+| Task manager     | -                                                                   |
+| File manager     | -                                                                   |
+| Password manager | [pass](https://wbg.gg/blog/pass)                                    |
+| Font             | FiraCode Nerd                                                       |
+| Browser          | firefox, surf, Tor                                                  |
+| Currency         | BTC, ETH                                                            |
+| App launcher     | rofi                                                                |
 
 # nvim
 
@@ -31,7 +31,7 @@ To get my setup of nvim:
 > **Note**
 > ❄️  - means it's already part of my NixOS setup, so if you're installing it, you don't need to install this package yourself.
 
-- ❄️ Get `neovim-goose` (my fork)
+- ❄️ Get `neovim`
   - ❄️ `pip3 install neovim` for deoplete
   - ❄️ Get `lazygit` for git UI
   - ❄️ .NET

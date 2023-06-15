@@ -7,4 +7,16 @@
     dunst
     waybar
   ];
+# TODO
+# clipboard
+# keyboard
+# screenshot
+# status bar
+# cursor pointer
+# wallpaper
+# lock screen
+# menu launcher
+# X-only software
+# shortcut managers
+# custom scripts
 }
