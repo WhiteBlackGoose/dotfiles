@@ -14,7 +14,7 @@ stat=$(echo "scale=0; 100*$batnow/$batfull" | bc)
 supply=$(cat /sys/class/power_supply/BAT0/status)
 
 if [ "$supply" = "Discharging" ]; then
-    sym=""
+    sym="󰁹"
 else
     sym="⚡"
 fi

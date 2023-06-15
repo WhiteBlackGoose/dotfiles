@@ -62,7 +62,7 @@ if vim.g.use_ide() then
     require('settings.nvim-autopairs')
     require('settings.nvim-cmp')
     require('settings.nvim-treesitter')
-    LazyRequire('settings.ale', {"*.csproj", "*.cs"})
+    LazyRequire('settings.ale', {"*.csproj", "*.cs", "*.rs", "Cargo.*"})
     LazyRequire('settings.asyncomplete', {"*.csproj", "*.cs"})
     LazyRequire('settings.omnisharp-vim', {"*.csproj", "*.cs"})
     LazyRequire('settings.vim-test', {"*.csproj", "*.cs"})

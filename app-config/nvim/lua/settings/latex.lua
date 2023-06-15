@@ -33,3 +33,8 @@ vim.g['vimtex_view_method'] = 'zathura'
 vim.cmd[[
 :command TexMoveOutAbove lua TexMoveOutAbove()<CR>
 ]]
+-- Lets silence some errors :)
+vim["g"]["vimtex_quickfix_ignore_filters"] = {
+  "Underfull",
+  "Overfull",
+}

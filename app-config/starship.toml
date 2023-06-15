@@ -21,7 +21,7 @@ $cmd_duration
 [directory]
 format = "$path"
 truncation_length = 0
-truncation_symbol = " "
+truncation_symbol = " "
 
 [git_branch]
 symbol = ""
