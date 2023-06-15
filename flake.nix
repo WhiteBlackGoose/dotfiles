@@ -11,9 +11,10 @@
     nil-input.url = "github:oxalica/nil/main";
     nvim-input.url = "github:neovim/neovim/master?dir=contrib";
     gpt4all.url = "github:polygon/gpt4all-nix";
+    my-nix.url = "github:WhiteBlackGoose/my-nix";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -23,8 +24,11 @@
           environment.etc."nix/path/nixpkgs".source = nixpkgs;
         }
         ./nix-config/nix-config.nix
-        (import ./nix-config/pc-specific-configuration.nix { linux-input = nixpkgs; })
-        (import ./nix-config/system-packages.nix { pkgs-goose = nixpkgs; })
+        ./nix-config/hardware.nix
+        ./nix-config/software/core.nix
+        ./nix-config/software/dev.nix
+        ./nix-config/software/casual.nix
+        ./nix-config/scripts.nix
         ./nix-config/system-settings.nix
         ./nix-config/users.nix
         ./nix-config/env-variables.nix
@@ -43,17 +47,13 @@
               "QT_SCALE_FACTOR=2.5 ${gpt4all.packages.${system}.gpt4all-chat}/bin/chat $@")
           ];
         }
-        {
-          environment.systemPackages = import ./nix-config/scripts.nix nixpkgs.legacyPackages.${system};
-        }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.goose = import ./nix-config/home.nix;
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
+          home-manager.users.goose.imports = [
+            ./nix-config/home.nix
+          ];
         }
       ];
     };

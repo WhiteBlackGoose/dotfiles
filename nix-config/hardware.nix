@@ -1,4 +1,3 @@
-{ linux-input }:
 { config, lib, pkgs, modulesPath, ... }:
 
 rec {
@@ -24,7 +23,7 @@ rec {
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = linux-input.legacyPackages.${pkgs.system}.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # boot.kernelPackages =
   # let
