@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    tri-input.url = "path:/home/goose/prj/tree-magick-editor";
+    tri-input.url = "path:/home/goose/prj/tri";
     amcli-input.url = "github:asc-community/AngouriMathCLI";
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";

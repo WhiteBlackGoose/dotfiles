@@ -26,7 +26,6 @@
       yfinance
       # catboost
       debugpy
-      (word2vec.overridePythonAttrs ( _: { doCheck = false; } ))
       pytorch
       tensorflow
       keras
