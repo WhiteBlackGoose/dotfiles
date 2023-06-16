@@ -71,41 +71,7 @@ rec {
   };
   dconf.enable = true;
 
-
-  xdg.desktopEntries = 
-    let 
-      ocr = lang: {
-        name = "OCR image: ${lang}";
-        exec = "${pkgs.writeScript "ocr" ''
-          ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /dev/stdout | \
-          ${pkgs.tesseract}/bin/tesseract -l ${lang} - - | \
-          ${pkgs.xclip}/bin/xclip -sel clip
-        ''}";
-      };
-      ocr-trans = lang-src: lang-dst: {
-        name = "OCR translate: all -> eng";
-        exec = "${pkgs.writeScript "tr" ''
-          ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /dev/stdout | \
-          ${pkgs.tesseract}/bin/tesseract -l ${lang-src} - - | \
-          tr '\n' ' ' |\
-          ${pkgs.translate-shell}/bin/trans -t "${lang-dst}" -b | \
-          ${pkgs.writeScript "stdin-to-yad" "
-            text=
-            while read line
-            do
-              text=\"$text $line\"
-            done
-            ${pkgs.yad}/bin/yad --text \"$text\" --no-buttons --escape-ok --text-align=center
-          "}
-        ''}";
-      };
-    in
-  {
-    ocr-en = ocr "eng";
-    ocr-ru = ocr "rus";
-    ocr-de = ocr "deu";
-    ocr-all = ocr "eng+rus+deu";
-    ocr-tr = ocr-trans "deu" "en";
+  xdg.desktopEntries = {
     firefox = {
       name = "Firefox";
       genericName = "Web Browser";
@@ -154,51 +120,6 @@ rec {
     neovide = {
       name = "Neovide";
       exec = ''${pkgs.writeScript "nice" "neovide"}'';
-    };
-    org = {
-      name = "OrgHub";
-      exec = 
-        let
-          runNvim = ''
-            sleep 0.5
-            nvim --cmd 'lua vim.g["is_ide_mode"]=1' ~/me/_org/_main.org
-          '';
-        in
-          ''${pkgs.writeScript "runHub" ''
-          cd ~/me/_org
-          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
-        ''}'';
-      icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
-    };
-    diary = {
-      name = "Diary";
-      exec = 
-        let
-          runNvim = ''
-            sleep 0.5
-            nvim --cmd 'lua vim.g["is_ide_mode"]=1' ~/me/_org/diary.org
-          '';
-        in
-          ''${pkgs.writeScript "runDiary" ''
-          cd ~/me/_org
-          xfce4-terminal -e '${pkgs.writeScript "runNvim" runNvim}'
-        ''}'';
-      icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
-    };
-    todo = {
-      name = "TODO list";
-      exec = 
-        let
-          runNvim = ''
-            sleep 0.5
-            nvim --cmd 'lua vim.g["is_ide_mode"]=1' --cmd "let g:open_agenda=1" -o ~/me/_org/_main.org
-          '';
-        in
-          ''${pkgs.writeScript "runTodo" ''
-          cd ~/me/_org
-          kitty ${pkgs.writeScript "runNvim" runNvim}
-        ''}'';
-      icon = pkgs.fetchurl { url="https://orgmode.org/resources/img/org-mode-unicorn.svg"; sha256="sha256-88a+wIN5Eh0xTwDKHuXTG7BA6zbBVaSGH0mO3B/sr0I="; };
     };
     file = {
       name = "Open file";

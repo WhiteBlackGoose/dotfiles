@@ -50,7 +50,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.goose.imports = [
-            ./nix-config/home.nix
+            ./nix-config/home/home.nix
+            ./nix-config/home/ocr.nix
+            ./nix-config/home/org.nix
           ];
         }
       ];

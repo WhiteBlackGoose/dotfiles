@@ -57,7 +57,7 @@
         patches = [ ];
       })
     )
-    (writeScriptBin "neovide" "${neovide}/bin/neovide --multigrid $@")
+    (writeScriptBin "neovide" "${neovide}/bin/neovide --multigrid \"$@\"")
     virt-manager
     qemu_kvm
     sw.tri.default
