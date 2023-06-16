@@ -23,7 +23,8 @@ require("org-bullets").setup {
   concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
   symbols = {
     list = "•",
-    headlines = { "◉", "○", "✸", "✿" },
+    headlines = { " ", "󰺕 ", "✸", "✿" },
+    -- headlines = { "◉", "○", "✸", "✿" },
     checkboxes = {
       half = { "", "OrgTSCheckboxHalfChecked" },
       done = { "✓", "OrgDone" },

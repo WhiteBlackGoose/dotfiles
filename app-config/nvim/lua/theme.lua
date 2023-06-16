@@ -49,7 +49,7 @@ vim.g.theme_light = function()
     let ayucolor="light"
     ]]
 
-    if not vim.g.neovide then
+    if not vim.g.neovide or vim.g.open_agenda then
         vim.cmd[[colorscheme ayu]]
     else
         vim.cmd[[colorscheme github_light]]

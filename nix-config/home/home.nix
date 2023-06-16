@@ -170,7 +170,7 @@ rec {
       name = "gpt4all";
       exec = "chat";
     };
-    theme = (import ./theme.nix inputs).desktopEntry;
+    theme = (import ../theme.nix inputs).desktopEntry;
   };
 
   xdg.mimeApps = {

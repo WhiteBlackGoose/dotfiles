@@ -1,6 +1,6 @@
-vim.o.guifont = "FiraCode Nerd Font:h9"
+-- vim.o.guifont = "FiraCode Nerd Font:h9"
 -- vim.o.guifont = "DejaVu Sans:h9"
-vim.o.guifont = "FantasqueSansM Nerd Font:h9"
+vim.o.guifont = "FantasqueSansM Nerd Font:h10"
 -- vim.o.guifont = "DejaVu Sans Mono:h9"
 vim.cmd[[set mouse=nv]]
 vim.g.neovide_cursor_vfx_mode = "sonicboom"
