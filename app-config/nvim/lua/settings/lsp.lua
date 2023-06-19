@@ -16,6 +16,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp.texlab.setup{capabilities = capabilities}
 lsp.clangd.setup{capabilities = capabilities}
 lsp.nil_ls.setup{capabilities = capabilities}
+lsp.vuels.setup{capabilities = capabilities}
+lsp.tsserver.setup{capabilities = capabilities}
 -- lsp.csharp_ls.setup{capabilities = capabilities}
 -- lsp.omnisharp.setup{
 --     cmd = { "OmniSharp" },
@@ -31,13 +33,13 @@ lsp.jedi_language_server.setup{capabilities = capabilities}
 -- }
 
 local jdtls = require('jdtls')
--- if os.getenv("JDTLS") ~= nil then
---     local jdtls_config = {
---         cmd = { os.getenv("JDTLS"), '-data', '~/jdtls/' },
---         root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
---     }
---     require('jdtls').start_or_attach(jdtls_config)
--- end
+if os.getenv("JDTLS") ~= nil then
+    local jdtls_config = {
+        cmd = { os.getenv("JDTLS"), '-data', '~/jdtls/' },
+        root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+    }
+    require('jdtls').start_or_attach(jdtls_config)
+end
 jdtls.setup_dap()
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = "java",

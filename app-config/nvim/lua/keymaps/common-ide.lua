@@ -48,6 +48,7 @@ local runCommands = {
     {{"*.sh"}, "./%"},
     {{"*.rs", "Cargo.*"}, "cargo run"},
     {{"*.cs", "*.csproj"}, "dotnet run"},
+    {{"*.fs", "*.fsproj"}, "dotnet run"},
     {{"*.py"}, "python %"},
     {{"*.fst"}, "fstar.exe %"},
     {{"*.idr"}, "idris2 % -o out && ./build/exec/out"},

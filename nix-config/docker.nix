@@ -1,0 +1,8 @@
+{ config, pkgs, ... }:
+{
+  users.users.goose.extraGroups = [ "docker" ];
+  virtualisation.docker.enable = true;
+  environment.systemPackages = with pkgs; [
+    docker docker-compose
+  ];
+}
