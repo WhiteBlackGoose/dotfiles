@@ -20,6 +20,7 @@ rec {
 
     git = {
       enable = true;
+      lfs.enable = true;
       userName = "WhiteBlackGoose";
       userEmail = "wbg@angouri.org";
       signing = {

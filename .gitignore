@@ -69,3 +69,7 @@ app-config/vis/vis.log
 app-config/youtube-tui
 app-config/youtube-viewer
 app-config/nomic.ai
+app-config/cabal
+app-config/cava
+app-config/xfce4/xfce4-screenshooter
+app-config/ILSpy.xml

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   users.users.goose.extraGroups = [ "docker" ];
   virtualisation.docker.enable = true;
