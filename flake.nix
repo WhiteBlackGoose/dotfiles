@@ -12,7 +12,7 @@
     nvim-input.url = "github:neovim/neovim/master?dir=contrib";
     my-nix.url = "path:/home/goose/prj/my-nix";
     gpt4all.url = "github:polygon/gpt4all-nix";
-    stablediffusion.url = "path:/home/goose/prj/nix-stable-diffusion";
+    stablediffusion.url = "github:nixified-ai/flake";
   };
 
   outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ... }: {
