@@ -10,11 +10,12 @@
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";
     nvim-input.url = "github:neovim/neovim/master?dir=contrib";
-    gpt4all.url = "github:polygon/gpt4all-nix";
     my-nix.url = "path:/home/goose/prj/my-nix";
+    gpt4all.url = "github:polygon/gpt4all-nix";
+    stablediffusion.url = "path:/home/goose/prj/nix-stable-diffusion";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -24,6 +25,7 @@
         nil = nil-input.packages.${system};
         nvim = nvim-input.packages.${system};
         gpt4all = gpt4all.packages.${system};
+        stablediffusion = stablediffusion.packages.${system};
       };
       modules = [
         { 
@@ -45,7 +47,7 @@
         (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
         # (import ./nix-config/hyprland.nix inputs)
 
-        ./nix-config/docker.nix
+        # ./nix-config/docker.nix
 
         home-manager.nixosModules.home-manager
         {
@@ -55,6 +57,7 @@
             ./nix-config/home/home.nix
             ./nix-config/home/ocr.nix
             ./nix-config/home/org.nix
+            # ./nix-config/home/pidgin.nix
           ];
         }
       ];

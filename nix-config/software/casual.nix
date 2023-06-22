@@ -63,5 +63,6 @@
     sw.tri.default
     sw.amcli.default
     (writeScriptBin "chat" "QT_SCALE_FACTOR=2.5 ${sw.gpt4all.gpt4all-chat}/bin/chat $@")
+    sw.stablediffusion.invokeai.amd
   ];
 }
