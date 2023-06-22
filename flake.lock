@@ -325,14 +325,17 @@
     },
     "my-nix_2": {
       "locked": {
-        "lastModified": 1686816919,
-        "narHash": "sha256-ZJJOPMBV9qiVxb4XS/hhgyKdDB69FT5opm8Z3/ZDldM=",
-        "path": "/home/goose/prj/my-nix",
-        "type": "path"
+        "lastModified": 1686816917,
+        "narHash": "sha256-IoTxMkTn3uU++dtwpIIqpjkj3xQ3CX+54TvNfHuvppg=",
+        "owner": "WhiteBlackGoose",
+        "repo": "my-nix",
+        "rev": "5908be682ac956794986ef3276706248a2340120",
+        "type": "github"
       },
       "original": {
-        "path": "/home/goose/prj/my-nix",
-        "type": "path"
+        "owner": "WhiteBlackGoose",
+        "repo": "my-nix",
+        "type": "github"
       }
     },
     "nil-input": {
@@ -636,14 +639,17 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1686201540,
-        "narHash": "sha256-q/mppC1CY45QXAmnldNsvRUxVIzCeksW3x9pal6O4rY=",
-        "path": "/home/goose/prj/tri",
-        "type": "path"
+        "lastModified": 1685802271,
+        "narHash": "sha256-d0gFwYRxZ/T+wrTDKMUCPAJCJGioO4oiA+pc7U2dq3A=",
+        "owner": "WhiteBlackGoose",
+        "repo": "tri",
+        "rev": "f198c0b2de2d9ccca3fdf538d09b418317ff5b31",
+        "type": "github"
       },
       "original": {
-        "path": "/home/goose/prj/tri",
-        "type": "path"
+        "owner": "WhiteBlackGoose",
+        "repo": "tri",
+        "type": "github"
       }
     },
     "wlroots": {

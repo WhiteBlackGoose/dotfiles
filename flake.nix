@@ -5,12 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    tri-input.url = "path:/home/goose/prj/tri";
+    tri-input.url = "github:WhiteBlackGoose/tri";
     amcli-input.url = "github:asc-community/AngouriMathCLI";
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";
     nvim-input.url = "github:neovim/neovim/master?dir=contrib";
-    my-nix.url = "path:/home/goose/prj/my-nix";
+    my-nix.url = "github:WhiteBlackGoose/my-nix";
     gpt4all.url = "github:polygon/gpt4all-nix";
     stablediffusion.url = "github:nixified-ai/flake";
   };
