@@ -47,7 +47,7 @@
         (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
         # (import ./nix-config/hyprland.nix inputs)
 
-        # ./nix-config/docker.nix
+        ./nix-config/docker.nix
 
         home-manager.nixosModules.home-manager
         {

@@ -124,8 +124,8 @@
   virtualisation.libvirtd.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.allowedTCPPorts = [ 8384 22000];
-  networking.firewall.allowedUDPPorts = [ 22000 21027];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   services.syncthing = {
     enable = true;
     configDir = "/home/goose/.config/syncthing";

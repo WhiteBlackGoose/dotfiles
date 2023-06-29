@@ -73,3 +73,14 @@ app-config/cabal
 app-config/cava
 app-config/xfce4/xfce4-screenshooter
 app-config/ILSpy.xml
+app-config/FreeTube/Cache/Cache_Data
+app-config/FreeTube/Code Cache
+app-config/FreeTube/Crashpad
+app-config/FreeTube/DawnCache
+app-config/FreeTube/Dictionaries
+app-config/FreeTube/GPUCache
+app-config/FreeTube/Local Storage/leveldb
+app-config/FreeTube/Session Storage
+app-config/FreeTube
+app-config/whatsapp-for-linux
+app-config/Electron/Crashpad/client_id
