@@ -52,3 +52,4 @@ vim.cmd[[
 ]]
 
 vim.g['magma_automatically_open_output'] = false
+vim.g.magma_copy_output = true

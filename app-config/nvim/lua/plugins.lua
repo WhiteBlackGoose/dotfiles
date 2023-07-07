@@ -84,7 +84,7 @@ local idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'WhiteBlackGoose/magma-nvim-goose', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
+    {'dccsillag/magma-nvim', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',

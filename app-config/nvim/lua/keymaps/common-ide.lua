@@ -45,20 +45,21 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 
 local runCommands = {
-    {{"*.sh"}, "./%"},
-    {{"*.rs", "Cargo.*"}, "cargo run"},
-    {{"*.cs", "*.csproj"}, "dotnet run"},
-    {{"*.fs", "*.fsproj"}, "dotnet run"},
-    {{"*.py"}, "python %"},
-    {{"*.fst"}, "fstar.exe %"},
-    {{"*.idr"}, "idris2 % -o out && ./build/exec/out"},
-    {{"*.hs"}, "cabal run"},
+    {{"*.sh"}, "!./%"},
+    {{"*.rs", "Cargo.*"}, "!cargo run"},
+    {{"*.cs", "*.csproj"}, "!dotnet run"},
+    {{"*.fs", "*.fsproj"}, "!dotnet run"},
+    {{"*.py"}, "!python %"},
+    {{"*.fst"}, "!fstar.exe %"},
+    {{"*.idr"}, "!idris2 % -o out && ./build/exec/out"},
+    {{"*.hs"}, "!cabal run"},
+    {{"*.md"}, "MdView"},
 }
 for _, pair in pairs(runCommands) do
     vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     pattern = pair[1],
     callback = function(_)
-        vim.keymap.set('n', '<leader>ex', ':!' .. pair[2] .. "<CR>", { buffer = true })
+        vim.keymap.set('n', '<leader>ex', ':' .. pair[2] .. "<CR>", { buffer = true })
     end
     })
 end
