@@ -137,11 +137,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1686518833,
-        "narHash": "sha256-tG0ynDobExejmmoHebK9Z3IxMMYlzrPMkb/UyLx6a7o=",
+        "lastModified": 1688658666,
+        "narHash": "sha256-q+RVN+kICGH2rI8oboK6R11WzqXkt11BlhxW5wTFpCM=",
         "owner": "polygon",
         "repo": "gpt4all-nix",
-        "rev": "df1c279661f37e8d4293aaa5c7740369a51fac54",
+        "rev": "eed585d383b868ba07cad88d78bee287433da509",
         "type": "github"
       },
       "original": {
@@ -153,11 +153,11 @@
     "gpt4all_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1686406538,
-        "narHash": "sha256-KDZyOPgO8/KJnKBKvSfYXo2bwN9QmZ7rNoZJIrUJuk8=",
+        "lastModified": 1688655236,
+        "narHash": "sha256-7E85hNs77VgE26mcWLgdWXR7o4RJcCn1r4gs7vX8lJs=",
         "ref": "refs/heads/main",
-        "rev": "a9c2f473032fe8a47226581601cb5a6fa3cbfd6f",
-        "revCount": 966,
+        "rev": "db528ef1b015c104b64e50c4393d8c3c85af06bd",
+        "revCount": 1132,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/nomic-ai/gpt4all"
@@ -418,11 +418,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1686412476,
-        "narHash": "sha256-inl9SVk6o5h75XKC79qrDCAobTD1Jxh6kVYTZKHzewA=",
+        "lastModified": 1688590700,
+        "narHash": "sha256-ZF055rIUP89cVwiLpG5xkJzx00gEuuGFF60Bs/LM3wc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "21951114383770f96ae528d0ae68824557768e81",
+        "rev": "f292b4964cb71f9dfbbd30dc9f511d6165cd109b",
         "type": "github"
       },
       "original": {
