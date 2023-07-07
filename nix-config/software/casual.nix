@@ -4,7 +4,6 @@
     firefox
     kitty
     gimp
-    element-desktop 
     (let dtools = sw.my-nix.dotnetTool pkgs;
     in  (dtools.combineTools dotnet-sdk_6 [ 
         dtools.tools.angourimath-terminal 
@@ -19,7 +18,12 @@
 
     libotr
     gpgme
+
+    element-desktop 
+    telegram-desktop
     thunderbird
+    signal-desktop
+
     ascii-image-converter
     electrum
     feh

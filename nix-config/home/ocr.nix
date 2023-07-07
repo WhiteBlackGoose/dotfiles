@@ -10,7 +10,7 @@ inputs@{ config, lib, pkgs, ... }: {
         ''}";
       };
       ocr-trans = lang-src: lang-dst: {
-        name = "OCR translate: all -> eng";
+        name = "OCR translate: ${lang-src} -> eng";
         exec = "${pkgs.writeScript "tr" ''
           ${pkgs.xfce.xfce4-screenshooter}/bin/xfce4-screenshooter -r --save /dev/stdout | \
           ${pkgs.tesseract}/bin/tesseract -l ${lang-src} - - | \
@@ -32,6 +32,7 @@ inputs@{ config, lib, pkgs, ... }: {
     ocr-ru = ocr "rus";
     ocr-de = ocr "deu";
     ocr-all = ocr "eng+rus+deu";
-    ocr-tr = ocr-trans "deu" "en";
+    ocr-tr-deu = ocr-trans "deu" "en";
+    ocr-tr-jpn = ocr-trans "jpn+eng" "en";
   };
 }

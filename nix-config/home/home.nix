@@ -60,7 +60,6 @@ rec {
   home.packages = [
     pkgs.pass
     pkgs.starship
-    pkgs.tdesktop
     pkgs.passphrase2pgp
     pkgs.dconf
   ];
@@ -211,6 +210,8 @@ rec {
     # ENG: 🇬🇧+ 🇩🇪
     # RUS: 🇷🇺+ 🇺🇦
     # by using right alt, type letters from the other alphabet
+    # 
+    # https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
     Service.ExecStart = 
       ''${pkgs.sxhkd}/bin/sxhkd -c ${pkgs.writeText "config" 
       ''
@@ -235,7 +236,7 @@ rec {
           keycode 108 = Mode_switch
           keysym Cyrillic_i = Cyrillic_i Cyrillic_I idiaeresis Idiaeresis
           keysym Cyrillic_ie = Cyrillic_ie Cyrillic_IE U0454 U0404
-          keysym Cyrillic_yeru = Cyrillic_yeru Cyrillic_YERU i I
+          keysym Cyrillic_yeru = Cyrillic_yeru Cyrillic_YERU U0456 U0406
           keysym Cyrillic_ghe = Cyrillic_ghe Cyrillic_GHE U0491 U0490
         ''}
       fi
