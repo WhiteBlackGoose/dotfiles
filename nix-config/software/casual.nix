@@ -70,5 +70,6 @@
     sw.stablediffusion.invokeai-amd
     freetube
     ffmpeg
+    foliate
   ];
 }

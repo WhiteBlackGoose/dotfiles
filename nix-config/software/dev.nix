@@ -7,6 +7,7 @@
       jedi-language-server
       jupyter-client
       jupyter_console
+      jupyterlab
       ipython
       scikit-learn
       notebook

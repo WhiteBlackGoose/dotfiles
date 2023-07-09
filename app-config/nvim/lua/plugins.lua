@@ -163,8 +163,6 @@ local idePlugins = {
     }
 }
 
-vim.g.magma_image_provider="kitty"
-
 local lazy_opt = {
     dev = {
         path = "~/prj",

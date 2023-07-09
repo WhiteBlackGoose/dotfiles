@@ -51,5 +51,6 @@ vim.cmd[[
 :command JupAttach -nargs=1 lua JupAttach(<q-args>)
 ]]
 
+vim.g.magma_image_provider="kitty"
 vim.g['magma_automatically_open_output'] = false
 vim.g.magma_copy_output = true
