@@ -13,9 +13,10 @@
     my-nix.url = "github:WhiteBlackGoose/my-nix";
     gpt4all.url = "github:polygon/gpt4all-nix";
     stablediffusion.url = "github:nixified-ai/flake";
+    veloren.url = "gitlab:veloren/veloren";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ... }: {
+  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -26,6 +27,7 @@
         nvim = nvim-input.packages.${system};
         gpt4all = gpt4all.packages.${system};
         stablediffusion = stablediffusion.packages.${system};
+        veloren = veloren.packages.${system};
       };
       modules = [
         { 

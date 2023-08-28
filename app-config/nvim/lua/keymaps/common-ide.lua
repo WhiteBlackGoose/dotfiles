@@ -54,6 +54,7 @@ local runCommands = {
     {{"*.idr"}, "!idris2 % -o out && ./build/exec/out"},
     {{"*.hs"}, "!cabal run"},
     {{"*.md"}, "MdView"},
+    {{"*.html"}, "!surf % & disown"},
 }
 for _, pair in pairs(runCommands) do
     vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
@@ -100,6 +101,7 @@ add('n', '<leader>lrn', ":LSPRename<CR>")
 add('n', '<leader>lc', ":LSPCodeActions<CR>")
 add('n', '<leader>lre', ":LSPReferences<CR>")
 add('n', '<leader>lll', ":LSPLocList<CR>")
+add('n', '<leader>lf', ":lua vim.lsp.buf.format()<CR>")
 
 function LSPLines()
     vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text, })

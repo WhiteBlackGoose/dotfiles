@@ -30,6 +30,7 @@
       pytorch
       tensorflow
       keras
+      opencv4
     ]))
     git
     lazygit

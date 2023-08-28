@@ -71,5 +71,6 @@
     freetube
     ffmpeg
     foliate
+    sw.veloren.default
   ];
 }

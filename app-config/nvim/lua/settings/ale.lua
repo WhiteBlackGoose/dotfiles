@@ -7,12 +7,12 @@ vim.b['ale_linters'] = { python = { 'flake8' }, rust = { "rust-analyzer" } }
 vim.g['ale_lsp_suggestions'] = 0
 vim.g['ale_lsp_show_message_severity'] = 'information'
 
-vim.g['ale_sign_error'] =          vim.g.gsign(' ', 'E')
-vim.g['ale_sign_warning'] =        vim.g.gsign(' ', 'W')
-vim.g['ale_sign_info'] =           vim.g.gsign(' ', 'I')
-vim.g['ale_sign_style_error'] =    vim.g.gsign(' ', 'I')
-vim.g['ale_sign_style_warning'] =  vim.g.gsign(' ', 'I')
-vim.g['ale_sign_suggestion'] =     vim.g.gsign(' ', 'L')
+vim.g['ale_sign_error'] =          LspSigns.Error
+vim.g['ale_sign_warning'] =        LspSigns.Warn
+vim.g['ale_sign_info'] =           LspSigns.Info
+vim.g['ale_sign_style_error'] =    LspSigns.Info
+vim.g['ale_sign_style_warning'] =  LspSigns.Info
+vim.g['ale_sign_suggestion'] =     LspSigns.Hint
 
 vim.g['airline#extensions#ale#enabled'] = 1
 

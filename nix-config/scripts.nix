@@ -9,5 +9,6 @@
       btrfs subvolume snapshot ~/Pictures/phone/ ~/Pictures/phone/.snapshots/snapshot-$(date -I'seconds')/
       btrfs subvolume snapshot ~/Pictures/ipad/ ~/Pictures/ipad/.snapshots/snapshot-$(date -I'seconds')/
     ")
+    (writeScriptBin "caps2ctrl"     "${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier")
   ];
 }
