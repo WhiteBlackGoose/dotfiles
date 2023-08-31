@@ -160,7 +160,15 @@ local idePlugins = {
           "nvim-lua/plenary.nvim",
           "nvim-telescope/telescope.nvim"
         }
-    }
+    },
+    {
+        "WhiteBlackGoose/markdown-preview.nvim",
+        dev=false,
+        ft = "markdown",
+        build = function()
+          vim.fn["mkdp#util#install"]()
+        end
+    },
 }
 
 local lazy_opt = {

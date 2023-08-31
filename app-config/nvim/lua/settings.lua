@@ -58,6 +58,7 @@ if vim.g.use_ide() then
     require('settings.lsp')
     LazyRequire('settings.lua-lsp', {"*.lua"})
     require('settings.magma')
+    require('settings.markdown')
     require('settings.trans')
     require('settings.nvim-autopairs')
     require('settings.nvim-cmp')

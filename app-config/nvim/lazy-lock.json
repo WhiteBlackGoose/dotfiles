@@ -33,6 +33,7 @@
   "linediff.vim": { "branch": "main", "commit": "3925a50a02b4b1e7958807676f93e06b53c66e27" },
   "lsp_lines.nvim": { "branch": "main", "commit": "f53af96d4789eef39a082dbcce078d2bfc384ece" },
   "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
+  "markdown-preview.nvim": { "branch": "master", "commit": "94e66335a8166eff032cbb27e96d51ce96e63fa6" },
   "markdowny.nvim": { "branch": "main", "commit": "083782f05e67cc08c6378affec9f55a913ac55f4" },
   "neodev.nvim": { "branch": "main", "commit": "3de41fe4b07443c9f1d75062920dfbb9cd31d641" },
   "nova.nvim": { "branch": "master", "commit": "274e60a6bb43d0a1e67ef795e8b413eeedf3617d" },
