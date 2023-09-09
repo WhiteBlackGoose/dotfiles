@@ -72,23 +72,32 @@ dap.adapters.codelldb = {
   }
 }
 
---- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
-dap.configurations.rust = {
-    {
-        type = 'codelldb',
-        request = 'launch',
-        program = function()
-            return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
-        end,
-        cwd = '${workspaceFolder}',
-        terminal = 'integrated',
-        sourceLanguages = { 'rust' },
-        stopOnEntry = true
-    }
+dap.adapters.rust_gdb = {
+  command = os.getenv("RUST_GDB"),
+  type = "executable"
 }
 
-dap.configurations.c = dap.configurations.rust
-dap.configurations.cpp = dap.configurations.rust
+--- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
+
+local function dbg_bin(name)
+    return {
+        {
+            type = name,
+            request = 'launch',
+            program = function()
+                return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
+            end,
+            cwd = '${workspaceFolder}',
+            terminal = 'integrated',
+            sourceLanguages = { 'rust' },
+            stopOnEntry = true
+        }
+    }
+end
+
+-- dap.configurations.rust = dbg_bin("rust_gdb")
+dap.configurations.c = dbg_bin("gdb")
+dap.configurations.cpp = dbg_bin("gdb")
 
 ---Python------------------------------
 
@@ -115,8 +124,7 @@ dap.configurations.native = {
         type = 'gdb',
         request = 'launch',
         program = function()
-            -- return vim.fn.input('Path to native executable: ', vim.fn.getcwd()..'/', 'file')
-            return '/home/goose/trash/InductiveVariadics/InductiveVariadics.Sample/bin/Debug/net7.0/InductiveVariadics.Sample'
+            return vim.fn.input('Path to native executable: ', vim.fn.getcwd()..'/', 'file')
         end,
         cwd = '${workspaceFolder}',
         terminal = 'integrated',
