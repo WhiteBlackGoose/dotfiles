@@ -67,10 +67,12 @@
     sw.tri.default
     sw.amcli.default
     (writeScriptBin "chat" "QT_SCALE_FACTOR=2.5 ${sw.gpt4all.gpt4all-chat}/bin/chat $@")
+    remmina
     sw.stablediffusion.invokeai-amd
     freetube
     ffmpeg
     foliate
     sw.veloren.default
+    gnome.gnome-system-monitor
   ];
 }

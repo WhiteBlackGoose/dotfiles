@@ -65,7 +65,7 @@
   };
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "CascadiaCode" "FantasqueSansMono" ]; })
+    nerdfonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
