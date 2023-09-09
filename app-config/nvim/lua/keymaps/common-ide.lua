@@ -1,6 +1,6 @@
 -- Debug
 function DapJumpTo()
-    dap = require'dap'
+    local dap = require'dap'
     dap.toggle_breakpoint()
     dap.continue()
     dap.toggle_breakpoint()
@@ -68,6 +68,8 @@ end
 -- Terminal
 add('n', '<leader>tt', ':botr vsplit <bar> term<CR>i')
 add('n', '<leader>tg', ':botr vsplit <bar> term lazygit<CR>i')
+add('n', '<leader>tT', ':botr split <bar> term<CR>i')
+add('n', '<leader>tG', ':botr split <bar> term lazygit<CR>i')
 add('n', '<leader>tna', ':botr vsplit <bar> term sudo ./apply<CR>i')
 
 -- nvim-toggler

@@ -1,6 +1,6 @@
 local commonPlugins = {
     'lewis6991/impatient.nvim',
-    'romgrk/barbar.nvim',
+    -- 'romgrk/barbar.nvim',
     { 'mg979/vim-visual-multi', branch = 'master' },
     {'kyazdani42/nvim-web-devicons', dev = false},
     'kyazdani42/nvim-tree.lua',
@@ -49,7 +49,7 @@ local commonPlugins = {
         end
     },
     'projekt0n/github-nvim-theme',
-    'navarasu/onedark.nvim'
+    'navarasu/onedark.nvim',
 }
 
 if vim.g.neovide == nil then
