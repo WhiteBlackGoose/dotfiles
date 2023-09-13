@@ -73,7 +73,10 @@ dap.adapters.codelldb = {
 }
 
 dap.adapters.rust_gdb = {
-  command = os.getenv("RUST_GDB"),
+  executable = {
+    command = os.getenv("RUST_GDB"),
+    args = { "" }
+  },
   type = "executable"
 }
 
@@ -95,7 +98,7 @@ local function dbg_bin(name)
     }
 end
 
--- dap.configurations.rust = dbg_bin("rust_gdb")
+dap.configurations.rust = dbg_bin("rust_lldb")
 dap.configurations.c = dbg_bin("gdb")
 dap.configurations.cpp = dbg_bin("gdb")
 

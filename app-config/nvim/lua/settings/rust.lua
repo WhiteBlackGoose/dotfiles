@@ -53,3 +53,11 @@ vim.diagnostic.config({
 vim.cmd([[
 set signcolumn=yes
 ]])
+
+-- autoformat
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    pattern = {"*.rs"},
+    callback = function(_)
+        vim.lsp.buf.format()
+    end
+})

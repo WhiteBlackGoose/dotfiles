@@ -26,6 +26,7 @@ lsp.clangd.setup { capabilities = capabilities }
 lsp.nil_ls.setup { capabilities = capabilities }
 lsp.vuels.setup { capabilities = capabilities }
 lsp.tsserver.setup { capabilities = capabilities }
+lsp.rust_analyzer.setup { capabilities = capabilities }
 -- lsp.csharp_ls.setup{capabilities = capabilities}
 -- lsp.omnisharp.setup{
 --     cmd = { "OmniSharp" },
