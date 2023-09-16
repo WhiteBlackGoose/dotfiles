@@ -14,7 +14,7 @@ local commonPlugins = {
     'dyng/ctrlsf.vim',
     'samodostal/image.nvim',
     'm00qek/baleia.nvim',
-    { 'https://github.com/Draco-lang/draco-nvim', dev=true },
+    { 'https://github.com/Draco-lang/draco-nvim', dev=false },
     'https://github.com/ggandor/leap.nvim',
     'https://github.com/xorid/asciitree.nvim',
     'glepnir/template.nvim',
@@ -30,7 +30,7 @@ local commonPlugins = {
     'vim-airline/vim-airline-themes',
     'MunifTanjim/nui.nvim',
     'https://github.com/vonheikemen/fine-cmdline.nvim',
-    -- { 'WhiteBlackGoose/power-char.nvim', dev=true,
+    -- { 'WhiteBlackGoose/power-char.nvim', dev=false,
     --     config = function (_)
     --         require('power-char').setup{}
     --     end
@@ -85,7 +85,7 @@ local idePlugins = {
     'kevinhwang91/promise-async',
     'kevinhwang91/nvim-ufo',
     'nguyenvukhang/nvim-toggler',
-    {'dccsillag/magma-nvim', dev=true, branch = 'main', build = ":UpdateRemotePlugins" },
+    {'dccsillag/magma-nvim', dev=false, branch = 'main', build = ":UpdateRemotePlugins" },
     'nvim-treesitter/nvim-treesitter-context',
     'tpope/vim-fugitive',
     'tpope/vim-dadbod',
@@ -137,7 +137,7 @@ local idePlugins = {
       end
     },
 
-    {"https://github.com/WhiteBlackGoose/orgmode", dev=true },
+    {"https://github.com/WhiteBlackGoose/orgmode", dev=false },
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
@@ -147,7 +147,7 @@ local idePlugins = {
     'nvim-pack/nvim-spectre',
     {
         'WhiteBlackGoose/gpt4all.nvim',
-        dev=true,
+        dev=false,
         event = "VeryLazy",
         config = function()
           require("chatgpt").setup {
