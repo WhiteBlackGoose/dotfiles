@@ -50,6 +50,7 @@ local commonPlugins = {
     },
     'projekt0n/github-nvim-theme',
     'navarasu/onedark.nvim',
+    'Pocco81/high-str.nvim'
 }
 
 if vim.g.neovide == nil then

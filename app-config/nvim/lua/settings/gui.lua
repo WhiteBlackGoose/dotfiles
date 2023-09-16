@@ -3,7 +3,7 @@
 vim.o.guifont = "FantasqueSansM Nerd Font:h10"
 -- vim.o.guifont = "DejaVu Sans Mono:h9"
 vim.cmd[[set mouse=nv]]
-vim.g.neovide_cursor_vfx_mode = "sonicboom"
+-- vim.g.neovide_cursor_vfx_mode = "sonicboom"
 vim.g.neovide_refresh_rate = 90
 vim.g.neovide_input_use_logo = false
 vim.g.neovide_scroll_animation_length = 0.2

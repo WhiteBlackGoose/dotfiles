@@ -67,9 +67,11 @@ end
 
 -- Terminal
 add('n', '<leader>tt', ':botr vsplit <bar> term<CR>i')
-add('n', '<leader>tg', ':botr vsplit <bar> term lazygit<CR>i')
 add('n', '<leader>tT', ':botr split <bar> term<CR>i')
+add('n', '<leader>TT', ':tab term<CR>i')
+add('n', '<leader>tg', ':botr vsplit <bar> term lazygit<CR>i')
 add('n', '<leader>tG', ':botr split <bar> term lazygit<CR>i')
+add('n', '<leader>TG', ':tab term lazygit<CR>i')
 add('n', '<leader>tna', ':botr vsplit <bar> term sudo ./apply<CR>i')
 
 -- nvim-toggler

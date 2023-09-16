@@ -20,6 +20,15 @@ add('n', '<leader>the', ":lua vim.g.theme_toggle()<CR>")
 -- Select
 add('n', 'E', 'viw')
 
+add('v', '<leader>hr', ':<C-u>HSRmHighlight<CR>')
+add('v', '<leader>h1', ':<C-u>HSHighlight 1<CR>')
+add('v', '<leader>h2', ':<C-u>HSHighlight 2<CR>')
+add('v', '<leader>h3', ':<C-u>HSHighlight 3<CR>')
+add('v', '<leader>h4', ':<C-u>HSHighlight 4<CR>')
+add('v', '<leader>h5', ':<C-u>HSHighlight 5<CR>')
+add('v', '<leader>h6', ':<C-u>HSHighlight 6<CR>')
+add('v', '<leader>h7', ':<C-u>HSHighlight 7<CR>')
+
 function Nvim_tree_keymaps(bufnr)
     local api = require("nvim-tree.api")
     local function opts(desc)
@@ -107,3 +116,4 @@ function Nvim_tree_keymaps(bufnr)
     end, opts('Print Node Path'))
     vim.keymap.set('n', 'Z', api.node.run.system, opts('Run System'))
 end
+
