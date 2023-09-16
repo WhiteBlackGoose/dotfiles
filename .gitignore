@@ -22,10 +22,14 @@ app-config/deepin/deepin-camera
 app-config/deluge
 app-config/environment.d
 app-config/dconf
+app-config/environment.d
 app-config/evolution/sources
+app-config/fish/config.fish
+app-config/fontconfig/conf.d
 app-config/fish
 app-config/fontconfig
 app-config/git
+app-config/global_scripts
 app-config/gpick
 app-config/gthumb
 app-config/gtk-2.0

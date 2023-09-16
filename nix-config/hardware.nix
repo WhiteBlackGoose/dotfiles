@@ -42,26 +42,30 @@ rec {
   # #   pkgs.linux-libre.override { linux = my-kernel; });
   # pkgs.linuxPackagesFor my-kernel;
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4b55bb88-d461-48ec-b3c1-26545e213e45";
-      fsType = "ext4";
-    };
+  boot.initrd.luks.devices.root.device = "/dev/disk/by-uuid/6157f167-254e-43d2-934a-9af12e015706";
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/15fc3289-5599-4e60-95c0-8937428a5d88";
-      fsType = "btrfs";
-    };
+  fileSystems = 
+    let 
+      bt = d: {
+        device = "/dev/disk/by-uuid/ea00659b-c3ec-4972-be77-9193baf408be";
+        fsType = "btrfs";
+        options = [ "subvol=@${d}" "compress=zstd" ];
+      }; in {
 
-  boot.initrd.luks.devices."nixos-home".device = "/dev/disk/by-uuid/34e93547-470a-415b-b6f1-f567f174a01e";
+    "/" = bt "";
+    "/home" = bt "home";
+    "/nix" = bt "nix";
+    "/var" = bt "var";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A4A5-D3C9";
-      fsType = "vfat";
+    "/boot" = {
+       device = "/dev/disk/by-uuid/A4A5-D3C9";
+       fsType = "vfat";
     };
+  };
 
   swapDevices = [
     {
-      device = "/home/swap1";
+      device = "/swap";
       size = 32 * 1024;
     }
   ];
