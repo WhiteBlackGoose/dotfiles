@@ -6,8 +6,7 @@
     (writeScriptBin "mount-msi"     "${sshfs}/bin/sshfs -o default_permissions mypc:/home/goose /home/goose/remote/msi")
     (writeScriptBin "unmount-msi"   "fusermount3 -u /home/goose/remote/msi")
     (writeScriptBin "backup-mobile" "
-      btrfs subvolume snapshot ~/Pictures/phone/ ~/Pictures/phone/.snapshots/snapshot-$(date -I'seconds')/
-      btrfs subvolume snapshot ~/Pictures/ipad/ ~/Pictures/ipad/.snapshots/snapshot-$(date -I'seconds')/
+      btrfs subvolume snapshot ~/Pictures/phone/ ~/Pictures/.phone-snapshots/snapshot-$(date -I'seconds')/
     ")
     (writeScriptBin "caps2ctrl"     "${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier")
   ];

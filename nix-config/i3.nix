@@ -22,6 +22,9 @@ inputs@{ config, pkgs, ... }:
     displayManager = {
       lightdm = {
         enable = true;
+        extraSeatDefaults = ''
+          greeter-hide-users=false
+        '';
       };
       defaultSession = "none+i3";
     };
