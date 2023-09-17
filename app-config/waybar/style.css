@@ -81,7 +81,7 @@ button:hover {
 #clock,
 #battery,
 #cpu,
-#memory,
+#custom-memory,
 #disk,
 #temperature,
 #backlight,
@@ -94,6 +94,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #custom-disk,
+#custom-temperature,
 #mpd {
     padding: 0 10px;
     color: #fff;
@@ -155,8 +156,12 @@ label:focus {
     color: #000000;
 }
 
-#memory {
+#custom-memory {
     background-color: #9b59b6;
+}
+
+#custom-temperature {
+    background-color: #a65902;
 }
 
 #disk {

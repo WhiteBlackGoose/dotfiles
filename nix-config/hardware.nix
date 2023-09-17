@@ -5,11 +5,15 @@ rec {
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.device = "nodev";
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    useOSProber = true;
+    device = "nodev";
+    efiInstallAsRemovable = true;
+  };
 
+  boot.loader.efi.canTouchEfiVariables = false;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -23,7 +27,7 @@ rec {
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_4;
 
   # boot.kernelPackages =
   # let

@@ -4,7 +4,7 @@
   programs.hyprland.enable = true;
   environment.systemPackages = with nixpkgs.legacyPackages.${system}; [
     wl-clipboard
-    dunst
+    # dunst
     waybar
     wofi
     hyprpaper
@@ -24,6 +24,7 @@
     grim
     slurp
     waydroid
+    swaylock
   ];
   environment.variables = {
     GDK_SCALE = "2";
@@ -38,6 +39,11 @@
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
   ];
+  security.pam.services.swaylock = {
+    text = ''
+    auth include login
+  '';
+  };
 # TODO
 # + clipboard
 # keyboard

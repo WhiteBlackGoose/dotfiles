@@ -21,6 +21,7 @@
 
     thunderbird
     signal-desktop
+    fluffychat
 
     ascii-image-converter
     electrum

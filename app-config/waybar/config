@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "custom/disk", "cpu", "memory", "temperature", "battery", "clock"],
+    "modules-right": ["pulseaudio", "network", "custom/disk", "cpu", "custom/memory", "custom/temperature", "battery", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -44,17 +44,6 @@
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": false
-    },
-    "memory": {
-        "format": "{}%  "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C",
-        "format": "{temperatureC}°C",
-        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -105,11 +94,19 @@
         },
         "on-click": "pavucontrol"
     },
+    "custom/memory": {
+        "restart-interval": 2,
+        "exec": "~/.config/scripts/ram.sh" // Script in resources folder
+    },
     "custom/disk": {
-        "restart-interval": 1,
+        "restart-interval": 10,
         "escape": true,
         "exec": "~/.config/scripts/disk-json.sh" // Script in resources folder
         // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+    "custom/temperature": {
+        "restart-interval": 3,
+        "exec": "~/.config/scripts/temp.sh" // Script in resources folder
+    },
 }
 

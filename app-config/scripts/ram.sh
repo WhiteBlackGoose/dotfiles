@@ -11,5 +11,5 @@ used=$(expr $total + $shmem - $free - $buffers - $cached - $reclaimable)
 swap=$(free -h | tail -n 1 | awk '{ print $3 }')
 
 percent=$(echo "scale=1; 100*$used/$total" | bc)
-printf "  %s%%/%'dMb/$swap\n" $percent $used
+printf " %s%%/%'dMb/$swap  \n" $percent $used
 
