@@ -19,7 +19,6 @@
     libotr
     gpgme
 
-    element-desktop 
     telegram-desktop
     thunderbird
     signal-desktop
