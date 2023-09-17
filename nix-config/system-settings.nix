@@ -115,6 +115,7 @@
 
   # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;
+  virtualisation.waydroid.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
   networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 ];

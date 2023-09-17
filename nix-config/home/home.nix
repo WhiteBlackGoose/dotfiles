@@ -167,6 +167,10 @@ rec {
       name = "gpt4all";
       exec = "chat";
     };
+    telegram = {
+      name = "Telegram";
+      exec = ''${pkgs.writeScript "tg" "QT_QPA_PLATFORM=xcb ${pkgs.telegram-desktop}/bin/telegram-desktop"}'';
+    };
     theme = (import ../theme.nix inputs).desktopEntry;
   };
 

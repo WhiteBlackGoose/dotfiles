@@ -21,6 +21,9 @@
     ")
     )
     element-desktop-wayland
+    grim
+    slurp
+    waydroid
   ];
   environment.variables = {
     GDK_SCALE = "2";
