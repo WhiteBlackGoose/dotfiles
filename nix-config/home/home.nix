@@ -34,9 +34,6 @@ rec {
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        alias ci="xclip -sel clip"
-        alias co="xclip -sel clip -o"
-
         alias ls="lsd"
         alias ll="lsd -la"
 

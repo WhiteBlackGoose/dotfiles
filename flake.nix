@@ -16,7 +16,7 @@
     veloren.url = "gitlab:veloren/veloren";
   };
 
-  outputs = { nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -46,8 +46,8 @@
         ./nix-config/env-variables.nix
 
         # WMs
-        (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
-        # (import ./nix-config/hyprland.nix inputs)
+        # (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
+        (import ./nix-config/hyprland.nix inputs system)
 
         ./nix-config/docker.nix
 

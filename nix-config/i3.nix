@@ -7,7 +7,14 @@ inputs@{ config, pkgs, ... }:
       xss-lock
       xclip
       xfce.xfce4-screenshooter
+      (writeScriptBin "ci" ''xclip -sel clip "$@"'')
+      (writeScriptBin "co" ''xclip -sel clip -o "$@"'')
   ];  
+
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
+  ];
 
   services.xserver = {
     dpi = 192;
@@ -40,5 +47,12 @@ inputs@{ config, pkgs, ... }:
     };   
     
     displayManager.sessionCommands = ''${(import ./theme.nix inputs).apply-theme-script}'';
+  };
+
+  environment.variables = {
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+    QT_SCALE_FACTOR = "2";
   };
 }
