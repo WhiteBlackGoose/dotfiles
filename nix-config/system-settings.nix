@@ -64,7 +64,7 @@
     #media-session.enable = true;
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts
     noto-fonts
     noto-fonts-cjk
@@ -126,10 +126,10 @@
     # dataDir = "/home/goose";
     overrideDevices = true;     # overrides any devices added or deleted through the WebUI
     overrideFolders = true;     # overrides any folders added or deleted through the WebUI
-    devices = {
+    settings.devices = {
       "phone" = { id = "3UWRHBV-GMIP76R-FXF46XB-XWVQP2I-KKQDDMD-TCRXE6F-SR5QEL5-42IRXAT"; };
     };
-    folders = {
+    settings.folders = {
       "info" = {        # Name of folder in Syncthing, also the folder ID
         path = "/home/goose/me/_org";    # Which folder to add to Syncthing
         devices = [ "phone" ];      # Which devices to share the folder with

@@ -39,6 +39,7 @@
     starship
     texlab
     texlive.combined.scheme-full
+    texlive.bin.pygmentex
     tlp
     tor-browser-bundle-bin
     translate-shell

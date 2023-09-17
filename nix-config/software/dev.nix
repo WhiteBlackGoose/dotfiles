@@ -17,7 +17,6 @@
       pytest
       geopandas
       pillow
-      pkgs.pygmentex
       pynvim
       pyperclip
       scipy
@@ -28,7 +27,6 @@
       # catboost
       debugpy
       pytorch
-      tensorflow
       keras
       opencv4
     ]))

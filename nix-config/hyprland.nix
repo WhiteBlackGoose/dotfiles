@@ -11,14 +11,12 @@
     (writeScriptBin "ci" ''wl-copy "$@"'')
     (writeScriptBin "co" ''wl-paste "$@"'')
     (let
-      wallpaper = pkgs.fetchurl {
-        url = "https://fedoraproject.org/w/uploads/f/fc/F37-01-night.jpg";
-        sha256 = "sha256-eiMZ3xWagyUrI9iTP015cZh4X5x9gz3XXi44IeaOrEM=";
-      }; in
+      wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});
+      in
     (writeScriptBin "hyprpaper-run" "
     hyprpaper --config ${writeText "hyprpaper.conf" "
-      preload = ${wallpaper}
-      wallpaper = ,${wallpaper}
+      preload = ${wp.space-austronaut}
+      wallpaper = ,${wp.space-austronaut}
     "}
     ")
     )
