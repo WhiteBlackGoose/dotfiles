@@ -13,4 +13,14 @@ pkgs: {
     url = "https://w.wallhaven.cc/full/p2/wallhaven-p25rw9.jpg";
     sha256 = "";
   };
+
+  fedora-light = pkgs.fetchurl {
+    url = "https://fedoraproject.org/w/uploads/0/02/F37-01-day.jpg";
+    sha256 = "sha256-l65ZSBoll80sSzje8qOkQPQtKnNqKQnMCwJGSRhrkvc=";
+  };
+
+  mountains-light = pkgs.fetchurl {
+    url = "https://w.wallhaven.cc/full/we/wallhaven-weq8y7.png";
+    sha256 = "sha256-ZTBkhWwPY4CZUaOBxxVO5HOL8zCrhmKvZak4idvaKpM=";
+  };
 }

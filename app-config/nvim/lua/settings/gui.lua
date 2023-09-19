@@ -27,7 +27,7 @@ local function curr_mode_cute()
     return r == "cute"
 end
 
-if curr_mode_cute() then
-    vim.g.neovide_transparency = 0.8
+--if curr_mode_cute() then
+    -- vim.g.neovide_transparency = 0.6
     vim.opt.cursorline = false
-end
+--end

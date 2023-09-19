@@ -10,22 +10,30 @@
     hyprpaper
     (writeScriptBin "ci" ''wl-copy "$@"'')
     (writeScriptBin "co" ''wl-paste "$@"'')
-    (let
-      wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});
-      in
-    (writeScriptBin "hyprpaper-run" "
-    hyprpaper --config ${writeText "hyprpaper.conf" "
-      preload = ${wp.space-austronaut}
-      wallpaper = ,${wp.space-austronaut}
-    "}
-    ")
-    )
+    
     element-desktop-wayland
     grim
     slurp
     waydroid
     swaylock
-  ];
+  ] ++ (let
+      wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});
+      in
+    [
+      (writeScriptBin "hyprpaper-run" "
+      hyprpaper --config ${writeText "hyprpaper.conf" "
+        preload = ${wp.space-austronaut}
+        wallpaper = ,${wp.space-austronaut}
+      "}
+      ")
+      (writeScriptBin "hyprpaper-run-light" "
+      hyprpaper --config ${writeText "hyprpaper.conf" "
+        preload = ${wp.mountains-light}
+        wallpaper = ,${wp.mountains-light}
+      "}
+      ")
+    ]
+    );
   environment.variables = {
     GDK_SCALE = "2";
     GDK_DPI_SCALE = "1";

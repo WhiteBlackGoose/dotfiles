@@ -103,8 +103,8 @@ end
 if vim.g["startup_theme"] == "light" then
     vim.g.theme_light()
 else
-    vim.g.theme_dark()
-    --vim.g.theme_light()
+    -- vim.g.theme_dark()
+    vim.g.theme_light()
 end
 
 
