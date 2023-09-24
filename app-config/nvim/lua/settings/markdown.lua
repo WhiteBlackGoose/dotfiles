@@ -1,1 +1,1 @@
-vim.g.mkdp_browser = "surf"
+-- vim.g.mkdp_browser = "surf"

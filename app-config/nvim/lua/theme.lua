@@ -7,7 +7,11 @@ vim.g.theme_dark = function()
     let g:airline_theme='violet'
     ]]
     -- vim.g.tokyonight_style = "storm"
-    vim.cmd[[colorscheme onedark]]
+    if vim.g.use_simple() then
+        vim.cmd[[colorscheme blue]]
+    else
+        vim.cmd[[colorscheme onedark]]
+    end
     -- vim.cmd[[colorscheme darcula]]
     vim.o.background = "dark"
     -- vim.cmd[[colorscheme catppuccin-frappe]]
@@ -103,8 +107,7 @@ end
 if vim.g["startup_theme"] == "light" then
     vim.g.theme_light()
 else
-    -- vim.g.theme_dark()
-    vim.g.theme_light()
+    vim.g.theme_dark()
 end
 
 

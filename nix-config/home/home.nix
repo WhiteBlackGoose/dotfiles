@@ -171,6 +171,10 @@ rec {
       name = "Telegram";
       exec = ''${pkgs.writeScript "tg" "QT_QPA_PLATFORM=xcb ${pkgs.telegram-desktop}/bin/telegram-desktop"}'';
     };
+    electrum = {
+      name = "Electrum";
+      exec = ''${pkgs.writeScript "electrum" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum"}'';
+    };
     theme = (import ../theme.nix inputs).desktopEntry;
   };
 

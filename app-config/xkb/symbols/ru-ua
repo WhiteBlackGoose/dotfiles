@@ -1,0 +1,11 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "ru"
+    include "level3(caps_switch)"
+    name[Group1] = "Russian";
+    keysym Cyrillic_i { [ Cyrillic_i, Cyrillic_I, idiaeresis, Idiaeresis ] };
+    keysym Cyrillic_ie { [ Cyrillic_ie, Cyrillic_IE, <U0454>, <U0404> ] };
+    keysym Cyrillic_yeru { [ Cyrillic_yeru, Cyrillic_YERU, <U0456>, <U0406> ] };
+    keysym Cyrillic_ghe { [ Cyrillic_ghe, Cyrillic_GHE, <U0491>, <U0490> ] };
+};
+

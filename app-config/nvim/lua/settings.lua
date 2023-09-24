@@ -8,6 +8,10 @@ if vim.g.use_ide() then
     opt.relativenumber = true
 end
 
+if vim.g.use_simple() then
+    opt.matchpairs = ""
+end
+
 vim.wo.fillchars='eob: '
 
 opt.ignorecase = true

@@ -24,7 +24,7 @@
     fluffychat
 
     ascii-image-converter
-    electrum
+    # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
     feh
     fprintd
     fzf

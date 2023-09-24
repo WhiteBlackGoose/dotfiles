@@ -1,10 +1,11 @@
 -- Debug
 function DapJumpTo()
-    local dap = require'dap'
+    local dap = require 'dap'
     dap.toggle_breakpoint()
     dap.continue()
     dap.toggle_breakpoint()
 end
+
 add('n', '<F5>', ":lua require'dap'.continue()<CR>")
 add('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>")
 add('n', '<F3>', ":lua DapJumpTo()<CR>")
@@ -14,12 +15,12 @@ add('n', '<F7>', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('n', '<F8>', ":lua require'dap'.repl.close()<CR>")
 add('n', '<F4>', ":lua require'dap'.disconnect()<CR>")
 
-add('i', '<F5>',  "<ESC>:lua require'dap'.continue()<CR>i")
-add('i', '<F9>',  "<ESC>:lua require'dap'.toggle_breakpoint()<CR>i")
+add('i', '<F5>', "<ESC>:lua require'dap'.continue()<CR>i")
+add('i', '<F9>', "<ESC>:lua require'dap'.toggle_breakpoint()<CR>i")
 add('i', '<F10>', "<ESC>:lua require'dap'.step_over()<CR>i")
 add('i', '<F34>', "<ESC>:lua require'dap'.step_into()<CR>i")
-add('i', '<F7>',  "<ESC>:lua require'dap'.repl.open()<CR><C-w><C-w>i")
-add('i', '<F8>',  "<ESC>:lua require'dap'.repl.close()<CR>i")
+add('i', '<F7>', "<ESC>:lua require'dap'.repl.open()<CR><C-w><C-w>i")
+add('i', '<F8>', "<ESC>:lua require'dap'.repl.close()<CR>i")
 add('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i")
 
 add('n', '<leader>enat', ":lua require'dap'.run(require'dap'.configurations.native)<CR>")
@@ -36,8 +37,8 @@ add('n', '<leader>edrepo', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('n', '<leader>edrepc', ":lua require'dap'.repl.close()<CR>")
 add('n', '<leader>eds', ":lua require'dap'.disconnect()<CR>")
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    pattern = {"*.rs", "Cargo.*"},
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "*.rs", "Cargo.*" },
     callback = function(_)
         add('n', '<F5>', ":RustDebuggables<CR>")
         add('n', '<leader>edc', ":RustDebuggables<CR>")
@@ -45,23 +46,23 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 
 local runCommands = {
-    {{"*.sh"}, "!./%"},
-    {{"*.rs", "Cargo.*"}, "!cargo run"},
-    {{"*.cs", "*.csproj"}, "!dotnet run"},
-    {{"*.fs", "*.fsproj"}, "!dotnet run"},
-    {{"*.py"}, "!python %"},
-    {{"*.fst"}, "!fstar.exe %"},
-    {{"*.idr"}, "!idris2 % -o out && ./build/exec/out"},
-    {{"*.hs"}, "!cabal run"},
-    {{"*.md"}, "MdView"},
-    {{"*.html"}, "!surf % & disown"},
+    { { "*.sh" },           "!./%" },
+    { { "*.rs", "Cargo.*" }, "!cargo run" },
+    { { "*.cs", "*.csproj" }, "!dotnet run" },
+    { { "*.fs", "*.fsproj" }, "!dotnet run" },
+    { { "*.py" },           "!python %" },
+    { { "*.fst" },          "!fstar.exe %" },
+    { { "*.idr" },          "!idris2 % -o out && ./build/exec/out" },
+    { { "*.hs" },           "!cabal run" },
+    { { "*.md" },           "MdView" },
+    { { "*.html" },         "!surf % & disown" },
 }
 for _, pair in pairs(runCommands) do
-    vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    pattern = pair[1],
-    callback = function(_)
-        vim.keymap.set('n', '<leader>ex', ':' .. pair[2] .. "<CR>", { buffer = true })
-    end
+    vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+        pattern = pair[1],
+        callback = function(_)
+            vim.keymap.set('n', '<leader>ex', ':' .. pair[2] .. "<CR>", { buffer = true })
+        end
     })
 end
 
@@ -106,11 +107,18 @@ add('n', '<leader>lc', ":LSPCodeActions<CR>")
 add('n', '<leader>lre', ":LSPReferences<CR>")
 add('n', '<leader>lll', ":LSPLocList<CR>")
 add('n', '<leader>lf', ":lua vim.lsp.buf.format()<CR>")
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "*.nix" },
+    callback = function(_)
+        add('n', '<leader>lf', ":!nix fmt<CR>")
+    end
+})
 
 function LSPLines()
     vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text, })
     vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines, })
 end
+
 add('n', '<leader>lli', ":lua LSPLines()<CR>")
 
 -- Clipboard into buffer

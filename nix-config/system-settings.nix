@@ -33,6 +33,9 @@
   # services.fprintd.enable = true;
   # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
+
   # bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -70,6 +73,8 @@
     noto-fonts-cjk
     noto-fonts-emoji
   ];
+  services.xserver.xkbOptions = "ctrl:swapcaps";
+  console.useXkbConfig = true;
 
   # GnuPG
   services.pcscd.enable = true;

@@ -6,8 +6,20 @@
     wl-clipboard
     # dunst
     waybar
-    wofi
+    # wofi
+    rofi # wofi works like shit
+    (writeScriptBin "rofi-run" ''
+curr=$(/home/goose/.config/global_scripts/get-current-theme.sh)
+if [ "$curr" = "prefer-light" ]; then
+    theme_arg="-theme Arc"
+else
+    theme_arg="-theme Arc-Dark"
+fi
+
+rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "element-icon { size: 2.65ch ; }"
+    '')
     hyprpaper
+    swaybg
     (writeScriptBin "ci" ''wl-copy "$@"'')
     (writeScriptBin "co" ''wl-paste "$@"'')
     
@@ -32,6 +44,16 @@
         wallpaper = ,${wp.mountains-light}
       "}
       ")
+      (writeScriptBin "swaybg-run-light" "swaybg -i ${wp.nixos-light}")
+      (writeScriptBin "bg-auto" ''
+        #!/usr/bin/env bash
+        if [ "$WAYLAND_DISPLAY" == "wayland-1" ]
+        then
+            hyprpaper-run-light
+        else
+            swaybg-run-light
+        fi
+      '')
     ]
     );
   environment.variables = {

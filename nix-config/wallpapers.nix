@@ -23,4 +23,9 @@ pkgs: {
     url = "https://w.wallhaven.cc/full/we/wallhaven-weq8y7.png";
     sha256 = "sha256-ZTBkhWwPY4CZUaOBxxVO5HOL8zCrhmKvZak4idvaKpM=";
   };
+
+  nixos-light = pkgs.fetchurl {
+    url = "https://github.com/NixOS/nixos-artwork/blob/e7e665687ff9d80550e26948405511bc70b5c6de/wallpapers/nix-wallpaper-nineish-solarized-light.png?raw=true";
+    sha256 = "sha256-gb5s5ePdw7kuIL3SI8VVhOcLcHu0cHMJJ623vg1kz40=";
+  };
 }

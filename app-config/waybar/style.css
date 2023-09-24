@@ -5,8 +5,8 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 0.0);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -46,22 +46,20 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: #666;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
@@ -69,8 +67,9 @@ button:hover {
 }
 
 #workspaces button.active {
-    color: #fff;
+    /*color: #ccc;*/
     background-color: transparent;
+    border-bottom: 2px solid  rgba(0, 0, 0, 0.7);
 }
 
 #mode {
@@ -152,16 +151,16 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #64727D;
 }
 
 #custom-memory {
-    background-color: #9b59b6;
+    background-color: #DDD;
+    color: #000000;
 }
 
 #custom-temperature {
-    background-color: #a65902;
+    background-color: #185c92;
 }
 
 #disk {
@@ -173,7 +172,7 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #185c92;
 }
 
 #network.disconnected {
@@ -181,8 +180,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #64727d;
 }
 
 #pulseaudio.muted {
@@ -191,8 +189,7 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+    color: #64727d;
 }
 
 #wireplumber.muted {
@@ -200,7 +197,7 @@ label:focus {
 }
 
 #custom-disk {
-    background-color: #BB9891;
+    background-color: #DDD;
     color: #000000;
 }
 

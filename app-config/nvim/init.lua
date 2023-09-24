@@ -1,6 +1,6 @@
 -- Look for logs here: /home/goose/.cache/nvim
 -- /home/goose/.local/state/nvim/lsp.log
--- vim.lsp.set_log_level("TRACE")
+-- vim.lsp.set_log_level("DEBUG")
 vim.g["is_ide_mode"]=1
 
 vim.o.rtp = vim.fn.stdpath('data') .. '/plugged/impatient.nvim' ..','.. vim.o.rtp
