@@ -9,7 +9,6 @@ if vim.g.use_ide() then
 end
 
 if vim.g.use_simple() then
-    opt.matchpairs = ""
 end
 
 vim.wo.fillchars='eob: '

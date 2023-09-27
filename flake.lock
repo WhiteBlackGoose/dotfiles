@@ -19,6 +19,27 @@
         "type": "github"
       }
     },
+    "ataraxiasjel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1695547799,
+        "narHash": "sha256-/Mu/lwVM4G0e0C7HSnmDvsuYzAuMCa1uIHQkJYVDd7k=",
+        "owner": "AtaraxiaSjel",
+        "repo": "nur",
+        "rev": "65eb45362bf9d7016a0e480602fe9ea2eaaa0a50",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AtaraxiaSjel",
+        "ref": "master",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
     "crane": {
       "flake": false,
       "locked": {
@@ -867,6 +888,7 @@
     "root": {
       "inputs": {
         "amcli-input": "amcli-input",
+        "ataraxiasjel": "ataraxiasjel",
         "gpt4all": "gpt4all",
         "home-manager": "home-manager",
         "hyprland-input": "hyprland-input",

@@ -1,4 +1,4 @@
-{ nixpkgs, hyprland-input, ... }: system:
+{ nixpkgs, hyprland-input, ataraxiasjel, ... }: system:
 {
   programs.hyprland.package = hyprland-input.packages.${system}.hyprland;
   programs.hyprland.enable = true;
@@ -27,6 +27,7 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     grim
     slurp
     waydroid
+    ataraxiasjel.packages.${system}.waydroid-script
     swaylock
   ] ++ (let
       wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});

@@ -2,7 +2,7 @@
 
 LspSigns = {
     Error = vim.g.gsign(' ', 'E'),
-    Warn = vim.g.gsign(' ', 'E'),
+    Warn = vim.g.gsign(' ', 'W'),
     Info = vim.g.gsign(' ', 'I'),
     Hint = vim.g.gsign(' ', 'L'),
 }

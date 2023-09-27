@@ -14,9 +14,11 @@
     gpt4all.url = "github:polygon/gpt4all-nix";
     stablediffusion.url = "github:nixified-ai/flake";
     veloren.url = "gitlab:veloren/veloren";
+    ataraxiasjel.url = "github:AtaraxiaSjel/nur/master";
+    ataraxiasjel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ataraxiasjel, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -28,6 +30,7 @@
         gpt4all = gpt4all.packages.${system};
         stablediffusion = stablediffusion.packages.${system};
         veloren = veloren.packages.${system};
+        ataraxiasjel = ataraxiasjel.packages.${system};
       };
       modules = [
         { 
@@ -57,7 +60,8 @@
           home-manager.useUserPackages = true;
           home-manager.users.goose.imports = [
             ./nix-config/home/home.nix
-            ./nix-config/home/ocr.nix
+            # ./nix-config/home/ocr.nix
+            ./nix-config/home/ocr-wayland.nix
             ./nix-config/home/org.nix
             # ./nix-config/home/pidgin.nix
           ];

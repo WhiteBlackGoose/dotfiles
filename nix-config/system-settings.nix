@@ -6,7 +6,7 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_GB.UTF-8";
@@ -123,8 +123,8 @@
   virtualisation.waydroid.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 ];
   services.syncthing = {
     enable = true;
     configDir = "/home/goose/.config/syncthing";
