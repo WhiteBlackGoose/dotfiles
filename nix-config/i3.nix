@@ -9,7 +9,6 @@ inputs@{ config, pkgs, ... }:
     xfce.xfce4-screenshooter
     (writeScriptBin "ci" ''xclip -sel clip "$@"'')
     (writeScriptBin "co" ''xclip -sel clip -o "$@"'')
-    element-desktop
   ];  
 
   xdg.portal.extraPortals = with pkgs; [

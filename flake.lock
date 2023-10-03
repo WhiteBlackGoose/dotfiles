@@ -806,11 +806,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1686803781,
-        "narHash": "sha256-Wcm4+wVjzyVQbwPGtDXIXF2vrjO1v7Rhhlu896vDvwg=",
+        "lastModified": 1695829419,
+        "narHash": "sha256-Go5NEmia3mZ9wGgGiBdD8+qBcB57ca4AwUGQPR16Bik=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "1f8fb7c00048bc217bb9a2bf29c58630d1810d6e",
+        "rev": "bfdec5b0e71991ebc0a8ad7c12d39f7a9cc56f07",
         "type": "github"
       },
       "original": {

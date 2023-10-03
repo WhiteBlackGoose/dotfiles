@@ -23,7 +23,6 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     (writeScriptBin "ci" ''wl-copy "$@"'')
     (writeScriptBin "co" ''wl-paste "$@"'')
     
-    element-desktop-wayland
     grim
     slurp
     waydroid

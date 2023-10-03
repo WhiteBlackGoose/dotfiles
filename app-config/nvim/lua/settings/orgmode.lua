@@ -37,7 +37,7 @@ require("org-bullets").setup {
 -- require("headlines").setup()
 
 -- This is a WORKAROUND of <https://github.com/nvim-orgmode/orgmode/issues/521>
-norm = { noremap = true, silent = true }
+local norm = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', 'c1', 'i*<space>', norm)
 vim.api.nvim_set_keymap('n', 'c2', 'i**<space>', norm)
 vim.api.nvim_set_keymap('n', 'c3', 'i***<space>', norm)
@@ -59,3 +59,5 @@ vim.api.nvim_set_keymap('n', 'T4', 'O****<space>', norm)
 vim.api.nvim_set_keymap('n', 'T5', 'O*****<space>', norm)
 vim.api.nvim_set_keymap('n', 'T6', 'O******<space>', norm)
 
+
+vim.api.nvim_set_hl(0, "OrgAgendaScheduled", { fg = "#ff9944" })
