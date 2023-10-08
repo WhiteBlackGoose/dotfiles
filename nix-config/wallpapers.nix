@@ -31,7 +31,6 @@ pkgs: {
 
   hexes = pkgs.fetchurl {
     url =  "https://images.pling.com/img/00/00/37/26/92/1192815/95bc75a862100788d62648eafa574290423d.jpg";
-    # sha256 = "sha256-tUcTgsnylW4+6vnHYU5+2inipoJVGdADWRVIkDoXK3A=";
     sha256 = "sha256-8gH/geoD2D+HRAAzqvFxUjaKEEvXiqN4TYQkJycr5wE=";
   };
 }

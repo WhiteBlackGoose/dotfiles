@@ -1,10 +1,22 @@
 -- German keys
-add('i', '<A-u>', 'ü')
-add('i', '<A-o>', 'ö')
-add('i', '<A-a>', 'ä')
-add('i', '<A-s>', 'ß')
+local keys = {
+    { '\\in', '∈' },
+    { '\\notin', '∉' },
+    { '\\land', '∧' },
+    { '\\lor', '∨' },
+}
+function SpecialSymbolsEnable()
+    for _, pair in pairs(keys) do
+        add('i', pair[1], pair[2])
+    end
+end
+function SpecialSymbolsDisable()
+    for _, pair in pairs(keys) do
+        vim.cmd(':iunmap ' .. pair[1])
+    end
+end
 
-add('i', '<A-U>', 'Ü')
-add('i', '<A-O>', 'Ö')
-add('i', '<A-A>', 'Ä')
-add('i', '<A-S>', 'ẞ')
+vim.cmd[[
+:command SpecialSymbolsEnable lua SpecialSymbolsEnable()
+:command SpecialSymbolsDisable lua SpecialSymbolsDisable()
+]]
