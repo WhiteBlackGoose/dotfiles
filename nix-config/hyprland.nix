@@ -40,8 +40,8 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
       ")
       (writeScriptBin "hyprpaper-run-light" "
       hyprpaper --config ${writeText "hyprpaper.conf" "
-        preload = ${wp.mountains-light}
-        wallpaper = ,${wp.mountains-light}
+        preload = ${wp.hexes}
+        wallpaper = ,${wp.hexes}
       "}
       ")
       (writeScriptBin "swaybg-run-light" "swaybg -i ${wp.nixos-light}")
@@ -69,6 +69,8 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
   ];
+  services.xserver.xkbOptions = "ctrl:swapcaps";
+  console.useXkbConfig = true;
   security.pam.services.swaylock = {
     text = ''
     auth include login

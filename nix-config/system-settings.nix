@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   environment.pathsToLink = [ "/libexec" ];
@@ -73,8 +73,6 @@
     noto-fonts-cjk
     noto-fonts-emoji
   ];
-  services.xserver.xkbOptions = "ctrl:swapcaps";
-  console.useXkbConfig = true;
 
   # GnuPG
   services.pcscd.enable = true;
@@ -123,8 +121,27 @@
   virtualisation.waydroid.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 ];
+  # environment.systemPackages = [
+  #   pkgs.wireguard-tools
+  # ];
+  # networking.wireguard.interfaces = {
+  #   wg0 = {
+  #     ips = [ "10.13.13.2" ];
+  #     listenPort = 51820;
+  #     privateKeyFile = "/root/wireguard-keys-art/private";
+  #     peers = [
+  #       {
+  #         publicKey = lib.readFile "/root/wireguard-keys-art/public";
+  #         presharedKeyFile = "/root/wireguard-keys-art/preshared";
+  #         allowedIPs = [ "192.168.1.0/24" ];
+  #         endpoint = "artemlab.ru:35051";
+  #         persistentKeepalive = 25;
+  #       }
+  #     ];
+  #   };
+  # };
   services.syncthing = {
     enable = true;
     configDir = "/home/goose/.config/syncthing";

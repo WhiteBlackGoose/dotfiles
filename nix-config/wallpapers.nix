@@ -28,4 +28,10 @@ pkgs: {
     url = "https://github.com/NixOS/nixos-artwork/blob/e7e665687ff9d80550e26948405511bc70b5c6de/wallpapers/nix-wallpaper-nineish-solarized-light.png?raw=true";
     sha256 = "sha256-gb5s5ePdw7kuIL3SI8VVhOcLcHu0cHMJJ623vg1kz40=";
   };
+
+  hexes = pkgs.fetchurl {
+    url =  "https://images.pling.com/img/00/00/37/26/92/1192815/95bc75a862100788d62648eafa574290423d.jpg";
+    # sha256 = "sha256-tUcTgsnylW4+6vnHYU5+2inipoJVGdADWRVIkDoXK3A=";
+    sha256 = "sha256-8gH/geoD2D+HRAAzqvFxUjaKEEvXiqN4TYQkJycr5wE=";
+  };
 }
