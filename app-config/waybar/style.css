@@ -5,8 +5,8 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.0);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.0);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 0px solid rgba(100, 114, 125, 0.0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -49,14 +49,16 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #666;
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    padding: 0 3px;
+    margin: 4px 3px;
+    background-color: #fff;
+    color: #333;
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 7px;
 }
 
 #workspaces button:hover {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
 }
 
 #workspaces button.focused {
@@ -68,8 +70,8 @@ button:hover {
 
 #workspaces button.active {
     /*color: #ccc;*/
-    background-color: transparent;
-    border-bottom: 2px solid  rgba(0, 0, 0, 0.7);
+    background-color: #cAcAcA;
+    border-bottom: 0px solid  rgba(0, 0, 0, 0);
 }
 
 #mode {
@@ -95,38 +97,18 @@ button:hover {
 #custom-disk,
 #custom-temperature,
 #mpd {
-    padding: 0 10px;
-    color: #fff;
-    border-radius: 0 0 10px 10px;
+    padding: 0px 10px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 4px;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    background-color: #64727D;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    margin: 0 0;
 }
 
 @keyframes blink {
@@ -144,77 +126,6 @@ button:hover {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #64727D;
-}
-
-#custom-memory {
-    background-color: #DDD;
-    color: #000000;
-}
-
-#custom-temperature {
-    background-color: #185c92;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #185c92;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: #64727d;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    color: #64727d;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-disk {
-    background-color: #DDD;
-    color: #000000;
-}
-
-#custom-disk.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-disk.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
 }
 
 #tray {
