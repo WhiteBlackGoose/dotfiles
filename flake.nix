@@ -16,9 +16,10 @@
     veloren.url = "gitlab:veloren/veloren";
     ataraxiasjel.url = "github:AtaraxiaSjel/nur/master";
     ataraxiasjel.inputs.nixpkgs.follows = "nixpkgs";
+    ocr4nix.url = "git+https://codeberg.org/WhiteBlackGoose/ocr4nix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ataraxiasjel, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, veloren, ataraxiasjel, ocr4nix, ... }: {
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -60,11 +61,11 @@
           home-manager.useUserPackages = true;
           home-manager.users.goose.imports = [
             ./nix-config/home/home.nix
-            # ./nix-config/home/ocr.nix
-            ./nix-config/home/ocr-wayland.nix
+            ./nix-config/home/ocr.nix
             ./nix-config/home/org.nix
-            # ./nix-config/home/pidgin.nix
           ];
+          home-manager.users.goose.ocr = (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system})
+            .wayland;
         }
       ];
     };

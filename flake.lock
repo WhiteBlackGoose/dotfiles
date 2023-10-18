@@ -819,6 +819,21 @@
         "type": "github"
       }
     },
+    "ocr4nix": {
+      "locked": {
+        "lastModified": 1697632480,
+        "narHash": "sha256-QPzvpTRPeiiSGw8rx5Bv4VQMCdL+BYHfPVpgh0RVLqk=",
+        "ref": "refs/heads/master",
+        "rev": "d99fe4156ce1d6c49cc7583151759eb4144ad9ff",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://codeberg.org/WhiteBlackGoose/ocr4nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/WhiteBlackGoose/ocr4nix"
+      }
+    },
     "parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -894,6 +909,7 @@
         "nil-input": "nil-input",
         "nixpkgs": "nixpkgs_5",
         "nvim-input": "nvim-input",
+        "ocr4nix": "ocr4nix",
         "stablediffusion": "stablediffusion",
         "tri-input": "tri-input",
         "veloren": "veloren"
