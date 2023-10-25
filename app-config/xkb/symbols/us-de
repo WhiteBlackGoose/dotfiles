@@ -8,5 +8,9 @@ xkb_symbols "basic" {
     key <AD09> { [ o, O, odiaeresis, Odiaeresis ] };
     key <AC01> { [ a, A, adiaeresis, Adiaeresis ] };
     key <AC02> { [ s, S, ssharp, U1E9E ] };
+    key <AC05> { [ g, G, agrave, Agrave ] };
+    key <AB04> { [ v, V, egrave, Egrave ] };
+    key <AD05> { [ t, T, igrave, Igrave ] };
+    key <AB03> { [ c, C, ograve, Ograve ] };
 };
 

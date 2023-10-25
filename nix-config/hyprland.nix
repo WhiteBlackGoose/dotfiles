@@ -4,9 +4,7 @@
   programs.hyprland.enable = true;
   environment.systemPackages = with nixpkgs.legacyPackages.${system}; [
     wl-clipboard
-    # dunst
     waybar
-    # wofi
     rofi # wofi works like shit
     (writeScriptBin "rofi-run" ''
 curr=$(/home/goose/.config/global_scripts/get-current-theme.sh)
@@ -76,16 +74,4 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     auth include login
   '';
   };
-# TODO
-# + clipboard
-# keyboard
-# screenshot
-# + status bar
-# + cursor pointer
-# wallpaper
-# lock screen
-# menu launcher
-# X-only software
-# + shortcut managers
-# custom scripts
 }

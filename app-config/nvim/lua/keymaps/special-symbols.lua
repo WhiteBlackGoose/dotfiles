@@ -4,6 +4,7 @@ local keys = {
     { '\\notin', '∉' },
     { '\\land', '∧' },
     { '\\lor', '∨' },
+    { '\\eps', 'ε' },
 }
 function SpecialSymbolsEnable()
     for _, pair in pairs(keys) do
