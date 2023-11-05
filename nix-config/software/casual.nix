@@ -18,6 +18,7 @@
 
     libotr
     gpgme
+    veracrypt
 
     thunderbird
     signal-desktop

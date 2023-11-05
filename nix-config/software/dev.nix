@@ -38,5 +38,7 @@
     clang-tools
     clangStdenv
     sumneko-lua-language-server
+
+    xxd
   ];
 }

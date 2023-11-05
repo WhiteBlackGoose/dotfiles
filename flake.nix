@@ -48,6 +48,7 @@
         ./nix-config/system-settings.nix
         ./nix-config/users.nix
         ./nix-config/env-variables.nix
+        ./nix-config/syncthing.nix
 
         # WMs
         # (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
