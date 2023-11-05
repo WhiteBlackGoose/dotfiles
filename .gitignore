@@ -29,7 +29,6 @@ app-config/fontconfig/conf.d
 app-config/fish
 app-config/fontconfig
 app-config/git
-app-config/global_scripts
 app-config/gpick
 app-config/gthumb
 app-config/gtk-2.0
@@ -101,3 +100,6 @@ app-config/krdcrc
 app-config/xchm.conf
 app-config/supertuxkart/config-0.10
 app-config/Ultralytics
+app-config/VeraCrypt
+app-config/lapce-nightly
+app-config/micro

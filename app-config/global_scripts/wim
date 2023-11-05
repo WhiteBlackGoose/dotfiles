@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-nvim '+lua vim.g.theme_light()' $@
+nvim '+lua vim.g.theme_light()' "$@"

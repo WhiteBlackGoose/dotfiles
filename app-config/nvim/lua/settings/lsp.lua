@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
             cmd = {
                 os.getenv("JDTLS"),
                 "-data",
-                '~/jdtls/',
+                '/home/goose/.jdtls/',
             },
             -- init_options = {
             --   bundles = vim.fn.readfile("@jdtls_bundles@"),

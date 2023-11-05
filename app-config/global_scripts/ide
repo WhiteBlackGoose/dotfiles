@@ -1,1 +1,1 @@
-nvim --cmd 'lua vim.g["is_ide_mode"]=1' $@
+nvim --cmd 'lua vim.g["is_ide_mode"]=1' "$@"
