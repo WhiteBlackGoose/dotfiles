@@ -28,6 +28,16 @@ rec {
       };
       extraConfig = {
         core.eol = "lf";
+        status.submodulesummary = 1;
+        push.recurseSubmodules = "check";
+      };
+      aliases = {
+        "unstage" = "reset HEAD --";
+        "rbi" = "rebase --interactive";
+        "sa" = "status -s --ignored=traditional";
+        "ss" = "status -s";
+        "a" = "add";
+        "c" = "commit -m";
       };
     };
     fish = {

@@ -11,6 +11,10 @@ end
 if vim.g.use_simple() then
 end
 
+vim.cmd[[
+set nrformats+=alpha
+]]
+
 vim.wo.fillchars='eob: '
 
 opt.ignorecase = true

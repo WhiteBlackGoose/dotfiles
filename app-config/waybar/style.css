@@ -128,9 +128,6 @@ button:hover {
     animation-direction: alternate;
 }
 
-#tray {
-    background-color: #2980b9;
-}
 
 #tray > .passive {
     -gtk-icon-effect: dim;
