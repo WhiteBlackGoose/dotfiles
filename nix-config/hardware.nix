@@ -142,6 +142,7 @@ rec {
     };
     wantedBy = [ "multi-user.target" ];
   };
+  hardware.sane.enable = true;
 
   networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
   # networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];

@@ -34,6 +34,7 @@
     lazygit
 
     gcc
+    gnumake
     clang
     clang-tools
     clangStdenv

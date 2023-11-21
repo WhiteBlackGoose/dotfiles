@@ -4,6 +4,8 @@ xkb_symbols "basic" {
     include "level3(caps_switch)"
     name[Group1] = "English (US, international with German umlaut)";
     key <AD03> { [ e, E, EuroSign, cent ] };
+    key <AD10> { [ p, P, sterling, cent ] };
+    key <AD02> { [ w, W, section, paragraph ] };
     key <AD07> { [ u, U, udiaeresis, Udiaeresis ] };
     key <AD09> { [ o, O, odiaeresis, Odiaeresis ] };
     key <AC01> { [ a, A, adiaeresis, Adiaeresis ] };

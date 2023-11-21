@@ -34,6 +34,7 @@ end
 
 vim.cmd[[
 :autocmd InsertEnter *.tex lua AddTexAutoPairRules()
+:autocmd InsertEnter *.typ lua AddTexAutoPairRules()
 :autocmd InsertEnter *.rs lua AddRsAutoPairRules()
 ]]
 
