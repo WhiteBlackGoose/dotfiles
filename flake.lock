@@ -40,145 +40,6 @@
         "type": "github"
       }
     },
-    "crane": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681175776,
-        "narHash": "sha256-7SsUy9114fryHAZ8p1L6G6YSu7jjz55FddEwa2U8XZc=",
-        "owner": "ipetkov",
-        "repo": "crane",
-        "rev": "445a3d222947632b5593112bb817850e8a9cf737",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ipetkov",
-        "ref": "v0.12.1",
-        "repo": "crane",
-        "type": "github"
-      }
-    },
-    "dream2nix": {
-      "inputs": {
-        "all-cabal-json": [
-          "veloren",
-          "nci"
-        ],
-        "crane": "crane",
-        "devshell": [
-          "veloren",
-          "nci"
-        ],
-        "drv-parts": "drv-parts",
-        "flake-compat": "flake-compat",
-        "flake-parts": [
-          "veloren",
-          "nci",
-          "parts"
-        ],
-        "flake-utils-pre-commit": [
-          "veloren",
-          "nci"
-        ],
-        "ghc-utils": [
-          "veloren",
-          "nci"
-        ],
-        "gomod2nix": [
-          "veloren",
-          "nci"
-        ],
-        "mach-nix": [
-          "veloren",
-          "nci"
-        ],
-        "nix-pypi-fetcher": [
-          "veloren",
-          "nci"
-        ],
-        "nixpkgs": [
-          "veloren",
-          "nci",
-          "nixpkgs"
-        ],
-        "nixpkgsV1": "nixpkgsV1",
-        "poetry2nix": [
-          "veloren",
-          "nci"
-        ],
-        "pre-commit-hooks": [
-          "veloren",
-          "nci"
-        ],
-        "pruned-racket-catalog": [
-          "veloren",
-          "nci"
-        ]
-      },
-      "locked": {
-        "lastModified": 1686064783,
-        "narHash": "sha256-qyptOk4vDut2JkRMJ+815eJNqqd8gIfjpz3l4WCCtMY=",
-        "owner": "nix-community",
-        "repo": "dream2nix",
-        "rev": "0c064fa9dd025069cc215b0a8b4eb5ea734aceb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "dream2nix",
-        "type": "github"
-      }
-    },
-    "drv-parts": {
-      "inputs": {
-        "flake-compat": [
-          "veloren",
-          "nci",
-          "dream2nix",
-          "flake-compat"
-        ],
-        "flake-parts": [
-          "veloren",
-          "nci",
-          "dream2nix",
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "veloren",
-          "nci",
-          "dream2nix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1680698112,
-        "narHash": "sha256-FgnobN/DvCjEsc0UAZEAdPLkL4IZi2ZMnu2K2bUaElc=",
-        "owner": "davhau",
-        "repo": "drv-parts",
-        "rev": "e8c2ec1157dc1edb002989669a0dbd935f430201",
-        "type": "github"
-      },
-      "original": {
-        "owner": "davhau",
-        "repo": "drv-parts",
-        "type": "github"
-      }
-    },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1673956053,
-        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -472,22 +333,6 @@
         "type": "github"
       }
     },
-    "mk-naked-shell": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681286841,
-        "narHash": "sha256-3XlJrwlR0nBiREnuogoa5i1b4+w/XPe0z8bbrJASw0g=",
-        "owner": "yusdacra",
-        "repo": "mk-naked-shell",
-        "rev": "7612f828dd6f22b7fb332cc69440e839d7ffe6bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yusdacra",
-        "repo": "mk-naked-shell",
-        "type": "github"
-      }
-    },
     "my-nix": {
       "locked": {
         "lastModified": 1683399880,
@@ -516,31 +361,6 @@
       "original": {
         "owner": "WhiteBlackGoose",
         "repo": "my-nix",
-        "type": "github"
-      }
-    },
-    "nci": {
-      "inputs": {
-        "dream2nix": "dream2nix",
-        "mk-naked-shell": "mk-naked-shell",
-        "nixpkgs": [
-          "veloren",
-          "nixpkgs"
-        ],
-        "parts": "parts",
-        "rust-overlay": "rust-overlay_2"
-      },
-      "locked": {
-        "lastModified": 1686550289,
-        "narHash": "sha256-2tmTVciCJJVEMLDdd28BeTUKOYlR9Z47oEUiKl/OXKg=",
-        "owner": "yusdacra",
-        "repo": "nix-cargo-integration",
-        "rev": "acb9cf3a5e31b791d675515eac4d73df13555061",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yusdacra",
-        "repo": "nix-cargo-integration",
         "type": "github"
       }
     },
@@ -617,55 +437,6 @@
       "original": {
         "dir": "lib",
         "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-lib_2": {
-      "locked": {
-        "dir": "lib",
-        "lastModified": 1685564631,
-        "narHash": "sha256-8ywr3AkblY4++3lIVxmrWZFzac7+f32ZEhH/A8pNscI=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4f53efe34b3a8877ac923b9350c874e3dcd5dc0a",
-        "type": "github"
-      },
-      "original": {
-        "dir": "lib",
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgsV1": {
-      "locked": {
-        "lastModified": 1678500271,
-        "narHash": "sha256-tRBLElf6f02HJGG0ZR7znMNFv/Uf7b2fFInpTHiHaSE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5eb98948b66de29f899c7fe27ae112a47964baf8",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-22.11",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_10": {
-      "locked": {
-        "lastModified": 1686412476,
-        "narHash": "sha256-inl9SVk6o5h75XKC79qrDCAobTD1Jxh6kVYTZKHzewA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "21951114383770f96ae528d0ae68824557768e81",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -834,46 +605,6 @@
         "url": "https://codeberg.org/WhiteBlackGoose/ocr4nix"
       }
     },
-    "parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "veloren",
-          "nci",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1685662779,
-        "narHash": "sha256-cKDDciXGpMEjP1n6HlzKinN0H+oLmNpgeCTzYnsA2po=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "71fb97f0d875fd4de4994dfb849f2c75e17eb6c3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "parts_2": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_2"
-      },
-      "locked": {
-        "lastModified": 1685662779,
-        "narHash": "sha256-cKDDciXGpMEjP1n6HlzKinN0H+oLmNpgeCTzYnsA2po=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "71fb97f0d875fd4de4994dfb849f2c75e17eb6c3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks-nix": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -911,8 +642,7 @@
         "nvim-input": "nvim-input",
         "ocr4nix": "ocr4nix",
         "stablediffusion": "stablediffusion",
-        "tri-input": "tri-input",
-        "veloren": "veloren"
+        "tri-input": "tri-input"
       }
     },
     "rust-overlay": {
@@ -932,22 +662,6 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "9b3284e2412f76bd68ff46f8cf1c7af44d7ffac0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1686537156,
-        "narHash": "sha256-mJD80brS6h6P4jzwdKID0S9RvfyiruxgJbXvPPIDqF0=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "e75da5cfc7da874401decaa88f4ccb3b4d64d20d",
         "type": "github"
       },
       "original": {
@@ -1039,26 +753,6 @@
         "owner": "WhiteBlackGoose",
         "repo": "tri",
         "type": "github"
-      }
-    },
-    "veloren": {
-      "inputs": {
-        "nci": "nci",
-        "nixpkgs": "nixpkgs_10",
-        "parts": "parts_2"
-      },
-      "locked": {
-        "lastModified": 1688812610,
-        "narHash": "sha256-d4JsEIiW8DWaR/8rp/TVoH0b8exfwMBXCPghdVhQEKg=",
-        "owner": "veloren",
-        "repo": "veloren",
-        "rev": "fd5fdd1840a8e73bff00a2e7d37d31ec7748dc7b",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "veloren",
-        "repo": "veloren",
-        "type": "gitlab"
       }
     },
     "wlroots": {

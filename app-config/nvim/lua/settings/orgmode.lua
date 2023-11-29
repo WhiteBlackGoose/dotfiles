@@ -2,8 +2,8 @@ require('orgmode').setup_ts_grammar()
 require('orgmode').setup({
   org_default_notes_file = '~/me/_org/notes.org',
   org_agenda_files = {"~/me/_org/**"},
-  win_split_mode = 'horizontal',
-  org_agenda_span = 'month',
+  win_split_mode = 'vertical',
+  org_agenda_span = 'week',
   org_agenda_skip_scheduled_if_done = true,
   org_agenda_skip_deadline_if_done = true,
   org_agenda_skip_if_done = true,

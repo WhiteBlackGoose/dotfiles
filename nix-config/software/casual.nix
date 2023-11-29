@@ -73,7 +73,7 @@
     freetube
     ffmpeg
     foliate
-    sw.veloren.default
+    airshipper
     gnome.gnome-system-monitor
   ];
 }

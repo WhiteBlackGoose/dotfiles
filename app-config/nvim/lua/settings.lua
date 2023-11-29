@@ -34,7 +34,7 @@ vim.g['python3_host_prog'] = 'python3'
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     pattern = {"*.html"},
     callback = function(_)
-        vim.cmd[[command HtmlView !surf % & disown]]
+        vim.cmd[[command-buffer HtmlView !surf % & disown]]
     end
 })
 
