@@ -50,7 +50,8 @@
 
         # WMs
         # (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
-        (import ./nix-config/hyprland.nix inputs system)
+        # (import ./nix-config/hyprland.nix inputs system)
+        (import ./nix-config/gnome.nix)
 
         ./nix-config/docker.nix
 

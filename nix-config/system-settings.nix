@@ -122,8 +122,10 @@
   virtualisation.waydroid.enable = true;
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 8873 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 6379 ];
+  networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+  networking.firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
   # environment.systemPackages = [
   #   pkgs.wireguard-tools
   # ];

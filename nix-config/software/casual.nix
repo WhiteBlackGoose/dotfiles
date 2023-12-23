@@ -22,7 +22,7 @@
 
     thunderbird
     signal-desktop
-    cinny-desktop
+    element-desktop
 
     ascii-image-converter
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
@@ -75,5 +75,8 @@
     foliate
     airshipper
     gnome.gnome-system-monitor
+    nix-index
+    timer
+    tmux
   ];
 }

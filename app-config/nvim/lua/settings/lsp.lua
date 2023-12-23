@@ -37,6 +37,8 @@ lsp.typst_lsp.setup { capabilities = capabilities }
 lsp.idris2_lsp.setup { capabilities = capabilities }
 lsp.hls.setup { capabilities = capabilities }
 lsp.jedi_language_server.setup { capabilities = capabilities }
+vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
+lsp.slint_lsp.setup { capabilities = capabilities }
 -- lsp.java_language_server.setup{
 --     capabilities = capabilities,
 --     cmd = {"java-language-server"}
@@ -96,3 +98,15 @@ end
 end
 
 define_lsp_signs()
+
+
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+-- vim.o.updatetime = 250
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+--   callback = function ()
+--     vim.diagnostic.open_float(nil, {focus=false})
+--   end
+-- })

@@ -138,6 +138,9 @@ local idePlugins = {
     },
 
     {"https://github.com/WhiteBlackGoose/orgmode", dev=false },
+    {"https://github.com/lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true, },
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",

@@ -107,6 +107,7 @@ add('n', '<leader>lc', ":LSPCodeActions<CR>")
 add('n', '<leader>lre', ":LSPReferences<CR>")
 add('n', '<leader>lll', ":LSPLocList<CR>")
 add('n', '<leader>lf', ":lua vim.lsp.buf.format()<CR>")
+add('n', '<leader>le', ":lua vim.diagnostic.open_float()<CR>")
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.nix" },
     callback = function(_)
