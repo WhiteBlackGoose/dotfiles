@@ -27,7 +27,6 @@
     ascii-image-converter
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
     feh
-    fprintd
     fzf
     kdeconnect
     lm_sensors
