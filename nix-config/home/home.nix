@@ -259,6 +259,24 @@ rec {
       ''}
       '';
   };
+
+  home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
+    let
+      wp = import ../wallpapers.nix pkgs;
+    in
+  ''<?xml version="1.0"?>
+    <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+    <wallpapers>
+      <wallpaper deleted="false">
+        <name>My Background</name>
+        <filename>${wp.fedora-37-light}</filename>
+        <filename-dark>${wp.fedora-37-dark}</filename-dark>
+        <options>zoom</options>
+        <shade_type>solid</shade_type>
+        <pcolor>#3071AE</pcolor>
+        <scolor>#000000</scolor>
+      </wallpaper>
+    </wallpapers>'';
   
   # Gallery: https://www.opendesktop.org/browse?cat=107
   # Nice ones:
@@ -266,25 +284,25 @@ rec {
   # Bibata regular: https://www.opendesktop.org/p/1914825
   # Fuchsia pink: https://www.opendesktop.org/p/1544830
   # Fuchsia pop: https://www.opendesktop.org/p/1641968
-  home.pointerCursor = 
-    let 
-      getFrom = url: hash: name: {
-          gtk.enable = true;
-          x11.enable = true;
-          name = name;
-          size = 48;
-          package = 
-            pkgs.runCommand "moveUp" {} ''
-              mkdir -p $out/share/icons
-              ln -s ${pkgs.fetchzip {
-                url = url;
-                hash = hash;
-              }} $out/share/icons/${name}
-          '';
-        };
-    in
-      getFrom 
-        "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
-        "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
-        "Fuchsia-Pop"; 
+  # home.pointerCursor = 
+  #   let 
+  #     getFrom = url: hash: name: {
+  #         gtk.enable = true;
+  #         x11.enable = true;
+  #         name = name;
+  #         size = 48;
+  #         package = 
+  #           pkgs.runCommand "moveUp" {} ''
+  #             mkdir -p $out/share/icons
+  #             ln -s ${pkgs.fetchzip {
+  #               url = url;
+  #               hash = hash;
+  #             }} $out/share/icons/${name}
+  #         '';
+  #       };
+  #   in
+  #     getFrom 
+  #       "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
+  #       "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
+  #       "Fuchsia-Pop"; 
 }

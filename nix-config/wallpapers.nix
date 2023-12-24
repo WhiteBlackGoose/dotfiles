@@ -14,9 +14,14 @@ pkgs: {
     sha256 = "";
   };
 
-  fedora-light = pkgs.fetchurl {
+  fedora-37-light = pkgs.fetchurl {
     url = "https://fedoraproject.org/w/uploads/0/02/F37-01-day.jpg";
     sha256 = "sha256-l65ZSBoll80sSzje8qOkQPQtKnNqKQnMCwJGSRhrkvc=";
+  };
+
+  fedora-37-dark = pkgs.fetchurl {
+    url = "https://fedoraproject.org/w/uploads/f/fc/F37-01-night.jpg";
+    sha256 = "sha256-eiMZ3xWagyUrI9iTP015cZh4X5x9gz3XXi44IeaOrEM=";
   };
 
   mountains-light = pkgs.fetchurl {

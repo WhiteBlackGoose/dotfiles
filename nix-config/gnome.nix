@@ -7,9 +7,6 @@ inputs@{ pkgs, ... }:
     gnome.gnome-tweaks
   ];  
 
-  # environment.shells = [ pkgs.fish ];
-  # environment.pathsToLink = [ "/share/fish" ];
-
   services.xserver = {
     dpi = 192;
     enable = true;
@@ -21,12 +18,16 @@ inputs@{ pkgs, ... }:
     };
 
     displayManager = rec {
-      gdm.enable = false;
+      gdm = rec {
+        enable = true;
+        debug = enable;
+        settings = {
+          greeter.IncludeAll = true;
+        };
+      };
       lightdm.enable = !gdm.enable;
-      gdm.debug = gdm.enable;
     };
   };
-
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
