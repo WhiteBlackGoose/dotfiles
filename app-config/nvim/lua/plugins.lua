@@ -7,7 +7,7 @@ local commonPlugins = {
     {'folke/tokyonight.nvim', branch = 'main' },
     'ayu-theme/ayu-vim',
     'nvim-lua/plenary.nvim',
-    {'nvim-telescope/telescope.nvim', tag = '0.1.0' },
+    {'nvim-telescope/telescope.nvim' },
     'nvim-telescope/telescope-symbols.nvim',
     'lervag/vimtex',
     'voldikss/vim-floaterm',
