@@ -1,5 +1,7 @@
 inputs@{ pkgs, ... }:
 
+let
+sys =
 {
   environment.systemPackages = with pkgs; [
     xclip
@@ -65,4 +67,26 @@ inputs@{ pkgs, ... }:
   environment.variables = {
     # CLUTTER_SHOW_FPS="1";
   };
+};
+home = {
+  home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
+    let
+      wp = import ../wallpapers.nix pkgs;
+    in
+  ''<?xml version="1.0"?>
+    <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+    <wallpapers>
+      <wallpaper deleted="false">
+        <name>My Background</name>
+        <filename>${wp.abstract-paint-2-light}</filename>
+        <filename-dark>${wp.abstract-paint-dark}</filename-dark>
+        <options>zoom</options>
+        <shade_type>solid</shade_type>
+        <pcolor>#3071AE</pcolor>
+        <scolor>#000000</scolor>
+      </wallpaper>
+    </wallpapers>'';
+};
+in {
+  inherit home sys;
 }

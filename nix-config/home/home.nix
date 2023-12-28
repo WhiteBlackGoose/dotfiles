@@ -260,24 +260,6 @@ rec {
       '';
   };
 
-  home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
-    let
-      wp = import ../wallpapers.nix pkgs;
-    in
-  ''<?xml version="1.0"?>
-    <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
-    <wallpapers>
-      <wallpaper deleted="false">
-        <name>My Background</name>
-        <filename>${wp.abstract-paint-2-light}</filename>
-        <filename-dark>${wp.abstract-paint-dark}</filename-dark>
-        <options>zoom</options>
-        <shade_type>solid</shade_type>
-        <pcolor>#3071AE</pcolor>
-        <scolor>#000000</scolor>
-      </wallpaper>
-    </wallpapers>'';
-  
   # Gallery: https://www.opendesktop.org/browse?cat=107
   # Nice ones:
   # White/Green: https://github.com/yeyushengfan258/ArcAurora-Cursors

@@ -49,9 +49,9 @@
         ./nix-config/syncthing.nix
 
         # WMs
-        # (import ./nix-config/i3.nix { pkgs-goose = nixpkgs; })
-        # (import ./nix-config/hyprland.nix inputs system)
-        (import ./nix-config/gnome.nix)
+        (import ./nix-config/desktops/i3.nix { pkgs-goose = nixpkgs; })
+        (import ./nix-config/desktops/hyprland.nix inputs system)
+        (import ./nix-config/desktops/gnome.nix).sys
 
         ./nix-config/docker.nix
 
@@ -63,6 +63,7 @@
             ./nix-config/home/home.nix
             ./nix-config/home/ocr.nix
             ./nix-config/home/org.nix
+            (import ./nix-config/desktops/gnome.nix).home
           ];
           home-manager.users.goose.ocr = (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system})
             .wayland;
