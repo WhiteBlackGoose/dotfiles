@@ -18,7 +18,8 @@
     ocr4nix.url = "git+https://codeberg.org/WhiteBlackGoose/ocr4nix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, ... }: rec {
+    nixosConfigurations."zenbook-ux3402z-nixos" = nixosConfigurations.wbg-pc;
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs.sw = {
@@ -30,6 +31,7 @@
         gpt4all = gpt4all.packages.${system};
         stablediffusion = stablediffusion.packages.${system};
         ataraxiasjel = ataraxiasjel.packages.${system};
+        inherit ocr4nix;
       };
       modules = [
         { 
@@ -47,13 +49,12 @@
         ./nix-config/users.nix
         ./nix-config/env-variables.nix
         ./nix-config/syncthing.nix
+        ./nix-config/docker.nix
 
         # WMs
-        (import ./nix-config/desktops/i3.nix { pkgs-goose = nixpkgs; })
-        (import ./nix-config/desktops/hyprland.nix inputs system)
+        # ((import ./nix-config/desktops/i3.nix).sys system { pkgs-goose = nixpkgs; })
+        # ((import ./nix-config/desktops/hyprland.nix).sys inputs system)
         (import ./nix-config/desktops/gnome.nix).sys
-
-        ./nix-config/docker.nix
 
         home-manager.nixosModules.home-manager
         {
@@ -63,10 +64,10 @@
             ./nix-config/home/home.nix
             ./nix-config/home/ocr.nix
             ./nix-config/home/org.nix
+            # ((import ./nix-config/desktops/i3.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
+            # ((import ./nix-config/desktops/hyprland.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
             (import ./nix-config/desktops/gnome.nix).home
           ];
-          home-manager.users.goose.ocr = (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system})
-            .wayland;
         }
       ];
     };

@@ -100,10 +100,6 @@
   services.tlp.enable = true;
   services.power-profiles-daemon.enable = false;
 
-  # If apps take a long time to start up
-  # https://github.com/swaywm/sway/issues/5732
-  xdg.portal.enable = true;
-  # for portals see the WM-relevant settings
 
   # services.xdg-desktop-portal-gnome.enable = true;
   # services.xdg-desktop-portal-gtk.enable = true;

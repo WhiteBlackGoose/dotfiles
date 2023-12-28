@@ -1,4 +1,5 @@
-{ nixpkgs, hyprland-input, ataraxiasjel, ... }: system:
+let 
+sys = { nixpkgs, hyprland-input, ataraxiasjel, ... }: system:
 {
   programs.hyprland.package = hyprland-input.packages.${system}.hyprland;
   programs.hyprland.enable = true;
@@ -27,7 +28,7 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     ataraxiasjel.packages.${system}.waydroid-script
     swaylock
   ] ++ (let
-      wp = (import ./wallpapers.nix nixpkgs.legacyPackages.${system});
+      wp = (import ../wallpapers.nix nixpkgs.legacyPackages.${system});
       in
     [
       (writeScriptBin "hyprpaper-run" "
@@ -74,4 +75,11 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     auth include login
   '';
   };
+};
+home = ocr: {
+  ocr = ocr.wayland;
+};
+in
+{
+  inherit sys home;
 }

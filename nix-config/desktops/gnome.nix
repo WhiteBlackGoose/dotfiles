@@ -1,7 +1,5 @@
-inputs@{ pkgs, ... }:
-
 let
-sys =
+sys = inputs@{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     xclip
@@ -68,7 +66,9 @@ sys =
     # CLUTTER_SHOW_FPS="1";
   };
 };
-home = {
+
+home = inputs@{ pkgs, ... }:
+{
   home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
     let
       wp = import ../wallpapers.nix pkgs;
@@ -87,6 +87,7 @@ home = {
       </wallpaper>
     </wallpapers>'';
 };
+
 in {
   inherit home sys;
 }
