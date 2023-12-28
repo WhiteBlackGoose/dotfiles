@@ -28,7 +28,7 @@
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
     feh
     fzf
-    kdeconnect
+    plasma5Packages.kdeconnect-kde
     lm_sensors
     lsd
     openvpn
@@ -41,7 +41,7 @@
     texlive.combined.scheme-full
     texlive.bin.pygmentex
     tlp
-    tor-browser-bundle-bin
+    tor-browser
     translate-shell
     unzip
     upower

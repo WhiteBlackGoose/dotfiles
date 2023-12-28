@@ -34,6 +34,7 @@
   # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
   hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
 
   # bluetooth
@@ -70,8 +71,8 @@
   fonts.packages = with pkgs; [
     nerdfonts
     noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
     iosevka
   ];
 

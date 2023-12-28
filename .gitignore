@@ -105,3 +105,8 @@ app-config/lapce-nightly
 app-config/micro
 app-config/Code
 app-config/VSCodium
+app-config/totem
+app-config/nautilus
+app-config/kitty/kitty.conf.bak
+app-config/weechat
+app-config/yelp

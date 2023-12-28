@@ -269,8 +269,8 @@ rec {
     <wallpapers>
       <wallpaper deleted="false">
         <name>My Background</name>
-        <filename>${wp.fedora-37-light}</filename>
-        <filename-dark>${wp.fedora-37-dark}</filename-dark>
+        <filename>${wp.abstract-paint-2-light}</filename>
+        <filename-dark>${wp.abstract-paint-dark}</filename-dark>
         <options>zoom</options>
         <shade_type>solid</shade_type>
         <pcolor>#3071AE</pcolor>
@@ -284,25 +284,33 @@ rec {
   # Bibata regular: https://www.opendesktop.org/p/1914825
   # Fuchsia pink: https://www.opendesktop.org/p/1544830
   # Fuchsia pop: https://www.opendesktop.org/p/1641968
-  # home.pointerCursor = 
-  #   let 
-  #     getFrom = url: hash: name: {
-  #         gtk.enable = true;
-  #         x11.enable = true;
-  #         name = name;
-  #         size = 48;
-  #         package = 
-  #           pkgs.runCommand "moveUp" {} ''
-  #             mkdir -p $out/share/icons
-  #             ln -s ${pkgs.fetchzip {
-  #               url = url;
-  #               hash = hash;
-  #             }} $out/share/icons/${name}
-  #         '';
-  #       };
-  #   in
-  #     getFrom 
-  #       "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
-  #       "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
-  #       "Fuchsia-Pop"; 
+  home.pointerCursor = 
+    let 
+      getFrom = url: hash: name: {
+          gtk.enable = true;
+          x11.enable = true;
+          name = name;
+          # size = 48;
+          package = 
+            pkgs.runCommand "moveUp" {} ''
+              mkdir -p $out/share/icons
+              ln -s ${pkgs.fetchzip {
+                url = url;
+                hash = hash;
+              }} $out/share/icons/${name}
+          '';
+        };
+    in
+      getFrom 
+        "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.4/Bibata-Modern-Classic.tar.xz"
+        "sha256-YEH6nA8A6KWuGQ6MPBCIEc4iTyllKwp/OLubD3m06Js="
+        "Bibata-Modern-Classic";
+
+        # "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.4/Bibata-Modern-Ice.tar.xz"
+        # "sha256-1U/HoGO/FG/EI6kUqf9sXVL8rfLIsopQLBbDVyxIuX4="
+        # "Bibata-Modern-Ice";
+
+        # "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
+        # "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
+        # "Fuchsia-Pop"; 
 }

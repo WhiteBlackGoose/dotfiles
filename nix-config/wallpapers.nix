@@ -38,4 +38,17 @@ pkgs: {
     url =  "https://images.pling.com/img/00/00/37/26/92/1192815/95bc75a862100788d62648eafa574290423d.jpg";
     sha256 = "sha256-8gH/geoD2D+HRAAzqvFxUjaKEEvXiqN4TYQkJycr5wE=";
   };
+
+  # https://www.freepik.com/free-photo/abstract-flames-exploding-multi-colored-ink-paint-generated-by-ai_41218607.htm
+  abstract-paint-dark = ./wallpapers/bg-abstract-flames.jpg;
+
+  abstract-paint-light = pkgs.fetchurl {
+    url = "https://img.freepik.com/free-photo/vibrant-yellow-blue-waves-showcase-modern-creativity-generated-by-ai_188544-9593.jpg?w=2000&t=st=1703558336~exp=1703558936~hmac=0ec5718533cf30954c86c38f6d257ca849b6c6b69a94e2c9304df66982c0f88b";
+    sha256 = "sha256-bu7ytiK6qWvEa9nRp3njO57HXk1L2replkGBCXOiMGc=";
+  };
+
+  abstract-paint-2-light = pkgs.fetchurl {
+    url = "https://img.freepik.com/free-photo/abstract-paint-background-with-multi-colored-watercolor-painting-generated-by-ai_188544-15558.jpg?w=2000&t=st=1703560517~exp=1703561117~hmac=d5f7993bfae947965889a0525f9d9c5f729be42176ee06d53e71c9bb2e9330e5";
+    sha256 = "sha256-HmUxM4lmWotopfCWkH63996fhp7u6RbzNTzWrj2rKGs=";
+  };
 }

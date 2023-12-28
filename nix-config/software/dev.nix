@@ -6,7 +6,7 @@
       flake8
       jedi-language-server
       jupyter-client
-      jupyter_console
+      jupyter-console
       jupyterlab
       ipython
       scikit-learn
@@ -26,7 +26,7 @@
       yfinance
       # catboost
       debugpy
-      pytorch
+      torch
       keras
       opencv4
     ]))
@@ -38,7 +38,7 @@
     clang
     clang-tools
     clangStdenv
-    sumneko-lua-language-server
+    lua-language-server
 
     xxd
   ];
