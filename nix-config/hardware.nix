@@ -98,6 +98,7 @@ rec {
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
     settings = {
@@ -118,30 +119,30 @@ rec {
     };
   };
   hardware.i2c.enable = true;
-  systemd.services.asus-touchpad-numpad = {
-    description = "Activate Numpad inside the touchpad with top right corner switch";
-    documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
-    path = [ pkgs.i2c-tools ];
-    script = ''
-      cd ${pkgs.fetchFromGitHub {
-        owner = "mohamed-badaoui";
-        repo = "asus-touchpad-numpad-driver";
-        # These needs to be updated from time to time
-        rev = "a2bada610ebb3fc002fceb53ddf93bc799241867";
-        sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
-      }}
-      # In the last argument here you choose your layout.
-      ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
-    '';
-    # Probably needed because it fails on boot seemingly because the driver
-    # is not ready yet. Alternativly, you can use `sleep 3` or similar in the
-    # `script`.
-    serviceConfig = {
-      RestartSec = "1s";
-      Restart = "on-failure";
-    };
-    wantedBy = [ "multi-user.target" ];
-  };
+  # systemd.services.asus-touchpad-numpad = {
+  #   description = "Activate Numpad inside the touchpad with top right corner switch";
+  #   documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
+  #   path = [ pkgs.i2c-tools ];
+  #   script = ''
+  #     cd ${pkgs.fetchFromGitHub {
+  #       owner = "mohamed-badaoui";
+  #       repo = "asus-touchpad-numpad-driver";
+  #       # These needs to be updated from time to time
+  #       rev = "a2bada610ebb3fc002fceb53ddf93bc799241867";
+  #       sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
+  #     }}
+  #     # In the last argument here you choose your layout.
+  #     ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
+  #   '';
+  #   # Probably needed because it fails on boot seemingly because the driver
+  #   # is not ready yet. Alternativly, you can use `sleep 3` or similar in the
+  #   # `script`.
+  #   serviceConfig = {
+  #     RestartSec = "1s";
+  #     Restart = "on-failure";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  # };
   hardware.sane.enable = true;
 
   networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];

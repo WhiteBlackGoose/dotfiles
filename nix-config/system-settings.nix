@@ -97,10 +97,6 @@
   # pinentry-program /run/current-system/sw/bin/pinentry
   # # https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/7
 
-  services.tlp.enable = true;
-  services.power-profiles-daemon.enable = false;
-
-
   # services.xdg-desktop-portal-gnome.enable = true;
   # services.xdg-desktop-portal-gtk.enable = true;
   services.avahi.enable = true;
