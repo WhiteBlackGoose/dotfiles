@@ -1,5 +1,6 @@
 -- vim.o.guifont = "FiraCode Nerd Font:h9"
 -- vim.o.guifont = "DejaVu Sans:h9"
+-- RUN :set guifont=* to select
 vim.o.guifont = "FantasqueSansM Nerd Font:h11"
 -- vim.o.guifont = "DejaVu Sans Mono:h9"
 vim.cmd[[set mouse=nv]]
@@ -10,6 +11,13 @@ vim.g.neovide_scroll_animation_length = 0.2
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.opt.showmode = false
 
+vim.api.nvim_create_autocmd(
+    { "FileType" }, {
+        pattern = ".*comic.*",
+        callback = function ()
+            vim.o.guifont = "ComicShannsMono Nerd Font"
+        end
+    })
 
 vim.o.winblend = 30
 vim.o.pumblend = 30

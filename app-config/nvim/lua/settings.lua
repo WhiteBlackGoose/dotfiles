@@ -8,6 +8,8 @@ if vim.g.use_ide() then
     opt.relativenumber = true
 end
 
+opt.title = true
+
 if vim.g.use_simple() then
 end
 

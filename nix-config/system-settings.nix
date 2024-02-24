@@ -114,6 +114,23 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
 
+  environment.systemPackages = [
+    (pkgs.writeScriptBin "waydroid-size-vertical" ''
+      waydroid prop set persist.waydroid.height 1600
+      waydroid prop set persist.waydroid.width 1200
+      sudo systemctl restart waydroid-container.service
+      echo 'restarted'
+      waydroid show-full-ui & disown
+    '')
+    (pkgs.writeScriptBin "waydroid-size-full" ''
+      waydroid prop set persist.waydroid.height ${builtins.toString (1800-64)}
+      waydroid prop set persist.waydroid.width ""
+      sudo systemctl restart waydroid-container.service
+      echo 'restarted'
+      waydroid show-full-ui & disown
+    '')
+  ];
+
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
   networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 6379 ];

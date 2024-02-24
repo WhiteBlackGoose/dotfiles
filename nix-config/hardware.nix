@@ -143,6 +143,24 @@ rec {
   #   };
   #   wantedBy = [ "multi-user.target" ];
   # };
+
+  services.udev.extraRules = ''
+# For Basler
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2676", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For Hikvision
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2bdf", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For The Imaging Source
+SUBSYSTEM=="usb", ATTRS{idVendor}=="199e", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For Daheng Imaging
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2ba2", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For Point Grey
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1e10", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For Dahua Technology
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2e03", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+# For IDS
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1409", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+  '';
+
   hardware.sane.enable = true;
 
   networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];

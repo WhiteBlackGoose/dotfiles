@@ -108,6 +108,14 @@ rec {
       genericName = "Libre & Privacy focused profile";
       exec = "firefox -P libre %u";
     };
+    neovide = {
+      name = "neovide";
+      exec = "${pkgs.neovide}/bin/neovide";
+      icon = pkgs.fetchurl {
+        url = "https://github.com/neovide/neovide/blob/main/website/docs/assets/neovide-128x128.png?raw=true";
+        sha256 = "sha256-pVF4G/S743UByC0VbeoozYGgBgrv4P5I4ZsIeg1L4F0=";
+      };
+    };
     file = {
       name = "Open file";
       exec = 

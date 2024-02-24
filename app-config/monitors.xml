@@ -78,4 +78,33 @@
       </monitorspec>
     </disabled>
   </configuration>
+  <configuration>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>1</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-1</connector>
+          <vendor>SAM</vendor>
+          <product>SAMSUNG</product>
+          <serial>0x01000e00</serial>
+        </monitorspec>
+        <mode>
+          <width>3840</width>
+          <height>2160</height>
+          <rate>60.000</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+    <disabled>
+      <monitorspec>
+        <connector>eDP-1</connector>
+        <vendor>SDC</vendor>
+        <product>0x4171</product>
+        <serial>0x00000000</serial>
+      </monitorspec>
+    </disabled>
+  </configuration>
 </monitors>
