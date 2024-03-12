@@ -53,8 +53,8 @@
 
         # WMs
         # ((import ./nix-config/desktops/i3.nix).sys system { pkgs-goose = nixpkgs; })
-        ((import ./nix-config/desktops/hyprland.nix).sys inputs system)
-        # (import ./nix-config/desktops/gnome.nix).sys
+        # ((import ./nix-config/desktops/hyprland.nix).sys inputs system)
+        (import ./nix-config/desktops/gnome.nix).sys
 
         home-manager.nixosModules.home-manager
         {
@@ -65,8 +65,8 @@
             ./nix-config/home/ocr.nix
             ./nix-config/home/org.nix
             # ((import ./nix-config/desktops/i3.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
-            ((import ./nix-config/desktops/hyprland.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
-            # (import ./nix-config/desktops/gnome.nix).home
+            # ((import ./nix-config/desktops/hyprland.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
+            (import ./nix-config/desktops/gnome.nix).home
           ];
         }
       ];
