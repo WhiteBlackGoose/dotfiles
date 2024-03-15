@@ -68,7 +68,7 @@ rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "eleme
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
   ];
-  services.xserver.xkbOptions = "ctrl:swapcaps";
+  services.xserver.xkb.options = "ctrl:swapcaps";
   console.useXkbConfig = true;
   security.pam.services.swaylock = {
     text = ''
