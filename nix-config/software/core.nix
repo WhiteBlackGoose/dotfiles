@@ -15,8 +15,6 @@
     bluez-tools
     cifs-utils
     gnupg
-    pinentry
-    pinentry-gnome
     wget
     # to generate SSH keys:
     # ssh-keydgen --as seedphrase -t ed25519 -c 256 -a 100 -at 3 -am 16384 -ap 4 -f ~/.ssh/id_rsa

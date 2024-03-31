@@ -6,6 +6,7 @@ sys = inputs@{ pkgs, ... }:
     wl-clipboard
     gnome.gnome-tweaks
     vulkan-validation-layers
+    pinentry-gnome3
   ];  
 
 

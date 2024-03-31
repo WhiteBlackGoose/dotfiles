@@ -8,7 +8,6 @@
     in  (dtools.combineTools dotnet-sdk_6 [ 
         dtools.tools.angourimath-terminal 
       ]))
-    deepin.deepin-camera
     litemdview
     vlc
     gthumb
