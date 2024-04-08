@@ -6,7 +6,7 @@ sys = { nixpkgs, hyprland-input, ataraxiasjel, ... }: system:
   environment.systemPackages = with nixpkgs.legacyPackages.${system}; [
     wl-clipboard
     waybar
-    rofi # wofi works like shit
+    rofi-wayland # wofi works like shit
     (writeScriptBin "rofi-run" ''
 curr=$(/home/goose/.config/global_scripts/get-current-theme.sh)
 if [ "$curr" = "prefer-light" ]; then
@@ -15,12 +15,13 @@ else
     theme_arg="-theme Arc-Dark"
 fi
 
-rofi -dpi 192 -modi drun,run -show drun -show-icons $theme_arg -theme-str "element-icon { size: 2.65ch ; }"
+rofi -dpi 96 -modi drun,run -show drun -show-icons $theme_arg -theme-str "element-icon { size: 2.65ch ; }"
     '')
     hyprpaper
     swaybg
     (writeScriptBin "ci" ''wl-copy "$@"'')
     (writeScriptBin "co" ''wl-paste "$@"'')
+    pinentry-gnome3
     
     grim
     slurp
