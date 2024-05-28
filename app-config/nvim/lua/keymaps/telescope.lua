@@ -20,6 +20,7 @@ add_tele('ref', 'lsp_references')
 add_tele('sy',  'lsp_workspace_symbols')
 add_tele('zz',  'spell_suggest')
 add_tele('tk',  'keymaps')
+add_tele('rg',  'live_grep')
 
 add_tele_ext('cof', "advanced_git_search", "diff_commit_file")
 add_tele_ext('col', "advanced_git_search", "search_log_content")

@@ -26,14 +26,6 @@ require'nvim-treesitter.configs'.setup {
     -- https://github.com/p00f/nvim-ts-rainbow#installation-and-setup
   },
 
-  rainbow = {
-      enable = true,
-      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-      max_file_lines = nil, -- Do not enable for files with more than n lines, int
-      -- colors = {}, -- table of hex strings
-      -- termcolors = {} -- table of colour name strings
-  },
-
   autotag = {
     enable = true,
   },
@@ -45,7 +37,15 @@ require'nvim-treesitter.configs'.setup {
     persist_queries = false, -- Whether the query persists across vim sessions
     keybindings = {
     },
-  }
+  },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      node_incremental = "v",
+      node_decremental = "V",
+    },
+  },
 }
 
 vim.cmd[[
