@@ -16,7 +16,6 @@
       pandas
       pytest
       geopandas
-      pillow
       pynvim
       pyperclip
       scipy
@@ -26,9 +25,6 @@
       yfinance
       # catboost
       debugpy
-      torch
-      keras
-      opencv4
     ]))
     git
     lazygit
