@@ -42,6 +42,8 @@ pkgs: {
   # https://www.freepik.com/free-photo/abstract-flames-exploding-multi-colored-ink-paint-generated-by-ai_41218607.htm
   abstract-paint-dark = ./wallpapers/bg-abstract-flames.jpg;
 
+  wake-dark = ./wallpapers/wake-cropped.jpg;
+
   abstract-paint-light = pkgs.fetchurl {
     url = "https://img.freepik.com/free-photo/vibrant-yellow-blue-waves-showcase-modern-creativity-generated-by-ai_188544-9593.jpg?w=2000&t=st=1703558336~exp=1703558936~hmac=0ec5718533cf30954c86c38f6d257ca849b6c6b69a94e2c9304df66982c0f88b";
     sha256 = "sha256-bu7ytiK6qWvEa9nRp3njO57HXk1L2replkGBCXOiMGc=";

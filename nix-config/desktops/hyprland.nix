@@ -40,8 +40,8 @@ rofi -dpi 96 -modi drun,run -show drun -show-icons $theme_arg -theme-str "elemen
       ")
       (writeScriptBin "hyprpaper-run-light" "
       hyprpaper --config ${writeText "hyprpaper.conf" "
-        preload = ${wp.hexes}
-        wallpaper = ,${wp.hexes}
+        preload = ${wp.wake-dark}
+        wallpaper = ,${wp.wake-dark}
       "}
       ")
       (writeScriptBin "swaybg-run-light" "swaybg -i ${wp.nixos-light}")
