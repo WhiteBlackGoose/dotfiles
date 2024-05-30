@@ -5,12 +5,12 @@ rec {
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.loader.grub = {
+  boot.loader.systemd-boot = {
     enable = true;
-    efiSupport = true;
-    useOSProber = true;
-    device = "nodev";
-    efiInstallAsRemovable = true;
+    # efiSupport = true;
+    # useOSProber = true;
+    # device = "nodev";
+    # efiInstallAsRemovable = true;
   };
 
   boot.loader.efi.canTouchEfiVariables = false;
@@ -18,12 +18,12 @@ rec {
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ 
     # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
   ];
-  boot.kernelParams = [ "i915.force_probe=46a8" ];
+  # boot.kernelParams = [ "i915.force_probe=46a8" ];
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -46,26 +46,34 @@ rec {
   # #   pkgs.linux-libre.override { linux = my-kernel; });
   # pkgs.linuxPackagesFor my-kernel;
 
-  boot.initrd.luks.devices.root.device = "/dev/disk/by-uuid/6157f167-254e-43d2-934a-9af12e015706";
-
-  fileSystems = 
-    let 
-      bt = d: {
-        device = "/dev/disk/by-uuid/ea00659b-c3ec-4972-be77-9193baf408be";
-        fsType = "btrfs";
-        options = [ "subvol=@${d}" "compress=zstd" ];
-      }; in {
-
-    "/" = bt "";
-    "/home" = bt "home";
-    "/nix" = bt "nix";
-    "/var" = bt "var";
-
-    "/boot" = {
-       device = "/dev/disk/by-uuid/A4A5-D3C9";
-       fsType = "vfat";
-    };
+  boot.initrd.luks.devices.root = {
+    device = "/dev/disk/by-uuid/7e836240-4ca8-4f26-8adf-ee509b96a0c4";
+    preLVM = true;
   };
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/0c2fae85-8684-4c1f-adf4-b401efa13138";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/0c2fae85-8684-4c1f-adf4-b401efa13138";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/0c2fae85-8684-4c1f-adf4-b401efa13138";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/0980-78F1";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
   swapDevices = [
     {
@@ -174,5 +182,5 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1409", MODE:="0666", TAG+="uaccess", TAG+="u
     '';
   };
 
-  networking.hostName = "zenbook-ux3402z-nixos"; # Define your hostname.
+  networking.hostName = "tuxedo-infinitypro14-nixos"; # Define your hostname.
 }
