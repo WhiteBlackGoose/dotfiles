@@ -23,7 +23,8 @@ rec {
   boot.extraModulePackages = [ 
     # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
   ];
-  # boot.kernelParams = [ "i915.force_probe=46a8" ];
+
+  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -78,7 +79,7 @@ rec {
   swapDevices = [
     {
       device = "/swap";
-      size = 32 * 1024;
+      size = 64 * 1024;
     }
   ];
 
@@ -87,6 +88,8 @@ rec {
   };
   hardware.opengl = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
       intel-vaapi-driver
@@ -94,6 +97,26 @@ rec {
       libvdpau-va-gl
     ];
   };
+
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    prime = {
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+	};
+  };
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = ["nvidia"];
+  services.thermald.enable = lib.mkDefault true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -108,7 +131,7 @@ rec {
 
   services.power-profiles-daemon.enable = false;
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       START_CHARGE_THRESH_BAT0=80;
       STOP_CHARGE_THRESH_BAT0=100;
