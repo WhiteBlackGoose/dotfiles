@@ -50,6 +50,7 @@
         ./nix-config/env-variables.nix
         ./nix-config/syncthing.nix
         ./nix-config/docker.nix
+        # ./nix-config/suspend-then-hibernate.nix
 
         # WMs
         # ((import ./nix-config/desktops/i3.nix).sys system { pkgs-goose = nixpkgs; })

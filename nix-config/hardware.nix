@@ -25,6 +25,10 @@ rec {
   ];
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+  # systemd.sleep.extraConfig = ''
+  #   HibernateDelaySec=30s
+  #   SuspendState=suspend2idle
+  # '';
   # boots with kernel panic (blinking caps lock), hangs there
   # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -79,7 +83,7 @@ rec {
   swapDevices = [
     {
       device = "/swap";
-      size = 64 * 1024;
+      size = 96 * 1024;
     }
   ];
 
@@ -116,6 +120,8 @@ rec {
   };
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
+  # Not load them lol
+  # services.xserver.videoDrivers = [];
   services.thermald.enable = lib.mkDefault true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -190,16 +196,27 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1e10", MODE:="0666", TAG+="uaccess", TAG+="u
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2e03", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
 # For IDS
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1409", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
+SUBSYSTEM=="usb", ATTR{bDeviceClass}=="ef", ATTR{idVendor}=="1409", MODE="0777"
   '';
 
   hardware.sane.enable = true;
 
-  networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  # networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "true";
+  #   domains = [ "~." ];
+  #   fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  #   extraConfig = ''
+  #     DNSOverTLS=yes
+  #   '';
+  # };
+  networking.nameservers = [ "8.8.8.8" ];
   services.resolved = {
     enable = true;
-    dnssec = "true";
+    dnssec = "false";
     domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    fallbackDns = [ "8.8.8.8" "1.1.1.1" ];
     extraConfig = ''
       DNSOverTLS=yes
     '';
