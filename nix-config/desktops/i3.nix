@@ -20,10 +20,10 @@ sys = system: { pkgs-goose }: inputs@{ config, pkgs, ... }:
   # xdg.portal.enable = true;
   # for portals see the WM-relevant settings
 
+  services.libinput.enable = true;
   services.xserver = {
     dpi = 192;
     enable = true;
-    libinput.enable = true;
 
     desktopManager = {
       xterm.enable = false;

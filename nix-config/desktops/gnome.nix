@@ -12,25 +12,27 @@ sys = inputs@{ pkgs, ... }:
 
   
   nixpkgs.config.allowAliases = false;
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     gnome = prev.gnome.overrideScope' (gnomeFinal: gnomePrev: {
-  #       mutter = gnomePrev.mutter.overrideAttrs ( old: {
-  #         src = pkgs.fetchgit {
-  #           url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-  #           # GNOME 45: triple-buffering-v4-45
-  #           rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
-  #           sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
-  #         };
-  #       } );
-  #     });
-  #   })
-  # ];
+  nixpkgs.overlays = [
+    # GNOME 46: triple-buffering-v4-46
+    (final: prev: {
+      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+        mutter = gnomePrev.mutter.overrideAttrs (old: {
+          src = pkgs.fetchFromGitLab  {
+            domain = "gitlab.gnome.org";
+            owner = "vanvugt";
+            repo = "mutter";
+            rev = "triple-buffering-v4-46";
+            hash = "sha256-fkPjB/5DPBX06t7yj0Rb3UEuu5b9mu3aS+jhH18+lpI=";
+          };
+        });
+      });
+    })
+  ];
 
+  services.libinput.enable = true;
   services.xserver = {
     dpi = 192;
     enable = true;
-    libinput.enable = true;
 
     desktopManager = {
       xterm.enable = false;
@@ -79,7 +81,7 @@ home = inputs@{ pkgs, ... }:
     <wallpapers>
       <wallpaper deleted="false">
         <name>My Background</name>
-        <filename>${wp.abstract-paint-2-light}</filename>
+        <filename>${wp.abstract-paint-dark}</filename>
         <filename-dark>${wp.abstract-paint-dark}</filename-dark>
         <options>zoom</options>
         <shade_type>solid</shade_type>
