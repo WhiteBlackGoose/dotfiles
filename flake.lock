@@ -541,11 +541,11 @@
     },
     "ocr4nix": {
       "locked": {
-        "lastModified": 1697632480,
-        "narHash": "sha256-QPzvpTRPeiiSGw8rx5Bv4VQMCdL+BYHfPVpgh0RVLqk=",
+        "lastModified": 1722195751,
+        "narHash": "sha256-j3CJIij4WfxzdVW3/LGOB4Ngw+0h27nG41m/Jg6T3+U=",
         "ref": "refs/heads/master",
-        "rev": "d99fe4156ce1d6c49cc7583151759eb4144ad9ff",
-        "revCount": 3,
+        "rev": "359a0004cadf20cb1a016318c0fbcc8bcbabc2e6",
+        "revCount": 6,
         "type": "git",
         "url": "https://codeberg.org/WhiteBlackGoose/ocr4nix"
       },

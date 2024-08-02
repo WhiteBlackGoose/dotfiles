@@ -38,7 +38,7 @@ rec {
         "ss" = "status -s";
         "a" = "add";
         "c" = "commit -m";
-        "logd" = ''log --date=short --pretty=format:"%m %C(yellow)%h %Creset%C(cyan)%C(bold)%ad%Creset %Cred%an%Creset  %C(green)%Creset %s"'';
+        "logd" = ''log --date=short --pretty=format:"%m %C(yellow)%h %Creset%C(cyan)%C(bold)%ad%Creset %C(green)%(decorate)%Creset %Cred%an%Creset   %s"'';
       };
     };
     fish = {

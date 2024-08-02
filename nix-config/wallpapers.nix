@@ -42,12 +42,12 @@ pkgs: {
   # https://www.freepik.com/free-photo/abstract-flames-exploding-multi-colored-ink-paint-generated-by-ai_41218607.htm
   abstract-paint-dark = ./wallpapers/bg-abstract-flames.jpg;
 
+  # https://www.freepik.com/free-photo/blue-cyan-holi-paint-color-powder-festival-explosion-ai-generated-image_41111914.htm#fromView=search&page=1&position=3&uuid=39958b19-a102-4f70-84a4-7ffe74a1673e
+  abstract-paint-light = ./wallpapers/bg-abstract-flames-light.jpg;
+
   wake-dark = ./wallpapers/wake-cropped.jpg;
 
-  abstract-paint-light = pkgs.fetchurl {
-    url = "https://img.freepik.com/free-photo/vibrant-yellow-blue-waves-showcase-modern-creativity-generated-by-ai_188544-9593.jpg?w=2000&t=st=1703558336~exp=1703558936~hmac=0ec5718533cf30954c86c38f6d257ca849b6c6b69a94e2c9304df66982c0f88b";
-    sha256 = "sha256-bu7ytiK6qWvEa9nRp3njO57HXk1L2replkGBCXOiMGc=";
-  };
+  splashes-light = ./wallpapers/splashes-light.jpg;
 
   abstract-paint-2-light = pkgs.fetchurl {
     url = "https://img.freepik.com/free-photo/abstract-paint-background-with-multi-colored-watercolor-painting-generated-by-ai_188544-15558.jpg?w=2000&t=st=1703560517~exp=1703561117~hmac=d5f7993bfae947965889a0525f9d9c5f729be42176ee06d53e71c9bb2e9330e5";

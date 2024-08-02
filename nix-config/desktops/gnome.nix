@@ -70,8 +70,9 @@ sys = inputs@{ pkgs, ... }:
   };
 };
 
-home = inputs@{ pkgs, ... }:
+home = ocr: inputs@{ pkgs, ... }:
 {
+  ocr = ocr.gnome;
   home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
     let
       wp = import ../wallpapers.nix pkgs;

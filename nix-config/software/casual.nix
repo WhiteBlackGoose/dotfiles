@@ -1,5 +1,7 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    powertop
+    rcp
     libreoffice
     firefox
     kitty
@@ -75,12 +77,12 @@
     sw.amcli.default
     # (writeScriptBin "chat" "QT_SCALE_FACTOR=1.0 ${sw.gpt4all.gpt4all-chat}/bin/chat $@")
     remmina
-    # sw.stablediffusion.invokeai-amd
+    # sw.stablediffusion.invokeai-nvidia
     freetube
     ffmpeg
     foliate
     airshipper
-    gnome.gnome-system-monitor
+    resources
     nix-index
     timer
     tmux

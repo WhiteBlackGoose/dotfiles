@@ -10,7 +10,7 @@
     ")
     (writeScriptBin "caps2ctrl"     "${pkgs.xorg.setxkbmap}/bin/setxkbmap -option caps:ctrl_modifier")
     (writeScriptBin "glog-bump" ''sed 's/>\(.*\)/    >\1/' -'')
-    (writeScriptBin "nvidia-bitch" "
+    (writeScriptBin "fuck-nvidia" "
       sudo modprobe --remove nvidia_uvm
       sudo modprobe nvidia-uvm
     ")

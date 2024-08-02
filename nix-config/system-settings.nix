@@ -131,7 +131,7 @@
   ];
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 7814 27017 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 6379 ] ++ [ 7000 4001 3000 ] ++ [ 27017 ];
   networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];

@@ -9,23 +9,18 @@
       jupyter-console
       jupyterlab
       ipython
-      scikit-learn
       notebook
       pkgs.neovim
       numpy
       pandas
       pytest
-      geopandas
       pynvim
       pyperclip
-      scipy
-      seaborn
-      statsmodels
       tqdm
-      yfinance
-      # catboost
       debugpy
+      pyright
     ]))
+    pyright
     git
     lazygit
 

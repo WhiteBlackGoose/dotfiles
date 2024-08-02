@@ -67,7 +67,7 @@
             ./nix-config/home/org.nix
             # ((import ./nix-config/desktops/i3.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
             # ((import ./nix-config/desktops/hyprland.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
-            (import ./nix-config/desktops/gnome.nix).home
+            ((import ./nix-config/desktops/gnome.nix).home (ocr4nix.from-pkgs nixpkgs.legacyPackages.${system}))
           ];
         }
       ];

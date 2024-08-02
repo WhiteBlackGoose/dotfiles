@@ -2,7 +2,8 @@
 
 rec {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.loader.systemd-boot = {
@@ -19,10 +20,18 @@ rec {
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "tuxedo_keyboard"
+    "tuxedo_compatibility_check"
+    "tuxedo_io"
+  ];
   boot.extraModulePackages = [ 
     # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
+    (config.boot.kernelPackages.callPackage ./tuxedo.nix { })
   ];
+
+  # hardware.tuxedo-drivers.enable = true;
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];
   # systemd.sleep.extraConfig = ''
@@ -115,6 +124,7 @@ rec {
       };
 	};
   };
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   # Not load them lol
@@ -132,7 +142,7 @@ rec {
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
   services.tlp = {
     enable = false;
     settings = {
@@ -153,30 +163,9 @@ rec {
     };
   };
   hardware.i2c.enable = true;
-  # systemd.services.asus-touchpad-numpad = {
-  #   description = "Activate Numpad inside the touchpad with top right corner switch";
-  #   documentation = ["https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver"];
-  #   path = [ pkgs.i2c-tools ];
-  #   script = ''
-  #     cd ${pkgs.fetchFromGitHub {
-  #       owner = "mohamed-badaoui";
-  #       repo = "asus-touchpad-numpad-driver";
-  #       # These needs to be updated from time to time
-  #       rev = "a2bada610ebb3fc002fceb53ddf93bc799241867";
-  #       sha256 = "sha256-qanPTmP2Sctq4ybiUFzIiADP2gZH8HhajBORUSIXb04=";
-  #     }}
-  #     # In the last argument here you choose your layout.
-  #     ${pkgs.python3.withPackages(ps: [ ps.libevdev ])}/bin/python asus_touchpad.py ux433fa
-  #   '';
-  #   # Probably needed because it fails on boot seemingly because the driver
-  #   # is not ready yet. Alternativly, you can use `sleep 3` or similar in the
-  #   # `script`.
-  #   serviceConfig = {
-  #     RestartSec = "1s";
-  #     Restart = "on-failure";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
+
+  hardware.tuxedo-rs.enable = true;
+  hardware.tuxedo-rs.tailor-gui.enable = true;
 
   services.udev.extraRules = ''
 # For Basler
@@ -208,14 +197,14 @@ SUBSYSTEM=="usb", ATTR{bDeviceClass}=="ef", ATTR{idVendor}=="1409", MODE="0777"
   #     DNSOverTLS=yes
   #   '';
   # };
-  networking.nameservers = [ "8.8.8.8" ];
+  # networking.nameservers = [ "8.8.8.8" ];
   services.resolved = {
     enable = true;
     dnssec = "false";
     domains = [ "~." ];
     fallbackDns = [ "8.8.8.8" "1.1.1.1" ];
     extraConfig = ''
-      DNSOverTLS=yes
+      DNSOverTLS=false
     '';
   };
 
