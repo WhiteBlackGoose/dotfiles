@@ -4,9 +4,9 @@ sys = inputs@{ pkgs, ... }:
   environment.systemPackages = with pkgs; [
     xclip
     wl-clipboard
-    gnome.gnome-tweaks
     vulkan-validation-layers
     pinentry-gnome3
+    gnome-network-displays
   ];  
 
 
@@ -56,8 +56,6 @@ sys = inputs@{ pkgs, ... }:
     gnome-tour
     gedit # text editor
   ]) ++ (with pkgs.gnome; [
-    epiphany # web browser
-    geary # email reader
     gnome-characters
     tali # poker game
     iagno # go game

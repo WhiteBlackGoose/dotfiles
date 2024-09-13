@@ -19,6 +19,7 @@
       tqdm
       debugpy
       pyright
+      matplotlib
     ]))
     pyright
     git

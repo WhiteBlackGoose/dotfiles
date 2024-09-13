@@ -1,8 +1,11 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    wireguard-tools wireguard-go
+    dnsutils
     powertop
     rcp
     libreoffice
+    librecad
     firefox
     kitty
     gimp
@@ -27,6 +30,7 @@
 
     ascii-image-converter
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
+    monero-gui
     feh
     fzf
     plasma5Packages.kdeconnect-kde

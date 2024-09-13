@@ -40,8 +40,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
 
   # Enable PulseAudio
   # services.pipewire.enable = false;
@@ -98,7 +96,12 @@
 
   # services.xdg-desktop-portal-gnome.enable = true;
   # services.xdg-desktop-portal-gtk.enable = true;
-  services.avahi.enable = false;
+  # services.avahi.enable = false;
+#  services.avahi = {
+#    enable = true;
+#    nssmdns4 = true;
+#    openFirewall = true;
+#  };
   # for a WiFi printer
   # services.avahi.openFirewall = true;
   # for an USB printer
@@ -129,6 +132,10 @@
       waydroid show-full-ui & disown
     '')
   ];
+
+  services.tailscale = {
+    enable = true;
+  };
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
   networking.firewall.enable = false;
