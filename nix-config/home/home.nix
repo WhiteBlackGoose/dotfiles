@@ -31,14 +31,32 @@ rec {
         status.submodulesummary = 1;
         push.recurseSubmodules = "check";
       };
-      aliases = {
+      aliases =
+        let
+          withColor = color: str: "%C(${color})${str}%Creset";
+          hash = "%h ";
+          date = "%ad ";
+          decor = "%(decorate) ";
+          auth = "%an ";
+        in
+      {
         "unstage" = "reset HEAD --";
         "rbi" = "rebase --interactive";
         "sa" = "status -s --ignored=traditional";
         "ss" = "status -s";
         "a" = "add";
         "c" = "commit -m";
-        "logd" = ''log --date=short --pretty=format:"%m %C(yellow)%h %Creset%C(cyan)%C(bold)%ad%Creset %C(green)%(decorate)%Creset %Cred%an%Creset   %s"'';
+        "logd" = ''log --date=short --pretty=format:"%m ''
+          + withColor "yellow" hash
+          + withColor "cyan" (withColor "bold" date)
+          + withColor "green" decor
+          + ''%s"'';
+        "logf" = ''log --date=short --pretty=format:"%m ''
+          + withColor "yellow" hash
+          + withColor "cyan" (withColor "bold" date)
+          + withColor "green" decor
+          + withColor "red" auth
+          + ''   %B"'';
       };
     };
     fish = {

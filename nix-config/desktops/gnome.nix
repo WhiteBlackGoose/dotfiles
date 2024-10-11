@@ -55,7 +55,8 @@ sys = inputs@{ pkgs, ... }:
     gnome-photos
     gnome-tour
     gedit # text editor
-  ]) ++ (with pkgs.gnome; [
+  ]) ++ (with pkgs.gnome; with pkgs; [
+    epiphany
     gnome-characters
     tali # poker game
     iagno # go game
