@@ -134,34 +134,30 @@
   ];
 
   services.tailscale = {
-    enable = true;
+    enable = false;
   };
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 7814 27017 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 1194 51820 6379 ] ++ [ 7000 4001 3000 ] ++ [ 27017 ];
-  networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-  networking.firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
-  # environment.systemPackages = [
-  #   pkgs.wireguard-tools
-  # ];
-  # networking.wireguard.interfaces = {
-  #   wg0 = {
-  #     ips = [ "10.13.13.2" ];
-  #     listenPort = 51820;
-  #     privateKeyFile = "/root/wireguard-keys-art/private";
-  #     peers = [
-  #       {
-  #         publicKey = lib.readFile "/root/wireguard-keys-art/public";
-  #         presharedKeyFile = "/root/wireguard-keys-art/preshared";
-  #         allowedIPs = [ "192.168.1.0/24" ];
-  #         endpoint = "artemlab.ru:35051";
-  #         persistentKeepalive = 25;
-  #       }
-  #     ];
-  #   };
-  # };
+  networking.firewall.enable = true;
+
+  networking.firewall.allowedTCPPorts =
+    [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 7814 27017 ]
+      ++ [ 7236 ]           # Miracast
+      ;
+  networking.firewall.allowedUDPPorts =
+    [ 22000 21027 1194 51820 6379 ]
+     ++ [ 7000 4001 3000 ]  # X-Ray
+     ++ [ 27017 ]
+     ++ [ 5353 1900 ]       # Miracast
+     ;
+  networking.firewall.allowedTCPPortRanges =
+    [
+      { from = 1714; to = 1764; }  # KDE Connect
+    ];
+  networking.firewall.allowedUDPPortRanges =
+    [
+      { from = 1714; to = 1764; }  # KDE Connect
+    ];
 
   programs.fish.enable = true;
 }

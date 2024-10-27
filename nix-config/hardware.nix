@@ -30,7 +30,7 @@ rec {
     # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
     (config.boot.kernelPackages.callPackage ./tuxedo.nix { })
   ];
-
+  hardware.nvidiaOptimus.disable = false;
   # hardware.tuxedo-drivers.enable = true;
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];

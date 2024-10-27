@@ -1,5 +1,6 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    termshark tcpdump
     wireguard-tools wireguard-go
     dnsutils
     powertop
@@ -8,6 +9,7 @@
     librecad
     firefox
     kitty
+    
     gimp
     (let dtools = sw.my-nix.dotnetTool pkgs;
     in  (dtools.combineTools dotnet-sdk_6 [ 
@@ -30,7 +32,6 @@
 
     ascii-image-converter
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
-    monero-gui
     feh
     fzf
     plasma5Packages.kdeconnect-kde
