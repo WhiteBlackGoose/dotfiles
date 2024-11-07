@@ -23,15 +23,16 @@ rec {
   boot.kernelModules = [
     "kvm-intel"
     "tuxedo_keyboard"
-    "tuxedo_compatibility_check"
-    "tuxedo_io"
+    # "tuxedo_compatibility_check"
+    # "tuxedo_io"
   ];
   boot.extraModulePackages = [ 
     # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
-    (config.boot.kernelPackages.callPackage ./tuxedo.nix { })
+    # (config.boot.kernelPackages.callPackage ./tuxedo.nix { })
+    # (config.boot.kernelPackages.callPackage ./tuxedo-new.nix { })
   ];
   hardware.nvidiaOptimus.disable = false;
-  # hardware.tuxedo-drivers.enable = true;
+  hardware.tuxedo-drivers.enable = true;
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];
   # systemd.sleep.extraConfig = ''
@@ -108,27 +109,27 @@ rec {
     ];
   };
 
-  # hardware.nvidia = {
-  #   package = config.boot.kernelPackages.nvidiaPackages.production;
-  #   modesetting.enable = true;
-  #   powerManagement.enable = false;
-  #   powerManagement.finegrained = false;
-  #   open = false;
-  #   nvidiaSettings = true;
-  #   prime = {
-  #     intelBusId = "PCI:0:2:0";
-  #     nvidiaBusId = "PCI:1:0:0";
-  #     offload = {
-  #       enable = true;
-  #       enableOffloadCmd = true;
-  #     };
-  #   };
-  # };
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    prime = {
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+    };
+  };
 
   # Load nvidia driver for Xorg and Wayland
-  # services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia"];
   # Not load them lol
-   services.xserver.videoDrivers = [];
+  # services.xserver.videoDrivers = [];
   services.thermald.enable = lib.mkDefault true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

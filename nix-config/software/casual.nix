@@ -91,6 +91,6 @@
     nix-index
     timer
     tmux
-    (writeScriptBin "factorio" "${steamPackages.steam-fhsenv-without-steam.run}/bin/steam-run /home/goose/factorio/factorio/bin/x64/factorio")
+    # (writeScriptBin "factorio" "${steamPackages.steam-fhsenv-without-steam.run}/bin/steam-run /home/goose/factorio/factorio/bin/x64/factorio")
   ];
 }
