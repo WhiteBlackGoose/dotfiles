@@ -51,17 +51,19 @@ sys = inputs@{ pkgs, ... }:
     };
   };
 
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = (with pkgs.gnome; with pkgs; [
     gnome-photos
     gnome-tour
     gedit # text editor
-  ]) ++ (with pkgs.gnome; with pkgs; [
     epiphany
     gnome-characters
     tali # poker game
     iagno # go game
     hitori # sudoku game
     atomix # puzzle game
+    gnome-console
+    geary
+    gnome-contacts
   ]);
 
   environment.variables = {

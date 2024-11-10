@@ -22,7 +22,7 @@ rec {
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [
     "kvm-intel"
-    "tuxedo_keyboard"
+    # "tuxedo_keyboard"
     # "tuxedo_compatibility_check"
     # "tuxedo_io"
   ];

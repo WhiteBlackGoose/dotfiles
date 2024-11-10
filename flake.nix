@@ -2,21 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs = {
-    #   type = "github";
-    #   owner = "NixOS";
-    #   repo = "nixpkgs";
-    #   ref = "master";
-    #   rev = "fa957fa9d827c2bf471acdf00c89806cec47926b";
-    # };
-    nixpkgs = {
-      type = "github";
-      owner = "Keksgesicht";
-      repo = "nixpkgs";
-      ref = "master";
-      rev = "8972df5e5ace61612feec3d88b8d768b041dc664";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     tri-input.url = "github:WhiteBlackGoose/tri";
