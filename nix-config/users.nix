@@ -11,5 +11,7 @@
     shell = "${pkgs.fish}/bin/fish";
     useDefaultShell = false;
   };
+
+  security.sudo.wheelNeedsPassword = false;
 }
 

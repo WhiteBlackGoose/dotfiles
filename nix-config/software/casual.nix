@@ -1,5 +1,6 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    monero-gui
     termshark tcpdump
     wireguard-tools wireguard-go
     dnsutils
@@ -9,6 +10,8 @@
     librecad
     firefox
     kitty
+
+    sw.nix-show.default
     
     gimp
     (let dtools = sw.my-nix.dotnetTool pkgs;

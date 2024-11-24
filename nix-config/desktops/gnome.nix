@@ -64,6 +64,16 @@ sys = inputs@{ pkgs, ... }:
     gnome-console
     geary
     gnome-contacts
+    gnome-connections
+    gnome-music
+    gedit
+    gnome-maps
+    gnome-calculator
+    file-roller
+    eog
+    evince
+    gnome-secrets
+    totem
   ]);
 
   environment.variables = {
@@ -72,25 +82,30 @@ sys = inputs@{ pkgs, ... }:
 };
 
 home = ocr: inputs@{ pkgs, ... }:
-{
-  ocr = ocr.gnome;
-  home.file."/home/goose/.local/share/gnome-background-properties/bg.xml".text = 
-    let
-      wp = import ../wallpapers.nix pkgs;
-    in
-  ''<?xml version="1.0"?>
+  let
+    wb-gen = light: dark: ''<?xml version="1.0"?>
     <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
     <wallpapers>
       <wallpaper deleted="false">
         <name>My Background</name>
-        <filename>${wp.abstract-paint-dark}</filename>
-        <filename-dark>${wp.abstract-paint-dark}</filename-dark>
+        <filename>${light}</filename>
+        <filename-dark>${dark}</filename-dark>
         <options>zoom</options>
         <shade_type>solid</shade_type>
         <pcolor>#3071AE</pcolor>
         <scolor>#000000</scolor>
       </wallpaper>
     </wallpapers>'';
+    wp = import ../wallpapers.nix pkgs;
+  in
+{
+  ocr = ocr.gnome;
+  home.file."/home/goose/.local/share/gnome-background-properties/bg-1.xml".text =
+    wb-gen wp.abstract-paint-dark wp.abstract-paint-dark;
+  home.file."/home/goose/.local/share/gnome-background-properties/bg-2.xml".text =
+    wb-gen wp.fedora-37-light wp.fedora-37-dark;
+  home.file."/home/goose/.local/share/gnome-background-properties/bg-3.xml".text =
+    wb-gen wp.abstract-paint-light wp.abstract-paint-dark;
 };
 
 in {

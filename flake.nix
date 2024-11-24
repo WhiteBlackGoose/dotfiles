@@ -16,9 +16,10 @@
     ataraxiasjel.url = "github:AtaraxiaSjel/nur/master";
     ataraxiasjel.inputs.nixpkgs.follows = "nixpkgs";
     ocr4nix.url = "git+https://codeberg.org/WhiteBlackGoose/ocr4nix";
+    nix-show.url = "github:WhiteBlackGoose/nix-show";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, ... }: rec {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, nix-show, ... }: rec {
     nixosConfigurations."zenbook-ux3402z-nixos" = nixosConfigurations.wbg-pc;
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
@@ -31,6 +32,7 @@
         gpt4all = gpt4all.packages.${system};
         stablediffusion = stablediffusion.packages.${system};
         ataraxiasjel = ataraxiasjel.packages.${system};
+        nix-show = nix-show.packages.${system};
         inherit ocr4nix;
       };
       modules = [
