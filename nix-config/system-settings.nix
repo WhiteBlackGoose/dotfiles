@@ -41,14 +41,6 @@
   services.blueman.enable = true;
 
 
-  # Enable PulseAudio
-  # services.pipewire.enable = false;
-  # hardware.pulseaudio.enable = true;
-  # hardware.pulseaudio.support32Bit = true;
-  # users.extraUsers.goose.extraGroups = [ "audio" ];
-  # nixpkgs.config.pulseaudio = true;
-  # hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
-
   # Enable Pipewire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -94,8 +86,6 @@
   # pinentry-program /run/current-system/sw/bin/pinentry
   # # https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/7
 
-  # services.xdg-desktop-portal-gnome.enable = true;
-  # services.xdg-desktop-portal-gtk.enable = true;
   # services.avahi.enable = false;
 #  services.avahi = {
 #    enable = true;

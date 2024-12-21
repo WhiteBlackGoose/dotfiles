@@ -8,10 +8,6 @@ rec {
 
   boot.loader.systemd-boot = {
     enable = true;
-    # efiSupport = true;
-    # useOSProber = true;
-    # device = "nodev";
-    # efiInstallAsRemovable = true;
   };
 
   boot.loader.efi.canTouchEfiVariables = false;
@@ -22,44 +18,12 @@ rec {
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [
     "kvm-intel"
-    # "tuxedo_keyboard"
-    # "tuxedo_compatibility_check"
-    # "tuxedo_io"
-  ];
-  boot.extraModulePackages = [ 
-    # import "/home/goose/prj/nixpkgs/nixpkgs/pkgs/os-specific/linux/als"
-    # (config.boot.kernelPackages.callPackage ./tuxedo.nix { })
-    # (config.boot.kernelPackages.callPackage ./tuxedo-new.nix { })
   ];
   hardware.nvidiaOptimus.disable = false;
   hardware.tuxedo-drivers.enable = true;
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];
-  # systemd.sleep.extraConfig = ''
-  #   HibernateDelaySec=30s
-  #   SuspendState=suspend2idle
-  # '';
-  # boots with kernel panic (blinking caps lock), hangs there
-  # boot.kernelPackages = pkgs.linuxPackages_latest-libre;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.linuxPackages_6_4;
-
-  # boot.kernelPackages =
-  # let
-  #   my-kernel = (pkgs.linux_6_1.override {
-  #     argsOverride = rec {
-  #       src = pkgs.fetchzip {
-  #         url = "https://github.com/torvalds/linux/archive/refs/tags/v6.2.zip";
-  #         sha256 = "sha256-woUP0KZEnwYEzvQEc1OBoCTjkLl8JjYAT4CxFVrfIjU=";
-  #       };
-  #       version = "6.2";
-  #       modDirVersion = "6.2";
-  #       };
-  #   });
-  # in
-  # #  pkgs.linuxPackagesFor (
-  # #   pkgs.linux-libre.override { linux = my-kernel; });
-  # pkgs.linuxPackagesFor my-kernel;
 
   boot.initrd.luks.devices.root = {
     device = "/dev/disk/by-uuid/7e836240-4ca8-4f26-8adf-ee509b96a0c4";
@@ -129,7 +93,6 @@ rec {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   # Not load them lol
-  # services.xserver.videoDrivers = [];
   services.thermald.enable = lib.mkDefault true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -188,17 +151,6 @@ SUBSYSTEM=="usb", ATTR{bDeviceClass}=="ef", ATTR{idVendor}=="1409", MODE="0777"
 
   hardware.sane.enable = true;
 
-  # networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  # services.resolved = {
-  #   enable = true;
-  #   dnssec = "true";
-  #   domains = [ "~." ];
-  #   fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  #   extraConfig = ''
-  #     DNSOverTLS=yes
-  #   '';
-  # };
-  # networking.nameservers = [ "8.8.8.8" ];
   services.resolved = {
     enable = true;
     dnssec = "false";

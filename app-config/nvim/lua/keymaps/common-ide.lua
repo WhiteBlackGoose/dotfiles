@@ -14,6 +14,7 @@ add('n', '<F11>', ":lua require'dap'.step_into()<CR>")
 add('n', '<F7>', ":lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('n', '<F8>', ":lua require'dap'.repl.close()<CR>")
 add('n', '<F4>', ":lua require'dap'.disconnect()<CR>")
+add('n', '<F2>', ":DapContinue<CR>")
 
 add('i', '<F5>', "<ESC>:lua require'dap'.continue()<CR>i")
 add('i', '<F9>', "<ESC>:lua require'dap'.toggle_breakpoint()<CR>i")
@@ -22,6 +23,7 @@ add('i', '<F34>', "<ESC>:lua require'dap'.step_into()<CR>i")
 add('i', '<F7>', "<ESC>:lua require'dap'.repl.open()<CR><C-w><C-w>i")
 add('i', '<F8>', "<ESC>:lua require'dap'.repl.close()<CR>i")
 add('i', '<F4>', "<ESC>:lua require'dap'.disconnect()<CR>i")
+add('i', '<F2>', "<ESC>:DapContinue<CR>i")
 
 add('n', '<leader>enat', ":lua require'dap'.run(require'dap'.configurations.native)<CR>")
 

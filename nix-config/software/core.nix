@@ -34,6 +34,8 @@
         '';
     })
     sw.nvim.default
+    nodejs # for nvim copilot
+
     sw.nil.default
   ];
 }

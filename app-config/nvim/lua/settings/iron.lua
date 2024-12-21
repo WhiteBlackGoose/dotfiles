@@ -16,7 +16,19 @@ iron.setup {
       },
       de2en = {
         command = {"de2"}
-      }
+      },
+      fsharp = {
+        command = {"dotnet", "fsi"}
+      },
+      cs = {
+        command = {"dotnet-repl"}
+      },
+      ps1 = {
+        command = {"pwsh"}
+      },
+      haskell = {
+        command = {"ghci"}
+      },
     },
     -- How the repl window will be displayed
     -- See below for more information

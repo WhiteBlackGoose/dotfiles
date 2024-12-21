@@ -12,7 +12,7 @@ vim.g.vimtex_fold_enabled = true
 
 function TexMoveOut(path)
     vim.g.vimtex_compiler_latexmk = {
-        build_dir = path,
+        out_dir = path,
         options = {
             '-shell-escape',
             '-verbose',

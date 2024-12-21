@@ -1,7 +1,8 @@
 -- vim.o.guifont = "FiraCode Nerd Font:h9"
 -- vim.o.guifont = "DejaVu Sans:h9"
 -- RUN :set guifont=* to select
-vim.o.guifont = "FantasqueSansM Nerd Font:h11"
+-- vim.g.theme_light()
+vim.o.guifont = "FantasqueSansM Nerd Font:h18"
 -- vim.o.guifont = "DejaVu Sans Mono:h9"
 vim.cmd[[set mouse=nv]]
 -- vim.g.neovide_cursor_vfx_mode = "sonicboom"

@@ -36,13 +36,20 @@ lsp.typst_lsp.setup { capabilities = capabilities }
 --     }
 lsp.idris2_lsp.setup { capabilities = capabilities }
 lsp.hls.setup { capabilities = capabilities }
-lsp.jedi_language_server.setup { capabilities = capabilities }
+-- lsp.jedi_language_server.setup { capabilities = capabilities }
+-- lsp.pylsp.setup {
+--     capabilities = capabilities,
+--     settings = {
+--     }
+-- }
+lsp.pyright.setup { capabilities = capabilities }
 vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
 lsp.slint_lsp.setup { capabilities = capabilities }
 -- lsp.java_language_server.setup{
 --     capabilities = capabilities,
 --     cmd = {"java-language-server"}
 -- }
+lsp.solc.setup { capabilities = capabilities }
 
 local jdtls = require('jdtls')
 if os.getenv("JDTLS") ~= nil then

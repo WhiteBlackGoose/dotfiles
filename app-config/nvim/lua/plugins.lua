@@ -50,7 +50,10 @@ local commonPlugins = {
     },
     'projekt0n/github-nvim-theme',
     'navarasu/onedark.nvim',
-    'Pocco81/high-str.nvim'
+    'Pocco81/high-str.nvim',
+    'VidocqH/data-viewer.nvim',
+    'fei6409/log-highlight.nvim',
+    { 'glacambre/firenvim', run = ':call firenvim#install(0)' },
 }
 
 if vim.g.neovide == nil then
@@ -138,9 +141,6 @@ local idePlugins = {
     },
 
     {"https://github.com/WhiteBlackGoose/orgmode", dev=false },
-    {"https://github.com/lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = true, },
     -- {"https://github.com/nvim-orgmode/orgmode" },
     'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
@@ -167,12 +167,13 @@ local idePlugins = {
     },
     {
         "WhiteBlackGoose/markdown-preview.nvim",
-        dev=false,
+        dev=true,
         ft = "markdown",
         build = function()
           vim.fn["mkdp#util#install"]()
         end
     },
+    'github/copilot.vim'
 }
 
 local lazy_opt = {

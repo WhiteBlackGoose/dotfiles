@@ -68,36 +68,34 @@ vim.api.nvim_set_hl(0, "OrgAgendaScheduled", { fg = "#ff9944" })
 vim.cmd [[highlight Headline1 guibg=#CCFFCC]]
 vim.cmd [[highlight Headline2 guibg=#FFCCCC]]
 
-require("headlines").setup {
-    org = {
-        query = vim.treesitter.query.parse(
-            "org",
-            [[
-                (headline (stars) @stars (#eq? @stars "*")) @headline
-
-                (
-                    (expr) @dash
-                    (#match? @dash "^-----+$")
-                )
-
-                (block
-                    name: (expr) @_name
-                    (#eq? @_name "SRC")
-                ) @codeblock
-
-                (paragraph . (expr) @quote
-                    (#eq? @quote ">")
-                )
-            ]]
-        ),
-        headline_highlights = { "Headline1" },
-        codeblock_highlight = "CodeBlock",
-        dash_highlight = "Dash",
-        dash_string = "—",
-        quote_highlight = "Quote",
-        quote_string = "┃",
-        fat_headlines = true,
-        fat_headline_upper_string = "▃",
-        fat_headline_lower_string = "🬂",
-    },
-}
+-- require("headlines").setup {
+--     org = {
+--         query = vim.treesitter.query.parse(
+--             "org",
+--             [[
+--                 (headline (stars) @stars (#eq? @stars "*")) @headline
+-- 
+--                 (
+--                     (expr) @dash
+--                     (#match? @dash "^-----+$")
+--                 )
+-- 
+--                 (block
+--                     name: (expr) @_name
+--                     (#eq? @_name "SRC")
+--                 ) @codeblock
+-- 
+--                 (paragraph . (expr) @quote
+--                     (#eq? @quote ">")
+--                 )
+--             ]]
+--         ),
+--         headline_highlights = { "Headline1" },
+--         codeblock_highlight = "CodeBlock",
+--         dash_highlight = "Dash",
+--         dash_string = "—",
+--         quote_highlight = "Quote",
+--         quote_string = "┃",
+--         fat_headlines = false,
+--     },
+-- }
