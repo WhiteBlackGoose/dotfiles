@@ -40,6 +40,8 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     end
 })
 
+
+
 -- By alphabet please
 require('settings.airline')
 require('settings.auto-char')

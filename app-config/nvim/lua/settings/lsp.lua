@@ -26,7 +26,7 @@ lsp.clangd.setup { capabilities = capabilities }
 lsp.nil_ls.setup { capabilities = capabilities }
 lsp.vuels.setup { capabilities = capabilities }
 lsp.tsserver.setup { capabilities = capabilities }
-lsp.rust_analyzer.setup { capabilities = capabilities }
+-- lsp.rust_analyzer.setup { capabilities = capabilities }
 lsp.typst_lsp.setup { capabilities = capabilities }
 -- lsp.csharp_ls.setup{capabilities = capabilities}
 -- lsp.omnisharp.setup{
@@ -117,3 +117,27 @@ define_lsp_signs()
 --     vim.diagnostic.open_float(nil, {focus=false})
 --   end
 -- })
+
+-- LSP Diagnostics Options Setup 
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
+})
+
+vim.lsp.inlay_hint.enable(true)
+vim.cmd([[
+command LspInlayHintsToggle lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+]])
+
+vim.cmd([[
+set signcolumn=yes
+]])

@@ -42,8 +42,8 @@ add('n', '<leader>eds', ":lua require'dap'.disconnect()<CR>")
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.rs", "Cargo.*" },
     callback = function(_)
-        add('n', '<F5>', ":RustDebuggables<CR>")
-        add('n', '<leader>edc', ":RustDebuggables<CR>")
+        add('n', '<F5>', ":RustLsp debuggables<CR>")
+        add('n', '<leader>edc', ":RustLsp debuggables<CR>")
     end
 })
 
@@ -131,3 +131,9 @@ add('n', '<leader>ns', ":hor new<CR>p")
 -- gpt4all autocomplete
 add('i', '<C-e>', "<Esc>:ChatGPTCompleteCode<CR>")
 add('v', '<C-e>', ":ChatGPTRun complete_code<CR>")
+
+-- Tests
+add('n', '<leader>bt', ":lua require('neotest').run.run()<CR>")
+add('n', '<leader>bT', ":lua require('neotest').run.run(vim.fn.expand(\"%\"))<CR>")
+add('n', '<leader>bd', ":lua require('neotest').run.run({strategy = \"dap\"})<CR>")
+add('n', '<leader>bs', ":lua require('neotest').run.stop()<CR>")

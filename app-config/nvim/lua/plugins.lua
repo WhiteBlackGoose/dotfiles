@@ -1,6 +1,5 @@
 local commonPlugins = {
     'lewis6991/impatient.nvim',
-    -- 'romgrk/barbar.nvim',
     { 'mg979/vim-visual-multi', branch = 'master' },
     {'kyazdani42/nvim-web-devicons', dev = false},
     'kyazdani42/nvim-tree.lua',
@@ -82,7 +81,21 @@ local idePlugins = {
     'windwp/nvim-autopairs',
     'windwp/nvim-ts-autotag',
     {'neovim/nvim-lspconfig', dev=false },
-    'simrat39/rust-tools.nvim',
+    {
+      'mrcjkb/rustaceanvim',
+      version = '^5',
+      lazy = false,
+    },
+    {
+      "nvim-neotest/neotest",
+      optional = false,
+      opts = function(_, opts)
+        opts.adapters = opts.adapters or {}
+        vim.list_extend(opts.adapters, {
+          require('rustaceanvim.neotest'),
+        })
+      end
+    },
     'zchee/deoplete-jedi',
     'mfussenegger/nvim-dap-python',
     'kevinhwang91/promise-async',
@@ -182,6 +195,7 @@ local lazy_opt = {
         fallback = false
     }
 }
+
 if vim.g.use_ide() then
     require("lazy").setup(TableUnion(commonPlugins, idePlugins), lazy_opt)
 else

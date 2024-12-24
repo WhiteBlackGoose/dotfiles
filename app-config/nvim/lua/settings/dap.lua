@@ -62,12 +62,22 @@ dap.configurations.fsharp = config
 
 ---Rust/C/C++----------------------------
 
+-- Debugger and tools
+local VSCODE_CODELLDB = os.getenv("VSCODE_CODELLDB")
+if VSCODE_CODELLDB == nil then
+    print("VSCODE_CODELLDB is not set, ignoring Rust config")
+    return
+end
+local extension_path = VSCODE_CODELLDB .. "/share/vscode/extensions/vadimcn.vscode-lldb/"
+local codelldb_path = extension_path .. 'adapter/codelldb'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+
 dap.adapters.codelldb = {
   type = 'server',
   -- host = '127.0.0.1',
   port = "13000",
   executable = {
-    command = '/home/goose/programs/codelldb/extension/adapter/codelldb',
+    command = codelldb_path,
     args = {"--port", "13000"},
   }
 }
@@ -98,7 +108,7 @@ local function dbg_bin(name)
     }
 end
 
-dap.configurations.rust = dbg_bin("rust_lldb")
+-- dap.configurations.rust = dbg_bin("rust_lldb")
 dap.configurations.c = dbg_bin("gdb")
 dap.configurations.cpp = dbg_bin("gdb")
 
