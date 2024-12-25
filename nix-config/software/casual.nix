@@ -95,5 +95,8 @@
     timer
     tmux
     (writeScriptBin "factorio" "${steam-fhsenv-without-steam.run}/bin/steam-run /home/goose/factorio/factorio/bin/x64/factorio")
+
+    numbat
+    bat
   ];
 }

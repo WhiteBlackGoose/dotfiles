@@ -1,8 +1,5 @@
 vim.g.rustaceanvim = {
   config = function(_, opts)
-    -- vim.g.rustaceanvim = vim.tbl_deep_extend("force",
-    --   {},
-    --   opts or {})
   end,
   tools = {
     runnables = {
@@ -11,7 +8,6 @@ vim.g.rustaceanvim = {
     debuggables = {
       use_telescope = true,
     },
-    -- enable_clippy = true,
   },
   server = {
     on_attach = function(_, bufnr)
@@ -38,6 +34,10 @@ vim.g.rustaceanvim = {
           },
         },
       }
+    },
+    dap = {
+        adapter = require('rustaceanvim.config').get_codelldb_adapter(
+            CODELLDB_PATH, LIBLLDB_PATH)
     }
   },
 }

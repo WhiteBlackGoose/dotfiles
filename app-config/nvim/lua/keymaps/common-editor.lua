@@ -117,3 +117,6 @@ function Nvim_tree_keymaps(bufnr)
     vim.keymap.set('n', 'Z', api.node.run.system, opts('Run System'))
 end
 
+add('n', '<leader>iI', ':IronRepl<CR>')
+add('n', '<leader>iP', ':set filetype=python<CR>:IronRepl<CR>')
+add('n', '<leader>iN', ':set filetype=numbat<CR>:IronRepl<CR>')

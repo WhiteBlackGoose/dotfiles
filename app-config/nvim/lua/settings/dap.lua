@@ -65,22 +65,26 @@ dap.configurations.fsharp = config
 -- Debugger and tools
 local VSCODE_CODELLDB = os.getenv("VSCODE_CODELLDB")
 if VSCODE_CODELLDB == nil then
-    print("VSCODE_CODELLDB is not set, ignoring Rust config")
-    return
-end
-local extension_path = VSCODE_CODELLDB .. "/share/vscode/extensions/vadimcn.vscode-lldb/"
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+    vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+        pattern = { "*.rs" },
+        callback = function(_)
+            print("VSCODE_CODELLDB is not set, Rust debugger won't work")
+        end
+    })
+else
+    local extension_path = VSCODE_CODELLDB .. "/share/vscode/extensions/vadimcn.vscode-lldb/"
+    CODELLDB_PATH = extension_path .. 'adapter/codelldb'
+    LIBLLDB_PATH = extension_path .. 'lldb/lib/liblldb.so'
 
-dap.adapters.codelldb = {
-  type = 'server',
-  -- host = '127.0.0.1',
-  port = "13000",
-  executable = {
-    command = codelldb_path,
-    args = {"--port", "13000"},
-  }
-}
+    dap.adapters.codelldb = {
+      type = 'server',
+      port = "13000",
+      executable = {
+        command = CODELLDB_PATH,
+        args = {"--port", "13000"},
+      }
+    }
+end
 
 dap.adapters.rust_gdb = {
   executable = {
@@ -92,7 +96,7 @@ dap.adapters.rust_gdb = {
 
 --- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
 
-local function dbg_bin(name)
+local function dbg_bin(name, lang)
     return {
         {
             type = name,
@@ -102,19 +106,19 @@ local function dbg_bin(name)
             end,
             cwd = '${workspaceFolder}',
             terminal = 'integrated',
-            sourceLanguages = { 'rust' },
+            sourceLanguages = { lang },
             stopOnEntry = true
         }
     }
 end
 
--- dap.configurations.rust = dbg_bin("rust_lldb")
-dap.configurations.c = dbg_bin("gdb")
-dap.configurations.cpp = dbg_bin("gdb")
+-- dap.configurations.rust = dbg_bin("codelldb", "rust")
+dap.configurations.c = dbg_bin("gdb", "c")
+dap.configurations.cpp = dbg_bin("gdb", "cpp")
 
 ---Python------------------------------
 
-dap.python = {
+dap.adapters.python = {
   type = 'executable';
   command = '/usr/bin/env';
   args = { 'python', '-m', 'debugpy.adapter' };
@@ -123,15 +127,13 @@ dap.python = {
 ---Other-------------------------------
 
 dap.adapters.gdb = {
-  type = 'server',
-  -- host = '127.0.0.1',
-  port = "13000",
-  executable = {
+    id = 'gdb',
+    type = 'executable',
     command = 'gdb',
-    args = {"--port", "13000"},
-  }
+    args = { '--quiet', '--interpreter=dap' },
 }
 
+--[[
 dap.configurations.native = {
     {
         type = 'gdb',
@@ -142,9 +144,11 @@ dap.configurations.native = {
         cwd = '${workspaceFolder}',
         terminal = 'integrated',
         sourceLanguages = { '*' },
-        stopOnEntry = true
+        stopOnEntry = true,
+        name = "Launch Program"
     }
 }
+]]
 
 vim.g['dap_DapBreakpoint_sign'] = vim.g.gsign(' ', '->')
 vim.fn.sign_define('DapBreakpoint', { text=vim.g.gsign(' ', 'B'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
