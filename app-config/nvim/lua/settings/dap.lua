@@ -81,40 +81,57 @@ else
       port = "13000",
       executable = {
         command = CODELLDB_PATH,
-        args = {"--port", "13000"},
+        args = {"--port", "13000", "--liblldb", LIBLLDB_PATH},
       }
     }
 end
 
-dap.adapters.rust_gdb = {
-  executable = {
-    command = os.getenv("RUST_GDB"),
-    args = { "" }
-  },
-  type = "executable"
+dap.adapters.codelldb_attach = {
+  type = 'server',
+  port = 13000,
+}
+
+dap.adapters.gdb_attach = {
+  type = 'server',
+  port = 13000,
+}
+
+dap.adapters.gdb = {
+    id = 'gdb',
+    type = 'executable',
+    command = 'gdb',
+    args = { '--quiet', '--interpreter=dap' },
 }
 
 --- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
 
-local function dbg_bin(name, lang)
+local function gen_cfg(name, type, request, langs)
     return {
-        {
-            type = name,
-            request = 'launch',
+            name = name,
+            type = type,
+            request = request,
             program = function()
                 return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
             end,
             cwd = '${workspaceFolder}',
             terminal = 'integrated',
-            sourceLanguages = { lang },
+            sourceLanguages = langs,
             stopOnEntry = true
         }
+end
+
+local function dbg_bin(lang)
+    return {
+        gen_cfg("Launch GDB", 'gdb', 'launch', { lang }),
+        gen_cfg("Launch LLDB", 'codelldb', 'launch', { lang }),
+        gen_cfg("Attach to LLDB (TCP)", 'codelldb_attach', 'launch', { lang }),
     }
 end
 
--- dap.configurations.rust = dbg_bin("codelldb", "rust")
-dap.configurations.c = dbg_bin("gdb", "c")
-dap.configurations.cpp = dbg_bin("gdb", "cpp")
+dap.configurations.rust = dbg_bin("rust")
+dap.configurations.c = dbg_bin("c")
+dap.configurations.cpp = dbg_bin("cpp")
+dap.configurations.asm = dbg_bin("asm")
 
 ---Python------------------------------
 
@@ -126,36 +143,10 @@ dap.adapters.python = {
 
 ---Other-------------------------------
 
-dap.adapters.gdb = {
-    id = 'gdb',
-    type = 'executable',
-    command = 'gdb',
-    args = { '--quiet', '--interpreter=dap' },
-}
-
---[[
-dap.configurations.native = {
-    {
-        type = 'gdb',
-        request = 'launch',
-        program = function()
-            return vim.fn.input('Path to native executable: ', vim.fn.getcwd()..'/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-        terminal = 'integrated',
-        sourceLanguages = { '*' },
-        stopOnEntry = true,
-        name = "Launch Program"
-    }
-}
-]]
-
 vim.g['dap_DapBreakpoint_sign'] = vim.g.gsign(' ', '->')
 vim.fn.sign_define('DapBreakpoint', { text=vim.g.gsign(' ', 'B'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointCondition', { text=vim.g.gsign(' ', 'B?'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl='DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointRejected', { text=vim.g.gsign(' ', 'B!'), texthl='DapBreakpoint', linehl='DapBreakpointLine', numhl= 'DapBreakpoint' })
 vim.fn.sign_define('DapLogPoint', { text=vim.g.gsign(' ', 'Bi'), texthl='DapLogPoint', linehl='DapLogPointLine', numhl= 'DapLogPoint' })
 vim.fn.sign_define('DapStopped', { text=vim.g.gsign(' ', '=>'), texthl='DapStopped', linehl='DapStoppedLine', numhl= 'DapStopped' })
-
-
 
