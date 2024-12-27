@@ -112,16 +112,28 @@ dap.adapters.gdb = {
     args = { '--quiet', '--interpreter=dap' },
 }
 
+dap.adapters.gdb_remote = {
+    id = 'gdb',
+    type = 'executable',
+    command = 'gdb',
+    args = {}
+}
+
 --- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
+
+local isCodelldbFound = CODELLDB_PATH ~= nil
+local isGdbFound = vim.fn.executable('gdb') == 1
+
+local executablePath = CacheFunction('program', function()
+    return vim.fn.input({prompt = 'Path to executable: ', completion = 'file'})
+end)
 
 local function gen_cfg(name, type, request, langs)
     return {
             name = name,
             type = type,
             request = request,
-            program = CacheFunction('Executable', function()
-                return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
-            end),
+            program = executablePath,
             cwd = '${workspaceFolder}',
             terminal = 'integrated',
             sourceLanguages = langs,
@@ -129,20 +141,32 @@ local function gen_cfg(name, type, request, langs)
         }
 end
 
+
 local function dbg_bin(lang)
+    local statusCodelldb
+    if isCodelldbFound then
+        statusCodelldb = ' ✅'
+    else
+        statusCodelldb = ' ❌<NOT AVAILABLE>'
+    end
+
+    local statusGdb
+    if isGdbFound then
+        statusGdb = ' ✅'
+    else
+        statusGdb = ' ❌<NOT AVAILABLE>'
+    end
+
     return {
-        gen_cfg("Launch GDB", 'gdb', 'launch', { lang }),
-        gen_cfg("Launch LLDB", 'codelldb', 'launch', { lang }),
-        gen_cfg("Attach to LLDB (TCP)", 'codelldb_attach', 'launch', { lang }),
+        gen_cfg("Launch GDB" .. statusGdb, 'gdb', 'launch', { lang }),
+        gen_cfg("Launch LLDB" .. statusCodelldb, 'codelldb', 'launch', { lang }),
 
         -- make sure to start lldb-server platform select remote-linux --listen *:some-port
         {
-            name = 'Remote LLDB',
+            name = 'Remote LLDB' .. statusCodelldb,
             type = 'codelldb_remote',
             request = 'launch',
-            program = CacheFunction('program', function()
-                return vim.fn.input({prompt = 'Path to executable: ', completion = 'file'})
-            end),
+            program = executablePath,
             cwd = '.',
             terminal = 'console',
             sourceLanguages = { lang },
@@ -161,6 +185,19 @@ local function dbg_bin(lang)
                 }
             end),
         },
+
+        -- make sure to start gdbserver :some-port
+        {
+            name = "Remote GDB (non-working :[ )" .. statusGdb,
+            type = 'gdb_remote',
+            program = executablePath,
+            cwd = '.',
+            terminal = 'console',
+            sourceLanguages = { lang },
+            stopOnEntry = false,
+        },
+
+        gen_cfg("Attach to LLDB (TCP)", 'codelldb_attach', 'launch', { lang }),
     }
 end
 
