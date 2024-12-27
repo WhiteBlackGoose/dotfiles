@@ -1,6 +1,29 @@
 local cmd = vim.cmd
 local opt = vim.opt
 
+local function TableToString(val)
+    if type(val) == 'table' then
+        return vim.inspect(val)
+    else
+        return tostring(val)
+    end
+end
+
+function CacheFunction(name, fn)
+    local val = nil
+    return function()
+        if val == nil then
+            val = fn()
+        else
+            if vim.fn.confirm('Do you want to change:\n' .. name .. ': ' .. TableToString(val),
+                '&yes\n&no', 2) == 1 then
+                val = fn()
+            end
+        end
+        return val
+    end
+end
+
 opt.clipboard = 'unnamedplus'
 if vim.g.use_ide() then
     opt.cursorline = true

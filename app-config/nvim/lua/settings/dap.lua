@@ -84,6 +84,15 @@ else
         args = {"--port", "13000", "--liblldb", LIBLLDB_PATH},
       }
     }
+
+    dap.adapters.codelldb_remote = {
+      type = 'server',
+      port = 14000,
+      executable = {
+        command = CODELLDB_PATH,
+        args = {"--port", "14000", "--liblldb", LIBLLDB_PATH},
+      }
+    }
 end
 
 dap.adapters.codelldb_attach = {
@@ -110,13 +119,13 @@ local function gen_cfg(name, type, request, langs)
             name = name,
             type = type,
             request = request,
-            program = function()
+            program = CacheFunction('Executable', function()
                 return vim.fn.input({prompt = 'Path to executable: ', default = vim.fn.getcwd()..'/', completion = 'file'})
-            end,
+            end),
             cwd = '${workspaceFolder}',
             terminal = 'integrated',
             sourceLanguages = langs,
-            stopOnEntry = true
+            stopOnEntry = false,
         }
 end
 
@@ -125,6 +134,33 @@ local function dbg_bin(lang)
         gen_cfg("Launch GDB", 'gdb', 'launch', { lang }),
         gen_cfg("Launch LLDB", 'codelldb', 'launch', { lang }),
         gen_cfg("Attach to LLDB (TCP)", 'codelldb_attach', 'launch', { lang }),
+
+        -- make sure to start lldb-server platform select remote-linux --listen *:some-port
+        {
+            name = 'Remote LLDB',
+            type = 'codelldb_remote',
+            request = 'launch',
+            program = CacheFunction('program', function()
+                return vim.fn.input({prompt = 'Path to executable: ', completion = 'file'})
+            end),
+            cwd = '.',
+            terminal = 'console',
+            sourceLanguages = { lang },
+            stopOnEntry = false,
+            initCommands = CacheFunction('settings', function()
+                local plat
+                vim.ui.select({'linux', 'macos', 'windows'}, {prompt = 'Platform: '},
+                    function(c)
+                        plat = c
+                    end)
+                local addr = vim.fn.input({prompt = 'Remote (host:port): '})
+                return {
+                    "platform select remote-" .. plat,
+                    "platform connect connect://" .. addr,
+                    "settings set target.inherit-env false",
+                }
+            end),
+        },
     }
 end
 

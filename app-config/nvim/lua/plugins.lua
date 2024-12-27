@@ -35,7 +35,13 @@ local commonPlugins = {
     --     end
     -- }
     'eandrju/cellular-automaton.nvim',
-    'WhiteBlackGoose/andromeda.nvim',
+    -- 'WhiteBlackGoose/andromeda.nvim',
+    {
+        'nobbmaestro/nvim-andromeda',
+        dependencies = {
+            { "tjdevries/colorbuddy.nvim", branch = "dev" }
+        }
+    },
     'zanglg/nova.nvim',
     'Mofiqul/dracula.nvim',
     {
@@ -85,6 +91,7 @@ local idePlugins = {
       'mrcjkb/rustaceanvim',
       version = '^5',
       lazy = false,
+      dev = true
     },
     {
       "nvim-neotest/neotest",

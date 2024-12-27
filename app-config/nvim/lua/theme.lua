@@ -10,7 +10,7 @@ vim.g.theme_dark = function()
     if vim.g.use_simple() then
         vim.cmd[[colorscheme blue]]
     else
-        vim.cmd[[colorscheme onedark]]
+        vim.cmd[[colorscheme andromeda]]
     end
     -- vim.cmd[[colorscheme darcula]]
     vim.o.background = "dark"
@@ -33,6 +33,8 @@ vim.g.theme_dark = function()
     vim.api.nvim_set_hl(0, 'ALEStyleWarningSign', { fg="#6666CC" })
     vim.api.nvim_set_hl(0, 'ALEStyleWarningLine', { bg="#2A2A11" })
     vim.api.nvim_set_hl(0, 'ALEVirtualTextStyleWarning', { fg="#777777", bg="#2A2A11" })
+
+    vim.api.nvim_set_hl(0, 'LspInlayHint', { fg="#777777" })
 
     -- Dap
     vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg='#AAAAFF' })
