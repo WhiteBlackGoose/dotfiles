@@ -1,4 +1,5 @@
 {
+  "Coqtail": { "branch": "main", "commit": "299d0acdb9b697fd951df81a5d67e3f5cb6ed4f9" },
   "Ionide-vim": { "branch": "master", "commit": "d94dd8f0e34fe230bd84d930f63732619163ab6e" },
   "LuaSnip": { "branch": "master", "commit": "a7a4b4682c4b3e2ba82b82a4e6e5f5a0e79dec32" },
   "ale": { "branch": "master", "commit": "6c10a519f1460179cf8f8e329d8eb3186247be2b" },
@@ -45,6 +46,7 @@
   "neotest": { "branch": "master", "commit": "6d3d22cdad49999ef774ebe1bc250a4994038964" },
   "nova.nvim": { "branch": "master", "commit": "65f5b979debbc9986a3cd7e596607155aeabdfec" },
   "nui.nvim": { "branch": "main", "commit": "cbd2668414331c10039278f558630ed19b93e69b" },
+  "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },
   "nvim": { "branch": "main", "commit": "c3572a968a79b64bd0ef16f2c3e93014f112e66d" },
   "nvim-andromeda": { "branch": "master", "commit": "09611657222fe07670acff984beb1bd793ee89fb" },
   "nvim-autopairs": { "branch": "master", "commit": "dbfc1c34bed415906395db8303c71039b3a3ffb4" },

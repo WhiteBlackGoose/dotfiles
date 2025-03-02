@@ -147,6 +147,8 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="2e03", MODE:="0666", TAG+="uaccess", TAG+="u
 # For IDS
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1409", MODE:="0666", TAG+="uaccess", TAG+="udev-acl"
 SUBSYSTEM=="usb", ATTR{bDeviceClass}=="ef", ATTR{idVendor}=="1409", MODE="0777"
+# Keychron keyboard
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
   hardware.sane.enable = true;

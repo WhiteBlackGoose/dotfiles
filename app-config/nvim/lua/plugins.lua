@@ -193,7 +193,14 @@ local idePlugins = {
           vim.fn["mkdp#util#install"]()
         end
     },
-    'github/copilot.vim'
+    'github/copilot.vim',
+    {
+        'whonore/Coqtail',
+        config = function()
+            vim.g.coqtail_noimap = true
+        end
+    },
+    'jose-elias-alvarez/null-ls.nvim'
 }
 
 local lazy_opt = {

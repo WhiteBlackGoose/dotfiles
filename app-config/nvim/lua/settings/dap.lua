@@ -116,7 +116,7 @@ dap.adapters.gdb_remote = {
     id = 'gdb',
     type = 'executable',
     command = 'gdb',
-    args = {}
+    args = { '--quiet', '--interpreter=dap' },
 }
 
 --- https://github.com/vadimcn/vscode-lldb/releases/download/v1.8.1/codelldb-x86_64-linux.vsix for 
@@ -161,7 +161,7 @@ local function dbg_bin(lang)
         gen_cfg("Launch GDB" .. statusGdb, 'gdb', 'launch', { lang }),
         gen_cfg("Launch LLDB" .. statusCodelldb, 'codelldb', 'launch', { lang }),
 
-        -- make sure to start lldb-server platform select remote-linux --listen *:some-port
+        -- make sure to start lldb-server platform --server --listen *:some-port
         {
             name = 'Remote LLDB' .. statusCodelldb,
             type = 'codelldb_remote',
@@ -190,11 +190,16 @@ local function dbg_bin(lang)
         {
             name = "Remote GDB (non-working :[ )" .. statusGdb,
             type = 'gdb_remote',
-            program = executablePath,
+            -- program = executablePath,
+            program = '/home/test/b',
             cwd = '.',
             terminal = 'console',
             sourceLanguages = { lang },
             stopOnEntry = false,
+            MIMode = 'gdb',
+            setupCommands = {
+                { text = 'target remote 192.168.122.152:13000' }
+            },
         },
 
         gen_cfg("Attach to LLDB (TCP)", 'codelldb_attach', 'launch', { lang }),

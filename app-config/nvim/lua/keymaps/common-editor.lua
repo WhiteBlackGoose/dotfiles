@@ -120,3 +120,6 @@ end
 add('n', '<leader>iI', ':IronRepl<CR>')
 add('n', '<leader>iP', ':set filetype=python<CR>:IronRepl<CR>')
 add('n', '<leader>iN', ':set filetype=numbat<CR>:IronRepl<CR>')
+add('n', '<leader>il', ':.lua<CR>')
+add('n', '<leader>iL', ':%lua<CR>')
+add('v', '<leader>il', ":'<,'>lua<CR>")

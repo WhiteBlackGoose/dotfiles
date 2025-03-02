@@ -80,7 +80,7 @@
     #   })
     # )
     virt-manager
-    qemu_kvm
+    qemu_kvm virtiofsd
     sw.tri.default
     sw.amcli.default
     # (writeScriptBin "chat" "QT_SCALE_FACTOR=1.0 ${sw.gpt4all.gpt4all-chat}/bin/chat $@")
@@ -98,5 +98,7 @@
 
     numbat
     bat
+
+    chromium
   ];
 }

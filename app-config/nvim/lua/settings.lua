@@ -103,9 +103,49 @@ if vim.g.use_ide() then
     LazyRequire('settings.vim-test', {"*.csproj", "*.cs"})
     LazyRequire('settings.orgmode', {"*.org"})
     LazyRequire('settings.rust', {"*.rs", "Cargo.*"})
+    LazyRequire('settings.python', {"*.py" })
     require('settings.toggler')
     require('settings.ufo')
     require('settings.vim-dadbod-ui')
     require('settings.vim-table-mode')
 end
 
+local function print_hex()
+    local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local current_line = vim.api.nvim_get_current_line()
+
+    local function get_hex(coll)
+        if coll < 0 then
+            return "[--:-]"
+        end
+        if coll >= #current_line then
+            return "[--:-]"
+        end
+        local c = current_line:sub(coll + 1, coll + 1)
+        return string.format("[%02X:%s]", string.byte(c), c)
+    end
+    return string.format("HEX: %s %s %s <<%s>> %s %s %s", get_hex(col - 3), get_hex(col - 2), get_hex(col - 1), get_hex(col), get_hex(col + 1), get_hex(col + 2), get_hex(col + 3))
+end
+
+HEX_ID = nil
+vim.api.nvim_create_user_command("HexViewEnable",
+    function()
+        if HEX_ID == nil then
+            HEX_ID = vim.api.nvim_create_autocmd({ "CursorMoved" },
+                {
+                    callback = function()
+                        print(print_hex())
+                    end
+                })
+        end
+    end, {})
+
+vim.api.nvim_create_user_command("HexViewDisable",
+    function()
+        if HEX_ID ~= nil then
+            vim.api.nvim_del_autocmd(HEX_ID)
+            HEX_ID = nil
+        end
+    end, {})
+
+vim.api.nvim_create_user_command('LogCollapseWrap', [[:%s/\n^\([^[]\)/\1]], {})

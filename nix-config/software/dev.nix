@@ -3,7 +3,6 @@
     (pkgs.python3.withPackages (p: with p; [
       nltk
       openpyxl
-      flake8
       jedi-language-server
       jupyter-client
       jupyter-console
@@ -20,7 +19,9 @@
       debugpy
       pyright
       matplotlib
+      ruff
     ]))
+    poetry
     pyright
     git
     lazygit

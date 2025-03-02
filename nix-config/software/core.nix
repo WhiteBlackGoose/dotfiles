@@ -33,6 +33,7 @@
         gsettings set $gnome_schema gtk-theme 'Dracula'
         '';
     })
+    # sw.nvim.default
     neovim
     nodejs # for nvim copilot
 

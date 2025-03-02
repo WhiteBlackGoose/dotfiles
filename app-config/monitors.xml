@@ -530,6 +530,36 @@
     </disabled>
   </configuration>
   <configuration>
+    <layoutmode>physical</layoutmode>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>1</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-1</connector>
+          <vendor>SKG</vendor>
+          <product>Q3212RUC</product>
+          <serial>0x00000001</serial>
+        </monitorspec>
+        <mode>
+          <width>2560</width>
+          <height>1440</height>
+          <rate>59.951</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+    <disabled>
+      <monitorspec>
+        <connector>eDP-1</connector>
+        <vendor>CSO</vendor>
+        <product>0x140c</product>
+        <serial>0x00000000</serial>
+      </monitorspec>
+    </disabled>
+  </configuration>
+  <configuration>
     <layoutmode>logical</layoutmode>
     <logicalmonitor>
       <x>0</x>

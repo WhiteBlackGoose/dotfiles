@@ -32,6 +32,9 @@ iron.setup {
       numbat = {
         command = {"numbat"}
       },
+      coq = {
+        command = {"coqtop"}
+      }
     },
     -- How the repl window will be displayed
     -- See below for more information

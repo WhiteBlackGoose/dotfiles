@@ -133,6 +133,7 @@
   networking.firewall.allowedTCPPorts =
     [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 7814 27017 ]
       ++ [ 7236 ]           # Miracast
+      ++ [ 13000 ]          # DAP
       ;
   networking.firewall.allowedUDPPorts =
     [ 22000 21027 1194 51820 6379 ]
@@ -143,10 +144,12 @@
   networking.firewall.allowedTCPPortRanges =
     [
       { from = 1714; to = 1764; }  # KDE Connect
+      { from = 55000; to = 55010; }  # random stuff
     ];
   networking.firewall.allowedUDPPortRanges =
     [
       { from = 1714; to = 1764; }  # KDE Connect
+      { from = 55000; to = 55010; }  # random stuff
     ];
 
   programs.fish.enable = true;

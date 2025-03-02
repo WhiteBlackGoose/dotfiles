@@ -43,6 +43,16 @@ lsp.hls.setup { capabilities = capabilities }
 --     }
 -- }
 lsp.pyright.setup { capabilities = capabilities }
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    -- null_ls.builtins.formatting.prettier, -- Example for JavaScript/TypeScript
+    null_ls.builtins.formatting.black,    -- Example for Python
+  },
+})
+
 vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
 lsp.slint_lsp.setup { capabilities = capabilities }
 -- lsp.java_language_server.setup{
@@ -50,6 +60,7 @@ lsp.slint_lsp.setup { capabilities = capabilities }
 --     cmd = {"java-language-server"}
 -- }
 lsp.solc.setup { capabilities = capabilities }
+lsp.cmake.setup { capabilities = capabilities }
 
 local jdtls = require('jdtls')
 if os.getenv("JDTLS") ~= nil then
