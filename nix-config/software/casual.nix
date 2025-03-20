@@ -15,7 +15,7 @@
     
     gimp
     (let dtools = sw.my-nix.dotnetTool pkgs;
-    in  (dtools.combineTools dotnet-sdk_6 [ 
+    in  (dtools.combineTools dotnet-sdk_8 [ 
         dtools.tools.angourimath-terminal 
       ]))
     litemdview

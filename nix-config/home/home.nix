@@ -97,11 +97,12 @@ rec {
   };
   dconf.enable = true;
 
-  xdg.desktopEntries = {
+  xdg.desktopEntries = with pkgs; {
     firefox = {
       name = "Firefox";
       genericName = "Web Browser";
-      exec = "firefox -P main %U";
+      exec = "${firefox}/bin/firefox -P main %U";
+      icon = "${firefox}/share/icons/hicolor/128x128/apps/firefox.png";
     };
     firefoxDiscord = {
       name = "Firefox Discord";
@@ -111,21 +112,6 @@ rec {
     syncthingUI = {
       name = "Syncthing UI";
       exec = "firefox -P main --new-window http://127.0.0.1:8384/ %U";
-    };
-    firefoxSchool = {
-      name = "firefox school";
-      genericName = "web browser for school";
-      exec = "firefox -P school %u";
-    };
-    firefox3 = {
-      name = "firefox 3";
-      genericName = "third profile of ff";
-      exec = "firefox -P p3 %u";
-    };
-    firefoxLibre = {
-      name = "firefox libre";
-      genericName = "Libre & Privacy focused profile";
-      exec = "firefox -P libre %u";
     };
     neovide = {
       name = "neovide";
