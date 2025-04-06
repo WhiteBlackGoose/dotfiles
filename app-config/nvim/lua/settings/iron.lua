@@ -34,6 +34,9 @@ iron.setup {
       },
       coq = {
         command = {"coqtop"}
+      },
+      idris = {
+        command = {"idris2"}
       }
     },
     -- How the repl window will be displayed

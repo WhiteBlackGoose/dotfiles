@@ -62,6 +62,8 @@ lsp.slint_lsp.setup { capabilities = capabilities }
 lsp.solc.setup { capabilities = capabilities }
 lsp.cmake.setup { capabilities = capabilities }
 
+lsp.gleam.setup { capabilities = capabilities }
+
 local jdtls = require('jdtls')
 if os.getenv("JDTLS") ~= nil then
     local jdtls_config = {

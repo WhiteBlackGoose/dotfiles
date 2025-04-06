@@ -49,6 +49,8 @@ pkgs: {
 
   splashes-light = ./wallpapers/splashes-light.jpg;
 
+  splashes-dark = ./wallpapers/splashes-2880x1800.jpg;
+
   abstract-paint-2-light = pkgs.fetchurl {
     url = "https://img.freepik.com/free-photo/abstract-paint-background-with-multi-colored-watercolor-painting-generated-by-ai_188544-15558.jpg?w=2000&t=st=1703560517~exp=1703561117~hmac=d5f7993bfae947965889a0525f9d9c5f729be42176ee06d53e71c9bb2e9330e5";
     sha256 = "sha256-HmUxM4lmWotopfCWkH63996fhp7u6RbzNTzWrj2rKGs=";

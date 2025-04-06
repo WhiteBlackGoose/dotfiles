@@ -1,6 +1,8 @@
 local cmd = vim.cmd
 local opt = vim.opt
 
+opt.shortmess:append('I')
+
 local function TableToString(val)
     if type(val) == 'table' then
         return vim.inspect(val)

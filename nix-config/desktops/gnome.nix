@@ -106,6 +106,10 @@ home = ocr: inputs@{ pkgs, ... }:
     wb-gen wp.fedora-37-light wp.fedora-37-dark;
   home.file."/home/goose/.local/share/gnome-background-properties/bg-3.xml".text =
     wb-gen wp.abstract-paint-light wp.abstract-paint-dark;
+  home.file."/home/goose/.local/share/gnome-background-properties/bg-4.xml".text =
+    wb-gen wp.splashes-light wp.splashes-dark;
+  home.file."/home/goose/.local/share/gnome-background-properties/bg-5.xml".text =
+    wb-gen wp.splashes-dark wp.splashes-dark;
 };
 
 in {

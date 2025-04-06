@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
         add('i', '<C-o>', '\\/')
         add('i', '<C-a>', '/\\')
         add('i', '<C-i>', '->')
+        vim.o.conceallevel = 2
     end
 })
 
