@@ -128,3 +128,6 @@ app-config/hardhat-nodejs
 app-config/gedit
 app-config/FreeCAD
 app-config/AusweisApp
+app-config/IJHack
+app-config/gcloud
+app-config/sniffnet

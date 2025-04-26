@@ -11,7 +11,6 @@
     amcli-input.url = "github:asc-community/AngouriMathCLI";
     hyprland-input.url = "github:hyprwm/Hyprland";
     nil-input.url = "github:oxalica/nil/main";
-    nvim-input.url = "github:neovim/neovim/master?dir=contrib";
     my-nix.url = "github:WhiteBlackGoose/my-nix";
     gpt4all.url = "github:polygon/gpt4all-nix";
     stablediffusion.url = "github:nixified-ai/flake";
@@ -21,7 +20,7 @@
     nix-show.url = "github:WhiteBlackGoose/nix-show";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, nvim-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, nix-show, ... }: rec {
+  outputs = inputs@{ nixpkgs, home-manager, tri-input, amcli-input, nil-input, gpt4all, my-nix, stablediffusion, ataraxiasjel, ocr4nix, nix-show, ... }: rec {
     nixosConfigurations."zenbook-ux3402z-nixos" = nixosConfigurations.wbg-pc;
     nixosConfigurations.wbg-pc = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
@@ -30,7 +29,6 @@
         tri = tri-input.packages.${system};
         amcli = amcli-input.packages.${system};
         nil = nil-input.packages.${system};
-        nvim = nvim-input.packages.${system};
         gpt4all = gpt4all.packages.${system};
         stablediffusion = stablediffusion.packages.${system};
         ataraxiasjel = ataraxiasjel.packages.${system};

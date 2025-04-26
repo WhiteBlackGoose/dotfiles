@@ -15,7 +15,7 @@ rec {
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "binder" ];
   boot.kernelModules = [
     "kvm-intel"
   ];
