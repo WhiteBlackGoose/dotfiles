@@ -56,7 +56,7 @@ rec {
           + withColor "cyan" (withColor "bold" date)
           + withColor "green" decor
           + withColor "red" auth
-          + ''   %B"'';
+          + ''%s"'';
       };
     };
     fish = {
