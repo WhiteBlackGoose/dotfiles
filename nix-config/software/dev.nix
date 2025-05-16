@@ -34,5 +34,6 @@
     lua-language-server
 
     xxd
+    dnsutils
   ];
 }

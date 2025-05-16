@@ -100,5 +100,7 @@
     bat
 
     chromium
+
+    obs-studio
   ];
 }
