@@ -151,3 +151,5 @@ vim.api.nvim_create_user_command("HexViewDisable",
     end, {})
 
 vim.api.nvim_create_user_command('LogCollapseWrap', [[:%s/\n^\([^[]\)/\1]], {})
+
+vim.api.nvim_set_hl(0, 'logLvDebug', { fg="gray" })

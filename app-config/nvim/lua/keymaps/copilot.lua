@@ -4,7 +4,7 @@ vim.keymap.set('i', '<C-f>', 'copilot#Accept("\\<CR>")', {
 })
 vim.keymap.set('i', '<C-r>', '<Plug>(copilot-accept-word)')
 vim.g.copilot_no_tab_map = true
-vim.g.copilot_enabled = true
+vim.g.copilot_enabled = false
 -- enable copilot for all filetypes
 -- local dic = {}
 -- dic[''] = true

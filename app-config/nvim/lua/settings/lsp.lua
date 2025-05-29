@@ -23,11 +23,20 @@ local lsp = require 'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp.texlab.setup { capabilities = capabilities }
 lsp.clangd.setup { capabilities = capabilities }
-lsp.nil_ls.setup { capabilities = capabilities }
+lsp.nil_ls.setup {
+    capabilities = capabilities,
+    settings = {
+        nix = {
+          flake = {
+            autoArchive = false,  -- optional, if you don't want autoArchive
+            autoEvalInputs = false, -- <== this disables the prompt
+            enable = false
+          }
+        }
+      }
+}
 lsp.vuels.setup { capabilities = capabilities }
-lsp.tsserver.setup { capabilities = capabilities }
 -- lsp.rust_analyzer.setup { capabilities = capabilities }
-lsp.typst_lsp.setup { capabilities = capabilities }
 -- lsp.csharp_ls.setup{capabilities = capabilities}
 -- lsp.omnisharp.setup{
 --     cmd = { "OmniSharp" },
@@ -46,12 +55,12 @@ lsp.pyright.setup { capabilities = capabilities }
 
 local null_ls = require("null-ls")
 
-null_ls.setup({
-  sources = {
-    -- null_ls.builtins.formatting.prettier, -- Example for JavaScript/TypeScript
-    null_ls.builtins.formatting.black,    -- Example for Python
-  },
-})
+-- null_ls.setup({
+--   sources = {
+--     -- null_ls.builtins.formatting.prettier, -- Example for JavaScript/TypeScript
+--     null_ls.builtins.formatting.black,    -- Example for Python
+--   },
+-- })
 
 vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
 lsp.slint_lsp.setup { capabilities = capabilities }

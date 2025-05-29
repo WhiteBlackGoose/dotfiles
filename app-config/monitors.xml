@@ -258,28 +258,6 @@
     <logicalmonitor>
       <x>0</x>
       <y>0</y>
-      <scale>2</scale>
-      <primary>yes</primary>
-      <monitor>
-        <monitorspec>
-          <connector>eDP-1</connector>
-          <vendor>SDC</vendor>
-          <product>0x4171</product>
-          <serial>0x00000000</serial>
-        </monitorspec>
-        <mode>
-          <width>2880</width>
-          <height>1800</height>
-          <rate>90.001</rate>
-        </mode>
-      </monitor>
-    </logicalmonitor>
-  </configuration>
-  <configuration>
-    <layoutmode>physical</layoutmode>
-    <logicalmonitor>
-      <x>0</x>
-      <y>0</y>
       <scale>1</scale>
       <primary>yes</primary>
       <monitor>
@@ -304,6 +282,28 @@
         <serial>0x00000000</serial>
       </monitorspec>
     </disabled>
+  </configuration>
+  <configuration>
+    <layoutmode>physical</layoutmode>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>2</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>eDP-1</connector>
+          <vendor>SDC</vendor>
+          <product>0x4171</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>2880</width>
+          <height>1800</height>
+          <rate>90.001</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
   </configuration>
   <configuration>
     <layoutmode>logical</layoutmode>
