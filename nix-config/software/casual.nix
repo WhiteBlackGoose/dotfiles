@@ -1,5 +1,6 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    usbutils pciutils
     monero-gui
     termshark tcpdump
     wireguard-tools wireguard-go
@@ -98,8 +99,6 @@
 
     numbat
     bat
-
-    chromium
 
     obs-studio
   ];

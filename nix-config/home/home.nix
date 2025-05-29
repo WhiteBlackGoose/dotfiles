@@ -91,18 +91,13 @@ rec {
     };
   };
 
-  home.packages = [
-    pkgs.starship
-    pkgs.passphrase2pgp
-    pkgs.dconf
+  home.packages = with pkgs; [
+    starship
+    passphrase2pgp
+    dconf
   ];
 
   services.blueman-applet.enable = true;
-
-  dconf.settings."org/blueman/general" = {
-    plugin-list = [ "!ConnectionNotifier" ];
-  };
-  dconf.enable = true;
 
   xdg.desktopEntries = with pkgs; {
     firefox = {

@@ -34,7 +34,7 @@
   # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = [ pkgs.mesa.drivers ];
+  hardware.graphics.extraPackages = [ pkgs.mesa ];
 
   # bluetooth
   hardware.bluetooth.enable = true;
@@ -42,7 +42,7 @@
 
 
   # Enable Pipewire
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -58,7 +58,9 @@
   };
 
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.symbols-only
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.comic-shanns-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
