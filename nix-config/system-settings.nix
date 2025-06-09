@@ -142,6 +142,7 @@
      ++ [ 7000 4001 3000 ]  # X-Ray
      ++ [ 27017 ]
      ++ [ 5353 1900 ]       # Miracast
+     ++ [ 51820 ]           # wireguard
      ;
   networking.firewall.allowedTCPPortRanges =
     [

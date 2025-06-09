@@ -26,7 +26,7 @@ sys = inputs@{ pkgs, ... }:
     displayManager = rec {
       gdm = rec {
         enable = true;
-        debug = enable;
+        debug = false;
         settings = {
           greeter.IncludeAll = true;
         };
