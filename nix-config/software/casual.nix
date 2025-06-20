@@ -101,5 +101,12 @@
     bat
 
     obs-studio
+
+    sshfs
   ];
+
+  # to mount sshfs with normal user
+  environment.etc."fuse.conf".text = ''
+    user_allow_other
+  '';
 }
