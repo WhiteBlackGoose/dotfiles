@@ -6,18 +6,21 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_NUMERIC = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-    LC_TIME = "en_GB.UTF-8";
+  i18n =
+    let lll = "de_DE.UTF-8";
+  in {
+    defaultLocale = lll;
+    extraLocaleSettings = {
+      LC_ADDRESS = lll;
+      LC_IDENTIFICATION = lll;
+      LC_MEASUREMENT = lll;
+      LC_MONETARY = lll;
+      LC_NAME = lll;
+      LC_NUMERIC = lll;
+      LC_PAPER = lll;
+      LC_TELEPHONE = lll;
+      LC_TIME = lll;
+    };
   };
 
   services.upower.enable = true;
@@ -88,7 +91,7 @@
   # pinentry-program /run/current-system/sw/bin/pinentry
   # # https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/7
 
-  # services.avahi.enable = false;
+  services.avahi.enable = false;
 #  services.avahi = {
 #    enable = true;
 #    nssmdns4 = true;
@@ -130,12 +133,19 @@
   };
 
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/syncthing.nix
-  networking.firewall.enable = false;
+
+  networking.firewall = {
+    enable = true;
+    logRefusedPackets = true;
+    logRefusedConnections = true;
+  };
+  networking.nftables.enable = true;
 
   networking.firewall.allowedTCPPorts =
     [ 8384 22000 4321 8000 8080 1194 42000 42001 6379 7814 27017 ]
       ++ [ 7236 ]           # Miracast
       ++ [ 13000 ]          # DAP
+     ++ [ 5535 ]            # LLMNR for some fucking reason?
       ;
   networking.firewall.allowedUDPPorts =
     [ 22000 21027 1194 51820 6379 ]

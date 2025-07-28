@@ -103,6 +103,7 @@
     obs-studio
 
     sshfs
+    restic
   ];
 
   # to mount sshfs with normal user

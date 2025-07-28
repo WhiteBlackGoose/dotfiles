@@ -7,6 +7,17 @@ sys = inputs@{ pkgs, ... }:
     vulkan-validation-layers
     pinentry-gnome3
     gnome-network-displays
+
+    # for gnome-network-displays
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
+    gst_all_1.gst-vaapi  # only if using VAAPI
+    gst_all_1.gst-plugins-base
+    openh264
   ];  
 
 
@@ -61,7 +72,6 @@ sys = inputs@{ pkgs, ... }:
   ]);
 
   environment.variables = {
-    CLUTTER_SHOW_FPS="1";
   };
 };
 
