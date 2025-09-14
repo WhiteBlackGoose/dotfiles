@@ -23,7 +23,7 @@ rec {
   hardware.tuxedo-drivers.enable = true;
 
   boot.kernelParams = [ "mem_sleep_default=s2idle" ];
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   boot.initrd.luks.devices.root = {
     device = "/dev/disk/by-uuid/7e836240-4ca8-4f26-8adf-ee509b96a0c4";

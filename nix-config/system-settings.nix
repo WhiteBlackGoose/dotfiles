@@ -81,6 +81,10 @@
     };
     kdeconnect.enable = true;
     ssh.askPassword = "";
+    captive-browser = {
+      enable = true;
+      interface = "wlo1";
+    };
   };
   # Add this to .gnupg/gpg-agent.conf:
   # debug-pinentry

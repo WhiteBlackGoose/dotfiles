@@ -19,6 +19,7 @@
       debugpy
       pyright
       matplotlib
+      pyclip
       ruff
     ]))
     poetry

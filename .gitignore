@@ -131,3 +131,7 @@ app-config/AusweisApp
 app-config/IJHack
 app-config/gcloud
 app-config/sniffnet
+app-config/bruno/Cache/Cache_Data
+app-config/bruno/Code Cache
+app-config/bruno/Crashpad
+app-config/bruno
