@@ -7,6 +7,7 @@ function DapJumpTo()
 end
 
 add('n', '<F5>', ":lua require'dap'.continue()<CR>")
+add('n', '<F6>', "<ESC>:lua require'dap'.continue()<CR>i")
 add('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>")
 add('n', '<F3>', ":lua DapJumpTo()<CR>")
 add('n', '<F10>', ":lua require'dap'.step_over()<CR>")
@@ -16,7 +17,7 @@ add('n', '<F8>', ":lua require'dap'.repl.close()<CR>")
 add('n', '<F4>', ":lua require'dap'.disconnect()<CR>")
 add('n', '<F2>', ":DapContinue<CR>")
 
-add('i', '<F5>', "<ESC>:lua require'dap'.continue()<CR>i")
+add('i', '<F6>', "<ESC>:lua require'dap'.continue()<CR>i")
 add('i', '<F9>', "<ESC>:lua require'dap'.toggle_breakpoint()<CR>i")
 add('i', '<F10>', "<ESC>:lua require'dap'.step_over()<CR>i")
 add('i', '<F34>', "<ESC>:lua require'dap'.step_into()<CR>i")

@@ -52,6 +52,7 @@ lsp.hls.setup { capabilities = capabilities }
 --     }
 -- }
 lsp.pyright.setup { capabilities = capabilities }
+lsp.ts_ls.setup { capabilities = capabilities }
 
 local null_ls = require("null-ls")
 

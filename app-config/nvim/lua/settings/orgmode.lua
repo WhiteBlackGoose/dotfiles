@@ -1,4 +1,4 @@
-require('orgmode').setup_ts_grammar()
+-- require('orgmode').setup_ts_grammar()
 require('orgmode').setup({
   org_default_notes_file = '~/me/_org/notes.org',
   org_agenda_files = {"~/me/_org/**"},
@@ -9,6 +9,7 @@ require('orgmode').setup({
   org_agenda_skip_if_done = true,
   org_agenda_start_on_weekday = false
 })
+
 --
 -- :autocmd BufNewFile,BufRead *.org fold
 vim.cmd[[
@@ -22,19 +23,19 @@ vim.cmd[[
 
 vim.cmd(":command MdToOrgLinks s/\\[\\(.*\\)\\](\\(.*\\))/[[\2][\1]]")
 
-require("org-bullets").setup {
-  concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
-  symbols = {
-    list = "•",
-    headlines = { " ", "󰺕 ", "✸", "✿" },
-    -- headlines = { "◉", "○", "✸", "✿" },
-    checkboxes = {
-      half = { "", "OrgTSCheckboxHalfChecked" },
-      done = { "✓", "OrgDone" },
-      todo = { "×", "OrgTODO" },
-    },
-  }
-}
+-- require("org-bullets").setup {
+--   concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
+--   symbols = {
+--     list = "•",
+--     headlines = { " ", "󰺕 ", "✸", "✿" },
+--     -- headlines = { "◉", "○", "✸", "✿" },
+--     checkboxes = {
+--       half = { "", "OrgTSCheckboxHalfChecked" },
+--       done = { "✓", "OrgDone" },
+--       todo = { "×", "OrgTODO" },
+--     },
+--   }
+-- }
 -- require("headlines").setup()
 
 -- This is a WORKAROUND of <https://github.com/nvim-orgmode/orgmode/issues/521>

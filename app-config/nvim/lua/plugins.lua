@@ -59,6 +59,16 @@ local commonPlugins = {
     'VidocqH/data-viewer.nvim',
     'fei6409/log-highlight.nvim',
     { 'glacambre/firenvim', run = ':call firenvim#install(0)' },
+    {
+      "folke/snacks.nvim",
+      opts = {
+        image = {
+          -- your image configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      }
+    }
 }
 
 if vim.g.neovide == nil then
@@ -67,6 +77,17 @@ if vim.g.neovide == nil then
 else
     commonPlugins = TableUnion(commonPlugins, {
     })
+end
+
+vim.g.copilot_enabled = 0
+
+local do_not_spy_on_me = function()
+    -- Check if we are in the specific directory
+    local path = vim.fn.expand("%:p")  -- Full path of the current buffer
+    local project_path = vim.fn.expand("~/prj/")  -- Path to check
+
+    -- Only load the plugin if we're inside ~/prj
+    return path:find(project_path, 1, true) == 1
 end
 
 local idePlugins = {
@@ -160,9 +181,9 @@ local idePlugins = {
       end
     },
 
-    {"https://github.com/WhiteBlackGoose/orgmode", dev=false },
-    -- {"https://github.com/nvim-orgmode/orgmode" },
-    'akinsho/org-bullets.nvim',
+    -- {"https://github.com/WhiteBlackGoose/orgmode", dev=false },
+    {"https://github.com/nvim-orgmode/orgmode" },
+    -- 'akinsho/org-bullets.nvim',
     -- "https://github.com/lukas-reineke/headlines.nvim",
     'mfussenegger/nvim-jdtls',
     'onsails/lspkind.nvim',
@@ -193,7 +214,10 @@ local idePlugins = {
           vim.fn["mkdp#util#install"]()
         end
     },
-    'github/copilot.vim',
+    {
+      'github/copilot.vim',
+      cond = do_not_spy_on_me
+    },
     {
         'whonore/Coqtail',
         dev=true,
@@ -202,7 +226,25 @@ local idePlugins = {
         end
     },
     'jose-elias-alvarez/null-ls.nvim',
-    'edwinb/idris2-vim'
+    'edwinb/idris2-vim',
+
+    {
+      'CopilotC-Nvim/CopilotChat.nvim',
+      cond = do_not_spy_on_me,
+      config = function()
+        require("CopilotChat").setup({
+          -- Disable or customize keybindings here
+          mappings = {
+            close = { normal = "<leader>cQ", insert = "<leader>cQ" },  -- Override default 'close' binding
+            reset = { normal = "<leader>cR", insert = "<leader>cR" },  -- Override default 'reset' binding
+            -- Don't override C-l and q
+            -- Example for a custom command
+            toggle = { normal = "<leader>ccv", insert = "<C-v>" }, -- Customize toggle
+            -- Other custom keymaps for CopilotChat functions here...
+         }
+        })
+      end
+    }
 }
 
 local lazy_opt = {
