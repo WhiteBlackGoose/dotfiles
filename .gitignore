@@ -135,3 +135,10 @@ app-config/bruno/Cache/Cache_Data
 app-config/bruno/Code Cache
 app-config/bruno/Crashpad
 app-config/bruno
+app-config/.mozilla/thunderbird/Crash Reports
+app-config/avante.nvim
+app-config/gnome-builder/syntax
+app-config/configstore/update-notifier-@github
+app-config/roboflow
+app-config/simple-scan
+app-config/gscan2pdfrc

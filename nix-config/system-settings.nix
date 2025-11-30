@@ -60,15 +60,75 @@
     #media-session.enable = true;
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.symbols-only
-    nerd-fonts.fantasque-sans-mono
-    nerd-fonts.comic-shanns-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-    iosevka
-  ];
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.symbols-only
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.comic-shanns-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      iosevka
+      monaspace
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia";
+        version = "local";
+        src = ./fonts/UnifrakturMaguntia.ttf;  # your local file next to configuration.nix
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-16"; version = "local";
+        src = ./fonts/UnifrakturMaguntia16.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia16.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-17"; version = "local";
+        src = ./fonts/UnifrakturMaguntia17.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia17.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-18"; version = "local";
+        src = ./fonts/UnifrakturMaguntia18.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia18.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-19"; version = "local";
+        src = ./fonts/UnifrakturMaguntia19.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia19.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-20"; version = "local";
+        src = ./fonts/UnifrakturMaguntia20.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia20.ttf"
+        '';
+      })
+     (pkgs.stdenvNoCC.mkDerivation {
+        pname = "unifraktur-maguntia-21"; version = "local";
+        src = ./fonts/UnifrakturMaguntia21.ttf;
+        dontUnpack = true;
+        installPhase = ''
+          install -Dm644 "$src" "$out/share/fonts/truetype/UnifrakturMaguntia21.ttf"
+        '';
+      })
+    ];
+  };
 
   # GnuPG
   services.pcscd.enable = true;

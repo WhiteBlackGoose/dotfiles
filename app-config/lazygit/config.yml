@@ -9,3 +9,5 @@ gui:
     selectedLineBgColor:
       - default
   mouseEvents: false
+git:
+  autoForwardBranches: none

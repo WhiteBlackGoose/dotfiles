@@ -85,9 +85,10 @@ local do_not_spy_on_me = function()
     -- Check if we are in the specific directory
     local path = vim.fn.expand("%:p")  -- Full path of the current buffer
     local project_path = vim.fn.expand("~/prj/")  -- Path to check
+    local external_zeta = "/run/media/goose/Zeta/"  -- Path to check
 
     -- Only load the plugin if we're inside ~/prj
-    return path:find(project_path, 1, true) == 1
+    return path:find(project_path, 1, true) == 1 or path:find(external_zeta, 1, true) == 1
 end
 
 local idePlugins = {
@@ -215,10 +216,6 @@ local idePlugins = {
         end
     },
     {
-      'github/copilot.vim',
-      cond = do_not_spy_on_me
-    },
-    {
         'whonore/Coqtail',
         dev=true,
         config = function()
@@ -227,6 +224,66 @@ local idePlugins = {
     },
     'jose-elias-alvarez/null-ls.nvim',
     'edwinb/idris2-vim',
+
+
+    {
+      'github/copilot.vim',
+      cond = do_not_spy_on_me
+    },
+    {
+      'yetone/avante.nvim',
+      cond = do_not_spy_on_me,
+      version = false, -- Never set this value to "*"! Never!
+      build = vim.fn.has("win32") ~= 0
+      and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+      or "make",
+      opts = {
+        provider = "copilot",
+        providers = {
+          copilot = {
+            model = "claude-sonnet-4.5"
+          }
+        },
+        behaviour = {
+          auto_apply_diff_after_generation = false,
+          auto_approve_tool_permissions = false
+        },
+        windows = {
+          width = 50,
+          position = "left"
+        }
+      },
+      dependencies = {
+        "zbirenbaum/copilot.lua"
+      }
+    },
+
+    {
+      'olimorris/codecompanion.nvim',
+      cond = do_not_spy_on_me,
+      dependencies = {
+        "ravitemer/mcphub.nvim"
+      },
+      opts = {
+        strategies = {
+          chat = { adapter = "copilot" },
+          inline = { adapter = "copilot" },
+          --[[
+          chat = {
+            adapter = "anthropic",
+            model = "claude-sonnet-4-20250514"
+          },
+          inline = {
+            adapter = "anthropic",
+          }
+          ]]
+        },
+        -- NOTE: The log_level is in `opts.opts`
+        opts = {
+          -- log_level = "DEBUG",
+        },
+      },
+    },
 
     {
       'CopilotC-Nvim/CopilotChat.nvim',
