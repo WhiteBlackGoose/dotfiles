@@ -24,7 +24,6 @@
     gthumb
     pamixer
     pavucontrol
-    surf
 
     libotr
     gpgme
@@ -38,7 +37,6 @@
     # (pkgs.writeScript "elect" "QT_QPA_PLATFORM=xcb ${pkgs.electrum}/bin/electrum")
     feh
     fzf
-    plasma5Packages.kdeconnect-kde
     lm_sensors
     lsd
     openvpn
@@ -95,7 +93,6 @@
     nix-index
     timer
     tmux
-    (writeScriptBin "factorio" "${steam-fhsenv-without-steam.run}/bin/steam-run /home/goose/factorio/factorio/bin/x64/factorio")
 
     numbat
     bat

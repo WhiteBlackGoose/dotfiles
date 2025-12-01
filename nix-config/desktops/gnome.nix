@@ -25,12 +25,8 @@ sys = inputs@{ pkgs, ... }:
   nixpkgs.config.allowAliases = false;
 
   services.libinput.enable = true;
-  services.xserver = {
-    dpi = 192;
-    enable = true;
-
+  services = {
     desktopManager = {
-      xterm.enable = false;
       gnome.enable = true;
     };
 
@@ -42,7 +38,6 @@ sys = inputs@{ pkgs, ... }:
           greeter.IncludeAll = true;
         };
       };
-      lightdm.enable = !gdm.enable;
     };
   };
 

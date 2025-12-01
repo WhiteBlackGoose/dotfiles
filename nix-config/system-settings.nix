@@ -24,10 +24,10 @@
   };
 
   services.upower.enable = true;
-  services.logind.extraConfig = ''
-     # don’t shutdown when power button is short-pressed
-     HandlePowerKey=ignore
-   '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+    HandlePowerKeyLongPress = "poweroff";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

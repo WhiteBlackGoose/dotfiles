@@ -21,42 +21,42 @@ rec {
     git = {
       enable = true;
       lfs.enable = true;
-      userName = "WhiteBlackGoose";
-      userEmail = "wbg@angouri.org";
       signing = {
         key = "640BEDDE9734310ABFA3B25752EDAE6A3995AFAB";
       };
-      extraConfig = {
+      settings = {
+        user.name = "WhiteBlackGoose";
+        user.email = "wbg@angouri.org";
         core.eol = "lf";
         status.submodulesummary = 1;
         push.recurseSubmodules = "check";
-      };
-      aliases =
-        let
-          withColor = color: str: "%C(${color})${str}%Creset";
-          hash = "%h ";
-          date = "%ad ";
-          decor = "%(decorate) ";
-          auth = "%an ";
-        in
-      {
-        "unstage" = "reset HEAD --";
-        "rbi" = "rebase --interactive";
-        "sa" = "status -s --ignored=traditional";
-        "ss" = "status -s";
-        "a" = "add";
-        "c" = "commit -m";
-        "logd" = ''log --date=short --pretty=format:"%m ''
-          + withColor "yellow" hash
-          + withColor "cyan" (withColor "bold" date)
-          + withColor "green" decor
-          + ''%s"'';
-        "logf" = ''log --date=short --pretty=format:"%m ''
-          + withColor "yellow" hash
-          + withColor "cyan" (withColor "bold" date)
-          + withColor "green" decor
-          + withColor "red" auth
-          + ''%s"'';
+        alias =
+          let
+            withColor = color: str: "%C(${color})${str}%Creset";
+            hash = "%h ";
+            date = "%ad ";
+            decor = "%(decorate) ";
+            auth = "%an ";
+          in
+        {
+          "unstage" = "reset HEAD --";
+          "rbi" = "rebase --interactive";
+          "sa" = "status -s --ignored=traditional";
+          "ss" = "status -s";
+          "a" = "add";
+          "c" = "commit -m";
+          "logd" = ''log --date=short --pretty=format:"%m ''
+            + withColor "yellow" hash
+            + withColor "cyan" (withColor "bold" date)
+            + withColor "green" decor
+            + ''%s"'';
+          "logf" = ''log --date=short --pretty=format:"%m ''
+            + withColor "yellow" hash
+            + withColor "cyan" (withColor "bold" date)
+            + withColor "green" decor
+            + withColor "red" auth
+            + ''%s"'';
+        };
       };
     };
     fish = {
