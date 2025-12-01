@@ -251,6 +251,12 @@ local idePlugins = {
         windows = {
           width = 50,
           position = "left"
+        },
+        mappings = {
+          suggestion = {
+            accept = "<leader>aa",
+            dismiss = "<leader>ar",
+          }
         }
       },
       dependencies = {

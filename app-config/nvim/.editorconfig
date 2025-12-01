@@ -1,0 +1,8 @@
+# Top-level EditorConfig file
+root = true
+
+# Lua-specific indentation
+[*.lua]
+indent_style = space
+indent_size = 2
+tab_width = 2
