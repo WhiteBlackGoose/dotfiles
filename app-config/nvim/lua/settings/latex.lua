@@ -1,4 +1,4 @@
-require'lspconfig'.texlab.setup{}
+vim.lsp.config.texlab = {}
 
 vim.cmd[[
 :autocmd BufNewFile,BufRead *.tex VimtexCompile

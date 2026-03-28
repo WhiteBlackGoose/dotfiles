@@ -19,60 +19,33 @@ vim.cmd [[
 ]]
 
 
-local lsp = require 'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-lsp.texlab.setup { capabilities = capabilities }
-lsp.clangd.setup { capabilities = capabilities }
-lsp.nil_ls.setup {
+
+vim.lsp.config.texlab = { capabilities = capabilities }
+vim.lsp.config.clangd = { capabilities = capabilities }
+vim.lsp.config.nil_ls = {
     capabilities = capabilities,
     settings = {
         nix = {
           flake = {
-            autoArchive = false,  -- optional, if you don't want autoArchive
-            autoEvalInputs = false, -- <== this disables the prompt
+            autoArchive = false,
+            autoEvalInputs = false,
             enable = false
           }
         }
       }
 }
-lsp.vuels.setup { capabilities = capabilities }
--- lsp.rust_analyzer.setup { capabilities = capabilities }
--- lsp.csharp_ls.setup{capabilities = capabilities}
--- lsp.omnisharp.setup{
---     cmd = { "OmniSharp" },
---     enable_editorconfig_support = true,
---     capabilities = capabilities
---     }
-lsp.idris2_lsp.setup { capabilities = capabilities }
-lsp.hls.setup { capabilities = capabilities }
--- lsp.jedi_language_server.setup { capabilities = capabilities }
--- lsp.pylsp.setup {
---     capabilities = capabilities,
---     settings = {
---     }
--- }
-lsp.pyright.setup { capabilities = capabilities }
-lsp.ts_ls.setup { capabilities = capabilities }
-
-local null_ls = require("null-ls")
-
--- null_ls.setup({
---   sources = {
---     -- null_ls.builtins.formatting.prettier, -- Example for JavaScript/TypeScript
---     null_ls.builtins.formatting.black,    -- Example for Python
---   },
--- })
+vim.lsp.config.vuels = { capabilities = capabilities }
+vim.lsp.config.idris2_lsp = { capabilities = capabilities }
+vim.lsp.config.hls = { capabilities = capabilities }
+vim.lsp.config.pyright = { capabilities = capabilities }
+vim.lsp.config.ts_ls = { capabilities = capabilities }
 
 vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
-lsp.slint_lsp.setup { capabilities = capabilities }
--- lsp.java_language_server.setup{
---     capabilities = capabilities,
---     cmd = {"java-language-server"}
--- }
-lsp.solc.setup { capabilities = capabilities }
-lsp.cmake.setup { capabilities = capabilities }
-
-lsp.gleam.setup { capabilities = capabilities }
+vim.lsp.config.slint_lsp = { capabilities = capabilities }
+vim.lsp.config.solc = { capabilities = capabilities }
+vim.lsp.config.cmake = { capabilities = capabilities }
+vim.lsp.config.gleam = { capabilities = capabilities }
 
 local jdtls = require('jdtls')
 if os.getenv("JDTLS") ~= nil then

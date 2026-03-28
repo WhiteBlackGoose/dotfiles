@@ -2,10 +2,11 @@ vim.cmd[[
 :au BufRead,BufNewFile *.fst set filetype=fstar
 :au BufRead,BufNewFile *.fst set syntax=fsharp
 ]]
-require'lspconfig'.fstar.setup{
-    root_dir = function (path)
+
+vim.lsp.config.fstar = {
+    root_dir = function(path)
         return "."
-    end
+    end,
 }
 -- function RunFStar()
 --    vim.lsp.start({
