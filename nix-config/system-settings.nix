@@ -210,6 +210,7 @@
       ++ [ 7236 ]           # Miracast
       ++ [ 13000 ]          # DAP
      ++ [ 5535 ]            # LLMNR for some fucking reason?
+     ++ [ 9090 ]            # Prometheus
       ;
   networking.firewall.allowedUDPPorts =
     [ 22000 21027 1194 51820 6379 ]
@@ -217,6 +218,7 @@
      ++ [ 27017 ]
      ++ [ 5353 1900 ]       # Miracast
      ++ [ 51820 ]           # wireguard
+     ++ [ 9090 ]           # Prometheus
      ;
   networking.firewall.allowedTCPPortRanges =
     [

@@ -156,7 +156,7 @@ rec {
     };
     telegram = {
       name = "Telegram";
-      exec = ''${pkgs.writeScript "tg" "QT_QPA_PLATFORM=xcb ${pkgs.telegram-desktop}/bin/telegram-desktop"}'';
+      exec = ''${pkgs.writeScript "tg" "QT_QPA_PLATFORM=xcb ${pkgs.telegram-desktop}/bin/Telegram"}'';
       icon = "${telegram-desktop}/share/icons/hicolor/128x128/apps/telegram.png";
     };
     electrum = {

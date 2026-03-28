@@ -1,5 +1,6 @@
 { pkgs, sw, ... }: {
   environment.systemPackages = with pkgs; [
+    file
     usbutils pciutils
     monero-gui
     termshark tcpdump

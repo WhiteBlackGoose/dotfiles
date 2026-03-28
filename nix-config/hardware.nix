@@ -16,13 +16,6 @@ rec {
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ "dm-snapshot" "binder" ];
-  boot.kernelModules = [
-    "kvm-intel"
-  ];
-  hardware.nvidiaOptimus.disable = false;
-  hardware.tuxedo-drivers.enable = true;
-
-  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
   # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   boot.initrd.luks.devices.root = {
@@ -61,6 +54,14 @@ rec {
     }
   ];
 
+  boot.kernelModules = [
+    "kvm-intel"
+  ];
+  hardware.nvidiaOptimus.disable = false;
+  hardware.tuxedo-drivers.enable = true;
+
+  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
@@ -76,9 +77,13 @@ rec {
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
+
+    # these two to true to avoid ERR! ERR! ERR! in nvidia-smi, 
+    # cuda/tensorrt failing _and_ not being able to suspend
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+
+    open = false;
     nvidiaSettings = true;
     prime = {
       intelBusId = "PCI:0:2:0";
@@ -91,7 +96,7 @@ rec {
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["modesetting" "nvidia"];
   # Not load them lol
   services.thermald.enable = lib.mkDefault true;
 
@@ -153,6 +158,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uacces
 
   hardware.sane.enable = true;
 
+
   services.resolved = {
     enable = true;
     dnssec = "false";
@@ -162,6 +168,10 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uacces
       DNSOverTLS=false
     '';
   };
+  networking.nameservers = [
+    "8.8.8.8"
+    "1.1.1.1"
+  ];
 
   networking.hostName = "tuxedo-infinitypro14-nixos"; # Define your hostname.
 }
